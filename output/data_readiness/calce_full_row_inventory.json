@@ -1,0 +1,92 @@
+{
+  "scope": "CALCE_FULL_ROW_DETERMINISTIC_INVENTORY",
+  "batteries": [
+    {
+      "dataset": "CALCE",
+      "battery_id": "CS2_35",
+      "file_found": true,
+      "raw_file_count": 25,
+      "raw_record_count": 266914,
+      "charge_cycle_count": 50,
+      "discharge_cycle_count": 50,
+      "impedance_or_other_record_count": 0,
+      "valid_cycle_count": 50,
+      "missing_records": [],
+      "duplicate_records": 0,
+      "malformed_records": 0,
+      "timestamp_order_status": "NON_MONOTONIC_OR_NO_RECORDS",
+      "file_path": "raw_data\\calce_cs2\\CS2_35\\CS2_35",
+      "file_size": 41978617,
+      "sha256": "PER_FILE_IN_DATA_SOURCE_MANIFEST"
+    },
+    {
+      "dataset": "CALCE",
+      "battery_id": "CS2_36",
+      "file_found": true,
+      "raw_file_count": 26,
+      "raw_record_count": 269656,
+      "charge_cycle_count": 50,
+      "discharge_cycle_count": 50,
+      "impedance_or_other_record_count": 0,
+      "valid_cycle_count": 50,
+      "missing_records": [],
+      "duplicate_records": 0,
+      "malformed_records": 0,
+      "timestamp_order_status": "NON_MONOTONIC_OR_NO_RECORDS",
+      "file_path": "raw_data\\calce_cs2\\CS2_36\\CS2_36",
+      "file_size": 42621919,
+      "sha256": "PER_FILE_IN_DATA_SOURCE_MANIFEST"
+    },
+    {
+      "dataset": "CALCE",
+      "battery_id": "CS2_37",
+      "file_found": true,
+      "raw_file_count": 27,
+      "raw_record_count": 290998,
+      "charge_cycle_count": 50,
+      "discharge_cycle_count": 50,
+      "impedance_or_other_record_count": 0,
+      "valid_cycle_count": 49,
+      "missing_records": [],
+      "duplicate_records": 0,
+      "malformed_records": 0,
+      "timestamp_order_status": "NON_MONOTONIC_OR_NO_RECORDS",
+      "file_path": "raw_data\\calce_cs2\\CS2_37\\CS2_37",
+      "file_size": 45962775,
+      "sha256": "PER_FILE_IN_DATA_SOURCE_MANIFEST"
+    },
+    {
+      "dataset": "CALCE",
+      "battery_id": "CS2_38",
+      "file_found": true,
+      "raw_file_count": 28,
+      "raw_record_count": 303295,
+      "charge_cycle_count": 50,
+      "discharge_cycle_count": 50,
+      "impedance_or_other_record_count": 0,
+      "valid_cycle_count": 50,
+      "missing_records": [],
+      "duplicate_records": 0,
+      "malformed_records": 0,
+      "timestamp_order_status": "NON_MONOTONIC_OR_NO_RECORDS",
+      "file_path": "raw_data\\calce_cs2\\CS2_38\\CS2_38",
+      "file_size": 47889036,
+      "sha256": "PER_FILE_IN_DATA_SOURCE_MANIFEST"
+    }
+  ],
+  "canonical_row_count": 200,
+  "flags": {
+    "TRAIN_SET_ASSIGNED": false,
+    "VALIDATION_SET_ASSIGNED": false,
+    "TEST_SET_ASSIGNED": false,
+    "TARGET_FIRST20_ASSIGNED": false,
+    "GAN_TARGET_POPULATION_ASSIGNED": false,
+    "FINAL_SOH_TARGET_ASSIGNED": false,
+    "PA004_UNCHANGED": true
+  },
+  "limitations": [
+    "Cycle identity is the source workbook plus its recorded Cycle_Index; identical numeric IDs across workbooks are reported rather than silently merged.",
+    "Final SOH target construction remains blocked by PA-001."
+  ],
+  "status": "COMPLETE"
+}

@@ -284,8 +284,8 @@ Phase 10 Acceptance               [..........] 0%
 OVERALL_PROGRESS=9%
 CURRENT_PHASE=Phase 0
 CURRENT_GATE=Phase 0 advancement review: critical protocol ambiguity PA-004
-LAST_COMPLETED=Split-independent official NASA/CALCE source acquisition; NASA full parsing and CALCE schema readiness completed; PA-004 remains unresolved
-NEXT_ACTION=Complete bounded CALCE full-row inventory if resources permit, while Human obtains PA-004 primary-source clarification; do not enter Phase 1 or implement model code
+LAST_COMPLETED=CALCE official full-row scan completed; source-safe cross-workbook cycle-boundary and row-null/duplicate reporting remain incomplete; PA-004 remains unresolved
+NEXT_ACTION=Persist CALCE source-keyed cycle-boundary and row-null/duplicate audit without splits, while Human obtains PA-004 primary-source clarification; do not enter Phase 1 or implement model code
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -702,6 +702,7 @@ These ten independent plan audits were completed before this Master Plan was wri
 | 2026-09-11 | Phase 0 | Full plan/Git/project/PDF audit and Plan Health Audit passed. | Extracted paper specification, ambiguity register, missing-parameter register, and machine-readable JSON. No code/model/training/search/metric run. | Specification complete; advancement blocked by PA-004 until Human/new-evidence resolution. | PASS_WITH_REGISTERED_AMBIGUITIES__ADVANCEMENT_BLOCKED. | PDF pp.1–16; `PA-001`–`PA-010`; `PM-001`–`PM-009`. |
 | 2026-09-11 | Phase 0 | Full plan/specification/registers/PDF audit; task is Phase-0 evidence work and allowed. | Audited all PA-004-relevant full-text passages, visually inspected the adjacent architecture/results pages, checked tables/captions, project supplementary inventory, and paper-provided code/data availability. No data/model/training/search/metric run. | No new evidence maps the two target-data constructions; no core-plan change is warranted. | `PA004_STATUS=UNRESOLVED_BLOCKING`; Phase 0 exit remains blocked. | `PA004_PROTOCOL_EVIDENCE_TABLE.md`; PDF pp.5, 7–11, 12–16. |
 | 2026-09-11 | Phase 0 side-track | Human authorized PLAN-CHANGE-0002; this task is split-independent raw-data readiness only. | Acquired and hashed official NASA/CALCE archives; parsed NASA fully; verified CALCE workbook presence/header schema and raw-record dimensions; created an unsplit NASA canonical artifact and complete provenance manifests. No split assignment, model, STL, GAN, training, metric, or search. | CALCE full-row parsing exceeds the bounded runtime and remains incomplete; no data or cycle was discarded. | `SPLIT_INDEPENDENT_DATA_READINESS_GATE=FAIL__PARTIAL`; `PA004_STATUS=UNRESOLVED_BLOCKING`. | `DATA_SOURCE_MANIFEST.md`; `output/data_readiness/`; `scripts/prepare_split_independent_data.py`. |
+| 2026-09-11 | Phase 0 side-track | Previous remote archive verified before work. | Read every operational row in all four official CALCE archives and generated a separate full-row inventory. No raw-file change, split assignment, target choice, model, STL, GAN, training, metric, or search. | CALCE numeric Cycle_Index may span/ repeat across source workbooks; global cycle identity and persisted row-null/content-duplicate reporting remain unresolved and are not inferred. | `CALCE_FULL_ROW_SCAN_STATUS=COMPLETE`; readiness gate remains fail/partial; `PA004_STATUS=UNRESOLVED_BLOCKING`. | `CALCE_FULL_ROW_INVENTORY.md`; `output/data_readiness/calce_full_row_inventory.json`. |
 
 ## MASTER_PLAN_SELF_AUDIT
 

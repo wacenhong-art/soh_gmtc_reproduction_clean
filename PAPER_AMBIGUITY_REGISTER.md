@@ -134,3 +134,14 @@ All records are Phase 0 paper-evidence records. They do not authorize defaults o
 `IMPLEMENTATION_IMPACT=Core SCF-GAN differs.`
 `BLOCKS_IMPLEMENTATION=True`
 `HUMAN_DECISION_REQUIRED=True`
+
+## Append-only engineering fallback record — PA-006 / PM-002 / PA-STL-COMPONENT-TARGET
+
+`STATUS=HUMAN_FALLBACK_ATTEMPTED__PAPER_AMBIGUITY_RETAINS_PRIORITY`
+`FALLBACK=PARTITION_ISOLATED_OFFLINE_STL__TRAIN_ONLY_STRUCTURAL_PERIOD_SELECTION__LIBRARY_DEFAULT_SMOOTHERS_IF_PERIOD_FROZEN`
+`RESULT_BLIND=True`
+`PERFORMANCE_BLIND=True`
+`TEST_LOADED=False`
+`AUTHOR_OVERRIDE_PENDING=True`
+
+The deterministic ACF/spectral agreement rule failed for every Protocol-A and Protocol-B target training track. It does not resolve the paper ambiguity and it does not supply a hidden period: `STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE=True`. Any fixed engineering period or bounded structural sensitivity study now requires a separate Human decision.

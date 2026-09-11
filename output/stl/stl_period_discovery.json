@@ -1,0 +1,919 @@
+{
+  "scope": "PHASE_2B_TRAIN_ONLY_STRUCTURAL_PERIOD_DISCOVERY",
+  "result_blind": true,
+  "performance_blind": true,
+  "period_discovery_detrend_method": "ORDINARY_LEAST_SQUARES_LINEAR_DETREND__NO_STL_USED_FOR_DETRENDING",
+  "period_selection_uses_validation_values": false,
+  "period_selection_uses_test_values": false,
+  "period_selection_uses_model_metrics": false,
+  "validation_counts_metadata_only": true,
+  "test_loaded": false,
+  "test_capacity_values_accessed": false,
+  "period_rows": [
+    {
+      "protocol": "A",
+      "dataset": "CALCE",
+      "battery_id": "CS2_36",
+      "n_train": 585,
+      "n_validation_metadata_only": 195,
+      "capacity_provenance": {
+        "capacity_source": "CALCE_SELECTED_SEGMENT_MAX_DISCHARGE_CAPACITY_AH",
+        "alignment_rule": "maximum finite Discharge_Capacity(Ah) within each selected canonical source-keyed segment",
+        "test_capacity_values_selected": false
+      },
+      "period_estimate": {
+        "status": "UNRESOLVED",
+        "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+        "max_period": 97,
+        "acf_period_candidate": 2,
+        "spectral_period_candidate": 53,
+        "agreement_difference": 51,
+        "acf": {
+          "candidate": 2,
+          "score": 0.79943528018406,
+          "eligible_lag_count": 96,
+          "runner_up_score": 0.7051395721323852
+        },
+        "spectral": {
+          "candidate": 53,
+          "frequency_bin": 11,
+          "power": 10906934.390326088,
+          "eligible_frequency_bin_count": 286,
+          "runner_up_power": 4230889.413031705
+        }
+      },
+      "period_stability": {
+        "status": "UNSTABLE_OR_UNRESOLVED",
+        "reason": "AT_LEAST_ONE_PREFIX_HAS_NO_AGREED_PERIOD",
+        "prefixes": {
+          "0.8": {
+            "prefix_n": 468,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 97,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 52,
+              "agreement_difference": 50,
+              "acf": {
+                "candidate": 2,
+                "score": 0.7993008775653682,
+                "eligible_lag_count": 96,
+                "runner_up_score": 0.7047736558742145
+              },
+              "spectral": {
+                "candidate": 52,
+                "frequency_bin": 9,
+                "power": 8999314.66240378,
+                "eligible_frequency_bin_count": 230,
+                "runner_up_power": 1949251.0735143805
+              }
+            }
+          },
+          "0.9": {
+            "prefix_n": 526,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 97,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 53,
+              "agreement_difference": 51,
+              "acf": {
+                "candidate": 2,
+                "score": 0.7988200227945582,
+                "eligible_lag_count": 96,
+                "runner_up_score": 0.7040670847438343
+              },
+              "spectral": {
+                "candidate": 53,
+                "frequency_bin": 10,
+                "power": 9483637.979882877,
+                "eligible_frequency_bin_count": 258,
+                "runner_up_power": 3093642.982528918
+              }
+            }
+          },
+          "1.0": {
+            "prefix_n": 585,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 97,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 53,
+              "agreement_difference": 51,
+              "acf": {
+                "candidate": 2,
+                "score": 0.79943528018406,
+                "eligible_lag_count": 96,
+                "runner_up_score": 0.7051395721323852
+              },
+              "spectral": {
+                "candidate": 53,
+                "frequency_bin": 11,
+                "power": 10906934.390326088,
+                "eligible_frequency_bin_count": 286,
+                "runner_up_power": 4230889.413031705
+              }
+            }
+          }
+        }
+      },
+      "period_frozen": false
+    },
+    {
+      "protocol": "A",
+      "dataset": "CALCE",
+      "battery_id": "CS2_38",
+      "n_train": 649,
+      "n_validation_metadata_only": 216,
+      "capacity_provenance": {
+        "capacity_source": "CALCE_SELECTED_SEGMENT_MAX_DISCHARGE_CAPACITY_AH",
+        "alignment_rule": "maximum finite Discharge_Capacity(Ah) within each selected canonical source-keyed segment",
+        "test_capacity_values_selected": false
+      },
+      "period_estimate": {
+        "status": "UNRESOLVED",
+        "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+        "max_period": 108,
+        "acf_period_candidate": 2,
+        "spectral_period_candidate": 50,
+        "agreement_difference": 48,
+        "acf": {
+          "candidate": 2,
+          "score": 0.7954103140735534,
+          "eligible_lag_count": 107,
+          "runner_up_score": 0.6990963880643515
+        },
+        "spectral": {
+          "candidate": 50,
+          "frequency_bin": 13,
+          "power": 6834890.190125091,
+          "eligible_frequency_bin_count": 319,
+          "runner_up_power": 4802832.670867802
+        }
+      },
+      "period_stability": {
+        "status": "UNSTABLE_OR_UNRESOLVED",
+        "reason": "AT_LEAST_ONE_PREFIX_HAS_NO_AGREED_PERIOD",
+        "prefixes": {
+          "0.8": {
+            "prefix_n": 519,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 108,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 47,
+              "agreement_difference": 45,
+              "acf": {
+                "candidate": 2,
+                "score": 0.7942462941174584,
+                "eligible_lag_count": 107,
+                "runner_up_score": 0.69729590780067
+              },
+              "spectral": {
+                "candidate": 47,
+                "frequency_bin": 11,
+                "power": 5887590.189650897,
+                "eligible_frequency_bin_count": 255,
+                "runner_up_power": 4325857.2532025995
+              }
+            }
+          },
+          "0.9": {
+            "prefix_n": 584,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 108,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 49,
+              "agreement_difference": 47,
+              "acf": {
+                "candidate": 2,
+                "score": 0.7929513514337911,
+                "eligible_lag_count": 107,
+                "runner_up_score": 0.6953961483171286
+              },
+              "spectral": {
+                "candidate": 49,
+                "frequency_bin": 12,
+                "power": 6475575.6140807,
+                "eligible_frequency_bin_count": 287,
+                "runner_up_power": 4457366.9052189
+              }
+            }
+          },
+          "1.0": {
+            "prefix_n": 649,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 108,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 50,
+              "agreement_difference": 48,
+              "acf": {
+                "candidate": 2,
+                "score": 0.7954103140735534,
+                "eligible_lag_count": 107,
+                "runner_up_score": 0.6990963880643515
+              },
+              "spectral": {
+                "candidate": 50,
+                "frequency_bin": 13,
+                "power": 6834890.190125091,
+                "eligible_frequency_bin_count": 319,
+                "runner_up_power": 4802832.670867802
+              }
+            }
+          }
+        }
+      },
+      "period_frozen": false
+    },
+    {
+      "protocol": "A",
+      "dataset": "NASA",
+      "battery_id": "B0007",
+      "n_train": 102,
+      "n_validation_metadata_only": 34,
+      "capacity_provenance": {
+        "capacity_source": "NASA_DISCHARGE_RECORD_CAPACITY",
+        "alignment_rule": "match the early charge membership reported_cycle_index to the same ordinal discharge record; only requested prefix capacity values are converted",
+        "raw_source": "raw_data/nasa_pcoe/extracted/5. Battery Data Set/BatteryAgingARC-FY08Q4/B0007.mat",
+        "test_capacity_values_selected": false
+      },
+      "period_estimate": {
+        "status": "UNRESOLVED",
+        "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+        "max_period": 17,
+        "acf_period_candidate": 2,
+        "spectral_period_candidate": 8,
+        "agreement_difference": 6,
+        "acf": {
+          "candidate": 2,
+          "score": 0.7604590715362992,
+          "eligible_lag_count": 16,
+          "runner_up_score": 0.6953355251438249
+        },
+        "spectral": {
+          "candidate": 8,
+          "frequency_bin": 12,
+          "power": 0.07758300864128485,
+          "eligible_frequency_bin_count": 46,
+          "runner_up_power": 0.0656361574282977
+        }
+      },
+      "period_stability": {
+        "status": "UNSTABLE_OR_UNRESOLVED",
+        "reason": "AT_LEAST_ONE_PREFIX_HAS_NO_AGREED_PERIOD",
+        "prefixes": {
+          "0.8": {
+            "prefix_n": 81,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 17,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 14,
+              "agreement_difference": 12,
+              "acf": {
+                "candidate": 2,
+                "score": 0.8322787118835624,
+                "eligible_lag_count": 16,
+                "runner_up_score": 0.7729505256118764
+              },
+              "spectral": {
+                "candidate": 14,
+                "frequency_bin": 6,
+                "power": 0.03358707860761492,
+                "eligible_frequency_bin_count": 36,
+                "runner_up_power": 0.024456438468195844
+              }
+            }
+          },
+          "0.9": {
+            "prefix_n": 91,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 17,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 8,
+              "agreement_difference": 6,
+              "acf": {
+                "candidate": 2,
+                "score": 0.7570789707490071,
+                "eligible_lag_count": 16,
+                "runner_up_score": 0.7042209827424086
+              },
+              "spectral": {
+                "candidate": 8,
+                "frequency_bin": 11,
+                "power": 0.06321266331050998,
+                "eligible_frequency_bin_count": 40,
+                "runner_up_power": 0.0585255237871384
+              }
+            }
+          },
+          "1.0": {
+            "prefix_n": 102,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 17,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 8,
+              "agreement_difference": 6,
+              "acf": {
+                "candidate": 2,
+                "score": 0.7604590715362992,
+                "eligible_lag_count": 16,
+                "runner_up_score": 0.6953355251438249
+              },
+              "spectral": {
+                "candidate": 8,
+                "frequency_bin": 12,
+                "power": 0.07758300864128485,
+                "eligible_frequency_bin_count": 46,
+                "runner_up_power": 0.0656361574282977
+              }
+            }
+          }
+        }
+      },
+      "period_frozen": false
+    },
+    {
+      "protocol": "A",
+      "dataset": "NASA",
+      "battery_id": "B0018",
+      "n_train": 80,
+      "n_validation_metadata_only": 27,
+      "capacity_provenance": {
+        "capacity_source": "NASA_DISCHARGE_RECORD_CAPACITY",
+        "alignment_rule": "match the early charge membership reported_cycle_index to the same ordinal discharge record; only requested prefix capacity values are converted",
+        "raw_source": "raw_data/nasa_pcoe/extracted/5. Battery Data Set/BatteryAgingARC-FY08Q4/B0018.mat",
+        "test_capacity_values_selected": false
+      },
+      "period_estimate": {
+        "status": "UNRESOLVED",
+        "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+        "max_period": 13,
+        "acf_period_candidate": 2,
+        "spectral_period_candidate": 5,
+        "agreement_difference": 3,
+        "acf": {
+          "candidate": 2,
+          "score": 0.5328706376753289,
+          "eligible_lag_count": 12,
+          "runner_up_score": 0.38738419095887494
+        },
+        "spectral": {
+          "candidate": 5,
+          "frequency_bin": 16,
+          "power": 0.16401497715282917,
+          "eligible_frequency_bin_count": 35,
+          "runner_up_power": 0.14104263598183356
+        }
+      },
+      "period_stability": {
+        "status": "UNSTABLE_OR_UNRESOLVED",
+        "reason": "AT_LEAST_ONE_PREFIX_HAS_NO_AGREED_PERIOD",
+        "prefixes": {
+          "0.8": {
+            "prefix_n": 64,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 13,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 11,
+              "agreement_difference": 9,
+              "acf": {
+                "candidate": 2,
+                "score": 0.48810065297399224,
+                "eligible_lag_count": 12,
+                "runner_up_score": 0.325528573621124
+              },
+              "spectral": {
+                "candidate": 11,
+                "frequency_bin": 6,
+                "power": 0.12280201616138763,
+                "eligible_frequency_bin_count": 28,
+                "runner_up_power": 0.1012687196627724
+              }
+            }
+          },
+          "0.9": {
+            "prefix_n": 72,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 13,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 5,
+              "agreement_difference": 3,
+              "acf": {
+                "candidate": 2,
+                "score": 0.522374318277005,
+                "eligible_lag_count": 12,
+                "runner_up_score": 0.36668396073689424
+              },
+              "spectral": {
+                "candidate": 5,
+                "frequency_bin": 14,
+                "power": 0.15246973662170898,
+                "eligible_frequency_bin_count": 31,
+                "runner_up_power": 0.13295785889511993
+              }
+            }
+          },
+          "1.0": {
+            "prefix_n": 80,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 13,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 5,
+              "agreement_difference": 3,
+              "acf": {
+                "candidate": 2,
+                "score": 0.5328706376753289,
+                "eligible_lag_count": 12,
+                "runner_up_score": 0.38738419095887494
+              },
+              "spectral": {
+                "candidate": 5,
+                "frequency_bin": 16,
+                "power": 0.16401497715282917,
+                "eligible_frequency_bin_count": 35,
+                "runner_up_power": 0.14104263598183356
+              }
+            }
+          }
+        }
+      },
+      "period_frozen": false
+    },
+    {
+      "protocol": "B",
+      "dataset": "CALCE",
+      "battery_id": "CS2_36",
+      "n_train": 195,
+      "n_validation_metadata_only": 195,
+      "capacity_provenance": {
+        "capacity_source": "CALCE_SELECTED_SEGMENT_MAX_DISCHARGE_CAPACITY_AH",
+        "alignment_rule": "maximum finite Discharge_Capacity(Ah) within each selected canonical source-keyed segment",
+        "test_capacity_values_selected": false
+      },
+      "period_estimate": {
+        "status": "UNRESOLVED",
+        "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+        "max_period": 97,
+        "acf_period_candidate": 2,
+        "spectral_period_candidate": 49,
+        "agreement_difference": 47,
+        "acf": {
+          "candidate": 2,
+          "score": 0.8000715896792903,
+          "eligible_lag_count": 96,
+          "runner_up_score": 0.7044886239811267
+        },
+        "spectral": {
+          "candidate": 49,
+          "frequency_bin": 4,
+          "power": 2171301.740225046,
+          "eligible_frequency_bin_count": 95,
+          "runner_up_power": 451559.09340733424
+        }
+      },
+      "period_stability": {
+        "status": "UNSTABLE_OR_UNRESOLVED",
+        "reason": "AT_LEAST_ONE_PREFIX_HAS_NO_AGREED_PERIOD",
+        "prefixes": {
+          "0.8": {
+            "prefix_n": 156,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 78,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 52,
+              "agreement_difference": 50,
+              "acf": {
+                "candidate": 2,
+                "score": 0.772805637877544,
+                "eligible_lag_count": 77,
+                "runner_up_score": 0.6641644643959648
+              },
+              "spectral": {
+                "candidate": 52,
+                "frequency_bin": 3,
+                "power": 1283692.2972298854,
+                "eligible_frequency_bin_count": 77,
+                "runner_up_power": 293395.00313177163
+              }
+            }
+          },
+          "0.9": {
+            "prefix_n": 175,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 87,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 44,
+              "agreement_difference": 42,
+              "acf": {
+                "candidate": 2,
+                "score": 0.7909192025297579,
+                "eligible_lag_count": 86,
+                "runner_up_score": 0.6912360706612983
+              },
+              "spectral": {
+                "candidate": 44,
+                "frequency_bin": 4,
+                "power": 970222.3663891873,
+                "eligible_frequency_bin_count": 85,
+                "runner_up_power": 513978.63122162235
+              }
+            }
+          },
+          "1.0": {
+            "prefix_n": 195,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 97,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 49,
+              "agreement_difference": 47,
+              "acf": {
+                "candidate": 2,
+                "score": 0.8000715896792903,
+                "eligible_lag_count": 96,
+                "runner_up_score": 0.7044886239811267
+              },
+              "spectral": {
+                "candidate": 49,
+                "frequency_bin": 4,
+                "power": 2171301.740225046,
+                "eligible_frequency_bin_count": 95,
+                "runner_up_power": 451559.09340733424
+              }
+            }
+          }
+        }
+      },
+      "period_frozen": false
+    },
+    {
+      "protocol": "B",
+      "dataset": "CALCE",
+      "battery_id": "CS2_38",
+      "n_train": 216,
+      "n_validation_metadata_only": 216,
+      "capacity_provenance": {
+        "capacity_source": "CALCE_SELECTED_SEGMENT_MAX_DISCHARGE_CAPACITY_AH",
+        "alignment_rule": "maximum finite Discharge_Capacity(Ah) within each selected canonical source-keyed segment",
+        "test_capacity_values_selected": false
+      },
+      "period_estimate": {
+        "status": "UNRESOLVED",
+        "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+        "max_period": 108,
+        "acf_period_candidate": 2,
+        "spectral_period_candidate": 54,
+        "agreement_difference": 52,
+        "acf": {
+          "candidate": 2,
+          "score": 0.7860448096102197,
+          "eligible_lag_count": 107,
+          "runner_up_score": 0.6843845413317916
+        },
+        "spectral": {
+          "candidate": 54,
+          "frequency_bin": 4,
+          "power": 1477504.2564279416,
+          "eligible_frequency_bin_count": 107,
+          "runner_up_power": 823360.390434265
+        }
+      },
+      "period_stability": {
+        "status": "UNSTABLE_OR_UNRESOLVED",
+        "reason": "AT_LEAST_ONE_PREFIX_HAS_NO_AGREED_PERIOD",
+        "prefixes": {
+          "0.8": {
+            "prefix_n": 172,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 86,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 43,
+              "agreement_difference": 41,
+              "acf": {
+                "candidate": 2,
+                "score": 0.7913007255798818,
+                "eligible_lag_count": 85,
+                "runner_up_score": 0.6917667263434729
+              },
+              "spectral": {
+                "candidate": 43,
+                "frequency_bin": 4,
+                "power": 798163.3134464939,
+                "eligible_frequency_bin_count": 85,
+                "runner_up_power": 586611.4268774181
+              }
+            }
+          },
+          "0.9": {
+            "prefix_n": 194,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 97,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 48,
+              "agreement_difference": 46,
+              "acf": {
+                "candidate": 2,
+                "score": 0.8002322656598293,
+                "eligible_lag_count": 96,
+                "runner_up_score": 0.7046996727392831
+              },
+              "spectral": {
+                "candidate": 48,
+                "frequency_bin": 4,
+                "power": 2011556.9022743707,
+                "eligible_frequency_bin_count": 96,
+                "runner_up_power": 396786.14341816696
+              }
+            }
+          },
+          "1.0": {
+            "prefix_n": 216,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 108,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 54,
+              "agreement_difference": 52,
+              "acf": {
+                "candidate": 2,
+                "score": 0.7860448096102197,
+                "eligible_lag_count": 107,
+                "runner_up_score": 0.6843845413317916
+              },
+              "spectral": {
+                "candidate": 54,
+                "frequency_bin": 4,
+                "power": 1477504.2564279416,
+                "eligible_frequency_bin_count": 107,
+                "runner_up_power": 823360.390434265
+              }
+            }
+          }
+        }
+      },
+      "period_frozen": false
+    },
+    {
+      "protocol": "B",
+      "dataset": "NASA",
+      "battery_id": "B0007",
+      "n_train": 34,
+      "n_validation_metadata_only": 34,
+      "capacity_provenance": {
+        "capacity_source": "NASA_DISCHARGE_RECORD_CAPACITY",
+        "alignment_rule": "match the early charge membership reported_cycle_index to the same ordinal discharge record; only requested prefix capacity values are converted",
+        "raw_source": "raw_data/nasa_pcoe/extracted/5. Battery Data Set/BatteryAgingARC-FY08Q4/B0007.mat",
+        "test_capacity_values_selected": false
+      },
+      "period_estimate": {
+        "status": "UNRESOLVED",
+        "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+        "max_period": 17,
+        "acf_period_candidate": 2,
+        "spectral_period_candidate": 17,
+        "agreement_difference": 15,
+        "acf": {
+          "candidate": 2,
+          "score": 0.18414296949404943,
+          "eligible_lag_count": 16,
+          "runner_up_score": 0.0411523844420171
+        },
+        "spectral": {
+          "candidate": 17,
+          "frequency_bin": 2,
+          "power": 0.015724379140596344,
+          "eligible_frequency_bin_count": 16,
+          "runner_up_power": 0.007484193683848259
+        }
+      },
+      "period_stability": {
+        "status": "UNSTABLE_OR_UNRESOLVED",
+        "reason": "AT_LEAST_ONE_PREFIX_HAS_NO_AGREED_PERIOD",
+        "prefixes": {
+          "0.8": {
+            "prefix_n": 27,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 13,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 7,
+              "agreement_difference": 5,
+              "acf": {
+                "candidate": 2,
+                "score": 0.41047970385208393,
+                "eligible_lag_count": 12,
+                "runner_up_score": 0.13840813127371002
+              },
+              "spectral": {
+                "candidate": 7,
+                "frequency_bin": 4,
+                "power": 0.004410870269803783,
+                "eligible_frequency_bin_count": 11,
+                "runner_up_power": 0.003033210202907167
+              }
+            }
+          },
+          "0.9": {
+            "prefix_n": 30,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 15,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 15,
+              "agreement_difference": 13,
+              "acf": {
+                "candidate": 2,
+                "score": 0.3976287655533793,
+                "eligible_lag_count": 14,
+                "runner_up_score": 0.14239544808844448
+              },
+              "spectral": {
+                "candidate": 15,
+                "frequency_bin": 2,
+                "power": 0.017069942267404825,
+                "eligible_frequency_bin_count": 14,
+                "runner_up_power": 0.004195372222182311
+              }
+            }
+          },
+          "1.0": {
+            "prefix_n": 34,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 17,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 17,
+              "agreement_difference": 15,
+              "acf": {
+                "candidate": 2,
+                "score": 0.18414296949404943,
+                "eligible_lag_count": 16,
+                "runner_up_score": 0.0411523844420171
+              },
+              "spectral": {
+                "candidate": 17,
+                "frequency_bin": 2,
+                "power": 0.015724379140596344,
+                "eligible_frequency_bin_count": 16,
+                "runner_up_power": 0.007484193683848259
+              }
+            }
+          }
+        }
+      },
+      "period_frozen": false
+    },
+    {
+      "protocol": "B",
+      "dataset": "NASA",
+      "battery_id": "B0018",
+      "n_train": 26,
+      "n_validation_metadata_only": 27,
+      "capacity_provenance": {
+        "capacity_source": "NASA_DISCHARGE_RECORD_CAPACITY",
+        "alignment_rule": "match the early charge membership reported_cycle_index to the same ordinal discharge record; only requested prefix capacity values are converted",
+        "raw_source": "raw_data/nasa_pcoe/extracted/5. Battery Data Set/BatteryAgingARC-FY08Q4/B0018.mat",
+        "test_capacity_values_selected": false
+      },
+      "period_estimate": {
+        "status": "UNRESOLVED",
+        "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+        "max_period": 13,
+        "acf_period_candidate": 2,
+        "spectral_period_candidate": 13,
+        "agreement_difference": 11,
+        "acf": {
+          "candidate": 2,
+          "score": 0.0873715698832315,
+          "eligible_lag_count": 12,
+          "runner_up_score": -0.012475813508978886
+        },
+        "spectral": {
+          "candidate": 13,
+          "frequency_bin": 2,
+          "power": 0.009824340162749268,
+          "eligible_frequency_bin_count": 12,
+          "runner_up_power": 0.007999585407624733
+        }
+      },
+      "period_stability": {
+        "status": "UNSTABLE_OR_UNRESOLVED",
+        "reason": "AT_LEAST_ONE_PREFIX_HAS_NO_AGREED_PERIOD",
+        "prefixes": {
+          "0.8": {
+            "prefix_n": 20,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 10,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 5,
+              "agreement_difference": 3,
+              "acf": {
+                "candidate": 2,
+                "score": 0.2550762166699564,
+                "eligible_lag_count": 9,
+                "runner_up_score": 0.0820690008044629
+              },
+              "spectral": {
+                "candidate": 5,
+                "frequency_bin": 4,
+                "power": 0.0019123410227069638,
+                "eligible_frequency_bin_count": 9,
+                "runner_up_power": 0.0011814118754884834
+              }
+            }
+          },
+          "0.9": {
+            "prefix_n": 23,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 11,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 5,
+              "agreement_difference": 3,
+              "acf": {
+                "candidate": 2,
+                "score": 0.38945384478300393,
+                "eligible_lag_count": 10,
+                "runner_up_score": 0.19887015092057847
+              },
+              "spectral": {
+                "candidate": 5,
+                "frequency_bin": 5,
+                "power": 0.0021537621121850868,
+                "eligible_frequency_bin_count": 9,
+                "runner_up_power": 0.001251698595810544
+              }
+            }
+          },
+          "1.0": {
+            "prefix_n": 26,
+            "estimate": {
+              "status": "UNRESOLVED",
+              "reason": "ACF_SPECTRAL_DISAGREEMENT_EXCEEDS_ONE_CYCLE",
+              "max_period": 13,
+              "acf_period_candidate": 2,
+              "spectral_period_candidate": 13,
+              "agreement_difference": 11,
+              "acf": {
+                "candidate": 2,
+                "score": 0.0873715698832315,
+                "eligible_lag_count": 12,
+                "runner_up_score": -0.012475813508978886
+              },
+              "spectral": {
+                "candidate": 13,
+                "frequency_bin": 2,
+                "power": 0.009824340162749268,
+                "eligible_frequency_bin_count": 12,
+                "runner_up_power": 0.007999585407624733
+              }
+            }
+          }
+        }
+      },
+      "period_frozen": false
+    }
+  ],
+  "all_target_periods_frozen": false,
+  "statsmodels_version": "0.14.6",
+  "scipy_version": "1.17.1",
+  "numpy_version": "2.4.2",
+  "membership_manifest_sha256": "799F4FD15041F4A19F085A99A04DB6FE991236904DF1BB95DC265541C1B5971A"
+}

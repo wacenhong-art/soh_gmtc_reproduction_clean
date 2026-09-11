@@ -1,0 +1,9 @@
+{
+  "scope": "PHASE_2B_TRAIN_STL_STRUCTURAL_AUDIT",
+  "train_stl_executed": false,
+  "all_target_periods_frozen": false,
+  "structural_rows": [],
+  "validation_stl_executability": "NOT_EXECUTED__PARAMETERS_ARE_CHECKED_ONLY_BY_BOUND",
+  "test_stl_executed": false,
+  "test_loaded": false
+}

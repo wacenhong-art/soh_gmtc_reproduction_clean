@@ -49,3 +49,21 @@ HUMAN_AUTHORIZATION_FOR_ANY_ENGINEERING_FALLBACK=True
 ```
 
 The future module contract must test additive reconstruction, length preservation, finite outputs, chronological-order preservation, partition boundaries, deterministic repeatability, and absence of test-file access.
+
+## Phase 2B authorized fallback and retained test lock
+
+Human authorized `PARTITION_ISOLATED_OFFLINE_STL`: train components would be decomposed only from the train capacity series; validation components, if later authorized, would use only validation capacity with train-frozen parameters; no test component may be created until final model freeze. This resolves the engineering execution policy, not the paper's missing split-order statement.
+
+```text
+STL_EXECUTION_MODE=PARTITION_ISOLATED_OFFLINE_STL
+INTER_PARTITION_LEAKAGE=False
+INTRA_PARTITION_FUTURE_CONTEXT_POSSIBLE=True
+STL_CAUSALITY_STATUS=NON_CAUSAL_OFFLINE_DECOMPOSITION
+VALIDATION_STL_EXECUTABILITY=NOT_EXECUTED__PARAMETERS_ARE_CHECKED_ONLY_BY_BOUND
+TEST_LOADED=False
+TEST_STL_EXECUTED=False
+TEST_COMPONENT_TARGETS_CREATED=False
+TEST_CAPACITY_VALUES_ACCESSED=False
+```
+
+No frozen period was obtained by the train-only structural rule, so neither train nor validation decomposition was executed. This preserves the test lock and avoids treating an unresolved period as a result to tune.

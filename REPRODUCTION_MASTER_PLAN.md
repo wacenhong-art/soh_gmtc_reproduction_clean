@@ -704,7 +704,7 @@ COMMIT=36c7836fc2fa52cb3b1591f070b91b774dcaed85
 |---|---|---|---|---|---|---|
 | 0 | PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY | Paper specification plus Human-authorized PA-001 fallback and PA-004 dual-track protocol record | f354af6 | 65ad49b | PASS | True |
 | 1 | PASS__PRIMARY_SOURCE_OVERRIDE_PENDING | Frozen A/B protocols, source-keyed metadata membership manifest, population-conservation and leakage audits, and augmentation plan; no test values or synthetic rows materialized | 65ad49b | 36c7836 | PASS | True |
-| 2 | BLOCKED_BY_STL_SPEC_AMBIGUITY | Capacity-domain STL input cross-evidence, parameter evidence audit, split/causality contract, and component-target ambiguity record | 27e4915 | — | — | False |
+| 2 | BLOCKED_BY_STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE | Capacity-domain STL input cross-evidence, Human-authorized partition-safe fallback, and train-only ACF/spectral dry-run; no period satisfied the pre-registered structural rule | 27e4915 | — | — | False |
 | 3 | NOT_STARTED | — | — | — | — | False |
 | 4 | NOT_STARTED | — | — | — | — | False |
 | 5 | NOT_STARTED | — | — | — | — | False |
@@ -937,4 +937,31 @@ PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
 PLAN_DEVIATION_LEVEL=0
 PLAN_CHANGE_REQUIRED=False
 NEXT_ACTION=HUMAN_REVIEW_OF_STL_ENGINEERING_FALLBACK_OPTIONS_OR_PRIMARY_SOURCE_CLARIFICATION
+```
+
+## Append-only run log — Phase 2B engineering fallback and structural period dry-run
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-11 | Phase 2B structural STL | Phase 1 remained complete and test-locked; Human authorized a result/performance-blind, train-only period fallback without changing paper architecture or phases. | Froze partition-isolated offline STL semantics, a linear-detrend ACF/FFT agreement rule, and library-default provenance. Ran the rule on eight A/B target training tracks. Every ACF candidate was 2 while spectral candidates were 5–54, exceeding the one-cycle agreement tolerance. No period or smoother contract was frozen; no STL component was decomposed or saved. | The fallback did not become a tuning route and did not expose validation/test capacity. The plan order remains valid, but Phase 2 cannot advance until Human makes a new non-performance-based period decision or primary-source evidence appears. | `PHASE_2_GATE=BLOCKED_BY_STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE`; no Phase 3 advancement. | `PHASE2_STL_ENGINEERING_FALLBACK.md`; `PHASE2_STL_PERIOD_DISCOVERY.md`; `output/stl/stl_period_discovery.json`; `scripts/run_phase2_stl_structural_audit.py`. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+STL_INPUT=CAPACITY_SEQUENCE
+STL_INPUT_PROVENANCE=PAPER_CROSS_EVIDENCE
+STL_EXECUTION_MODE=PARTITION_ISOLATED_OFFLINE_STL
+STL_CAUSALITY_STATUS=NON_CAUSAL_OFFLINE_DECOMPOSITION
+INTER_PARTITION_LEAKAGE=False
+INTRA_PARTITION_FUTURE_CONTEXT_POSSIBLE=True
+PERIOD_DISCOVERY_USES_MODEL_METRICS=False
+PERIOD_DISCOVERY_USES_VALIDATION_VALUES=False
+PERIOD_DISCOVERY_USES_TEST_VALUES=False
+PERIOD_VALUES_FROZEN=False
+TRAIN_STL_IMPLEMENTED=False
+TEST_LOADED=False
+PHASE_2_GATE=BLOCKED_BY_STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=0
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=HUMAN_DECISION_ON_FIXED_ENGINEERING_PERIOD_OR_SMALL_BOUNDED_STRUCTURAL_SENSITIVITY_STUDY
 ```

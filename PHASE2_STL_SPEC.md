@@ -45,3 +45,17 @@
 `NEXT_ACTION=HUMAN_REVIEW_OF_STL_ENGINEERING_FALLBACK_OPTIONS_OR_PRIMARY_SOURCE_CLARIFICATION`
 
 No parameter sensitivity, STL run, structural reconstruction result, model work, or test access is authorized by this specification-only outcome.
+
+## Phase 2B Human-authorized engineering fallback outcome
+
+Human authorized a result-blind, train-only structural period-discovery rule and partition-isolated offline STL fallback. The rule was applied to all eight Protocol-A/Protocol-B target training tracks without validation/test capacity values or predictive metrics. Each track failed the pre-registered ACF-versus-spectral agreement rule; no period is frozen and no STL decomposition has been executed.
+
+`STL_EXECUTION_MODE=PARTITION_ISOLATED_OFFLINE_STL`
+`STL_CAUSALITY_STATUS=NON_CAUSAL_OFFLINE_DECOMPOSITION`
+`INTER_PARTITION_LEAKAGE=False`
+`INTRA_PARTITION_FUTURE_CONTEXT_POSSIBLE=True`
+`PHASE_2_GATE=BLOCKED_BY_STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE`
+`PHASE_2_STATUS=BLOCKED__STRUCTURAL_PERIOD_NOT_IDENTIFIABLE`
+`NEXT_ACTION=HUMAN_DECISION_ON_FIXED_ENGINEERING_PERIOD_OR_SMALL_BOUNDED_STRUCTURAL_SENSITIVITY_STUDY`
+
+See `PHASE2_STL_ENGINEERING_FALLBACK.md` and `PHASE2_STL_PERIOD_DISCOVERY.md`; these records do not convert any fallback into a paper-exact parameter.

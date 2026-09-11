@@ -6,6 +6,10 @@
 
 **Current plan state:** INITIALIZED — no Phase has passed.
 
+`CURRENT_PLAN_VERSION=1.1.0`
+
+`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0001`
+
 ## NON-NEGOTIABLE RULES
 
 1. Reproduce first; innovate only after reproduction acceptance.
@@ -19,6 +23,8 @@
 9. Old projects are historical references only.
 10. `PAPER_REPRODUCTION=PASS` requires Phase 10 acceptance; a runnable model is insufficient.
 11. Every Codex task requires an audited, meaningful local Git commit and a verified private GitHub backup when infrastructure permits; an unsuccessful remote backup is an explicit governance blocker, never a reason to rewrite history.
+12. Structural correctness precedes predictive claims; predictive validity precedes credibility claims; credibility and component contribution precede final reproduction acceptance; broad hyperparameter search is not a substitute for any of them.
+13. `POOR_RESULT_ALONE IS_NOT A_PLAN_DEFECT`. Poor metrics trigger diagnosis before protocol, architecture, or plan changes.
 
 ## Evidence authority and initial paper status
 
@@ -77,17 +83,184 @@ The full text identifies the fusion learner specifically as an attention-enhance
 
 A model that runs, a partial scaffold, a classical baseline, or a proxy target does not establish either definition. `PAPER_REPRODUCTION=PASS` is possible only after Phase 10.
 
+## REPRODUCTION VALIDATION HIERARCHY
+
+The five levels below are ordered evidence claims, not a leaderboard. A later level cannot cure a failed earlier level. Results from a lower level must never be represented as proof of a higher level.
+
+### LEVEL 1 — Structural Correctness
+
+**Question:** does the code implement what the paper describes?
+
+**Required evidence:** input/output shapes; tensor routing; STL reconstruction; Trend/Seasonal/Residual branch assignment; both TimesNet branches; iTransformer branch; attention-enhanced Bi-LSTM fusion; SCF-GAN’s paper-defined role; loss path; and gradient path. Every core module requires an independent minimal contract test before full integration.
+
+`STRUCTURAL_VALIDATION_STATUS=NOT_STARTED`
+
+If Level 1 fails, predictive performance may not be interpreted or compared to the paper.
+
+### LEVEL 2 — Predictive Validity
+
+**Question:** does the model actually predict under the frozen development protocol?
+
+**Required metrics:** RMSE, MAE, and R² at minimum; MAPE when paper-aligned. Required sanity/reference baselines are Mean predictor, Persistence/previous-SOH predictor, and Ridge. Their purpose is `sanity check + predictive reference + complexity control`.
+
+`PREDICTIVE_VALIDITY_STATUS=NOT_STARTED`
+
+`BASELINE_MODEL != PAPER_REPRODUCTION_MODEL`
+
+`RIDGE_HIGH_R2 DOES_NOT_MEAN PAPER_REPRODUCTION_SUCCESS`
+
+If a complex model persistently fails to exceed simple baselines, first diagnose `CODE_BUG`, `DATA_PROTOCOL_ERROR`, `IMPLEMENTATION_MISMATCH`, `TRAINING_INSTABILITY`, `INSUFFICIENT_SAMPLE`, `PAPER_AMBIGUITY`, or `UNKNOWN`. Do not default to `NEEDS_MORE_GRID_SEARCH`. Conversely, `FULL_MODEL_LOWER_THAN_RIDGE` alone is not a reproduction failure; assess paper alignment, stability, protocol, sample count, and implementation fidelity first.
+
+### LEVEL 3 — Credibility / Reproducibility
+
+**Question:** is the result credible?
+
+**Required evidence:** train/validation/test separation; preprocessing, future, STL, GAN, and standardization leakage controls; overlapping-window and duplicate-cycle audit; fixed evaluation population; and multi-seed reporting. The test set remains locked during development:
+
+```text
+TEST_SET_LOCKED=True
+TestLoaded=False
+```
+
+Training learns parameters. Validation selects models, drives early stopping, and supports only permitted sensitivity work. Test may be loaded only after `FINAL_MODEL_FROZEN=True`; repeated test inspection followed by changes is prohibited.
+
+`MULTI_SEED_EVALUATION=True`
+
+Use five seeds by default for stochastic final models. Three are permitted only when resource constraints are recorded. Report individual seeds and mean ± standard deviation; a single best seed is never primary evidence.
+
+`CREDIBILITY_STATUS=NOT_STARTED`
+
+### LEVEL 4 — Component Contribution
+
+**Question:** why is the model effective?
+
+Use paper-logic-driven ablation, never arbitrary module deletion. The final acceptance evidence must consider the full model and suitable controls for: no SCF-GAN; no STL or an appropriate decomposition control; TimesNet replacement; iTransformer replacement; and adaptive-fusion versus simple-fusion control. Exact ablations must preserve the frozen evaluation population and be justified by the paper architecture.
+
+`COMPONENT_CONTRIBUTION_STATUS=NOT_STARTED`
+
+### LEVEL 5 — Controlled Optimization
+
+**Question:** after correctness and credibility are established, can a small set of important choices be optimized under the frozen protocol?
+
+Level 5 begins only after Levels 1–3 satisfy their declared entry conditions. Level 4 may be scheduled before or after limited optimization for practical reasons, but must be complete before final reproduction acceptance.
+
+`HYPERPARAMETER_OPTIMIZATION_STATUS=NOT_STARTED`
+
+## HYPERPARAMETER SEARCH POLICY
+
+`LARGE_SCALE_GRID_SEARCH_BEFORE_FIRST_VALID_FULL_REPRODUCTION=PROHIBITED`
+
+Before the first complete paper-aligned model has passed its structural checks, prohibit large-scale Grid Search, Random Search, Bayesian Optimization, massive Optuna searches, and exhaustive “800-grid” tuning. Grid search answers “which candidate is best on validation?” It does not establish whether the code follows the paper, whether the protocol is credible, or why a model works.
+
+```text
+GRID_SEARCH != STRUCTURAL_CORRECTNESS
+GRID_SEARCH != CREDIBILITY
+GRID_SEARCH != INTERPRETABILITY
+GRID_SEARCH != REPRODUCTION_SUCCESS
+```
+
+Parameter priority is fixed:
+
+1. `PAPER_EXACT_PARAMETER`: use it strictly.
+2. `PAPER_AMBIGUOUS_PARAMETER`: use only a 3–5 value, physically/engineering-justified sensitivity analysis and record the ambiguity ID.
+3. `LIMITED_SEARCH`: allowed only after model correctness, protocol correctness, and training stability are demonstrated; restrict to a few critical parameters with a validation-only rationale.
+4. `LARGE_SEARCH`: requires explicit Human authorization.
+
+Negative R², exploding loss, NaN, prediction collapse, constant prediction, severe overfit, or large baseline superiority must enter the diagnostic classification named in Level 2 before any search authorization.
+
+## Module-level validation and small-subset sanity checks
+
+`SMALL_BATCH_OVERFIT_TEST=REQUIRED_BEFORE_FORMAL_TRAINING`
+
+For TimesNet, iTransformer, fusion, and the full predictor, first use a deliberately tiny **training-only** subset to verify that forward pass, backward pass, loss, optimizer, and gradients can substantially reduce training error. This is an implementation sanity check, not a performance experiment, numerical-reproduction result, or permission to load test data. Failure blocks formal large-scale training.
+
+Minimum module evidence:
+
+| Module | Required minimum validation before integration |
+|---|---|
+| STL | `Trend + Seasonal + Residual ≈ Original`; alignment, boundary, period, and shape audit. |
+| iTransformer | input/output contract, loss, gradient, and small-subset overfit check. |
+| TimesNet | input/output contract, period/tensor transformation, loss, gradient, and small-subset overfit check. |
+| Fusion | weight shape, softmax normalization, gradients, and branch-contribution routing. |
+| SCF-GAN | source-only training stability, condition usage, and generated-feature distribution checks. |
+
+No module that lacks its minimum evidence may be hidden inside an end-to-end full-model claim.
+
+## PLAN HEALTH AUDIT
+
+`PLAN_HEALTH_AUDIT_REQUIRED_BEFORE_RUN=True`
+
+`PLAN_HEALTH_AUDIT_REQUIRED_AFTER_RUN=True`
+
+Every Codex task must perform `PLAN_HEALTH_AUDIT_BEFORE_RUN` immediately after reading this file and `PLAN_HEALTH_AUDIT_AFTER_RUN` after rereading it. Each audit must explicitly assess:
+
+1. whether the research target remains clear;
+2. whether the task still serves paper reproduction;
+3. whether the current data protocol remains reasonable;
+4. whether new evidence invalidates a downstream assumption;
+5. whether new paper information requires plan correction;
+6. whether model structure still matches the paper;
+7. whether leakage risk exists;
+8. whether sample count supports the proposed next step;
+9. whether the current gate remains meaningful;
+10. whether plan complexity exceeds the problem;
+11. whether poor results are causing unprincipled module/tuning accumulation; and
+12. whether “reproduce first, innovate later” is still being followed.
+
+### Plan deviation levels and mandatory response
+
+`PLAN_DEVIATION_LEVEL_0=NORMAL`: naming changes, file splits, small bug fixes, logging improvements, or other engineering changes that do not alter scientific protocol. Record normally; no core-plan change.
+
+`PLAN_DEVIATION_LEVEL_1=MINOR`: a limited parameter ambiguity, implementation-detail correction, or minor execution-order optimization that does not alter core architecture, data protocol, research question, or evaluation logic. Append a `PLAN_MINOR_AMENDMENT` and continue only after it is recorded.
+
+`PLAN_DEVIATION_LEVEL_2=MAJOR`: an incorrect paper-architecture interpretation; incorrect split or target definition; systemic leakage; invalid phase dependency; a core module materially unlike the paper; an inexecutably specified experiment; a route that would create substantial meaningless work; or a required redefinition of the reproduction target.
+
+For Level 2, immediately set:
+
+```text
+PAUSE=True
+PLAN_CHANGE_REQUIRED=True
+ADVANCEMENT_ALLOWED=False
+```
+
+Create a `MASTER_PLAN_CHANGE_REQUEST`, await Human review, amend the plan only after authorization, and re-audit before continuing. `POOR_RESULT_ALONE IS_NOT A_PLAN_DEFECT`; a poor result may be a negative finding under a valid plan and must first enter the Level 2 diagnostic classification.
+
+### Change-history contract
+
+Every plan change must preserve history in the append-only `PLAN_CHANGE_LEDGER` using:
+
+```text
+PLAN_CHANGE_ID=
+TRIGGER=
+OLD_ASSUMPTION=
+NEW_EVIDENCE=
+IMPACT=
+OLD_PLAN=
+NEW_PLAN=
+WHY_CHANGE_NECESSARY=
+RESULT_DRIVEN=False/True
+HUMAN_AUTHORIZED=True/False
+COMMIT=
+```
+
+Core architecture, phase order, reproduction definition, or data protocol changes additionally require `MASTER_PLAN_CHANGE_REQUEST=True` and Human authorization. The paper has priority over this plan: evidence that SCF-GAN must occur earlier for faithful reproduction triggers the above change process rather than an unreviewed reorder.
+
 ## Mandatory run protocol
 
 Every future Codex task must execute this protocol in order.
 
 1. Read this entire `REPRODUCTION_MASTER_PLAN.md`.
-2. Audit the requested action against this plan.
-3. Emit `PLAN_AUDIT_BEFORE_RUN` with `CURRENT_PHASE`, `CURRENT_GATE`, `LAST_COMPLETED_STEP`, `REQUESTED_ACTION`, `ACTION_ALLOWED=True/False`, and `PLAN_CONFLICT=True/False`.
-4. If `PLAN_CONFLICT=True`, stop and output `PLAN_CONFLICT`; await Human direction. Otherwise execute only actions allowed in the current Phase.
-5. Re-read this entire file after work completes.
-6. Emit `PLAN_AUDIT_AFTER_RUN`: action performed, acceptance evidence, gate result, any deviation, and whether entry into the next Phase is allowed.
-7. Emit the fixed progress block below, calculated only from passed gates—not lines of code or elapsed effort.
+2. Execute `PLAN_HEALTH_AUDIT_BEFORE_RUN`.
+3. Read Git status and remote state.
+4. Emit the current progress and Git/GitHub archive blocks.
+5. Audit requested action and emit `PLAN_AUDIT_BEFORE_RUN` with `CURRENT_PHASE`, `CURRENT_GATE`, `LAST_COMPLETED_STEP`, `REQUESTED_ACTION`, `ACTION_ALLOWED=True/False`, and `PLAN_CONFLICT=True/False`.
+6. If conflict or Level 2 deviation is found, stop; otherwise execute only current-Phase-permitted work.
+7. Analyze task evidence without converting a poor result into a plan defect by default.
+8. Re-read this file and execute `PLAN_HEALTH_AUDIT_AFTER_RUN`.
+9. Determine `PLAN_DEVIATION_LEVEL`; for Level 1 append an amendment; for Level 2 pause and create a change request.
+10. Update only permitted current status/progress/evidence/log fields.
+11. Audit diff, create meaningful Git commit, push without force, and verify remote backup.
+12. Emit final plan audit, progress, health, and archive blocks with all required status fields.
 
 ## Reproduction Master Progress
 
@@ -117,6 +290,13 @@ NEXT_ACTION=Freeze executable paper specification and ambiguity register without
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
 NUMERICAL_REPRODUCTION_STATUS=NOT_STARTED
+STRUCTURAL_VALIDATION_STATUS=NOT_STARTED
+PREDICTIVE_VALIDITY_STATUS=NOT_STARTED
+CREDIBILITY_STATUS=NOT_STARTED
+COMPONENT_CONTRIBUTION_STATUS=NOT_STARTED
+HYPERPARAMETER_OPTIMIZATION_STATUS=NOT_STARTED
+TEST_SET_LOCKED=True
+TestLoaded=False
 ========================================
 ```
 
@@ -428,6 +608,22 @@ HUMAN_AUTHORIZATION_REQUIRED=True
 
 Until authorized, preserve this plan and stop conflicting work.
 
+## PLAN_CHANGE_LEDGER (append-only)
+
+```text
+PLAN_CHANGE_ID=PLAN-CHANGE-0001
+TRIGGER=Human-authorized methodology hardening and permanent plan-health governance
+OLD_ASSUMPTION=Existing phase gates and generic before/after plan audit were sufficient without an explicit evidence hierarchy, controlled-search policy, or deviation-health mechanism.
+NEW_EVIDENCE=Methodological review found missing/weak explicit requirements for structural-first validation, simple baseline sanity checks, multi-seed reporting, test lock, ablation, small-subset overfit tests, hyperparameter-search control, and plan-health escalation.
+IMPACT=Governance and acceptance evidence are strengthened; Phase 0–10 order, paper architecture, data protocol, and reproduction definitions remain unchanged.
+OLD_PLAN=Version 1.0.0
+NEW_PLAN=Version 1.1.0
+WHY_CHANGE_NECESSARY=Prevent optimization or favorable scores from being mistaken for paper fidelity or credible reproduction.
+RESULT_DRIVEN=False
+HUMAN_AUTHORIZED=True
+COMMIT=PENDING
+```
+
 ## Phase completion ledger
 
 | Phase | Gate status | Completion evidence | PHASE_START_COMMIT | PHASE_COMPLETION_COMMIT | PHASE_COMPLETION_PUSH_STATUS | PHASE_REMOTE_BACKUP_CONFIRMED |
@@ -469,12 +665,13 @@ These ten independent plan audits were completed before this Master Plan was wri
 |---|---|---|---|---|---|---|
 | 2026-09-11 | Phase 0 | Plan did not yet exist; user-authorized governance initialization only. | Created this Master Plan, initialized Git, and created `.gitignore`; no data/model/experiment action. | Plan self-audit required below. | Phase 0 remains NOT_STARTED. | Local 17-page PDF inspected; this file. |
 | 2026-09-11 | Phase 0 | Git/GitHub archive rules authorized; governance work is allowed in Phase 0. | Added mandatory Git/GitHub archive protocol, ignored local copyrighted PDF, created versioned paper metadata, created the new private GitHub repository, and pushed the initial plan commit; no data/model/experiment action. | Local/remote `main` commit `86a47e7` verified; current status-record update pending. | Phase 0 remains NOT_STARTED. | `origin=https://github.com/wacenhong-art/soh_gmtc_reproduction_clean.git`; private repository and remote `main` verified. |
+| 2026-09-11 | Phase 0 | Full plan, Git state, project files, and local 17-page paper re-read; Plan Health Audit found governance gaps but no paper/protocol/architecture invalidation. | Added validation hierarchy, controlled-search policy, module and small-subset checks, baseline/multi-seed/test-lock/ablation rules, plan-health/deviation/change-history governance. No Phase 0 extraction, model code, training, search, or experiment. | Pending final self-audit and archive of this governance amendment. | Phase 0 remains NOT_STARTED. | `PLAN-CHANGE-0001`; Human-authorized; result-driven=False. |
 
 ## MASTER_PLAN_SELF_AUDIT
 
 `MASTER_PLAN_SELF_AUDIT=PASS`
 
-The plan contains: the local-paper authority and status; all 10 required audits; distinct framework and numerical definitions; Phases 0–10 with objective, input, allowed/forbidden actions, artifacts, acceptance, failures, and entry conditions; mandatory before/after task audits; fixed progress; ambiguity/deviation rules; old-project isolation; TimesNet and SCF-GAN requirements; baseline prohibition; Git/reproducibility policy; and append-only state tracking. It intentionally authorizes no Phase 0 model code.
+The plan contains: the local-paper authority and status; all 10 required audits; distinct framework and numerical definitions; a five-level structural-to-controlled-optimization validation hierarchy; Phases 0–10 with objective, input, allowed/forbidden actions, artifacts, acceptance, failures, and entry conditions; module-level and small-subset sanity gates; leakage/test-lock and multi-seed rules; paper-driven ablation policy; hyperparameter-search restrictions; mandatory before/after plan-health audits; deviation escalation and append-only plan-change history; baseline prohibition; Git/reproducibility policy; and append-only state tracking. It intentionally authorizes no Phase 0 model code.
 
 ## Initial status declaration
 
@@ -487,6 +684,16 @@ PROJECT_INITIALIZATION_STATUS=PASS
 PAPER_FULLTEXT_STATUS=AVAILABLE
 TEN_AUDIT_PASSES_COMPLETED=True
 MASTER_PLAN_SELF_AUDIT=PASS
+PLAN_HEALTH_STATUS=PASS
+PLAN_DEVIATION_LEVEL=1
+PLAN_DEFECT_FOUND=False
+PLAN_CHANGE_REQUIRED=False
+CORE_ASSUMPTIONS_STILL_VALID=True
+PAPER_ALIGNMENT_STILL_VALID=True
+DATA_PROTOCOL_STILL_VALID=True
+LEAKAGE_STATUS=NOT_ASSESSED_NO_DATA_OR_EXECUTION
+CURRENT_REPRODUCTION_STRATEGY_STILL_VALID=True
+NEXT_STEP_STILL_OPTIMAL=True
 CURRENT_PHASE=Phase 0
 CURRENT_GATE=Paper Specification Freeze
 EXPERIMENT_RUN=False
@@ -497,5 +704,8 @@ PTOC_ACTIVE=False
 RIDGE_IS_REPRODUCTION_MODEL=False
 TIMESNET_REQUIRED_FOR_FINAL_REPRODUCTION=True
 SCF_GAN_REQUIRED_FOR_FINAL_REPRODUCTION=True
+LARGE_GRID_SEARCH_AUTHORIZED=False
+FIRST_FULL_REPRODUCTION_COMPLETED=False
+TEST_LOADED=False
 NEXT_ACTION=Create and verify Phase 0 paper-specification and ambiguity-register artifacts only; do not implement model code.
 ```

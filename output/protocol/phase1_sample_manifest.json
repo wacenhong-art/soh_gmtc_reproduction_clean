@@ -1,0 +1,9 @@
+{
+  "manifest_kind": "BLOCKED_BEFORE_ROW_ASSIGNMENT",
+  "real_sample_manifest_created": false,
+  "row_assignments": [],
+  "blocker_id": "PROTOCOL_B_VALIDATION_TEST_POPULATION_UNDEFINED",
+  "required_sample_fields": ["active_protocol", "experiment_id", "dataset", "battery_id", "sample_uid", "chronological_index", "role", "role_provenance", "source_key", "pa001_version", "pa002_version", "pa004_version", "pa005_version"],
+  "test_membership_defined": false,
+  "test_loaded": false
+}

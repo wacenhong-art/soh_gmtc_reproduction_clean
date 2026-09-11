@@ -55,6 +55,8 @@ SCF-GAN augmentation = five complete synthetic HF datasets per original target s
 
 Protocol B does **not** claim to be the sole protocol for every final G-MTC experiment. It must never receive Protocol A's `[0.20N, 0.60N)` real training cycles, validation cycles, or test cycles unless a paper-matched experiment explicitly requires this.
 
+`PROTOCOL_B_VALIDATION_TEST_POPULATION=UNDEFINED__ROW_ASSIGNMENT_BLOCKED`
+
 ## Isolation and manifest contract
 
 Every future protocol manifest row must retain:
@@ -90,4 +92,3 @@ If the author replies:
 `PA005_SYNTHETIC_COUNT_AND_INSERTION=BLOCKING_PROTOCOL_B_AUGMENTATION_EXECUTION`
 
 The present document authorizes Phase 1 protocol-contract work only. It does not authorize STL, a model, training, metrics, grid search, or Phase 2 entry.
-

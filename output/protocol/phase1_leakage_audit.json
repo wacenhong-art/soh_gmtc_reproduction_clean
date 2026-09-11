@@ -1,0 +1,14 @@
+{
+  "status": "NOT_RUN__NO_ROW_ASSIGNMENT_AUTHORIZED",
+  "train_validation_overlap_count": null,
+  "train_test_overlap_count": null,
+  "validation_test_overlap_count": null,
+  "protocol_cross_contamination_count": null,
+  "source_key_collision_count": null,
+  "chronological_order_violation_count": null,
+  "expected_count_after_authorized_assignment": 0,
+  "test_loaded": false,
+  "test_target_accessed_for_analysis": false,
+  "test_features_used_for_fit": false,
+  "test_used_for_hyperparameter_selection": false
+}

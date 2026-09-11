@@ -1,0 +1,12 @@
+{
+  "status": "BLOCKED_BEFORE_TARGET_ASSIGNMENT",
+  "synthetic_rows_materialized": false,
+  "pa005_provenance": "HUMAN_FALLBACK",
+  "pa005_internal_wording_tension": true,
+  "fallback_expected_augmented_total_rule": "6N",
+  "expected_synthetic_set_count": 5,
+  "expected_rows_per_synthetic_set": "N",
+  "expected_synthetic_total": "5N",
+  "target_battery": null,
+  "author_override_pending": true
+}

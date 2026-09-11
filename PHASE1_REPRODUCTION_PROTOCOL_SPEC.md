@@ -64,11 +64,13 @@ There is no global source/target label. Rows with an unmapped role cannot be use
 | SCF-GAN real-data population | source batteries with complete charging data | PAPER_EXACT |
 | Synthetic dataset count | five complete synthetic HF datasets per original target set | PAPER_EXACT |
 | Synthetic insertion fallback | preserve original set and concatenate five complete synthetic sets, yielding original `N` plus synthetic `5N` records (`6N` total) | HUMAN_FALLBACK |
-| Validation / test augmentation | no augmentation | PAPER_CROSS_EVIDENCE: paper calls augmentation a training-sample expansion and §4 requires strict target test separation |
+| Validation / test population | UNDEFINED for Protocol B | UNRESOLVED: §4.2 does not state a validation or test population for its small-sample experiment |
 
 `PA005_STATUS=FALLBACK_FROZEN_WITH_LIMITATION`
 
-The text “five complete synthetic datasets” and “expanded training sample size fivefold” does not uniquely establish whether “fivefold” describes synthetic-only or final total count. The fallback follows the direct first phrase, retains original observations, and adds no unmentioned merging or performance-based selection.
+`PROTOCOL_B_VALIDATION_TEST_POPULATION=UNDEFINED`
+
+The text “five complete synthetic datasets” and “expanded training sample size fivefold” does not uniquely establish whether “fivefold” describes synthetic-only or final total count. The fallback follows the direct first phrase, retains original observations, and adds no unmentioned merging or performance-based selection. It also does not provide Protocol B validation/test populations; therefore no Protocol B row assignment is authorized.
 
 `RESULT_BLIND=True`
 `PERFORMANCE_BLIND=True`

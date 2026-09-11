@@ -4,7 +4,7 @@
 
 **Plan authority:** This is the sole highest-level roadmap for this repository. Every future Codex task must read this complete file before acting and must obey its gates. Its core architecture, phase order, reproduction definitions, and protocol rules may not be silently changed.
 
-**Current plan state:** Phase 1 protocol freeze is active under Human-authorized dual-protocol fallback; primary-source clarification remains pending.
+**Current plan state:** Phase 1 is blocked before row assignment: Protocol B validation/test population is undefined; Human decision or primary-source clarification is required.
 
 `CURRENT_PLAN_VERSION=1.3.0`
 
@@ -283,9 +283,9 @@ Phase 10 Acceptance               [..........] 0%
 
 OVERALL_PROGRESS=13%
 CURRENT_PHASE=Phase 1
-CURRENT_GATE=Phase 1 exact sample manifests and leakage checklist
-LAST_COMPLETED=PA-001/PA-002/PA-004/PA-005 protocol statuses frozen with field-level provenance; author clarification pending
-NEXT_ACTION=Create source-keyed, protocol-isolated exact sample manifests and leakage-risk checklist; do not enter Phase 2 or implement model code
+CURRENT_GATE=Blocked: Protocol B validation/test population undefined
+LAST_COMPLETED=Phase 1 executability audit stopped before any row assignment; Plan Change Request 0004 created
+NEXT_ACTION=Human decision on Protocol B evaluation population or primary-source clarification; do not enter Phase 2 or implement model code
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -685,7 +685,7 @@ COMMIT=65ad49b098112a06e4ead0e43622644e3e8d471f
 | Phase | Gate status | Completion evidence | PHASE_START_COMMIT | PHASE_COMPLETION_COMMIT | PHASE_COMPLETION_PUSH_STATUS | PHASE_REMOTE_BACKUP_CONFIRMED |
 |---|---|---|---|---|---|---|
 | 0 | PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY | Paper specification plus Human-authorized PA-001 fallback and PA-004 dual-track protocol record | f354af6 | 65ad49b | PASS | True |
-| 1 | IN_PROGRESS__PROTOCOL_FREEZE | Phase1 protocol spec freezes PA-001/PA-002/PA-004/PA-005 with provenance; exact sample manifests/checklist remain | 65ad49b | — | — | False |
+| 1 | BLOCKED__PROTOCOL_B_VALIDATION_TEST_POPULATION_UNDEFINED | Phase1 protocol spec, blocked-manifest artifacts, leakage policy, and pending Plan Change Request 0004 | 65ad49b | — | — | False |
 | 2 | NOT_STARTED | — | — | — | — | False |
 | 3 | NOT_STARTED | — | — | — | — | False |
 | 4 | NOT_STARTED | — | — | — | — | False |
@@ -851,4 +851,24 @@ PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
 PLAN_DEVIATION_LEVEL=0
 PLAN_CHANGE_REQUIRED=False
 NEXT_ACTION=CREATE_EXACT_SOURCE_KEYED_SAMPLE_MANIFESTS_AND_LEAKAGE_CHECKLIST_WITHOUT_MODEL_WORK
+```
+
+## Append-only run log — Phase 1 exact sample manifests and leakage freeze
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-11 | Phase 1 blocked | Existing fallback was audited for row-level executability before assignment. | Confirmed Protocol B defines its first-20% original training population but has no validation/test population; stopped prior to any membership assignment. Created blocked-manifest, leakage-policy, and augmentation-plan artifacts, plus a pending Human change request. No raw data mutation, split assignment, synthetic rows, STL, model, training, metrics, or search. | New protocol defect is material: Phase 1 cannot pass without a result-blind Human decision or author clarification. | `PHASE_1_GATE=FAIL__BLOCKED_BEFORE_ROW_ASSIGNMENT`; advancement is stopped. | `PHASE1_SAMPLE_MANIFEST.md`; `PHASE1_LEAKAGE_CHECKLIST.md`; `MASTER_PLAN_CHANGE_REQUEST_PLAN-CHANGE-0004.md`. |
+
+```text
+NEW_PHASE1_BLOCKER_FOUND=True
+BLOCKER_ID=PROTOCOL_B_VALIDATION_TEST_POPULATION_UNDEFINED
+PHASE_1_GATE=FAIL__BLOCKED_BEFORE_ROW_ASSIGNMENT
+PHASE_1_STATUS=BLOCKED
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PLAN_HEALTH_AUDIT_AFTER_RUN=FAIL__MAJOR_PROTOCOL_DEFECT
+PLAN_DEVIATION_LEVEL=2
+PLAN_CHANGE_REQUIRED=True
+PLAN_CHANGE_ID=PLAN-CHANGE-0004
+ADVANCEMENT_ALLOWED=False
+NEXT_ACTION=AWAIT_HUMAN_RESULT_BLIND_DECISION_OR_PRIMARY_SOURCE_CLARIFICATION_FOR_PROTOCOL_B_EVALUATION_POPULATION
 ```

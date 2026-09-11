@@ -284,8 +284,8 @@ Phase 10 Acceptance               [..........] 0%
 OVERALL_PROGRESS=9%
 CURRENT_PHASE=Phase 0
 CURRENT_GATE=Phase 0 advancement review: critical protocol ambiguity PA-004
-LAST_COMPLETED=Phase 0 paper specification, ambiguity register, and missing-parameter register extracted from local full text
-NEXT_ACTION=Resolve PA-004 through Human review/new paper evidence before Phase 1; do not implement model code
+LAST_COMPLETED=PA-004 full-text, figure/table, supplementary, and official-code availability audit; ambiguity remains unresolved
+NEXT_ACTION=Human must authorize an explicit PA-004 protocol interpretation or obtain primary-source clarification before Phase 1; do not implement model code
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -667,6 +667,7 @@ These ten independent plan audits were completed before this Master Plan was wri
 | 2026-09-11 | Phase 0 | Git/GitHub archive rules authorized; governance work is allowed in Phase 0. | Added mandatory Git/GitHub archive protocol, ignored local copyrighted PDF, created versioned paper metadata, created the new private GitHub repository, and pushed the initial plan commit; no data/model/experiment action. | Local/remote `main` commit `86a47e7` verified; current status-record update pending. | Phase 0 remains NOT_STARTED. | `origin=https://github.com/wacenhong-art/soh_gmtc_reproduction_clean.git`; private repository and remote `main` verified. |
 | 2026-09-11 | Phase 0 | Full plan, Git state, project files, and local 17-page paper re-read; Plan Health Audit found governance gaps but no paper/protocol/architecture invalidation. | Added validation hierarchy, controlled-search policy, module and small-subset checks, baseline/multi-seed/test-lock/ablation rules, plan-health/deviation/change-history governance. No Phase 0 extraction, model code, training, search, or experiment. | Pending final self-audit and archive of this governance amendment. | Phase 0 remains NOT_STARTED. | `PLAN-CHANGE-0001`; Human-authorized; result-driven=False. |
 | 2026-09-11 | Phase 0 | Full plan/Git/project/PDF audit and Plan Health Audit passed. | Extracted paper specification, ambiguity register, missing-parameter register, and machine-readable JSON. No code/model/training/search/metric run. | Specification complete; advancement blocked by PA-004 until Human/new-evidence resolution. | PASS_WITH_REGISTERED_AMBIGUITIES__ADVANCEMENT_BLOCKED. | PDF pp.1–16; `PA-001`–`PA-010`; `PM-001`–`PM-009`. |
+| 2026-09-11 | Phase 0 | Full plan/specification/registers/PDF audit; task is Phase-0 evidence work and allowed. | Audited all PA-004-relevant full-text passages, visually inspected the adjacent architecture/results pages, checked tables/captions, project supplementary inventory, and paper-provided code/data availability. No data/model/training/search/metric run. | No new evidence maps the two target-data constructions; no core-plan change is warranted. | `PA004_STATUS=UNRESOLVED_BLOCKING`; Phase 0 exit remains blocked. | `PA004_PROTOCOL_EVIDENCE_TABLE.md`; PDF pp.5, 7–11, 12–16. |
 
 ## MASTER_PLAN_SELF_AUDIT
 
@@ -711,5 +712,5 @@ TEST_LOADED=False
 PHASE_0_STATUS=PASS_WITH_REGISTERED_AMBIGUITIES__ADVANCEMENT_BLOCKED
 PHASE_0_PROGRESS=100%
 ADVANCEMENT_ALLOWED=False
-NEXT_ACTION=Resolve PA-004 through Human review or new paper evidence before Phase 1; do not implement model code.
+NEXT_ACTION=Human must authorize an explicit PA-004 protocol interpretation or obtain primary-source clarification before Phase 1; do not implement model code.
 ```

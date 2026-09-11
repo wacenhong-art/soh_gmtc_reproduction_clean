@@ -74,6 +74,19 @@ All records are Phase 0 paper-evidence records. They do not authorize defaults o
 `BLOCKS_IMPLEMENTATION=True`
 `HUMAN_DECISION_REQUIRED=True`
 
+## PA-STL-COMPONENT-TARGET — validation/test component-label construction
+
+`CATEGORY=stl_component_target_protocol`
+`PAPER_LOCATION=PDF p.6 §3.3; pp.8–9 Fig.5/§3.7; p.13 Fig.9; p.14 §4.4`
+`PAPER_TEXT_SUMMARY=The paper shows real/predicted trend, seasonal and residual components, but does not state how real validation/test component labels are derived after chronological splitting.`
+`CONFLICT_OR_MISSING_DETAIL=No full-life, partition-isolated, rolling/expanding, or final-SOH-only supervision rule is stated.`
+`POSSIBLE_INTERPRETATION_A=Decompose each partition independently.`
+`POSSIBLE_INTERPRETATION_B=Decompose the complete lifecycle before splitting.`
+`POSSIBLE_INTERPRETATION_C=Use an expanding/rolling decomposition or no component-label supervision.`
+`IMPLEMENTATION_IMPACT=Determines branch targets and can create inter-partition or intra-train future-context leakage.`
+`BLOCKS_IMPLEMENTATION=True`
+`HUMAN_DECISION_REQUIRED=True`
+
 ## PA-007 — iTransformer prediction target
 
 `CATEGORY=branch_target`

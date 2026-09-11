@@ -44,3 +44,6 @@ output/data_readiness/*_run.log
 
 # Local exact membership body; its versioned summary and SHA-256 remain the Git audit record.
 output/protocol/phase1_membership_manifest.csv
+
+# Read-only PDF renderings used for visual source audit; formal evidence is versioned in Markdown.
+output/stl/_pdf_visual_audit/

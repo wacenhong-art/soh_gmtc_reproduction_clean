@@ -1,0 +1,39 @@
+{
+  "scope": "PHASE_2A_STL_SPECIFICATION_AND_LEAKAGE_CONTRACT",
+  "paper_fulltext_status": "AVAILABLE",
+  "equation": "X_t = T_t + S_t + R_t",
+  "input_semantics": {
+    "selected": "CAPACITY_SEQUENCE",
+    "status": "RESOLVED_BY_CROSS_EVIDENCE_WITH_EXECUTABLE_SCALE_LIMITATION",
+    "provenance": "PAPER_CROSS_EVIDENCE__PDF_p6_SECTION_3_3__PDF_p13_FIG9",
+    "fig5_top_bottom_connection": "ABSENT",
+    "fig9_unit_evidence": "components shown in Ah while final SOH is shown in percent"
+  },
+  "branches": {
+    "trend": "TimesNet",
+    "seasonal": "TimesNet_variant",
+    "residual": "iTransformer"
+  },
+  "downstream_sequence_length": 10,
+  "downstream_sequence_length_is_stl_window": false,
+  "parameter_policy": {
+    "status": "UNRESOLVED",
+    "period": null,
+    "seasonal_window": null,
+    "trend_window": null,
+    "low_pass_window": null,
+    "robust": null,
+    "p12_monthly_example_is_project_parameter": false,
+    "missing_parameter_register": "PM-002"
+  },
+  "split_and_causality": {
+    "stl_split_order_status": "UNRESOLVED",
+    "inter_partition_leakage_policy": "PROHIBITED",
+    "intra_train_future_context_policy": "UNRESOLVED__IMPLEMENTATION_NOT_SELECTED",
+    "full_lifecycle_stl_before_split": "PROHIBITED_UNLESS_PAPER_EXACTLY_REQUIRES_AND_LEAKAGE_AUDITED"
+  },
+  "component_target_construction_status": "UNRESOLVED_BLOCKING",
+  "test_loaded": false,
+  "minimal_stl_implemented": false,
+  "phase_2_gate": "BLOCKED_BY_STL_SPEC_AMBIGUITY"
+}

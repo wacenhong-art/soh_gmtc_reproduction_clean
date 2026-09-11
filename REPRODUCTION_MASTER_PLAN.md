@@ -4,7 +4,7 @@
 
 **Plan authority:** This is the sole highest-level roadmap for this repository. Every future Codex task must read this complete file before acting and must obey its gates. Its core architecture, phase order, reproduction definitions, and protocol rules may not be silently changed.
 
-**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2 is authorized as the next phase but is not started in this run.
+**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2A recovered its STL evidence and leakage contract, but the Phase 2 gate is blocked by missing STL configuration, fit-order, and component-target construction evidence.
 
 `CURRENT_PLAN_VERSION=1.4.0`
 
@@ -271,7 +271,7 @@ REPRODUCTION MASTER PROGRESS
 
 Phase 0  Paper Specification      [##########] 100%
 Phase 1  Data Protocol            [##########] 100%
-Phase 2  STL                      [..........] 0%
+Phase 2  STL                      [##........] 20%
 Phase 3  iTransformer             [..........] 0%
 Phase 4  Framework Scaffold       [..........] 0%
 Phase 5  TimesNet                 [..........] 0%
@@ -281,11 +281,11 @@ Phase 8  Full G-MTC               [..........] 0%
 Phase 9  Numerical Reproduction   [..........] 0%
 Phase 10 Acceptance               [..........] 0%
 
-OVERALL_PROGRESS=18%
+OVERALL_PROGRESS=20%
 CURRENT_PHASE=Phase 2
-CURRENT_GATE=Phase 2 entry: partition-safe STL reproduction specification and contract
-LAST_COMPLETED=Phase 1 source-keyed A/B membership, leakage, population-conservation, and augmentation-plan freeze under authorized PLAN-CHANGE-0004
-NEXT_ACTION=PHASE_2_STL_REPRODUCTION; do not train a model or load test values for analysis
+CURRENT_GATE=Blocked: STL parameter, split-order, and component-target construction specification
+LAST_COMPLETED=Phase 2A STL input-semantics, parameter-evidence, and leakage-contract audit
+NEXT_ACTION=HUMAN_REVIEW_OF_STL_ENGINEERING_FALLBACK_OPTIONS_OR_PRIMARY_SOURCE_CLARIFICATION; do not implement or run STL
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -704,7 +704,7 @@ COMMIT=36c7836fc2fa52cb3b1591f070b91b774dcaed85
 |---|---|---|---|---|---|---|
 | 0 | PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY | Paper specification plus Human-authorized PA-001 fallback and PA-004 dual-track protocol record | f354af6 | 65ad49b | PASS | True |
 | 1 | PASS__PRIMARY_SOURCE_OVERRIDE_PENDING | Frozen A/B protocols, source-keyed metadata membership manifest, population-conservation and leakage audits, and augmentation plan; no test values or synthetic rows materialized | 65ad49b | 36c7836 | PASS | True |
-| 2 | NOT_STARTED | — | — | — | — | False |
+| 2 | BLOCKED_BY_STL_SPEC_AMBIGUITY | Capacity-domain STL input cross-evidence, parameter evidence audit, split/causality contract, and component-target ambiguity record | 27e4915 | — | — | False |
 | 3 | NOT_STARTED | — | — | — | — | False |
 | 4 | NOT_STARTED | — | — | — | — | False |
 | 5 | NOT_STARTED | — | — | — | — | False |
@@ -917,4 +917,24 @@ PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
 PLAN_DEVIATION_LEVEL=0
 PLAN_CHANGE_REQUIRED=False
 NEXT_ACTION=PHASE_2_STL_REPRODUCTION__BEGIN_WITH_PARTITION_SAFE_DECOMPOSITION_SPEC_AND_CONTRACT_ONLY
+```
+
+## Append-only run log — Phase 2A STL specification and leakage contract
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-11 | Phase 2A specification | Phase 1 is complete, test remains locked, and Phase 2 allows evidence recovery before implementation. | Re-read the full paper, visually inspected Fig.5 and Fig.9, audited STL input candidates, parameters, split order, causality, and component-target construction. Recorded a capacity-domain input conclusion only as cross-evidence; added no default period/window and did not execute STL. | Existing plan order and test-lock policy remain valid. Missing parameters, fit scope, and component-label mechanism prevent an honest module implementation. | `PHASE_2_GATE=BLOCKED_BY_STL_SPEC_AMBIGUITY`; no Phase 3 advancement. | `PHASE2_STL_SPEC.md`; `STL_INPUT_SEMANTICS_EVIDENCE.md`; `STL_PARAMETER_EVIDENCE.md`; `PHASE2_STL_LEAKAGE_CONTRACT.md`; `PA-STL-COMPONENT-TARGET`. |
+
+```text
+PHASE_2A_STATUS=SPECIFICATION_COMPLETE__IMPLEMENTATION_NOT_AUTHORIZED
+STL_INPUT_SEMANTICS_STATUS=RESOLVED_BY_CROSS_EVIDENCE_WITH_EXECUTABLE_SCALE_LIMITATION
+STL_PARAMETER_POLICY_RESOLVED=False
+STL_SPLIT_ORDER_RESOLVED=False
+COMPONENT_TARGET_CONSTRUCTION_RESOLVED=False
+TEST_LOADED=False
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=0
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=HUMAN_REVIEW_OF_STL_ENGINEERING_FALLBACK_OPTIONS_OR_PRIMARY_SOURCE_CLARIFICATION
 ```

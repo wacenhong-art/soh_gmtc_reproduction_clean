@@ -1,6 +1,9 @@
 # Primary-source Fallback Policy — PA-001 and PA-004
 
-`AUTHOR_REPLY_STATUS=NOT_CONTACTED`
+`AUTHOR_CONTACT_STATUS=CONTACTED`
+`AUTHOR_REPLY_STATUS=CONTACTED_WAITING`
+`HUMAN_CONFIRMED_EMAIL_SENT=True`
+`GMAIL_MESSAGE_ID=1a0906ec8a4ae625`
 
 ## Governing rules
 
@@ -36,4 +39,3 @@
 ## Required record before any fallback execution
 
 Create a Human-authorized `REPRODUCTION_DEVIATION_RECORD` naming the chosen option, evidence, non-performance rationale, protocol impact, and `THIS_IS_NOT_STRICT_REPRODUCTION=True`. Do not load the test set, run training, or advance to protocol freeze merely because a fallback document exists.
-

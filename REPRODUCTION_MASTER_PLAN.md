@@ -270,7 +270,7 @@ REPRODUCTION MASTER PROGRESS
 ========================================
 
 Phase 0  Paper Specification      [##########] 100%
-Phase 1  Data Protocol            [##........] 20%
+Phase 1  Data Protocol            [####......] 40%
 Phase 2  STL                      [..........] 0%
 Phase 3  iTransformer             [..........] 0%
 Phase 4  Framework Scaffold       [..........] 0%
@@ -281,11 +281,11 @@ Phase 8  Full G-MTC               [..........] 0%
 Phase 9  Numerical Reproduction   [..........] 0%
 Phase 10 Acceptance               [..........] 0%
 
-OVERALL_PROGRESS=11%
+OVERALL_PROGRESS=13%
 CURRENT_PHASE=Phase 1
-CURRENT_GATE=Phase 1 protocol-contract freeze: PA-002 roster and PA-005 augmentation insertion
-LAST_COMPLETED=Human-authorized PA-001 nominal-capacity fallback and isolated Protocol A/B rules frozen; author clarification pending
-NEXT_ACTION=Freeze PA-002 experiment roster and PA-005 augmentation insertion before row assignment or Phase 1 acceptance; do not enter Phase 2 or implement model code
+CURRENT_GATE=Phase 1 exact sample manifests and leakage checklist
+LAST_COMPLETED=PA-001/PA-002/PA-004/PA-005 protocol statuses frozen with field-level provenance; author clarification pending
+NEXT_ACTION=Create source-keyed, protocol-isolated exact sample manifests and leakage-risk checklist; do not enter Phase 2 or implement model code
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -677,15 +677,15 @@ NEW_PLAN=Version 1.3.0
 WHY_CHANGE_NECESSARY=Avoid indefinite research pause while keeping unconfirmed interpretations, isolation boundaries, and primary-source override visible.
 RESULT_DRIVEN=False
 HUMAN_AUTHORIZED=True
-COMMIT=PENDING_CURRENT_RUN_COMMIT
+COMMIT=65ad49b098112a06e4ead0e43622644e3e8d471f
 ```
 
 ## Phase completion ledger
 
 | Phase | Gate status | Completion evidence | PHASE_START_COMMIT | PHASE_COMPLETION_COMMIT | PHASE_COMPLETION_PUSH_STATUS | PHASE_REMOTE_BACKUP_CONFIRMED |
 |---|---|---|---|---|---|---|
-| 0 | PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY | Paper specification plus Human-authorized PA-001 fallback and PA-004 dual-track protocol record | f354af6 | PENDING_CURRENT_RUN_COMMIT | PENDING | False |
-| 1 | IN_PROGRESS__PROTOCOL_FREEZE | REPRODUCTION_PROTOCOLS.md; declarative Protocol A/B manifests; PA-002/PA-005 blockers retained | PENDING_CURRENT_RUN_COMMIT | — | — | False |
+| 0 | PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY | Paper specification plus Human-authorized PA-001 fallback and PA-004 dual-track protocol record | f354af6 | 65ad49b | PASS | True |
+| 1 | IN_PROGRESS__PROTOCOL_FREEZE | Phase1 protocol spec freezes PA-001/PA-002/PA-004/PA-005 with provenance; exact sample manifests/checklist remain | 65ad49b | — | — | False |
 | 2 | NOT_STARTED | — | — | — | — | False |
 | 3 | NOT_STARTED | — | — | — | — | False |
 | 4 | NOT_STARTED | — | — | — | — | False |
@@ -828,4 +828,27 @@ PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
 PLAN_DEVIATION_LEVEL=1
 PLAN_CHANGE_REQUIRED=False
 NEXT_ACTION=FREEZE_PA002_EXPERIMENT_ROSTER_AND_PA005_AUGMENTATION_INSERTION_BEFORE_ROW_ASSIGNMENT_OR_PHASE_1_ACCEPTANCE
+```
+
+## Append-only run log — Phase 1 blocker resolution and fallback protocol freeze
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-11 | Phase 1 protocol freeze | Existing PLAN-CHANGE-0003 already includes PA-002/PA-005 in the Phase 1 blocker set; no duplicate plan change was needed. | Recorded Human-confirmed Gmail contact status; reconstructed experiment-specific paper rosters; froze PA-005’s explicit limitation with a result-blind original-plus-five-synthetic-set fallback; created field-provenanced Phase 1 protocol specification. No row split, STL, GAN training, model, metric, or search occurred. | All four named protocol blockers are resolved from paper context or frozen as limitations. Phase 1 remains incomplete pending exact source-keyed manifests and leakage checklist. | `PHASE_0_EXIT_GATE=PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITIES`; `PHASE_1_STATUS=PROTOCOL_FREEZE_IN_PROGRESS`. | `PHASE1_REPRODUCTION_PROTOCOL_SPEC.md`; `output/protocol/phase1_reproduction_protocol_spec.json`. |
+
+```text
+AUTHOR_CONTACT_STATUS=CONTACTED
+AUTHOR_REPLY_STATUS=CONTACTED_WAITING
+GMAIL_MESSAGE_ID=1a0906ec8a4ae625
+PA001_STATUS=FALLBACK_FROZEN_WITH_LIMITATION
+PA002_STATUS=RESOLVED_AS_EXPERIMENT_SPECIFIC_ROSTER
+PA004_STATUS=DUAL_PROTOCOL_FALLBACK_FROZEN_WITH_LIMITATION
+PA005_STATUS=FALLBACK_FROZEN_WITH_LIMITATION
+PHASE1_BLOCKER_SET_AFTER=NONE__ALL_NAMED_BLOCKERS_RESOLVED_OR_FALLBACK_FROZEN
+NEW_PHASE1_BLOCKER_FOUND=False
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=0
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=CREATE_EXACT_SOURCE_KEYED_SAMPLE_MANIFESTS_AND_LEAKAGE_CHECKLIST_WITHOUT_MODEL_WORK
 ```

@@ -1,0 +1,16 @@
+{
+  "scope": "PHASE1_FALLBACK_PROTOCOL_FREEZE",
+  "author_contact_status": "CONTACTED",
+  "author_reply_status": "CONTACTED_WAITING",
+  "gmail_message_id": "1a0906ec8a4ae625",
+  "primary_source_override": true,
+  "strict_numerical_reproduction_limitation": true,
+  "pa001": {"status": "FALLBACK_FROZEN_WITH_LIMITATION", "formula": "SOH_i = measured_capacity_i / dataset_rated_capacity", "provenance": "HUMAN_FALLBACK", "denominators_ah": {"NASA": 2.0, "CALCE": 1.1, "Tsinghua": 24.0}},
+  "pa002": {"status": "RESOLVED_AS_EXPERIMENT_SPECIFIC_ROSTER", "provenance": "PAPER_CROSS_EVIDENCE", "global_source_target_label": false},
+  "pa004": {"status": "DUAL_PROTOCOL_FALLBACK_FROZEN_WITH_LIMITATION", "provenance": "HUMAN_FALLBACK", "primary_source_confirmed": false},
+  "pa005": {"status": "FALLBACK_FROZEN_WITH_LIMITATION", "provenance": "HUMAN_FALLBACK", "synthetic_dataset_interpretation": "five complete synthetic datasets each matching the original-set record count", "synthetic_insertion_rule": "preserve original N and concatenate five synthetic N-sized sets; total 6N", "validation_test_augmentation": false},
+  "protocol_a": {"status": "FROZEN", "train": "[0,0.60N)", "validation": "[0.60N,0.80N)", "test": "[0.80N,N)"},
+  "protocol_b": {"status": "FROZEN", "original_small_sample": "[0,0.20N)", "synthetic_dataset_count": 5},
+  "unresolved_fields": ["Table-5-specific SCF-GAN source roster", "exact synthetic-set cardinality and whether fivefold means final or synthetic-only expansion"],
+  "forbidden": ["performance_based_protocol_selection", "test_loading", "model_implementation", "model_training", "grid_search"]
+}

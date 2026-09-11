@@ -10,6 +10,14 @@
 
 `CONTACT_CONFIDENCE=HIGH__TARGET_PAPER_DIRECT_EVIDENCE`
 
+`AUTHOR_CONTACT_STATUS=CONTACTED`
+
+`AUTHOR_REPLY_STATUS=CONTACTED_WAITING`
+
+`HUMAN_CONFIRMED_EMAIL_SENT=True`
+
+`GMAIL_MESSAGE_ID=1a0906ec8a4ae625`
+
 `SECONDARY_CONTACT=Hanhua Yang, first author; use only if Human elects follow-up after the corresponding-author route is exhausted. No secondary email is asserted here.`
 
 ## PA-001 evidence and question
@@ -30,5 +38,4 @@
 
 ## Packet boundary
 
-The email draft is in [AUTHOR_CLARIFICATION_REQUEST.md](C:/Users/ROG/Documents/Python/new_soh/AUTHOR_CLARIFICATION_REQUEST.md). No message has been sent. This packet does not select a fallback, create a data split, or change the original ambiguity history.
-
+The email draft is in [AUTHOR_CLARIFICATION_REQUEST.md](C:/Users/ROG/Documents/Python/new_soh/AUTHOR_CLARIFICATION_REQUEST.md). Human confirms it was sent through Gmail. Codex must not send a duplicate. This packet does not itself select a fallback, create a data split, or change the original ambiguity history.

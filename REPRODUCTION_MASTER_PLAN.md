@@ -704,7 +704,7 @@ COMMIT=36c7836fc2fa52cb3b1591f070b91b774dcaed85
 |---|---|---|---|---|---|---|
 | 0 | PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY | Paper specification plus Human-authorized PA-001 fallback and PA-004 dual-track protocol record | f354af6 | 65ad49b | PASS | True |
 | 1 | PASS__PRIMARY_SOURCE_OVERRIDE_PENDING | Frozen A/B protocols, source-keyed metadata membership manifest, population-conservation and leakage audits, and augmentation plan; no test values or synthetic rows materialized | 65ad49b | 36c7836 | PASS | True |
-| 2 | BLOCKED_BY_STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE | Capacity-domain STL input cross-evidence, Human-authorized partition-safe fallback, and train-only ACF/spectral dry-run; no period satisfied the pre-registered structural rule | 27e4915 | — | — | False |
+| 2 | BLOCKED_BY_STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE | Capacity-domain STL input cross-evidence, partition-safe fallback, and Phase 2C method audit; global ACF argmax was invalidated as a persistence artifact and no replacement period is authorized | 27e4915 | — | — | False |
 | 3 | NOT_STARTED | — | — | — | — | False |
 | 4 | NOT_STARTED | — | — | — | — | False |
 | 5 | NOT_STARTED | — | — | — | — | False |
@@ -964,4 +964,25 @@ PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
 PLAN_DEVIATION_LEVEL=0
 PLAN_CHANGE_REQUIRED=False
 NEXT_ACTION=HUMAN_DECISION_ON_FIXED_ENGINEERING_PERIOD_OR_SMALL_BOUNDED_STRUCTURAL_SENSITIVITY_STUDY
+```
+
+## Append-only run log — Phase 2C STL period-discovery method audit
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-11 | Phase 2C methodology audit | Phase 2 remained blocked, test-locked, and limited to training-only structural analysis. | Audited the exact Phase 2B ACF/FFT rules, ACF shapes, local peaks, prefix stability, three train-only preprocessing views, spectral top-two peaks, low-frequency risk, and harmonic relations of order at most three. The global ACF argmax rule was found invalid for persistent series because it selects lag 2 rather than a periodic local maximum. No STL, model, metric, validation/test value, or search ran. | This is a Level-1 methodology amendment only. CALCE has diagnostic but insufficient evidence near 50; NASA has no stable periodic family. Phase 2 remains blocked pending Human fixed-period authority or primary-source clarification. | `PHASE_2_GATE=BLOCKED_BY_STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE`; no Phase 3 advancement. | `PERIOD_DISCOVERY_METHOD_AUDIT.md`; `PLAN_MINOR_AMENDMENT_STL-PERIOD-0001.md`; `output/stl/stl_period_method_audit.json`. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+ACF_ORIGINAL_RULE_VALIDITY=INVALID_FOR_PERSISTENT_SERIES
+ACF_LAG2_ARTIFACT_STATUS=PERSISTENCE_OR_GLOBAL_ARGMAX_ARTIFACT
+STL_PERIOD_IDENTIFIABLE=False
+BOUNDED_STRUCTURAL_CANDIDATES_AVAILABLE=False
+TRAIN_STL_IMPLEMENTED=False
+TEST_LOADED=False
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=1
+PLAN_CHANGE_REQUIRED=False
+PLAN_MINOR_AMENDMENT=STL-PERIOD-0001
+NEXT_ACTION=HUMAN_FIXED_ENGINEERING_PERIOD_OR_PRIMARY_SOURCE_CLARIFICATION
 ```

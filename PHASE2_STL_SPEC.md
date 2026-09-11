@@ -59,3 +59,12 @@ Human authorized a result-blind, train-only structural period-discovery rule and
 `NEXT_ACTION=HUMAN_DECISION_ON_FIXED_ENGINEERING_PERIOD_OR_SMALL_BOUNDED_STRUCTURAL_SENSITIVITY_STUDY`
 
 See `PHASE2_STL_ENGINEERING_FALLBACK.md` and `PHASE2_STL_PERIOD_DISCOVERY.md`; these records do not convert any fallback into a paper-exact parameter.
+
+## Phase 2C period-discovery method audit
+
+Phase 2C invalidated the Phase 2B global-ACF-argmax candidate rule for this persistent degradation setting: it mechanically selected lag 2 in every track and supplied no periodic-peak evidence. The revised local-peak/prominence concept cannot yet be frozen because the paper supplies no domain-grounded minimum period. CALCE has only diagnostic evidence around 50 observations; NASA has no stable family. No STL was run.
+
+`PHASE_2C_STATUS=METHODOLOGY_AUDIT_COMPLETE__OUTCOME_C`
+`PLAN_MINOR_AMENDMENT=STL-PERIOD-0001`
+`PHASE_2_GATE=BLOCKED_BY_STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE`
+`NEXT_ACTION=HUMAN_FIXED_ENGINEERING_PERIOD_OR_PRIMARY_SOURCE_CLARIFICATION`

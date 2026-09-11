@@ -269,7 +269,7 @@ Every future Codex task must execute this protocol in order.
 REPRODUCTION MASTER PROGRESS
 ========================================
 
-Phase 0  Paper Specification      [..........] 0%
+Phase 0  Paper Specification      [##########] 100%
 Phase 1  Data Protocol            [..........] 0%
 Phase 2  STL                      [..........] 0%
 Phase 3  iTransformer             [..........] 0%
@@ -281,11 +281,11 @@ Phase 8  Full G-MTC               [..........] 0%
 Phase 9  Numerical Reproduction   [..........] 0%
 Phase 10 Acceptance               [..........] 0%
 
-OVERALL_PROGRESS=0%
+OVERALL_PROGRESS=9%
 CURRENT_PHASE=Phase 0
-CURRENT_GATE=Paper Specification Freeze
-LAST_COMPLETED=Master Plan initialized; no scientific Phase completed
-NEXT_ACTION=Freeze executable paper specification and ambiguity register without model implementation
+CURRENT_GATE=Phase 0 advancement review: critical protocol ambiguity PA-004
+LAST_COMPLETED=Phase 0 paper specification, ambiguity register, and missing-parameter register extracted from local full text
+NEXT_ACTION=Resolve PA-004 through Human review/new paper evidence before Phase 1; do not implement model code
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -628,7 +628,7 @@ COMMIT=dcb24dd841a2dc0917bb36f3c65c76dab790b7b0
 
 | Phase | Gate status | Completion evidence | PHASE_START_COMMIT | PHASE_COMPLETION_COMMIT | PHASE_COMPLETION_PUSH_STATUS | PHASE_REMOTE_BACKUP_CONFIRMED |
 |---|---|---|---|---|---|---|
-| 0 | NOT_STARTED | — | — | — | — | False |
+| 0 | PASS_WITH_REGISTERED_AMBIGUITIES__ADVANCEMENT_BLOCKED | PAPER_REPRODUCTION_SPEC.md; PAPER_AMBIGUITY_REGISTER.md; PAPER_MISSING_PARAMETER_REGISTER.md; JSON specification | ATOMIC_WITH_PHASE_0_SPEC_COMMIT | PENDING | PENDING | False |
 | 1 | NOT_STARTED | — | — | — | — | False |
 | 2 | NOT_STARTED | — | — | — | — | False |
 | 3 | NOT_STARTED | — | — | — | — | False |
@@ -666,6 +666,7 @@ These ten independent plan audits were completed before this Master Plan was wri
 | 2026-09-11 | Phase 0 | Plan did not yet exist; user-authorized governance initialization only. | Created this Master Plan, initialized Git, and created `.gitignore`; no data/model/experiment action. | Plan self-audit required below. | Phase 0 remains NOT_STARTED. | Local 17-page PDF inspected; this file. |
 | 2026-09-11 | Phase 0 | Git/GitHub archive rules authorized; governance work is allowed in Phase 0. | Added mandatory Git/GitHub archive protocol, ignored local copyrighted PDF, created versioned paper metadata, created the new private GitHub repository, and pushed the initial plan commit; no data/model/experiment action. | Local/remote `main` commit `86a47e7` verified; current status-record update pending. | Phase 0 remains NOT_STARTED. | `origin=https://github.com/wacenhong-art/soh_gmtc_reproduction_clean.git`; private repository and remote `main` verified. |
 | 2026-09-11 | Phase 0 | Full plan, Git state, project files, and local 17-page paper re-read; Plan Health Audit found governance gaps but no paper/protocol/architecture invalidation. | Added validation hierarchy, controlled-search policy, module and small-subset checks, baseline/multi-seed/test-lock/ablation rules, plan-health/deviation/change-history governance. No Phase 0 extraction, model code, training, search, or experiment. | Pending final self-audit and archive of this governance amendment. | Phase 0 remains NOT_STARTED. | `PLAN-CHANGE-0001`; Human-authorized; result-driven=False. |
+| 2026-09-11 | Phase 0 | Full plan/Git/project/PDF audit and Plan Health Audit passed. | Extracted paper specification, ambiguity register, missing-parameter register, and machine-readable JSON. No code/model/training/search/metric run. | Specification complete; advancement blocked by PA-004 until Human/new-evidence resolution. | PASS_WITH_REGISTERED_AMBIGUITIES__ADVANCEMENT_BLOCKED. | PDF pp.1–16; `PA-001`–`PA-010`; `PM-001`–`PM-009`. |
 
 ## MASTER_PLAN_SELF_AUDIT
 
@@ -695,7 +696,7 @@ LEAKAGE_STATUS=NOT_ASSESSED_NO_DATA_OR_EXECUTION
 CURRENT_REPRODUCTION_STRATEGY_STILL_VALID=True
 NEXT_STEP_STILL_OPTIMAL=True
 CURRENT_PHASE=Phase 0
-CURRENT_GATE=Paper Specification Freeze
+CURRENT_GATE=Phase 0 advancement review: PA-004
 EXPERIMENT_RUN=False
 MODEL_IMPLEMENTED=False
 MODEL_TRAINED=False
@@ -707,5 +708,8 @@ SCF_GAN_REQUIRED_FOR_FINAL_REPRODUCTION=True
 LARGE_GRID_SEARCH_AUTHORIZED=False
 FIRST_FULL_REPRODUCTION_COMPLETED=False
 TEST_LOADED=False
-NEXT_ACTION=Create and verify Phase 0 paper-specification and ambiguity-register artifacts only; do not implement model code.
+PHASE_0_STATUS=PASS_WITH_REGISTERED_AMBIGUITIES__ADVANCEMENT_BLOCKED
+PHASE_0_PROGRESS=100%
+ADVANCEMENT_ALLOWED=False
+NEXT_ACTION=Resolve PA-004 through Human review or new paper evidence before Phase 1; do not implement model code.
 ```

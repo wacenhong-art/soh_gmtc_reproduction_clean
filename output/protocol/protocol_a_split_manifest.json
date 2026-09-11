@@ -1,0 +1,12 @@
+{
+  "manifest_kind": "DECLARATIVE_PROTOCOL_MANIFEST_NOT_ROW_ASSIGNMENT",
+  "active_protocol": "A",
+  "name": "PROTOCOL_A_GENERAL_SOH_ESTIMATION",
+  "rule": {"training": "[0, 0.60N)", "validation": "[0.60N, 0.80N)", "test": "[0.80N, N)", "ordering": "chronological"},
+  "datasets_in_scope": ["NASA", "CALCE"],
+  "required_sample_fields": ["battery_id", "cycle_id", "canonical_source_key", "raw_source_provenance", "chronological_index", "active_protocol", "protocol_role"],
+  "row_assignments": [],
+  "row_assignment_status": "BLOCKED_BY_PA002_EXPERIMENT_ROSTER_AND_DATASET_SPECIFIC_CANONICAL_TARGET_ORDER",
+  "cross_protocol_isolation": "No Protocol B synthetic or real samples are included.",
+  "test_loaded": false
+}

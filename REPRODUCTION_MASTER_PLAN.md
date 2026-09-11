@@ -4,11 +4,11 @@
 
 **Plan authority:** This is the sole highest-level roadmap for this repository. Every future Codex task must read this complete file before acting and must obey its gates. Its core architecture, phase order, reproduction definitions, and protocol rules may not be silently changed.
 
-**Current plan state:** INITIALIZED — no Phase has passed.
+**Current plan state:** Phase 1 protocol freeze is active under Human-authorized dual-protocol fallback; primary-source clarification remains pending.
 
-`CURRENT_PLAN_VERSION=1.2.0`
+`CURRENT_PLAN_VERSION=1.3.0`
 
-`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0002`
+`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0003`
 
 ## NON-NEGOTIABLE RULES
 
@@ -270,7 +270,7 @@ REPRODUCTION MASTER PROGRESS
 ========================================
 
 Phase 0  Paper Specification      [##########] 100%
-Phase 1  Data Protocol            [..........] 0%
+Phase 1  Data Protocol            [##........] 20%
 Phase 2  STL                      [..........] 0%
 Phase 3  iTransformer             [..........] 0%
 Phase 4  Framework Scaffold       [..........] 0%
@@ -281,11 +281,11 @@ Phase 8  Full G-MTC               [..........] 0%
 Phase 9  Numerical Reproduction   [..........] 0%
 Phase 10 Acceptance               [..........] 0%
 
-OVERALL_PROGRESS=9%
-CURRENT_PHASE=Phase 0
-CURRENT_GATE=Phase 0 advancement review: critical protocol ambiguity PA-004
-LAST_COMPLETED=CALCE official full-row scan completed; source-safe cross-workbook cycle-boundary and row-null/duplicate reporting remain incomplete; PA-004 remains unresolved
-NEXT_ACTION=Persist CALCE source-keyed cycle-boundary and row-null/duplicate audit without splits, while Human obtains PA-004 primary-source clarification; do not enter Phase 1 or implement model code
+OVERALL_PROGRESS=11%
+CURRENT_PHASE=Phase 1
+CURRENT_GATE=Phase 1 protocol-contract freeze: PA-002 roster and PA-005 augmentation insertion
+LAST_COMPLETED=Human-authorized PA-001 nominal-capacity fallback and isolated Protocol A/B rules frozen; author clarification pending
+NEXT_ACTION=Freeze PA-002 experiment roster and PA-005 augmentation insertion before row assignment or Phase 1 acceptance; do not enter Phase 2 or implement model code
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -353,6 +353,14 @@ This is an explicitly authorized Phase-0 side-track, not Phase 1 and not a proto
 **FAILURE_CONDITIONS:** unknown origin; duplicate/cross-partition cycle; future/all-life normalization; target leakage into source-only GAN training; or undocumented proxy labels.
 
 **NEXT_PHASE_ENTRY_CONDITION:** Phase 1 gate passes and its `PHASE_COMPLETION_COMMIT` is recorded.
+
+### Authorized dual-protocol fallback while primary-source clarification is pending
+
+`PLAN_CHANGE_ID=PLAN-CHANGE-0003`
+
+Human-authorized fallback permits Phase 1 protocol-freeze work with two isolated tracks: `PROTOCOL_A_GENERAL_SOH_ESTIMATION` (Section 4 chronological 60/20/20) and `PROTOCOL_B_SMALL_SAMPLE_AUGMENTATION` (Section 4.2 first-20%-of-life plus five synthetic HF datasets). The PA-001 engineering fallback uses each dataset’s nominal/rated capacity as the SOH denominator. These are explicitly non-primary-source-confirmed engineering interpretations, recorded in `REPRODUCTION_PROTOCOLS.md`.
+
+**Additional Phase 1 controls:** every future row must carry `ACTIVE_PROTOCOL=A/B` and source-key provenance. Protocol A real data and Protocol B real/synthetic data are isolated. Performance cannot select either track. PA-002 blocks row-level experiment-roster assignment; PA-005 blocks Protocol B augmentation execution. The author-clarification override policy requires a primary-source decision record and plan-change review if a reply differs.
 
 ## Phase 2 — STL Reproduction
 
@@ -657,12 +665,27 @@ HUMAN_AUTHORIZED=True
 COMMIT=5992f3050b90a813e1bc084fb013d233d3458a5d
 ```
 
+```text
+PLAN_CHANGE_ID=PLAN-CHANGE-0003
+NAME=ALLOW_DUAL_PROTOCOL_REPRODUCTION_WHILE_PRIMARY_SOURCE_CLARIFICATION_PENDING
+TRIGGER=Human Researcher authorized a result-blind PA-001 nominal-capacity fallback and two isolated PA-004 protocol tracks after contacting the corresponding author.
+OLD_ASSUMPTION=PA-001 and PA-004 blocked all Phase 1 entry until primary-source clarification.
+NEW_EVIDENCE=Human decision: proceed transparently with nominal/rated-capacity SOH labels and separate Section 4 versus Section 4.2 protocol tracks while preserving author override priority.
+IMPACT=Permits Phase 1 protocol-contract freeze only; does not alter architecture, Phase 2–10 order, final reproduction definition, or authorize model work. PA-002 and PA-005 remain explicit row-assignment/augmentation-execution blockers.
+OLD_PLAN=Version 1.2.0
+NEW_PLAN=Version 1.3.0
+WHY_CHANGE_NECESSARY=Avoid indefinite research pause while keeping unconfirmed interpretations, isolation boundaries, and primary-source override visible.
+RESULT_DRIVEN=False
+HUMAN_AUTHORIZED=True
+COMMIT=PENDING_CURRENT_RUN_COMMIT
+```
+
 ## Phase completion ledger
 
 | Phase | Gate status | Completion evidence | PHASE_START_COMMIT | PHASE_COMPLETION_COMMIT | PHASE_COMPLETION_PUSH_STATUS | PHASE_REMOTE_BACKUP_CONFIRMED |
 |---|---|---|---|---|---|---|
-| 0 | PASS_WITH_REGISTERED_AMBIGUITIES__ADVANCEMENT_BLOCKED | PAPER_REPRODUCTION_SPEC.md; PAPER_AMBIGUITY_REGISTER.md; PAPER_MISSING_PARAMETER_REGISTER.md; JSON specification | f354af6 | f354af6 | PASS | True |
-| 1 | NOT_STARTED | — | — | — | — | False |
+| 0 | PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY | Paper specification plus Human-authorized PA-001 fallback and PA-004 dual-track protocol record | f354af6 | PENDING_CURRENT_RUN_COMMIT | PENDING | False |
+| 1 | IN_PROGRESS__PROTOCOL_FREEZE | REPRODUCTION_PROTOCOLS.md; declarative Protocol A/B manifests; PA-002/PA-005 blockers retained | PENDING_CURRENT_RUN_COMMIT | — | — | False |
 | 2 | NOT_STARTED | — | — | — | — | False |
 | 3 | NOT_STARTED | — | — | — | — | False |
 | 4 | NOT_STARTED | — | — | — | — | False |
@@ -785,4 +808,24 @@ PA001_STATUS=AMBIGUOUS_BLOCKING_TARGET_CONSTRUCTION
 PA004_STATUS=UNRESOLVED_BLOCKING
 PHASE1_BLOCKER_SET=PA-001, PA-002, PA-004, PA-005
 NEXT_ACTION=HUMAN_REVIEW_AND_SEND_AUTHOR_CLARIFICATION
+```
+
+## Append-only run log — dual-protocol fallback freeze
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-11 | Phase 0 to Phase 1 entry | Human authorized Level-1 amendment; data readiness is pass; PA-001/PA-004 are retained as primary-source-pending interpretations. | Froze nominal/rated-capacity SOH fallback and two isolated, paper-section-specific protocol contracts. Created only declarative A/B manifests because PA-002 and PA-005 still preclude honest row-level role assignment/augmentation execution. No STL, model, training, metrics, or search. | Dual-track protocol freeze is coherent and result-blind. Author reply overrides fallback if materially different. | `PHASE_0_EXIT_GATE=PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY`; Phase 1 protocol freeze is in progress. | `REPRODUCTION_PROTOCOLS.md`; `output/protocol/`. |
+
+```text
+AUTHOR_REPLY_STATUS=CONTACTED_WAITING
+PA001_STATUS=FALLBACK_FROZEN__PRIMARY_SOURCE_PENDING
+PA004_STATUS=AMBIGUOUS__DUAL_TRACK_FROZEN__PRIMARY_SOURCE_PENDING
+PHASE_0_EXIT_GATE=PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY
+ADVANCEMENT_TO_PHASE_1=True
+PHASE_1_STATUS=IN_PROGRESS__PROTOCOL_FREEZE
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=1
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=FREEZE_PA002_EXPERIMENT_ROSTER_AND_PA005_AUGMENTATION_INSERTION_BEFORE_ROW_ASSIGNMENT_OR_PHASE_1_ACCEPTANCE
 ```

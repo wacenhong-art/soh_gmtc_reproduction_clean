@@ -1,0 +1,12 @@
+{
+  "manifest_kind": "DECLARATIVE_PROTOCOL_MANIFEST_NOT_ROW_ASSIGNMENT",
+  "active_protocol": "B",
+  "name": "PROTOCOL_B_SMALL_SAMPLE_AUGMENTATION",
+  "rule": {"original_small_sample": "[0, 0.20N)", "synthetic_hf_dataset_count": 5, "ordering": "chronological"},
+  "datasets_in_scope": ["NASA", "CALCE"],
+  "required_sample_fields": ["battery_id", "cycle_id", "canonical_source_key", "raw_source_provenance", "chronological_index", "active_protocol", "protocol_role"],
+  "row_assignments": [],
+  "row_assignment_status": "BLOCKED_BY_PA002_EXPERIMENT_ROSTER_AND_PA005_SYNTHETIC_INSERTION",
+  "cross_protocol_isolation": "No Protocol A real training, validation, or test samples are included.",
+  "test_loaded": false
+}

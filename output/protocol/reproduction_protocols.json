@@ -1,0 +1,22 @@
+{
+  "scope": "HUMAN_AUTHORIZED_DUAL_PROTOCOL_REPRODUCTION_FREEZE",
+  "author_reply_status": "CONTACTED_WAITING",
+  "primary_source_confirmation_pending": true,
+  "primary_source_confirmed": false,
+  "result_blind": true,
+  "performance_blind": true,
+  "pa001": {
+    "status": "FALLBACK_FROZEN__PRIMARY_SOURCE_PENDING",
+    "fallback_interpretation": "USE_DATASET_NOMINAL_OR_RATED_CAPACITY_AS_SOH_DENOMINATOR",
+    "engineering_reproduction_assumption": true,
+    "denominators_ah": {"NASA": 2.0, "CALCE": 1.1, "Tsinghua": 24.0}
+  },
+  "pa004": {
+    "status": "AMBIGUOUS__DUAL_TRACK_FROZEN__PRIMARY_SOURCE_PENDING",
+    "protocol_a": {"name": "PROTOCOL_A_GENERAL_SOH_ESTIMATION", "paper_scope": "Section 4", "roles": {"training": "[0, 0.60N)", "validation": "[0.60N, 0.80N)", "test": "[0.80N, N)"}, "status": "FROZEN_RULE__ROW_ASSIGNMENT_PENDING_PA002_EXPERIMENT_ROSTER"},
+    "protocol_b": {"name": "PROTOCOL_B_SMALL_SAMPLE_AUGMENTATION", "paper_scope": "Section 4.2", "roles": {"original_small_sample": "[0, 0.20N)", "synthetic_hf_dataset_count": 5}, "status": "FROZEN_RULE__ROW_ASSIGNMENT_PENDING_PA002_AND_PA005"}
+  },
+  "required_sample_fields": ["battery_id", "cycle_id", "canonical_source_key", "raw_source_provenance", "chronological_index", "active_protocol", "protocol_role", "target_definition_version"],
+  "forbidden": ["performance_based_protocol_selection", "cross_protocol_real_data_mixing", "cross_protocol_synthetic_data_mixing", "model_implementation", "model_training", "grid_search"],
+  "author_clarification_override_policy": "ACTIVE"
+}

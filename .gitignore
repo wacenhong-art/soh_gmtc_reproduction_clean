@@ -1,0 +1,37 @@
+# Raw/restricted battery data and derived datasets
+data/
+raw_data/
+datasets/
+
+# Local copyrighted reference papers (track metadata, not binaries)
+*.pdf
+
+# Training outputs and large artifacts
+checkpoints/
+models/
+runs/
+results/
+outputs/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+.env
+
+# Secrets and editor/runtime clutter
+*.key
+*.pem
+secrets.*
+.vscode/.ropeproject/
+
+# Temporary inspection artifacts
+*.tmp
+*.tmp.*

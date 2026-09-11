@@ -768,3 +768,21 @@ DATA_READINESS_STATUS=PASS__PAPER_HF_FEATURES_FEASIBLE__TEMPERATURE_NOT_A_PAPER_
 ADVANCEMENT_TO_PROTOCOL_FREEZE=False
 NEXT_ACTION=PRIMARY_SOURCE_PROTOCOL_CLARIFICATION for PA-001 and PA-004; do not enter Phase 1 or implement model code.
 ```
+
+## Append-only run log — primary-source clarification package
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-11 | Phase 0 blocked | PA-001 and PA-004 remain unresolved; documentation-only clarification preparation is allowed. | Re-read paper and registers; identified the corresponding author from the target-paper title page; prepared a two-question English draft, Chinese reference translation, evidence packet, and Human-only result-blind fallback framework. No contact, protocol selection, split, model, training, metric, or search occurred. | Waiting for Human review/send is the correct state. Additional Phase-1 blockers PA-002 and PA-005 remain visible, rather than deferred silently. | Phase 0 exit remains blocked. | `AUTHOR_CLARIFICATION_REQUEST.md`; `PRIMARY_SOURCE_CLARIFICATION_PACKET.md`; `PRIMARY_SOURCE_FALLBACK_POLICY.md`. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=0
+PLAN_CHANGE_REQUIRED=False
+AUTHOR_REPLY_STATUS=NOT_CONTACTED
+PA001_STATUS=AMBIGUOUS_BLOCKING_TARGET_CONSTRUCTION
+PA004_STATUS=UNRESOLVED_BLOCKING
+PHASE1_BLOCKER_SET=PA-001, PA-002, PA-004, PA-005
+NEXT_ACTION=HUMAN_REVIEW_AND_SEND_AUTHOR_CLARIFICATION
+```

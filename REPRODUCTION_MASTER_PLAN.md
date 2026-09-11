@@ -284,8 +284,8 @@ Phase 10 Acceptance               [..........] 0%
 OVERALL_PROGRESS=9%
 CURRENT_PHASE=Phase 0
 CURRENT_GATE=Phase 0 advancement review: critical protocol ambiguity PA-004
-LAST_COMPLETED=PA-004 full-text, figure/table, supplementary, and official-code availability audit; ambiguity remains unresolved
-NEXT_ACTION=Human must authorize an explicit PA-004 protocol interpretation or obtain primary-source clarification before Phase 1; do not implement model code
+LAST_COMPLETED=Split-independent official NASA/CALCE source acquisition; NASA full parsing and CALCE schema readiness completed; PA-004 remains unresolved
+NEXT_ACTION=Complete bounded CALCE full-row inventory if resources permit, while Human obtains PA-004 primary-source clarification; do not enter Phase 1 or implement model code
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -654,7 +654,7 @@ NEW_PLAN=Version 1.2.0
 WHY_CHANGE_NECESSARY=Permit protocol-independent preparation while retaining an explicit non-advancement boundary and PA-004 hard block.
 RESULT_DRIVEN=False
 HUMAN_AUTHORIZED=True
-COMMIT=PENDING_PLAN_COMMIT
+COMMIT=5992f3050b90a813e1bc084fb013d233d3458a5d
 ```
 
 ## Phase completion ledger
@@ -701,6 +701,7 @@ These ten independent plan audits were completed before this Master Plan was wri
 | 2026-09-11 | Phase 0 | Full plan, Git state, project files, and local 17-page paper re-read; Plan Health Audit found governance gaps but no paper/protocol/architecture invalidation. | Added validation hierarchy, controlled-search policy, module and small-subset checks, baseline/multi-seed/test-lock/ablation rules, plan-health/deviation/change-history governance. No Phase 0 extraction, model code, training, search, or experiment. | Pending final self-audit and archive of this governance amendment. | Phase 0 remains NOT_STARTED. | `PLAN-CHANGE-0001`; Human-authorized; result-driven=False. |
 | 2026-09-11 | Phase 0 | Full plan/Git/project/PDF audit and Plan Health Audit passed. | Extracted paper specification, ambiguity register, missing-parameter register, and machine-readable JSON. No code/model/training/search/metric run. | Specification complete; advancement blocked by PA-004 until Human/new-evidence resolution. | PASS_WITH_REGISTERED_AMBIGUITIES__ADVANCEMENT_BLOCKED. | PDF pp.1–16; `PA-001`–`PA-010`; `PM-001`–`PM-009`. |
 | 2026-09-11 | Phase 0 | Full plan/specification/registers/PDF audit; task is Phase-0 evidence work and allowed. | Audited all PA-004-relevant full-text passages, visually inspected the adjacent architecture/results pages, checked tables/captions, project supplementary inventory, and paper-provided code/data availability. No data/model/training/search/metric run. | No new evidence maps the two target-data constructions; no core-plan change is warranted. | `PA004_STATUS=UNRESOLVED_BLOCKING`; Phase 0 exit remains blocked. | `PA004_PROTOCOL_EVIDENCE_TABLE.md`; PDF pp.5, 7–11, 12–16. |
+| 2026-09-11 | Phase 0 side-track | Human authorized PLAN-CHANGE-0002; this task is split-independent raw-data readiness only. | Acquired and hashed official NASA/CALCE archives; parsed NASA fully; verified CALCE workbook presence/header schema and raw-record dimensions; created an unsplit NASA canonical artifact and complete provenance manifests. No split assignment, model, STL, GAN, training, metric, or search. | CALCE full-row parsing exceeds the bounded runtime and remains incomplete; no data or cycle was discarded. | `SPLIT_INDEPENDENT_DATA_READINESS_GATE=FAIL__PARTIAL`; `PA004_STATUS=UNRESOLVED_BLOCKING`. | `DATA_SOURCE_MANIFEST.md`; `output/data_readiness/`; `scripts/prepare_split_independent_data.py`. |
 
 ## MASTER_PLAN_SELF_AUDIT
 
@@ -745,5 +746,5 @@ TEST_LOADED=False
 PHASE_0_STATUS=PASS_WITH_REGISTERED_AMBIGUITIES__ADVANCEMENT_BLOCKED
 PHASE_0_PROGRESS=100%
 ADVANCEMENT_ALLOWED=False
-NEXT_ACTION=Human must authorize an explicit PA-004 protocol interpretation or obtain primary-source clarification before Phase 1; do not implement model code.
+NEXT_ACTION=Complete bounded CALCE full-row inventory if resources permit, while Human obtains PA-004 primary-source clarification; do not enter Phase 1 or implement model code.
 ```

@@ -1,0 +1,73 @@
+{
+  "sources": [
+    {
+      "dataset": "NASA",
+      "battery_id": "B0005,B0006,B0007,B0018",
+      "source_url": "https://phm-datasets.s3.amazonaws.com/NASA/5.+Battery+Data+Set.zip",
+      "source_organization": "NASA Ames PCoE",
+      "file_name": "NASA_5_Battery_Data_Set.zip",
+      "file_size": 209708670,
+      "sha256": "82302A7DB4FC1B34E0B6676326610438D43B816BDF11A69D1D012A464EF2F92E",
+      "download_date": "2026-09-11",
+      "raw_or_processed": "RAW_ARCHIVE",
+      "license_or_access_note": "NASA repository states users employ data at their own risk; no license specified in portal metadata."
+    },
+    {
+      "dataset": "CALCE",
+      "battery_id": "CS2_35",
+      "source_url": "https://web.calce.umd.edu/batteries/data/CS2_35.zip",
+      "source_organization": "University of Maryland CALCE Battery Group",
+      "file_name": "CS2_35.zip",
+      "file_size": 37056519,
+      "sha256": "84D88CB98A43C02049F16C78806A78EC19084776EA5DF8A4B7C2F8F7BA4589E5",
+      "download_date": "2026-09-11",
+      "raw_or_processed": "RAW_ARCHIVE",
+      "license_or_access_note": "CALCE requests citation of its data base and referenced articles for publication use."
+    },
+    {
+      "dataset": "CALCE",
+      "battery_id": "CS2_36",
+      "source_url": "https://web.calce.umd.edu/batteries/data/CS2_36.zip",
+      "source_organization": "University of Maryland CALCE Battery Group",
+      "file_name": "CS2_36.zip",
+      "file_size": 37881685,
+      "sha256": "2E674F58BB6DC005C73BEF10E87EDBBD97AFD041DDE77A1D461A3C4ECAC1B027",
+      "download_date": "2026-09-11",
+      "raw_or_processed": "RAW_ARCHIVE",
+      "license_or_access_note": "CALCE requests citation of its data base and referenced articles for publication use."
+    },
+    {
+      "dataset": "CALCE",
+      "battery_id": "CS2_37",
+      "source_url": "https://web.calce.umd.edu/batteries/data/CS2_37.zip",
+      "source_organization": "University of Maryland CALCE Battery Group",
+      "file_name": "CS2_37.zip",
+      "file_size": 41513048,
+      "sha256": "8ED8AECBCBEA2BCB17F455923A974BE01EA21D7389210E1912D177DE5B6AF4A5",
+      "download_date": "2026-09-11",
+      "raw_or_processed": "RAW_ARCHIVE",
+      "license_or_access_note": "CALCE requests citation of its data base and referenced articles for publication use."
+    },
+    {
+      "dataset": "CALCE",
+      "battery_id": "CS2_38",
+      "source_url": "https://web.calce.umd.edu/batteries/data/CS2_38.zip",
+      "source_organization": "University of Maryland CALCE Battery Group",
+      "file_name": "CS2_38.zip",
+      "file_size": 42811100,
+      "sha256": "98787427C10478425EFD4F54D823805724DAFF1D2FCBD822B3A2D7006A1051D8",
+      "download_date": "2026-09-11",
+      "raw_or_processed": "RAW_ARCHIVE",
+      "license_or_access_note": "CALCE requests citation of its data base and referenced articles for publication use."
+    }
+  ],
+  "flags": {
+    "TRAIN_SET_ASSIGNED": false,
+    "VALIDATION_SET_ASSIGNED": false,
+    "TEST_SET_ASSIGNED": false,
+    "TARGET_FIRST20_ASSIGNED": false,
+    "GAN_TARGET_POPULATION_ASSIGNED": false,
+    "SCF_GAN_TRAINING_EXECUTED": false,
+    "PA004_UNCHANGED": true
+  }
+}

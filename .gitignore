@@ -2,6 +2,7 @@
 data/
 raw_data/
 datasets/
+数据/
 
 # Local copyrighted reference papers (track metadata, not binaries)
 *.pdf

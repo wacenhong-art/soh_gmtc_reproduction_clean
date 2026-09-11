@@ -38,7 +38,7 @@ target battery chronological cycle population [0, N)
   test       = [0.80N, N)
 ```
 
-`PROTOCOL_A_STATUS=FROZEN_RULE__ROW_ASSIGNMENT_PENDING_PA002_EXPERIMENT_ROSTER`
+`PROTOCOL_A_STATUS=FROZEN__ASSIGNMENT_VALID`
 
 No row may cross these chronological partitions. Synthetic samples belong to neither Protocol A nor its test/validation populations unless a paper-matched experiment explicitly specifies their use.
 
@@ -51,11 +51,23 @@ target battery original small-sample population = [0, 0.20N)
 SCF-GAN augmentation = five complete synthetic HF datasets per original target set
 ```
 
-`PROTOCOL_B_STATUS=FROZEN_RULE__ROW_ASSIGNMENT_PENDING_PA002_AND_PA005`
+`PROTOCOL_B_STATUS=FROZEN__ASSIGNMENT_VALID`
 
-Protocol B does **not** claim to be the sole protocol for every final G-MTC experiment. It must never receive Protocol A's `[0.20N, 0.60N)` real training cycles, validation cycles, or test cycles unless a paper-matched experiment explicitly requires this.
+Protocol B does **not** claim to be the sole protocol for every final G-MTC experiment. Under Human-authorized `PLAN-CHANGE-0004`, it uses the following result-blind evaluation fallback:
 
-`PROTOCOL_B_VALIDATION_TEST_POPULATION=UNDEFINED__ROW_ASSIGNMENT_BLOCKED`
+```text
+target battery chronological population [0, N), zero-based half-open intervals
+  TRAIN_REAL              = [0, floor(0.20*N))
+  UNUSED_PROTOCOL_B       = [floor(0.20*N), floor(0.60*N))
+  VALIDATION              = [floor(0.60*N), floor(0.80*N))
+  TEST                    = [floor(0.80*N), N)
+```
+
+`PROTOCOL_B_EVALUATION_FALLBACK=NESTED_SMALL_SAMPLE_WITH_GENERAL_HOLDOUT_BOUNDARIES`
+
+`PROTOCOL_B_EVALUATION_PROVENANCE=HUMAN_FALLBACK__RESULT_BLIND__PERFORMANCE_BLIND`
+
+The `[20%,60%)` records remain as `UNUSED_PROTOCOL_B`; they are neither silently dropped nor used for Protocol B fitting, GAN training, scaling/imputation fitting, STL training decomposition, model training, or hyperparameter selection. This choice preserves the paper’s stated 60%/80% holdout boundaries while not importing unstated real training data into the 20%-small-sample regime.
 
 ## Isolation and manifest contract
 
@@ -88,7 +100,7 @@ If the author replies:
 
 ## Remaining Phase 1 blockers
 
-`PA002_SOURCE_TARGET_ROSTER=BLOCKING_ROW_LEVEL_ASSIGNMENT`
-`PA005_SYNTHETIC_COUNT_AND_INSERTION=BLOCKING_PROTOCOL_B_AUGMENTATION_EXECUTION`
+`PA002_SOURCE_TARGET_ROSTER=FROZEN__EXPERIMENT_SPECIFIC`
+`PA005_SYNTHETIC_COUNT_AND_INSERTION=FROZEN_WITH_LIMITATION__NO_SYNTHETIC_ROWS_MATERIALIZED`
 
 The present document authorizes Phase 1 protocol-contract work only. It does not authorize STL, a model, training, metrics, grid search, or Phase 2 entry.

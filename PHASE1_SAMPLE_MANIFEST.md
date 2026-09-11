@@ -1,32 +1,38 @@
-# Phase 1 Exact Sample Manifest Status
+# Phase 1 Exact Sample Manifest
 
-`REAL_SAMPLE_MANIFEST_CREATED=False`
+`REAL_SAMPLE_MANIFEST_CREATED=True`
 
-`ROW_ASSIGNMENT_EXECUTED=False`
+`ROW_ASSIGNMENT_EXECUTED=True__METADATA_ONLY`
 
-`NEW_PHASE1_BLOCKER_FOUND=True`
+`NEW_PHASE1_BLOCKER_FOUND=False`
 
-`BLOCKER_ID=PROTOCOL_B_VALIDATION_TEST_POPULATION_UNDEFINED`
+`TEST_MEMBERSHIP_DEFINED=True`
 
-## Evidence
+`TEST_LOADED=False`
 
-Protocol B is grounded in PDF p.10 §4.2: the original target training set is the first 20% of total target life and SCF-GAN generates five complete synthetic datasets. Neither that passage nor Table 5 defines Protocol B validation or test populations. PDF p.10 §4’s 60%/20%/20% split belongs to the separate general SOH-estimation statement; the paper never states that it also governs the §4.2 experiment.
+The deterministic body is local-only, contains source/order metadata rather than raw measurements, and is hashed by the versioned summary: `output/protocol/phase1_membership_manifest.csv`. It has **4,724** rows: the four E1 target-battery operational populations, each represented once for Protocol A and once for Protocol B. No health-feature value, raw capacity, SOH label, synthetic row, or model input is materialized.
 
-## Consequence
+## Identity and ordering
 
-No real sample receives `TRAIN`, `VALIDATION`, `TEST`, or a Protocol B role in this run. Protocol A assignment is also withheld: row-level A/B isolation must be created as a complete coherent manifest set, not as a partial assignment that could be mistaken for a Phase 1 gate pass.
+NASA identities combine dataset, battery, canonical raw source, original operation record, reported cycle index, and zero-based chronological index. CALCE identities use the audited `CANONICAL_CALCE_SOURCE_KEY`, which contains battery, workbook, sheet, source segment and reported cycle index; raw CALCE `Cycle_Index` is never treated as global. CALCE membership uses only audited `Channel_*` contiguous source segments, sorted by source timestamps.
 
-The required future sample-row schema remains frozen:
+`ROUNDING_RULE=zero_based_half_open__TRAIN20_END=floor(0.20*N)__TRAIN60_END=floor(0.60*N)__VALID80_END=floor(0.80*N)`
 
-```text
-ACTIVE_PROTOCOL, EXPERIMENT_ID, DATASET, BATTERY_ID, SAMPLE_UID,
-CHRONOLOGICAL_INDEX, ROLE, ROLE_PROVENANCE, SOURCE_KEY,
-PA001_VERSION, PA002_VERSION, PA004_VERSION, PA005_VERSION
-```
+`ROUNDING_RULE_PROVENANCE=HUMAN_ENGINEERING_FALLBACK__RESULT_BLIND`
 
-For NASA, `SAMPLE_UID` must include dataset, battery, original operation/cycle record, and chronological index. For CALCE, it must include the audited canonical source key; raw `Cycle_Index` is never treated as globally unique.
+## Population map
 
-`MINIMUM_HUMAN_DECISION_REQUIRED=Define Protocol B validation/test population, or explicitly authorize that Protocol B is a training-only augmentation study with no numerical evaluation population.`
+| Dataset / target battery | N | Protocol A: Train / Validation / Test | Protocol B: Train real / Unused / Validation / Test |
+|---|---:|---:|---:|
+| NASA B0007 | 170 | 102 / 34 / 34 | 34 / 68 / 34 / 34 |
+| NASA B0018 | 134 | 80 / 27 / 27 | 26 / 54 / 27 / 27 |
+| CALCE CS2_36 | 976 | 585 / 195 / 196 | 195 / 390 / 195 / 196 |
+| CALCE CS2_38 | 1,082 | 649 / 216 / 217 | 216 / 433 / 216 / 217 |
 
-`PHASE_1_GATE=FAIL__BLOCKED_BEFORE_ROW_ASSIGNMENT`
+Every raw metadata record is conserved in exactly one role within each protocol. Protocol A and B are isolated by distinct `active_protocol` and `experiment_id`; reappearance of the same raw source record across these two separately declared tracks is reported as cross-track identity sharing, not pooled training or protocol contamination.
 
+`PROTOCOL_A_ASSIGNMENT_STATUS=VALID`
+
+`PROTOCOL_B_ASSIGNMENT_STATUS=VALID`
+
+`PHASE_1_GATE=PASS__PENDING_ARCHIVE_VERIFICATION`

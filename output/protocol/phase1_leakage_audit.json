@@ -1,12 +1,146 @@
 {
-  "status": "NOT_RUN__NO_ROW_ASSIGNMENT_AUTHORIZED",
-  "train_validation_overlap_count": null,
-  "train_test_overlap_count": null,
-  "validation_test_overlap_count": null,
-  "protocol_cross_contamination_count": null,
-  "source_key_collision_count": null,
-  "chronological_order_violation_count": null,
-  "expected_count_after_authorized_assignment": 0,
+  "status": "PASS",
+  "scope": "MEMBERSHIP_METADATA_ONLY__NO_FEATURE_OR_TARGET_VALUES",
+  "rounding_rule": "zero-based indexes: train20_end=floor(0.20*N); train60_end=floor(0.60*N); valid80_end=floor(0.80*N); intervals are [start,end)",
+  "counts_by_protocol_dataset_battery": {
+    "A:NASA:B0007": {
+      "n_total": 170,
+      "roles": {
+        "TEST": 34,
+        "TRAIN": 102,
+        "VALIDATION": 34
+      },
+      "boundary_indexes": {
+        "n_total": 170,
+        "train20_end": 34,
+        "train60_end": 102,
+        "valid80_end": 136
+      },
+      "population_conserved": true
+    },
+    "B:NASA:B0007": {
+      "n_total": 170,
+      "roles": {
+        "TEST": 34,
+        "TRAIN_REAL": 34,
+        "UNUSED_PROTOCOL_B": 68,
+        "VALIDATION": 34
+      },
+      "boundary_indexes": {
+        "n_total": 170,
+        "train20_end": 34,
+        "train60_end": 102,
+        "valid80_end": 136
+      },
+      "population_conserved": true
+    },
+    "A:NASA:B0018": {
+      "n_total": 134,
+      "roles": {
+        "TEST": 27,
+        "TRAIN": 80,
+        "VALIDATION": 27
+      },
+      "boundary_indexes": {
+        "n_total": 134,
+        "train20_end": 26,
+        "train60_end": 80,
+        "valid80_end": 107
+      },
+      "population_conserved": true
+    },
+    "B:NASA:B0018": {
+      "n_total": 134,
+      "roles": {
+        "TEST": 27,
+        "TRAIN_REAL": 26,
+        "UNUSED_PROTOCOL_B": 54,
+        "VALIDATION": 27
+      },
+      "boundary_indexes": {
+        "n_total": 134,
+        "train20_end": 26,
+        "train60_end": 80,
+        "valid80_end": 107
+      },
+      "population_conserved": true
+    },
+    "A:CALCE:CS2_36": {
+      "n_total": 976,
+      "roles": {
+        "TEST": 196,
+        "TRAIN": 585,
+        "VALIDATION": 195
+      },
+      "boundary_indexes": {
+        "n_total": 976,
+        "train20_end": 195,
+        "train60_end": 585,
+        "valid80_end": 780
+      },
+      "population_conserved": true
+    },
+    "B:CALCE:CS2_36": {
+      "n_total": 976,
+      "roles": {
+        "TEST": 196,
+        "TRAIN_REAL": 195,
+        "UNUSED_PROTOCOL_B": 390,
+        "VALIDATION": 195
+      },
+      "boundary_indexes": {
+        "n_total": 976,
+        "train20_end": 195,
+        "train60_end": 585,
+        "valid80_end": 780
+      },
+      "population_conserved": true
+    },
+    "A:CALCE:CS2_38": {
+      "n_total": 1082,
+      "roles": {
+        "TEST": 217,
+        "TRAIN": 649,
+        "VALIDATION": 216
+      },
+      "boundary_indexes": {
+        "n_total": 1082,
+        "train20_end": 216,
+        "train60_end": 649,
+        "valid80_end": 865
+      },
+      "population_conserved": true
+    },
+    "B:CALCE:CS2_38": {
+      "n_total": 1082,
+      "roles": {
+        "TEST": 217,
+        "TRAIN_REAL": 216,
+        "UNUSED_PROTOCOL_B": 433,
+        "VALIDATION": 216
+      },
+      "boundary_indexes": {
+        "n_total": 1082,
+        "train20_end": 216,
+        "train60_end": 649,
+        "valid80_end": 865
+      },
+      "population_conserved": true
+    }
+  },
+  "train_validation_overlap_count": 0,
+  "train_test_overlap_count": 0,
+  "validation_test_overlap_count": 0,
+  "train_unused_overlap_count": 0,
+  "unused_validation_overlap_count": 0,
+  "unused_test_overlap_count": 0,
+  "protocol_cross_contamination_count": 0,
+  "protocol_cross_contamination_definition": "No row has more than one active_protocol and no experiment_id pools A and B. Shared raw identities across separately declared A/B tracks are reported separately, not treated as contamination.",
+  "cross_protocol_shared_raw_sample_count": 2362,
+  "source_key_collision_count": 0,
+  "duplicate_sample_uid_within_protocol_count": 0,
+  "chronological_order_violation_count": 0,
+  "test_membership_defined": true,
   "test_loaded": false,
   "test_target_accessed_for_analysis": false,
   "test_features_used_for_fit": false,

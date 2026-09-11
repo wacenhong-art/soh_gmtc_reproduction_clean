@@ -13,10 +13,11 @@
   },
   "pa004": {
     "status": "AMBIGUOUS__DUAL_TRACK_FROZEN__PRIMARY_SOURCE_PENDING",
-    "protocol_a": {"name": "PROTOCOL_A_GENERAL_SOH_ESTIMATION", "paper_scope": "Section 4", "roles": {"training": "[0, 0.60N)", "validation": "[0.60N, 0.80N)", "test": "[0.80N, N)"}, "status": "FROZEN_RULE__ROW_ASSIGNMENT_PENDING_PA002_EXPERIMENT_ROSTER"},
-    "protocol_b": {"name": "PROTOCOL_B_SMALL_SAMPLE_AUGMENTATION", "paper_scope": "Section 4.2", "roles": {"original_small_sample": "[0, 0.20N)", "synthetic_hf_dataset_count": 5}, "status": "FROZEN_RULE__ROW_ASSIGNMENT_PENDING_PA002_AND_PA005"}
+    "protocol_a": {"name": "PROTOCOL_A_GENERAL_SOH_ESTIMATION", "paper_scope": "Section 4", "roles": {"training": "[0, floor(0.60*N))", "validation": "[floor(0.60*N), floor(0.80*N))", "test": "[floor(0.80*N), N)"}, "status": "FROZEN__ASSIGNMENT_VALID"},
+    "protocol_b": {"name": "PROTOCOL_B_SMALL_SAMPLE_AUGMENTATION", "paper_scope": "Section 4.2 with PLAN-CHANGE-0004 Human fallback", "roles": {"train_real": "[0, floor(0.20*N))", "unused_protocol_b": "[floor(0.20*N), floor(0.60*N))", "validation": "[floor(0.60*N), floor(0.80*N))", "test": "[floor(0.80*N), N)", "synthetic_hf_dataset_count": 5}, "status": "FROZEN__ASSIGNMENT_VALID", "evaluation_fallback": "NESTED_SMALL_SAMPLE_WITH_GENERAL_HOLDOUT_BOUNDARIES", "provenance": "HUMAN_FALLBACK__RESULT_BLIND"}
   },
-  "required_sample_fields": ["battery_id", "cycle_id", "canonical_source_key", "raw_source_provenance", "chronological_index", "active_protocol", "protocol_role", "target_definition_version"],
+  "rounding_rule": "zero-based half-open: train20_end=floor(0.20*N), train60_end=floor(0.60*N), valid80_end=floor(0.80*N)",
+  "required_sample_fields": ["active_protocol", "experiment_id", "dataset", "battery_id", "sample_uid", "source_key", "chronological_index", "role", "role_provenance", "raw_source_provenance", "pa001_version", "pa002_version", "pa004_version", "pa005_version"],
   "forbidden": ["performance_based_protocol_selection", "cross_protocol_real_data_mixing", "cross_protocol_synthetic_data_mixing", "model_implementation", "model_training", "grid_search"],
   "author_clarification_override_policy": "ACTIVE"
 }

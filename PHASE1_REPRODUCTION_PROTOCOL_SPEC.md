@@ -1,6 +1,6 @@
 # Phase 1 Reproduction Protocol Specification
 
-**Scope:** Human-authorized fallback protocol freeze. It contains no model, STL, GAN training, metrics, or row-level split assignment. All provenance labels are one of `PAPER_EXACT`, `PAPER_CROSS_EVIDENCE`, `HUMAN_FALLBACK`, or `UNRESOLVED`.
+**Scope:** Human-authorized fallback protocol freeze and source-keyed membership definition. It contains no model, STL, GAN training, metrics, feature values, target values, or synthetic rows. All provenance labels are one of `PAPER_EXACT`, `PAPER_CROSS_EVIDENCE`, `HUMAN_FALLBACK`, or `UNRESOLVED`.
 
 `AUTHOR_CONTACT_STATUS=CONTACTED`
 `AUTHOR_REPLY_STATUS=CONTACTED_WAITING`
@@ -53,7 +53,7 @@ There is no global source/target label. Rows with an unmapped role cannot be use
 | SCF-GAN real-data population | E1 source batteries exclusively | PAPER_EXACT |
 | Synthetic insertion | excluded unless a matching paper experiment says otherwise | HUMAN_FALLBACK_ISOLATION |
 
-`PROTOCOL_A_STATUS=FROZEN`
+`PROTOCOL_A_STATUS=FROZEN__ASSIGNMENT_VALID`
 
 ## Protocol B — small-sample augmentation
 
@@ -64,13 +64,21 @@ There is no global source/target label. Rows with an unmapped role cannot be use
 | SCF-GAN real-data population | source batteries with complete charging data | PAPER_EXACT |
 | Synthetic dataset count | five complete synthetic HF datasets per original target set | PAPER_EXACT |
 | Synthetic insertion fallback | preserve original set and concatenate five complete synthetic sets, yielding original `N` plus synthetic `5N` records (`6N` total) | HUMAN_FALLBACK |
-| Validation / test population | UNDEFINED for Protocol B | UNRESOLVED: §4.2 does not state a validation or test population for its small-sample experiment |
+| Evaluation fallback | `NESTED_SMALL_SAMPLE_WITH_GENERAL_HOLDOUT_BOUNDARIES` | HUMAN_FALLBACK: authorized in PLAN-CHANGE-0004 |
+| TRAIN_REAL | zero-based interval `[0, floor(0.20*N))` | HUMAN_FALLBACK, retaining paper’s first-20% training statement |
+| UNUSED_PROTOCOL_B | `[floor(0.20*N), floor(0.60*N))` | HUMAN_FALLBACK, preserved in the manifest and excluded from all B fitting/augmentation |
+| Validation | `[floor(0.60*N), floor(0.80*N))` | HUMAN_FALLBACK, retaining §4’s 60%/80% holdout boundaries |
+| Test | `[floor(0.80*N), N)` | HUMAN_FALLBACK, retaining §4’s 80% boundary |
 
 `PA005_STATUS=FALLBACK_FROZEN_WITH_LIMITATION`
 
-`PROTOCOL_B_VALIDATION_TEST_POPULATION=UNDEFINED`
+`PROTOCOL_B_STATUS=FROZEN__ASSIGNMENT_VALID`
 
-The text “five complete synthetic datasets” and “expanded training sample size fivefold” does not uniquely establish whether “fivefold” describes synthetic-only or final total count. The fallback follows the direct first phrase, retains original observations, and adds no unmentioned merging or performance-based selection. It also does not provide Protocol B validation/test populations; therefore no Protocol B row assignment is authorized.
+`ROUNDING_RULE=zero_based__TRAIN20_END=floor(0.20*N)__TRAIN60_END=floor(0.60*N)__VALID80_END=floor(0.80*N)__all_intervals_half_open`
+
+`ROUNDING_RULE_PROVENANCE=HUMAN_ENGINEERING_FALLBACK__RESULT_BLIND`
+
+The text “five complete synthetic datasets” and “expanded training sample size fivefold” does not uniquely establish whether “fivefold” describes synthetic-only or final total count. The fallback follows the direct first phrase, retains original observations, and adds no unmentioned merging or performance-based selection. The evaluation fallback preserves the paper’s stated general holdout boundaries while preventing the unmentioned `[20%,60%)` interval from silently expanding the small-sample training population.
 
 `RESULT_BLIND=True`
 `PERFORMANCE_BLIND=True`
@@ -78,7 +86,7 @@ The text “five complete synthetic datasets” and “expanded training sample 
 
 ## Mandatory row-level manifest contract
 
-Every future row must include `battery_id`, `cycle_id`, `canonical_source_key`, `raw_source_provenance`, `chronological_index`, `active_protocol`, `protocol_role`, and `target_definition_version`. Protocol A and B remain physically separate. No model, validation, or test result may be used to select or merge them.
+Every membership row includes `active_protocol`, `experiment_id`, `dataset`, `battery_id`, `sample_uid`, `source_key`, `chronological_index`, `role`, `role_provenance`, raw provenance, and PA-version fields. Protocol A and B remain physically separate. No model, validation, or test result may be used to select or merge them. Membership is metadata only: `TEST_LOADED=False`, `TARGET_VALUES_MATERIALIZED=False`, and no feature values are copied into the manifest.
 
 ## Author-reply override
 

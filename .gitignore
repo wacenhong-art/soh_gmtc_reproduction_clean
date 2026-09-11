@@ -41,3 +41,6 @@ secrets.*
 output/data_readiness/*_run*.stdout.log
 output/data_readiness/*_run*.stderr.log
 output/data_readiness/*_run.log
+
+# Local exact membership body; its versioned summary and SHA-256 remain the Git audit record.
+output/protocol/phase1_membership_manifest.csv

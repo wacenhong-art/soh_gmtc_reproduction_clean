@@ -1,9 +1,58 @@
 {
-  "manifest_kind": "BLOCKED_BEFORE_ROW_ASSIGNMENT",
-  "real_sample_manifest_created": false,
-  "row_assignments": [],
-  "blocker_id": "PROTOCOL_B_VALIDATION_TEST_POPULATION_UNDEFINED",
-  "required_sample_fields": ["active_protocol", "experiment_id", "dataset", "battery_id", "sample_uid", "chronological_index", "role", "role_provenance", "source_key", "pa001_version", "pa002_version", "pa004_version", "pa005_version"],
-  "test_membership_defined": false,
-  "test_loaded": false
+  "manifest_kind": "EXACT_SOURCE_KEYED_MEMBERSHIP_METADATA",
+  "real_sample_manifest_created": true,
+  "membership_csv": "output/protocol/phase1_membership_manifest.csv",
+  "membership_csv_sha256": "799F4FD15041F4A19F085A99A04DB6FE991236904DF1BB95DC265541C1B5971A",
+  "row_count": 4724,
+  "raw_target_sample_count_per_track": 2362,
+  "active_protocols": [
+    "A",
+    "B"
+  ],
+  "protocol_a": {
+    "status": "ASSIGNMENT_VALID",
+    "roles": [
+      "TRAIN",
+      "VALIDATION",
+      "TEST"
+    ]
+  },
+  "protocol_b": {
+    "status": "ASSIGNMENT_VALID",
+    "roles": [
+      "TRAIN_REAL",
+      "UNUSED_PROTOCOL_B",
+      "VALIDATION",
+      "TEST"
+    ]
+  },
+  "rounding_rule": "zero-based indexes: train20_end=floor(0.20*N); train60_end=floor(0.60*N); valid80_end=floor(0.80*N); intervals are [start,end)",
+  "rounding_rule_provenance": "HUMAN_ENGINEERING_FALLBACK__RESULT_BLIND",
+  "required_sample_fields": [
+    "active_protocol",
+    "experiment_id",
+    "dataset",
+    "battery_id",
+    "sample_uid",
+    "source_key",
+    "chronological_index",
+    "role",
+    "role_provenance",
+    "raw_source_provenance",
+    "reported_cycle_index",
+    "source_sheet",
+    "source_row_start",
+    "source_row_end",
+    "boundary_status",
+    "metadata_feature_status",
+    "pa001_version",
+    "pa002_version",
+    "pa004_version",
+    "pa005_version"
+  ],
+  "target_values_materialized": false,
+  "synthetic_rows_materialized": false,
+  "test_membership_defined": true,
+  "test_loaded": false,
+  "author_override_pending": true
 }

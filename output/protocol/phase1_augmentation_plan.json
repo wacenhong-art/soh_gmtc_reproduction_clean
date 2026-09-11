@@ -1,12 +1,22 @@
 {
-  "status": "BLOCKED_BEFORE_TARGET_ASSIGNMENT",
+  "status": "FROZEN__SYNTHETIC_ROWS_NOT_MATERIALIZED",
+  "active_protocol": "B",
+  "eligible_target_role": "TRAIN_REAL",
+  "validation_augmented": false,
+  "test_augmented": false,
+  "unused_20_60_augmented": false,
   "synthetic_rows_materialized": false,
   "pa005_provenance": "HUMAN_FALLBACK",
   "pa005_internal_wording_tension": true,
   "fallback_expected_augmented_total_rule": "6N",
   "expected_synthetic_set_count": 5,
-  "expected_rows_per_synthetic_set": "N",
+  "expected_rows_per_synthetic_set": "N (per target battery TRAIN_REAL count)",
   "expected_synthetic_total": "5N",
-  "target_battery": null,
-  "author_override_pending": true
+  "author_override_pending": true,
+  "target_train_real_counts": {
+    "B:NASA:B0007": 34,
+    "B:NASA:B0018": 26,
+    "B:CALCE:CS2_36": 195,
+    "B:CALCE:CS2_38": 216
+  }
 }

@@ -4,11 +4,11 @@
 
 **Plan authority:** This is the sole highest-level roadmap for this repository. Every future Codex task must read this complete file before acting and must obey its gates. Its core architecture, phase order, reproduction definitions, and protocol rules may not be silently changed.
 
-**Current plan state:** Phase 1 is blocked before row assignment: Protocol B validation/test population is undefined; Human decision or primary-source clarification is required.
+**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2 is authorized as the next phase but is not started in this run.
 
-`CURRENT_PLAN_VERSION=1.3.0`
+`CURRENT_PLAN_VERSION=1.4.0`
 
-`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0003`
+`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0004`
 
 ## NON-NEGOTIABLE RULES
 
@@ -270,7 +270,7 @@ REPRODUCTION MASTER PROGRESS
 ========================================
 
 Phase 0  Paper Specification      [##########] 100%
-Phase 1  Data Protocol            [####......] 40%
+Phase 1  Data Protocol            [##########] 100%
 Phase 2  STL                      [..........] 0%
 Phase 3  iTransformer             [..........] 0%
 Phase 4  Framework Scaffold       [..........] 0%
@@ -281,11 +281,11 @@ Phase 8  Full G-MTC               [..........] 0%
 Phase 9  Numerical Reproduction   [..........] 0%
 Phase 10 Acceptance               [..........] 0%
 
-OVERALL_PROGRESS=13%
-CURRENT_PHASE=Phase 1
-CURRENT_GATE=Blocked: Protocol B validation/test population undefined
-LAST_COMPLETED=Phase 1 executability audit stopped before any row assignment; Plan Change Request 0004 created
-NEXT_ACTION=Human decision on Protocol B evaluation population or primary-source clarification; do not enter Phase 2 or implement model code
+OVERALL_PROGRESS=18%
+CURRENT_PHASE=Phase 2
+CURRENT_GATE=Phase 2 entry: partition-safe STL reproduction specification and contract
+LAST_COMPLETED=Phase 1 source-keyed A/B membership, leakage, population-conservation, and augmentation-plan freeze under authorized PLAN-CHANGE-0004
+NEXT_ACTION=PHASE_2_STL_REPRODUCTION; do not train a model or load test values for analysis
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -680,12 +680,30 @@ HUMAN_AUTHORIZED=True
 COMMIT=65ad49b098112a06e4ead0e43622644e3e8d471f
 ```
 
+```text
+PLAN_CHANGE_ID=PLAN-CHANGE-0004
+NAME=FREEZE_PROTOCOL_B_EVALUATION_POPULATION_WITH_GENERAL_HOLDOUT_BOUNDARIES
+TRIGGER=PROTOCOL_B_VALIDATION_TEST_POPULATION_UNDEFINED
+LEVEL=2
+OLD_ASSUMPTION=The dual-track fallback was executable despite Protocol B lacking a stated validation/test population.
+NEW_EVIDENCE=Human Researcher authorized a result-blind nested Protocol B evaluation fallback: [0,20%) train-real, [20,60%) unused, [60,80%) validation, [80,100%) test, with deterministic floor boundaries.
+IMPACT=Completes Phase 1 source-keyed role assignment and leakage audit. It changes neither paper architecture nor phase order; it creates no model, synthetic data, target labels, feature values, or results. The fallback is explicitly non-paper-exact and remains subject to primary-source override.
+OLD_PLAN=Version 1.3.0
+NEW_PLAN=Version 1.4.0
+WHY_CHANGE_NECESSARY=Protocol B could not be evaluated or leakage-audited honestly without explicit holdout semantics. The authorized choice preserves the paper’s 60%/80% general holdout boundaries and prevents [20%,60%) from silently expanding the small-sample training set.
+RESULT_DRIVEN=False
+PERFORMANCE_DRIVEN=False
+TEST_LOADED=False
+HUMAN_AUTHORIZED=True
+COMMIT=PENDING_CURRENT_RUN
+```
+
 ## Phase completion ledger
 
 | Phase | Gate status | Completion evidence | PHASE_START_COMMIT | PHASE_COMPLETION_COMMIT | PHASE_COMPLETION_PUSH_STATUS | PHASE_REMOTE_BACKUP_CONFIRMED |
 |---|---|---|---|---|---|---|
 | 0 | PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY | Paper specification plus Human-authorized PA-001 fallback and PA-004 dual-track protocol record | f354af6 | 65ad49b | PASS | True |
-| 1 | BLOCKED__PROTOCOL_B_VALIDATION_TEST_POPULATION_UNDEFINED | Phase1 protocol spec, blocked-manifest artifacts, leakage policy, and pending Plan Change Request 0004 | 65ad49b | — | — | False |
+| 1 | PASS__PRIMARY_SOURCE_OVERRIDE_PENDING | Frozen A/B protocols, source-keyed metadata membership manifest, population-conservation and leakage audits, and augmentation plan; no test values or synthetic rows materialized | 65ad49b | PENDING_CURRENT_RUN | PENDING_CURRENT_RUN | False |
 | 2 | NOT_STARTED | — | — | — | — | False |
 | 3 | NOT_STARTED | — | — | — | — | False |
 | 4 | NOT_STARTED | — | — | — | — | False |
@@ -871,4 +889,32 @@ PLAN_CHANGE_REQUIRED=True
 PLAN_CHANGE_ID=PLAN-CHANGE-0004
 ADVANCEMENT_ALLOWED=False
 NEXT_ACTION=AWAIT_HUMAN_RESULT_BLIND_DECISION_OR_PRIMARY_SOURCE_CLARIFICATION_FOR_PROTOCOL_B_EVALUATION_POPULATION
+```
+
+## Append-only run log — PLAN-CHANGE-0004 authorization and Phase 1 freeze
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-11 | Phase 1 protocol freeze | Pending PLAN-CHANGE-0004 identified a material, result-blind Protocol B evaluation-population defect. | Applied Human-authorized Level-2 amendment: Protocol B is [0,20%) train-real, [20,60%) unused, [60,80%) validation, [80,100%) test. Built source-keyed metadata-only membership manifests for E1 NASA B0007/B0018 and CALCE CS2_36/CS2_38, froze augmentation boundaries, and mechanically audited conservation, overlap, ordering, and protocol isolation. No raw data modification, feature/target materialization, synthetic rows, STL, model, training, metric, or search occurred. | The fallback is internally coherent, result/performance blind, source-traceable, and test-locked. Primary-source override remains active. | `PHASE_1_GATE=PASS`; Phase 2 is next but not started. | `MASTER_PLAN_CHANGE_REQUEST_PLAN-CHANGE-0004.md`; `PHASE1_SAMPLE_MANIFEST.md`; `PHASE1_LEAKAGE_CHECKLIST.md`; `output/protocol/phase1_sample_manifest.json`. |
+
+```text
+AUTHOR_CONTACT_STATUS=CONTACTED
+AUTHOR_REPLY_STATUS=CONTACTED_WAITING
+GMAIL_MESSAGE_ID=1a0906ec8a4ae625
+PLAN_CHANGE_ID=PLAN-CHANGE-0004
+PLAN_CHANGE_0004_STATUS=APPLIED__HUMAN_AUTHORIZED
+PLAN_CHANGE_HUMAN_AUTHORIZED=True
+PROTOCOL_B_EVALUATION_FALLBACK=NESTED_SMALL_SAMPLE_WITH_GENERAL_HOLDOUT_BOUNDARIES
+ROUNDING_RULE=zero_based__floor_boundaries__half_open_intervals
+PHASE_1_GATE=PASS
+PHASE_1_STATUS=COMPLETE
+ADVANCEMENT_TO_PHASE_2=True
+TEST_MEMBERSHIP_DEFINED=True
+TEST_LOADED=False
+SYNTHETIC_ROWS_MATERIALIZED=False
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=0
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=PHASE_2_STL_REPRODUCTION__BEGIN_WITH_PARTITION_SAFE_DECOMPOSITION_SPEC_AND_CONTRACT_ONLY
 ```

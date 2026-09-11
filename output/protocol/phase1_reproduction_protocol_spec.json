@@ -9,8 +9,9 @@
   "pa002": {"status": "RESOLVED_AS_EXPERIMENT_SPECIFIC_ROSTER", "provenance": "PAPER_CROSS_EVIDENCE", "global_source_target_label": false},
   "pa004": {"status": "DUAL_PROTOCOL_FALLBACK_FROZEN_WITH_LIMITATION", "provenance": "HUMAN_FALLBACK", "primary_source_confirmed": false},
   "pa005": {"status": "FALLBACK_FROZEN_WITH_LIMITATION", "provenance": "HUMAN_FALLBACK", "synthetic_dataset_interpretation": "five complete synthetic datasets each matching the original-set record count", "synthetic_insertion_rule": "preserve original N and concatenate five synthetic N-sized sets; total 6N", "validation_test_augmentation": false},
-  "protocol_a": {"status": "FROZEN", "train": "[0,0.60N)", "validation": "[0.60N,0.80N)", "test": "[0.80N,N)"},
-  "protocol_b": {"status": "FROZEN", "original_small_sample": "[0,0.20N)", "synthetic_dataset_count": 5},
+  "protocol_a": {"status": "FROZEN__ASSIGNMENT_VALID", "train": "[0,floor(0.60*N))", "validation": "[floor(0.60*N),floor(0.80*N))", "test": "[floor(0.80*N),N)"},
+  "protocol_b": {"status": "FROZEN__ASSIGNMENT_VALID", "evaluation_fallback": "NESTED_SMALL_SAMPLE_WITH_GENERAL_HOLDOUT_BOUNDARIES", "train_real": "[0,floor(0.20*N))", "unused_protocol_b": "[floor(0.20*N),floor(0.60*N))", "validation": "[floor(0.60*N),floor(0.80*N))", "test": "[floor(0.80*N),N)", "synthetic_dataset_count": 5, "provenance": "HUMAN_FALLBACK__RESULT_BLIND"},
+  "rounding_rule": "zero-based half-open: train20_end=floor(0.20*N), train60_end=floor(0.60*N), valid80_end=floor(0.80*N)",
   "unresolved_fields": ["Table-5-specific SCF-GAN source roster", "exact synthetic-set cardinality and whether fivefold means final or synthetic-only expansion"],
   "forbidden": ["performance_based_protocol_selection", "test_loading", "model_implementation", "model_training", "grid_search"]
 }

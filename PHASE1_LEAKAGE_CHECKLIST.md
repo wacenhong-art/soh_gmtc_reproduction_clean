@@ -1,6 +1,6 @@
 # Phase 1 Leakage Checklist
 
-**Status:** policy frozen; sample-level audit is `NOT_RUN__NO_ROW_ASSIGNMENT_AUTHORIZED`.
+**Status:** policy frozen and source-keyed sample-level membership audit passed. The audit is metadata-only; it neither materialized nor analysed test features or targets.
 
 | Control | Frozen rule | Status |
 |---|---|---|
@@ -12,5 +12,31 @@
 | GAN | Future GAN real-data training must contain only the protocol-specific source pool; no target validation/test cycle may enter it. | `GAN_TARGET_LEAKAGE=PROHIBITED` |
 | Protocol isolation | A and B cannot be pooled or selected by model performance. | `PROTOCOL_CROSS_CONTAMINATION=PROHIBITED` |
 
-No count audit can truthfully report overlap values until the missing Protocol B evaluation population is resolved. Any later manifest must report zero expected duplicates, partition overlaps, source-key collisions, chronological violations, and protocol contamination.
+## Mechanical membership audit
 
+| Check | Result | Expected |
+|---|---:|---:|
+| Train / validation overlap | 0 | 0 |
+| Train / test overlap | 0 | 0 |
+| Validation / test overlap | 0 | 0 |
+| Protocol B train-real / unused overlap | 0 | 0 |
+| Protocol B unused / validation overlap | 0 | 0 |
+| Protocol B unused / test overlap | 0 | 0 |
+| Source-key collisions within a protocol | 0 | 0 |
+| Duplicate `SAMPLE_UID` within a protocol | 0 | 0 |
+| Chronological-order violations | 0 | 0 |
+| Protocol cross-contamination | 0 | 0 |
+
+`CROSS_PROTOCOL_SHARED_RAW_SAMPLE_COUNT=2362`
+
+This nonzero value is expected because A and B are two explicitly separate protocol tracks that cover the same E1 raw target populations. It is not contamination: no manifest row has more than one `active_protocol`, and no `experiment_id` pools their roles.
+
+`TEST_MEMBERSHIP_DEFINED=True`
+
+`TEST_LOADED=False`
+
+`TEST_TARGET_ACCESSED_FOR_ANALYSIS=False`
+
+`TEST_FEATURES_USED_FOR_FIT=False`
+
+`TEST_USED_FOR_HYPERPARAMETER_SELECTION=False`

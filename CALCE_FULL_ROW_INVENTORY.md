@@ -58,3 +58,19 @@ The last line is a reporting gap, not permission to infer zero missing values or
 `TEST_SET_ASSIGNED=False`
 
 `PA004_STATUS=UNRESOLVED_BLOCKING`
+
+## Final source-keyed readiness audit (addendum; no earlier evidence replaced)
+
+The subsequent source-keyed audit closes the two reporting gaps above without changing raw data or any scientific protocol:
+
+- [CALCE_CYCLE_IDENTITY_AUDIT.md](C:/Users/ROG/Documents/Python/new_soh/CALCE_CYCLE_IDENTITY_AUDIT.md) records 6,628 exact contiguous source-local segments and establishes that numeric `Cycle_Index` is **not** globally unique across workbooks.
+- [CALCE_NULL_DUPLICATE_AUDIT.md](C:/Users/ROG/Documents/Python/new_soh/CALCE_NULL_DUPLICATE_AUDIT.md) records every column-level null statistic and duplicate definition/count.
+- The machine-readable artifacts are `calce_cycle_identity_audit.json`, `calce_cycle_identity_audit_v3.json` (source-keyed correction), `calce_null_duplicate_audit.json`, `calce_null_duplicate_audit_v3.json` (explicit rates), and the versioned source-local boundary artifact `calce_cycle_boundary_audit_v3.json`.
+
+`CALCE_CYCLE_IDENTITY_AUDITED=True`
+`CALCE_CYCLE_BOUNDARIES_AUDITED=True`
+`CALCE_COLUMN_NULL_AUDIT_COMPLETE=True`
+`CALCE_DUPLICATE_AUDIT_COMPLETE=True`
+`SOURCE_TRACEABILITY_VERIFIED=True`
+`CALCE_TEMPERATURE_SIGNAL_STATUS=MISSING`
+`DATA_READINESS_STATUS=PASS_WITH_RECORDED_FEATURE_LIMITATION`

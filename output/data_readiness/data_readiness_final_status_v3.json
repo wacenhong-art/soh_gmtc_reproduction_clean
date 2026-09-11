@@ -1,0 +1,35 @@
+{
+  "scope": "SPLIT_INDEPENDENT_DATA_READINESS_FINAL_AUDIT",
+  "data_readiness_gate": "PASS",
+  "data_readiness_status": "PASS__PAPER_HF_FEATURES_FEASIBLE__TEMPERATURE_NOT_A_PAPER_HF_INPUT",
+  "gate_conditions": {
+    "OFFICIAL_DATA_SOURCE_VERIFIED": true,
+    "BATTERY_ROSTER_VERIFIED": true,
+    "NASA_RAW_PARSING_VERIFIED": true,
+    "CALCE_FULL_ROW_SCAN_VERIFIED": true,
+    "CALCE_CYCLE_IDENTITY_AUDITED": true,
+    "CALCE_CYCLE_BOUNDARIES_AUDITED": true,
+    "CALCE_COLUMN_NULL_AUDIT_COMPLETE": true,
+    "CALCE_DUPLICATE_AUDIT_COMPLETE": true,
+    "SOURCE_TRACEABILITY_VERIFIED": true,
+    "NO_TRAIN_VAL_TEST_ASSIGNMENT": true,
+    "PA001_UNCHANGED": true,
+    "PA004_UNCHANGED": true
+  },
+  "recorded_limitations": {
+    "CALCE_TEMPERATURE_SIGNAL_STATUS": "MISSING",
+    "paper_feature_impact": "The verified paper temporal inputs are HF1/HF2/HF3, which use time/current/voltage; temperature is not a specified model input.",
+    "TARGET_CONSTRUCTION_STATUS": "BLOCKED_BY_PA001_SOH_DENOMINATOR_AMBIGUITY",
+    "GLOBAL_CALCE_LIFECYCLE_CYCLE_MAPPING": "UNRESOLVED__NOT_REQUIRED_FOR_SPLIT_INDEPENDENT_READINESS",
+    "PA004_STATUS": "UNRESOLVED_BLOCKING"
+  },
+  "forbidden_state": {
+    "TRAIN_SET_ASSIGNED": false,
+    "VALIDATION_SET_ASSIGNED": false,
+    "TEST_SET_ASSIGNED": false,
+    "MODEL_IMPLEMENTED": false,
+    "MODEL_TRAINED": false,
+    "EXPERIMENT_RUN": false,
+    "GRID_SEARCH_RUN": false
+  }
+}

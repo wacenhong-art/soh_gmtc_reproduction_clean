@@ -749,3 +749,22 @@ PHASE_0_PROGRESS=100%
 ADVANCEMENT_ALLOWED=False
 NEXT_ACTION=Complete bounded CALCE full-row inventory if resources permit, while Human obtains PA-004 primary-source clarification; do not enter Phase 1 or implement model code.
 ```
+
+## Append-only run log — CALCE final readiness audit
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-11 | Phase 0 side-track | Existing PLAN-CHANGE-0002 permits only split-independent preparation; PA-001 and PA-004 remain blocking. | Completed source-keyed CALCE cycle identity, contiguous boundary, all-sheet column-null, and layered duplicate audits. No raw-file mutation, split assignment, target choice, model, training, metric, or search occurred. | Paper HFs HF1/HF2/HF3 remain reconstructible from time/current/voltage. CALCE has no temperature field, but temperature is not a specified paper-HF input. Cross-workbook numeric Cycle_Index is not global and is retained with source keys. | `SPLIT_INDEPENDENT_DATA_READINESS_GATE=PASS`; Phase 0 exit remains blocked by PA-004. | `CALCE_CYCLE_IDENTITY_AUDIT.md`; `CALCE_NULL_DUPLICATE_AUDIT.md`; `output/data_readiness/data_readiness_final_status_v3.json`. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=0
+PLAN_CHANGE_REQUIRED=False
+PA001_STATUS=AMBIGUOUS_BLOCKING_TARGET_CONSTRUCTION
+PA004_STATUS=UNRESOLVED_BLOCKING
+DATA_READINESS_GATE=PASS
+DATA_READINESS_STATUS=PASS__PAPER_HF_FEATURES_FEASIBLE__TEMPERATURE_NOT_A_PAPER_HF_INPUT
+ADVANCEMENT_TO_PROTOCOL_FREEZE=False
+NEXT_ACTION=PRIMARY_SOURCE_PROTOCOL_CLARIFICATION for PA-001 and PA-004; do not enter Phase 1 or implement model code.
+```

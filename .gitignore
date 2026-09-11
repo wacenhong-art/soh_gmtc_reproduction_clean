@@ -36,3 +36,8 @@ secrets.*
 # Temporary inspection artifacts
 *.tmp
 *.tmp.*
+
+# Reproducible local parser logs; formal evidence is in versioned audit artifacts
+output/data_readiness/*_run*.stdout.log
+output/data_readiness/*_run*.stderr.log
+output/data_readiness/*_run.log

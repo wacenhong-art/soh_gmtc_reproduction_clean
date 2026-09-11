@@ -6,9 +6,9 @@
 
 **Current plan state:** INITIALIZED — no Phase has passed.
 
-`CURRENT_PLAN_VERSION=1.1.0`
+`CURRENT_PLAN_VERSION=1.2.0`
 
-`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0001`
+`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0002`
 
 ## NON-NEGOTIABLE RULES
 
@@ -318,6 +318,24 @@ TestLoaded=False
 
 **NEXT_PHASE_ENTRY_CONDITION:** Phase 0 acceptance recorded with Human-visible unresolved-item list and signed `PHASE_COMPLETION_COMMIT`.
 
+### Authorized side-track — Split-independent data readiness while PA-004 is blocked
+
+`SPLIT_INDEPENDENT_DATA_READINESS_AUTHORIZED=True`
+
+This is an explicitly authorized Phase-0 side-track, not Phase 1 and not a protocol freeze. It exists solely to make lawful, provenance-preserving raw data available in an **unsplit** canonical form. It neither selects `PA-004` Candidate A/B nor changes the paper’s target definition, train/validation/test population, small-sample definition, GAN target-data allocation, model architecture, or evaluation population.
+
+**OBJECTIVE:** acquire paper-roster NASA/CALCE raw files from official or provenance-verifiable sources; create deterministic operation/cycle inventory; verify chronological order and the feasibility of the three paper health features; retain raw capacity/provenance without deciding an SOH denominator.
+
+**ALLOWED_ACTIONS:** official-source lookup and download; SHA-256, size, license/access and provenance records; deterministic raw-file parsing; battery and operation inventory; raw-record/cycle counts; duplicate, timestamp-order, missing-value, malformed-record and physical-range flags; feature-constructability checks; an unsplit canonical manifest with `battery_id`, chronological cycle identity/order, raw provenance, legally available raw capacity, and feature-extraction status.
+
+**FORBIDDEN_ACTIONS:** assigning `train`, `validation`, `test`, `first20`, source/target-GAN population, or any split-derived role; fitting standardizers; constructing split-dependent windows; choosing an SOH denominator; deleting adverse cycles; STL; any neural/classical model; augmentation; training; metrics; hyperparameter search; or selecting either PA-004 candidate.
+
+**REQUIRED_ARTIFACTS:** `DATA_SOURCE_MANIFEST.md`, `output/data_readiness/data_source_manifest.json`, an ignored raw-data directory, deterministic parser source, unsplit inventory/feature-feasibility manifests, and a data-readiness report. Large raw files must remain ignored.
+
+**SPLIT_INDEPENDENT_DATA_READINESS_GATE:** pass only if `OFFICIAL_DATA_SOURCE_VERIFIED=True`, `BATTERY_ROSTER_VERIFIED=True`, `RAW_PARSING_VERIFIED=True`, `CYCLE_ORDER_VERIFIED=True`, `FEATURE_CONSTRUCTION_FEASIBILITY_VERIFIED=True`, `NO_TRAIN_VAL_TEST_ASSIGNMENT=True`, and `PA004_UNCHANGED=True`.
+
+**NON-ADVANCEMENT RULE:** even when this side-track gate passes, retain `PHASE_0_SPECIFICATION_WORK=COMPLETE`, `PHASE_0_EXIT_GATE=BLOCKED_BY_PA004`, `PA004_STATUS=UNRESOLVED_BLOCKING`, and `ADVANCEMENT_TO_PROTOCOL_FREEZE=False`. Data readiness is not permission to enter Phase 1.
+
 ## Phase 1 — Data & Experimental Protocol
 
 **OBJECTIVE:** establish traceable raw-data handling and a leakage-safe paper-aligned protocol.
@@ -622,6 +640,21 @@ WHY_CHANGE_NECESSARY=Prevent optimization or favorable scores from being mistake
 RESULT_DRIVEN=False
 HUMAN_AUTHORIZED=True
 COMMIT=dcb24dd841a2dc0917bb36f3c65c76dab790b7b0
+```
+
+```text
+PLAN_CHANGE_ID=PLAN-CHANGE-0002
+NAME=ALLOW_SPLIT_INDEPENDENT_DATA_READINESS_WHILE_PA004_BLOCKED
+TRIGGER=Human Researcher authorization to eliminate avoidable idle time while preserving PA-004 as a hard protocol blocker.
+OLD_ASSUMPTION=Phase 0 ambiguity blocking prohibited all data handling before Phase 1.
+NEW_EVIDENCE=Raw-data acquisition, provenance inventory, deterministic parsing, chronology checks, and feature constructability can be performed without choosing Candidate A/B or assigning any split-derived role.
+IMPACT=Adds a constrained Phase-0 side-track only. It does not change the paper architecture, phase order, SOH target definition, train/validation/test population, small-sample definition, GAN target allocation, or evaluation population.
+OLD_PLAN=Version 1.1.0
+NEW_PLAN=Version 1.2.0
+WHY_CHANGE_NECESSARY=Permit protocol-independent preparation while retaining an explicit non-advancement boundary and PA-004 hard block.
+RESULT_DRIVEN=False
+HUMAN_AUTHORIZED=True
+COMMIT=PENDING_PLAN_COMMIT
 ```
 
 ## Phase completion ledger

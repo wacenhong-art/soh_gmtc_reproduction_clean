@@ -110,6 +110,18 @@ SCF-GAN real-data training: full-range source-battery HFs
 
 `OFFICIAL_CODE_PROTOCOL_EVIDENCE=None__THE_PAPER'S_DATA_AVAILABILITY_STATEMENT_SAYS_DATA_WILL_BE_MADE_AVAILABLE_ON_REQUEST_AND_DOES_NOT_PROVIDE_AN_OFFICIAL_CODE_OR_REPOSITORY_LINK.`
 
+## External public-index corroboration (non-resolving)
+
+`EXTERNAL_WEB_CORROBORATION=Human Researcher reported a public ScienceDirect index identifying NASA B0005/B0006 and CALCE CS2-35/CS2-37 as complete-charging-data SCF-GAN source examples, and NASA B0007/B0018 and CALCE CS2-36/CS2-38 as small-sample target examples.`
+
+`EVIDENCE_STRENGTH=SECONDARY_PUBLIC_INDEX`
+
+`DOES_NOT_RESOLVE_PA004=True`
+
+`NOT_PROTOCOL_RESOLUTION=True`
+
+This corroboration may clarify source/target **role examples** already present in the paper. It cannot select Candidate A or Candidate B, allocate a target cycle to train/validation/test/GAN use, or change `PA004_STATUS=UNRESOLVED_BLOCKING`.
+
 ## Resolution
 
 `PA004_STATUS=UNRESOLVED_BLOCKING`

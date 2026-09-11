@@ -695,7 +695,7 @@ RESULT_DRIVEN=False
 PERFORMANCE_DRIVEN=False
 TEST_LOADED=False
 HUMAN_AUTHORIZED=True
-COMMIT=PENDING_CURRENT_RUN
+COMMIT=36c7836fc2fa52cb3b1591f070b91b774dcaed85
 ```
 
 ## Phase completion ledger
@@ -703,7 +703,7 @@ COMMIT=PENDING_CURRENT_RUN
 | Phase | Gate status | Completion evidence | PHASE_START_COMMIT | PHASE_COMPLETION_COMMIT | PHASE_COMPLETION_PUSH_STATUS | PHASE_REMOTE_BACKUP_CONFIRMED |
 |---|---|---|---|---|---|---|
 | 0 | PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY | Paper specification plus Human-authorized PA-001 fallback and PA-004 dual-track protocol record | f354af6 | 65ad49b | PASS | True |
-| 1 | PASS__PRIMARY_SOURCE_OVERRIDE_PENDING | Frozen A/B protocols, source-keyed metadata membership manifest, population-conservation and leakage audits, and augmentation plan; no test values or synthetic rows materialized | 65ad49b | PENDING_CURRENT_RUN | PENDING_CURRENT_RUN | False |
+| 1 | PASS__PRIMARY_SOURCE_OVERRIDE_PENDING | Frozen A/B protocols, source-keyed metadata membership manifest, population-conservation and leakage audits, and augmentation plan; no test values or synthetic rows materialized | 65ad49b | 36c7836 | PENDING_REMOTE_PUSH | False |
 | 2 | NOT_STARTED | — | — | — | — | False |
 | 3 | NOT_STARTED | — | — | — | — | False |
 | 4 | NOT_STARTED | — | — | — | — | False |

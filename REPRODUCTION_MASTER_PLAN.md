@@ -283,9 +283,9 @@ Phase 10 Acceptance               [..........] 0%
 
 OVERALL_PROGRESS=20%
 CURRENT_PHASE=Phase 2
-CURRENT_GATE=Blocked: STL parameter, split-order, and component-target construction specification
-LAST_COMPLETED=Phase 2A STL input-semantics, parameter-evidence, and leakage-contract audit
-NEXT_ACTION=HUMAN_REVIEW_OF_STL_ENGINEERING_FALLBACK_OPTIONS_OR_PRIMARY_SOURCE_CLARIFICATION; do not implement or run STL
+CURRENT_GATE=Blocked: STL period is not structurally identifiable; Phase 2B global-ACF argmax is retired as a persistence artifact
+LAST_COMPLETED=Phase 2C train-only STL period-discovery methodology audit and Level-1 amendment STL-PERIOD-0001
+NEXT_ACTION=HUMAN_FIXED_ENGINEERING_PERIOD_OR_PRIMARY_SOURCE_CLARIFICATION; do not implement or run STL
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED

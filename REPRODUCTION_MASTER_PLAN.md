@@ -468,7 +468,7 @@ These ten independent plan audits were completed before this Master Plan was wri
 | Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
 |---|---|---|---|---|---|---|
 | 2026-09-11 | Phase 0 | Plan did not yet exist; user-authorized governance initialization only. | Created this Master Plan, initialized Git, and created `.gitignore`; no data/model/experiment action. | Plan self-audit required below. | Phase 0 remains NOT_STARTED. | Local 17-page PDF inspected; this file. |
-| 2026-09-11 | Phase 0 | Git/GitHub archive rules authorized; governance work is allowed in Phase 0. | Added mandatory Git/GitHub archive protocol, ignored local copyrighted PDF, and added versioned paper metadata; no data/model/experiment action. | Pending local commit and remote authentication recovery. | Phase 0 remains NOT_STARTED. | Git audit: new `main`, no history/remote; GitHub CLI token invalid. |
+| 2026-09-11 | Phase 0 | Git/GitHub archive rules authorized; governance work is allowed in Phase 0. | Added mandatory Git/GitHub archive protocol, ignored local copyrighted PDF, created versioned paper metadata, created the new private GitHub repository, and pushed the initial plan commit; no data/model/experiment action. | Local/remote `main` commit `86a47e7` verified; current status-record update pending. | Phase 0 remains NOT_STARTED. | `origin=https://github.com/wacenhong-art/soh_gmtc_reproduction_clean.git`; private repository and remote `main` verified. |
 
 ## MASTER_PLAN_SELF_AUDIT
 
@@ -480,6 +480,10 @@ The plan contains: the local-paper authority and status; all 10 required audits;
 
 ```text
 MASTER_PLAN_CREATED=True
+MASTER_PLAN_COMMITTED=True
+MASTER_PLAN_PUSHED=True
+GITHUB_CLOUD_BACKUP_CONFIRMED=True
+PROJECT_INITIALIZATION_STATUS=PASS
 PAPER_FULLTEXT_STATUS=AVAILABLE
 TEN_AUDIT_PASSES_COMPLETED=True
 MASTER_PLAN_SELF_AUDIT=PASS

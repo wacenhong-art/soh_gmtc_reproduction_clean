@@ -16,9 +16,9 @@
 
 ## Unresolved execution fields
 
-`ITRANSFORMER_INPUT_SEMANTICS_STATUS=AMBIGUOUS_BLOCKING_REAL_DATA`
+`ITRANSFORMER_INPUT_SEMANTICS_STATUS=UNRESOLVED_BLOCKING_FOR_REAL_DATA`
 
-`FORECAST_TARGET_ALIGNMENT_STATUS=MISSING_BLOCKING`
+`FORECAST_TARGET_ALIGNMENT_STATUS=UNRESOLVED_BLOCKING_FOR_REAL_DATA`
 
 `RESIDUAL_TARGET_ALIGNMENT=AMBIGUOUS_BLOCKING__PA-007`
 
@@ -36,11 +36,27 @@
 
 ## Dual gates
 
-`ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=BLOCKED_BY_TARGET_ALIGNMENT_MISSING`
+`ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=PASS__GENERIC_SYNTHETIC_INTERFACE_ONLY`
 
 `ITRANSFORMER_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_STL_PERIOD_AND_INPUT_SEMANTICS_AND_MISSING_ARCH_PARAMETERS`
 
-No iTransformer module, real residual input, model training, metric, validation-value access, test-value access, TimesNet, fusion, or search is authorized by this artifact.
+No real-data iTransformer branch, real residual input, real model training, metric, validation-value access, test-value access, TimesNet, fusion, or search is authorized by this artifact. The narrowly scoped synthetic-only structural exception is recorded below.
+
+## Phase 3B authorized structural exception
+
+Human authorized a pre-registered generic synthetic multivariate interface and a synthetic-only one-step projection target. This permits structural software testing of the standard iTransformer core only; it does not resolve any real target-paper input, output, or architecture field.
+
+`PARAMETERIZED_ITRANSFORMER_IMPLEMENTED=True`
+
+`FRAMEWORK_ITRANSFORMER_STATUS=STRUCTURALLY_IMPLEMENTED_SYNTHETIC_ONLY`
+
+`REAL_RESIDUAL_DATA_USED=False`
+
+`REAL_FORECAST_ALIGNMENT=UNRESOLVED`
+
+`REAL_RESIDUAL_TARGET=UNRESOLVED`
+
+`REAL_COMPONENT_SUPERVISION=UNRESOLVED`
 
 ## Numerical-reproduction blockers
 

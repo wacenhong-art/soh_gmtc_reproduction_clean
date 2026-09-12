@@ -1,0 +1,213 @@
+{
+  "artifact_type": "SYNTHETIC_ONLY_PARAMETERIZED_ITRANSFORMER_STRUCTURAL_AUDIT",
+  "real_input_semantics_inference": false,
+  "real_target_alignment_inference": false,
+  "real_residual_data_used": false,
+  "real_window_manifest_created": false,
+  "validation_values_used": false,
+  "test_values_used": false,
+  "model_metrics_used": false,
+  "grid_search_run": false,
+  "custom_graph_module_implemented": false,
+  "standard_itransformer_core_implemented": true,
+  "synthetic_target_alignment": "ONE_STEP_SYNTHETIC_PROJECTION_ONLY",
+  "synthetic_target_alignment_is_real_inference": false,
+  "shape_and_backward_results": [
+    {
+      "n_vars": 1,
+      "config": {
+        "seq_len": 10,
+        "pred_len": 1,
+        "n_vars": 1,
+        "d_model": 8,
+        "n_heads": 2,
+        "e_layers": 1,
+        "d_ff": 16,
+        "dropout": 0.0,
+        "activation": "gelu",
+        "strict_paper_mode": true,
+        "synthetic_only_mode": true
+      },
+      "input_shape": [
+        2,
+        10,
+        1
+      ],
+      "target_shape": [
+        2,
+        1,
+        1
+      ],
+      "trace_shapes": {
+        "input": [
+          2,
+          10,
+          1
+        ],
+        "inverted_tokens": [
+          2,
+          1,
+          10
+        ],
+        "embedded": [
+          2,
+          1,
+          8
+        ],
+        "attention_output": [
+          2,
+          1,
+          8
+        ],
+        "output": [
+          2,
+          1,
+          1
+        ]
+      },
+      "expected_shapes": {
+        "input": [
+          2,
+          10,
+          1
+        ],
+        "inverted_tokens": [
+          2,
+          1,
+          10
+        ],
+        "embedded": [
+          2,
+          1,
+          8
+        ],
+        "attention_output": [
+          2,
+          1,
+          8
+        ],
+        "output": [
+          2,
+          1,
+          1
+        ]
+      },
+      "forward_pass": true,
+      "output_shape_pass": true,
+      "backward_pass": true,
+      "finite_loss": true,
+      "nonzero_gradient": true,
+      "finite_gradients": true
+    },
+    {
+      "n_vars": 3,
+      "config": {
+        "seq_len": 10,
+        "pred_len": 1,
+        "n_vars": 3,
+        "d_model": 8,
+        "n_heads": 2,
+        "e_layers": 1,
+        "d_ff": 16,
+        "dropout": 0.0,
+        "activation": "gelu",
+        "strict_paper_mode": true,
+        "synthetic_only_mode": true
+      },
+      "input_shape": [
+        2,
+        10,
+        3
+      ],
+      "target_shape": [
+        2,
+        1,
+        3
+      ],
+      "trace_shapes": {
+        "input": [
+          2,
+          10,
+          3
+        ],
+        "inverted_tokens": [
+          2,
+          3,
+          10
+        ],
+        "embedded": [
+          2,
+          3,
+          8
+        ],
+        "attention_output": [
+          2,
+          3,
+          8
+        ],
+        "output": [
+          2,
+          1,
+          3
+        ]
+      },
+      "expected_shapes": {
+        "input": [
+          2,
+          10,
+          3
+        ],
+        "inverted_tokens": [
+          2,
+          3,
+          10
+        ],
+        "embedded": [
+          2,
+          3,
+          8
+        ],
+        "attention_output": [
+          2,
+          3,
+          8
+        ],
+        "output": [
+          2,
+          1,
+          3
+        ]
+      },
+      "forward_pass": true,
+      "output_shape_pass": true,
+      "backward_pass": true,
+      "finite_loss": true,
+      "nonzero_gradient": true,
+      "finite_gradients": true
+    }
+  ],
+  "determinism_test": true,
+  "tiny_overfit": {
+    "max_steps": 64,
+    "loss_decrease_rule": "final_loss < initial_loss",
+    "initial_loss": 2.775003433227539,
+    "final_loss": 0.0003344158467371017,
+    "pass": true,
+    "real_performance_evaluation": false
+  },
+  "fail_closed_tests": {
+    "strict_seq_len_not_10": true,
+    "missing_config": true,
+    "missing_pred_len": true,
+    "d_model_head_incompatibility": true,
+    "wrong_tensor_rank": true,
+    "nan_input": true,
+    "inf_input": true,
+    "real_data_provenance": true,
+    "calce_provenance": true,
+    "validation_provenance": true,
+    "test_provenance": true
+  },
+  "real_data_guard_test": true,
+  "all_structural_tests_passed": true
+}

@@ -4,9 +4,9 @@
 
 **Plan authority:** This is the sole highest-level roadmap for this repository. Every future Codex task must read this complete file before acting and must obey its gates. Its core architecture, phase order, reproduction definitions, and protocol rules may not be silently changed.
 
-**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2 structural STL is complete only on deterministic synthetic fixtures; real NASA/CALCE STL remains blocked by its missing period. Phase 3A establishes that the iTransformer residual input and target alignment are not executable from the paper, so neither a synthetic module nor a real-data branch is presently authorized.
+**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2 structural STL is complete only on deterministic synthetic fixtures; real NASA/CALCE STL remains blocked by its missing period. Phase 3 standard iTransformer core is structurally implemented and tested on a generic synthetic interface only; real residual input, target alignment, and target-paper architecture fidelity remain blocked.
 
-`CURRENT_PLAN_VERSION=1.4.2`
+`CURRENT_PLAN_VERSION=1.4.3`
 
 `LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0006`
 
@@ -272,7 +272,7 @@ REPRODUCTION MASTER PROGRESS
 Phase 0  Paper Specification      [##########] 100%
 Phase 1  Data Protocol            [##########] 100%
 Phase 2  STL                      [#####.....] 50%
-Phase 3  iTransformer             [##........] 20%
+Phase 3  iTransformer             [#####.....] 50%
 Phase 4  Framework Scaffold       [..........] 0%
 Phase 5  TimesNet                 [..........] 0%
 Phase 6  Adaptive Fusion          [..........] 0%
@@ -281,11 +281,11 @@ Phase 8  Full G-MTC               [..........] 0%
 Phase 9  Numerical Reproduction   [..........] 0%
 Phase 10 Acceptance               [..........] 0%
 
-OVERALL_PROGRESS=25%
+OVERALL_PROGRESS=27%
 CURRENT_PHASE=Phase 3
-CURRENT_GATE=ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE: BLOCKED_BY_TARGET_ALIGNMENT_MISSING
-LAST_COMPLETED=Phase 3A iTransformer specification and dataflow contract
-NEXT_ACTION=PRIMARY_SOURCE_CLARIFICATION_OR_HUMAN_RESULT_BLIND_TARGET_ALIGNMENT_DECISION; no iTransformer implementation
+CURRENT_GATE=ITRANSFORMER_REAL_DATA_FIDELITY_GATE: BLOCKED_BY_STL_PERIOD_AND_INPUT_SEMANTICS_AND_TARGET_ALIGNMENT_AND_MISSING_ARCH_PARAMETERS
+LAST_COMPLETED=Phase 3B parameterized synthetic-only iTransformer structural implementation
+NEXT_ACTION=PHASE_4_SYNTHETIC_ONLY_FRAMEWORK_SCAFFOLD_SPECIFICATION__OR_PRIMARY_SOURCE_CLARIFICATION; no real-data framework claim
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -302,8 +302,14 @@ STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD
 FRAMEWORK_STL_IMPLEMENTATION_STATUS=STRUCTURALLY_REPRODUCED
 PAPER_ALIGNED_REAL_STL_OUTPUTS_CREATED=False
 NUMERICAL_REPRODUCTION_BLOCKERS=STL_REAL_BATTERY_PERIOD_MISSING
-ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=BLOCKED_BY_TARGET_ALIGNMENT_MISSING
-ITRANSFORMER_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_STL_PERIOD_AND_INPUT_SEMANTICS_AND_MISSING_ARCH_PARAMETERS
+ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=PASS
+ITRANSFORMER_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_STL_PERIOD_AND_INPUT_SEMANTICS_AND_TARGET_ALIGNMENT_AND_MISSING_ARCH_PARAMETERS
+FRAMEWORK_ITRANSFORMER_STATUS=STRUCTURALLY_IMPLEMENTED_SYNTHETIC_ONLY
+ITRANSFORMER_INPUT_SEMANTICS_STATUS=UNRESOLVED_BLOCKING_FOR_REAL_DATA
+FORECAST_TARGET_ALIGNMENT_STATUS=UNRESOLVED_BLOCKING_FOR_REAL_DATA
+REAL_FORECAST_ALIGNMENT=UNRESOLVED
+REAL_RESIDUAL_TARGET=UNRESOLVED
+REAL_COMPONENT_SUPERVISION=UNRESOLVED
 ========================================
 ```
 
@@ -415,7 +421,7 @@ Structural success is not Phase 2 paper reproduction or numerical reproduction s
 
 ### Phase 3 dual-gate contract — PLAN-CHANGE-0006
 
-`ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE` can assess a synthetic-only tensor contract, strict paper-exact 10-step input length, forward/backward wiring, determinism, and fail-closed behavior only after an explicit target/horizon alignment contract is frozen. It cannot use real residuals, validation/test values, model metrics, or target-paper parameter defaults.
+`ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE` can assess a synthetic-only tensor contract, strict paper-exact 10-step input length, forward/backward wiring, determinism, and fail-closed behavior after a pre-registered generic synthetic target contract is frozen. A generic synthetic target does not infer the target paper’s horizon, offset, or real residual supervision. Structural work cannot use real residuals, validation/test values, model metrics, or target-paper parameter defaults.
 
 `ITRANSFORMER_REAL_DATA_FIDELITY_GATE` can pass only after paper-defensible residual construction, input-channel semantics, target/horizon alignment, and architecture parameters are frozen. It inherits `STL_REAL_BATTERY_PERIOD_MISSING` and remains blocked by current iTransformer ambiguities.
 
@@ -728,7 +734,7 @@ COMMIT=36c7836fc2fa52cb3b1591f070b91b774dcaed85
 | 0 | PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY | Paper specification plus Human-authorized PA-001 fallback and PA-004 dual-track protocol record | f354af6 | 65ad49b | PASS | True |
 | 1 | PASS__PRIMARY_SOURCE_OVERRIDE_PENDING | Frozen A/B protocols, source-keyed metadata membership manifest, population-conservation and leakage audits, and augmentation plan; no test values or synthetic rows materialized | 65ad49b | 36c7836 | PASS | True |
 | 2 | STRUCTURAL_IMPLEMENTATION_COMPLETE__REAL_DATA_FIDELITY_BLOCKED | Capacity-domain STL input cross-evidence; Phase 2C period-method audit; and a parameterized, synthetic-only STL module with explicit-period and fail-closed structural tests. No real NASA/CALCE period or decomposition is authorized. | 27e4915 | pending Phase 2 real-fidelity evidence | `STL_STRUCTURAL_IMPLEMENTATION_GATE=PASS`; `STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD` | False |
-| 3 | SPECIFICATION_COMPLETE__STRUCTURAL_AND_REAL_DATA_GATES_BLOCKED | Target-paper iTransformer evidence, Fig.5 residual-routing audit, standard-vs-target boundary, parameter-evidence table, and dual-gate contract. No module or real residual data was used because input semantics and target alignment remain unresolved. | — | pending target-alignment evidence | `ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=BLOCKED_BY_TARGET_ALIGNMENT_MISSING`; real-data gate also inherits STL period blocker | False |
+| 3 | STRUCTURAL_IMPLEMENTATION_COMPLETE__REAL_DATA_FIDELITY_BLOCKED | Target-paper iTransformer evidence, Fig.5 residual-routing audit, standard-vs-target boundary, parameter evidence, and a parameterized standard core verified only on generic synthetic multivariate fixtures. No real residual input or paper target alignment was selected. | pending real-data evidence | pending real-data evidence | `ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=PASS`; real-data gate inherits STL period and iTransformer ambiguity blockers | False |
 | 4 | NOT_STARTED | — | — | — | — | False |
 | 5 | NOT_STARTED | — | — | — | — | False |
 | 6 | NOT_STARTED | — | — | — | — | False |
@@ -1065,4 +1071,34 @@ PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
 PLAN_DEVIATION_LEVEL=1
 PLAN_CHANGE_REQUIRED=False
 NEXT_ACTION=PRIMARY_SOURCE_CLARIFICATION_OR_HUMAN_RESULT_BLIND_TARGET_ALIGNMENT_DECISION
+```
+
+## Append-only run log — Phase 3B parameterized synthetic-only iTransformer structural implementation
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-12 | Phase 3B synthetic structural implementation | Phase 3A left real input semantics and target alignment unresolved. Human explicitly authorized a generic synthetic multivariate interface and synthetic one-step projection target for structure-only testing. | Implemented only the common standard iTransformer core: explicit time-history embedding, variable-token inversion, encoder attention, and projection. Ran deterministic synthetic tests for one and three variables, forward/backward shape and gradient checks, finite loss, fixed-seed determinism, pre-registered 64-step tiny-overfit sanity, and fail-closed provenance/config/input checks. No NASA/CALCE, real residual/capacity/HF, validation/test value, metric, graph module, or search was used. | Structural core is valid only as a generic synthetic fixture. It does not select a paper target horizon, input tensor, graph mechanism, or target-paper architecture parameters; real-data fidelity remains blocked. A later synthetic-only framework-scaffold specification is dependency-safe but may not claim paper-aligned framework reproduction. | `ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=PASS`; `ITRANSFORMER_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_STL_PERIOD_AND_INPUT_SEMANTICS_AND_TARGET_ALIGNMENT_AND_MISSING_ARCH_PARAMETERS`. | `scripts/itransformer_structural.py`; `scripts/run_itransformer_structural_tests.py`; `PHASE3B_PARAMETERIZED_ITRANSFORMER_STRUCTURAL_IMPLEMENTATION.md`; `output/itransformer/itransformer_structural_audit.json`. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PLAN_CHANGE_ID=PLAN-CHANGE-0006
+PLAN_CHANGE_STATUS=APPLIED__USER_AUTHORIZED__PHASE_3B_SCOPE_FROZEN
+REAL_INPUT_SEMANTICS_INFERENCE=False
+REAL_TARGET_ALIGNMENT_INFERENCE=False
+PARAMETERIZED_ITRANSFORMER_IMPLEMENTED=True
+STANDARD_ITRANSFORMER_CORE_IMPLEMENTED=True
+CUSTOM_GRAPH_MODULE_IMPLEMENTED=False
+SYNTHETIC_N_VARS_TESTED=1,3
+ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=PASS
+ITRANSFORMER_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_STL_PERIOD_AND_INPUT_SEMANTICS_AND_TARGET_ALIGNMENT_AND_MISSING_ARCH_PARAMETERS
+REAL_RESIDUAL_DATA_USED=False
+TEST_LOADED=False
+VALIDATION_VALUES_USED=False
+TEST_VALUES_USED=False
+MODEL_METRICS_USED=False
+GRID_SEARCH_RUN=False
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=1
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=PHASE_4_SYNTHETIC_ONLY_FRAMEWORK_SCAFFOLD_SPECIFICATION__OR_PRIMARY_SOURCE_CLARIFICATION
 ```

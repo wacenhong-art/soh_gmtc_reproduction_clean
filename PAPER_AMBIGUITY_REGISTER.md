@@ -48,6 +48,16 @@ All records are Phase 0 paper-evidence records. They do not authorize defaults o
 
 `STATUS=RETAINED_AS_BLOCKING_FOR_REAL_DATA_ITRANSFORMER`
 
+### Phase 5A audit update — Trend and Seasonal branch dataflow
+
+`EVIDENCE_ADDED=PDF p.6 §3.3–§3.4 Eqs.(18)–(20); p.8 Fig.5 visual audit; p.9 §3.7(2)`
+
+`FINDING=Fig.5 displays Trend and Seasonal component pathways without an HF/raw-signal side-channel. Section 3.4 defines generic multivariate input X∈R^(T×C), while the paper does not map C to either component branch.`
+
+`IMPLEMENTATION_IMPACT=The real Trend/Seasonal input tensor cannot be chosen as univariate or multivariate without an unreported engineering assumption.`
+
+`STATUS=RETAINED_AS_BLOCKING_FOR_REAL_DATA_TIMESNET`
+
 ## PA-004 — split versus small-sample conflict
 
 `CATEGORY=critical_protocol`

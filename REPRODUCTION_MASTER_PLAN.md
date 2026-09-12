@@ -4,11 +4,11 @@
 
 **Plan authority:** This is the sole highest-level roadmap for this repository. Every future Codex task must read this complete file before acting and must obey its gates. Its core architecture, phase order, reproduction definitions, and protocol rules may not be silently changed.
 
-**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2 structural STL is complete only on deterministic synthetic fixtures; real NASA/CALCE STL remains blocked by its missing period. Phase 3 standard iTransformer core is structurally implemented and tested on a generic synthetic interface only; real residual input, target alignment, and target-paper architecture fidelity remain blocked. Phase 4 has a Human-authorized synthetic-only scaffold side-track: its routing/lineage interface may be structurally tested without TimesNet or fusion, but real-data framework fidelity remains blocked.
+**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2 structural STL is complete only on deterministic synthetic fixtures; real NASA/CALCE STL remains blocked by its missing period. Phase 3 standard iTransformer core is structurally implemented and tested on a generic synthetic interface only; real residual input, target alignment, and target-paper architecture fidelity remain blocked. Phase 4 has a synthetic-only routing scaffold. Phase 5 now has a Human-authorized synthetic standard TimesNet-core side-track, but neither target-paper Trend/Seasonal variant nor real-data TimesNet fidelity is established.
 
-`CURRENT_PLAN_VERSION=1.4.4`
+`CURRENT_PLAN_VERSION=1.4.5`
 
-`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0007`
+`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0008`
 
 ## NON-NEGOTIABLE RULES
 
@@ -274,18 +274,18 @@ Phase 1  Data Protocol            [##########] 100%
 Phase 2  STL                      [#####.....] 50%
 Phase 3  iTransformer             [#####.....] 50%
 Phase 4  Framework Scaffold       [#####.....] 50%
-Phase 5  TimesNet                 [..........] 0%
+Phase 5  TimesNet                 [#####.....] 50%
 Phase 6  Adaptive Fusion          [..........] 0%
 Phase 7  SCF-GAN                  [..........] 0%
 Phase 8  Full G-MTC               [..........] 0%
 Phase 9  Numerical Reproduction   [..........] 0%
 Phase 10 Acceptance               [..........] 0%
 
-OVERALL_PROGRESS=32%
-CURRENT_PHASE=Phase 4
-CURRENT_GATE=FRAMEWORK_REAL_DATA_FIDELITY_GATE: BLOCKED_BY_STL_PERIOD_AND_TIMESNET_AND_ITRANSFORMER_AND_FUSION_AND_TRAINING_ORCHESTRATION
-LAST_COMPLETED=Phase 4A synthetic-only G-MTC framework scaffold specification and interface contract
-NEXT_ACTION=PHASE_5_TIMESNET_SPECIFICATION_AND_SYNTHETIC_ONLY_STRUCTURAL_WORK__OR_PRIMARY_SOURCE_CLARIFICATION; no real-data framework claim
+OVERALL_PROGRESS=36%
+CURRENT_PHASE=Phase 5
+CURRENT_GATE=TIMESNET_BRANCH_VARIANT_FIDELITY_GATE: BLOCKED_BY_INPUT_TARGET_AND_VARIANT_PARAMETERS
+LAST_COMPLETED=Phase 5A TimesNet specification and synthetic standard-core structural implementation
+NEXT_ACTION=PHASE_6_SYNTHETIC_ONLY_FUSION_SPECIFICATION_AND_INTERFACE_AUDIT__OR_PRIMARY_SOURCE_CLARIFICATION; no real-data framework claim
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -301,7 +301,7 @@ STL_STRUCTURAL_IMPLEMENTATION_GATE=PASS
 STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD
 FRAMEWORK_STL_IMPLEMENTATION_STATUS=STRUCTURALLY_REPRODUCED
 PAPER_ALIGNED_REAL_STL_OUTPUTS_CREATED=False
-NUMERICAL_REPRODUCTION_BLOCKERS=STL_REAL_BATTERY_PERIOD_MISSING;ITRANSFORMER_INPUT_SEMANTICS_MISSING;ITRANSFORMER_TARGET_ALIGNMENT_MISSING;ITRANSFORMER_ARCH_PARAMETERS_MISSING;TIMESNET_NOT_IMPLEMENTED;FUSION_INTERFACE_SEMANTICS_INCOMPLETE;GMTC_TRAINING_ORCHESTRATION_UNSPECIFIED;SHARED_ADVERSARIAL_TRAINING_UNSPECIFIED
+NUMERICAL_REPRODUCTION_BLOCKERS=STL_REAL_BATTERY_PERIOD_MISSING;ITRANSFORMER_INPUT_SEMANTICS_MISSING;ITRANSFORMER_TARGET_ALIGNMENT_MISSING;ITRANSFORMER_ARCH_PARAMETERS_MISSING;TIMESNET_INPUT_SEMANTICS_MISSING;TIMESNET_TARGET_ALIGNMENT_MISSING;TIMESNET_TOPK_MISSING;TREND_TIMESNET_CONFIGURATION_MISSING;SEASONAL_LIGHTWEIGHT_DEFINITION_MISSING;INCEPTION_CONFIGURATION_MISSING;ADAPTIVE_MERGE_DETAIL_MISSING;FUSION_INTERFACE_SEMANTICS_INCOMPLETE;GMTC_TRAINING_ORCHESTRATION_UNSPECIFIED;SHARED_ADVERSARIAL_TRAINING_UNSPECIFIED
 ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=PASS
 ITRANSFORMER_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_STL_PERIOD_AND_INPUT_SEMANTICS_AND_TARGET_ALIGNMENT_AND_MISSING_ARCH_PARAMETERS
 FRAMEWORK_ITRANSFORMER_STATUS=STRUCTURALLY_IMPLEMENTED_SYNTHETIC_ONLY
@@ -313,6 +313,9 @@ REAL_COMPONENT_SUPERVISION=UNRESOLVED
 FRAMEWORK_SCAFFOLD_STRUCTURAL_GATE=PASS
 FRAMEWORK_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_STL_PERIOD_AND_TIMESNET_AND_ITRANSFORMER_AND_FUSION_AND_TRAINING_ORCHESTRATION
 FRAMEWORK_SCAFFOLD_STATUS=STRUCTURALLY_IMPLEMENTED_SYNTHETIC_ONLY
+TIMESNET_STANDARD_CORE_STRUCTURAL_GATE=PASS
+TIMESNET_BRANCH_VARIANT_FIDELITY_GATE=BLOCKED_BY_INPUT_TARGET_AND_VARIANT_PARAMETERS
+FRAMEWORK_TIMESNET_STATUS=STANDARD_REFERENCE_CORE_STRUCTURALLY_IMPLEMENTED_SYNTHETIC_ONLY
 ========================================
 ```
 
@@ -472,7 +475,13 @@ No structural work can establish iTransformer paper reproduction, framework repr
 
 **FAILURE_CONDITIONS:** generic Transformer substitution, unverified hyperparameters represented as paper facts, or residual placeholders.
 
-**NEXT_PHASE_ENTRY_CONDITION:** Phase 5 gate passes and its `PHASE_COMPLETION_COMMIT` is recorded.
+**NEXT_PHASE_ENTRY_CONDITION:** the branch-variant fidelity gate passes and its `PHASE_COMPLETION_COMMIT` is recorded. A synthetic-only Phase 6 structural side-track may be authorized after the standard-core structural gate passes, but it cannot establish adaptive-fusion, framework, paper, or numerical reproduction.
+
+### Phase 5 dual-gate contract — PLAN-CHANGE-0008
+
+`TIMESNET_STANDARD_CORE_STRUCTURAL_GATE` may assess only a generic synthetic input contract, explicit FFT top-k period discovery, deterministic padding/reshape/crop, parameter-shared Inception-style processing, standard-reference amplitude merge, forward/backward wiring, and fail-closed provenance/configuration behavior. Every unreported architecture value is an explicit synthetic fixture parameter, not a target-paper parameter.
+
+`TIMESNET_BRANCH_VARIANT_FIDELITY_GATE` can pass only after target-paper-defensible Trend and Seasonal input semantics, forecast/component target alignment, top-k, deep versus lightweight configuration, Inception configuration, and AdaptiveMerge semantics are frozen. It inherits `STL_REAL_BATTERY_PERIOD_MISSING` and all current numerical-reproduction blockers. A standard-core structural pass cannot establish either TimesNet branch, framework, paper, or numerical reproduction.
 
 ## Phase 6 — Adaptive Fusion
 
@@ -754,6 +763,25 @@ HUMAN_AUTHORIZED=True
 COMMIT=PENDING_CURRENT_RUN
 ```
 
+```text
+PLAN_CHANGE_ID=PLAN-CHANGE-0008
+NAME=ALLOW_SYNTHETIC_STANDARD_TIMESNET_CORE_WHILE_BRANCH_VARIANT_PARAMETERS_REMAIN_UNRESOLVED
+LEVEL=1
+TRIGGER=PHASE_5A_TIMESNET_SPECIFICATION_AND_SYNTHETIC_STANDARD_CORE_IMPLEMENTATION
+OLD_ASSUMPTION=Phase 5 had a single undifferentiated gate, which could conflate a generic structural algorithm test with the paper's unspecified deep and lightweight branch variants.
+NEW_EVIDENCE=Human authorized a result-blind, performance-blind standard-core synthetic side-track after evidence recovery confirmed the algorithmic core but not target-paper variant parameters or real-data semantics.
+IMPACT=Adds a structural-vs-branch-fidelity dual gate only. It changes neither paper architecture, data protocol, phase order, research goal, reproduction definition, nor evaluation population.
+OLD_PLAN=Version 1.4.4
+NEW_PLAN=Version 1.4.5
+WHY_CHANGE_NECESSARY=Allow isolated verification of standard FFT/2D/Inception routing without representing the generic implementation as the target paper's unspecified Trend or Seasonal model.
+RESULT_DRIVEN=False
+PERFORMANCE_DRIVEN=False
+REAL_DATA_USED=False
+TEST_LOADED=False
+HUMAN_AUTHORIZED=True
+COMMIT=PENDING_CURRENT_RUN
+```
+
 ## Phase completion ledger
 
 | Phase | Gate status | Completion evidence | PHASE_START_COMMIT | PHASE_COMPLETION_COMMIT | PHASE_COMPLETION_PUSH_STATUS | PHASE_REMOTE_BACKUP_CONFIRMED |
@@ -763,7 +791,7 @@ COMMIT=PENDING_CURRENT_RUN
 | 2 | STRUCTURAL_IMPLEMENTATION_COMPLETE__REAL_DATA_FIDELITY_BLOCKED | Capacity-domain STL input cross-evidence; Phase 2C period-method audit; and a parameterized, synthetic-only STL module with explicit-period and fail-closed structural tests. No real NASA/CALCE period or decomposition is authorized. | 27e4915 | pending Phase 2 real-fidelity evidence | `STL_STRUCTURAL_IMPLEMENTATION_GATE=PASS`; `STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD` | False |
 | 3 | STRUCTURAL_IMPLEMENTATION_COMPLETE__REAL_DATA_FIDELITY_BLOCKED | Target-paper iTransformer evidence, Fig.5 residual-routing audit, standard-vs-target boundary, parameter evidence, and a parameterized standard core verified only on generic synthetic multivariate fixtures. No real residual input or paper target alignment was selected. | pending real-data evidence | pending real-data evidence | `ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=PASS`; real-data gate inherits STL period and iTransformer ambiguity blockers | False |
 | 4 | STRUCTURAL_IMPLEMENTATION_COMPLETE__REAL_DATA_FIDELITY_BLOCKED | Synthetic-only component-routing/lineage interfaces, unimplemented TimesNet ports, a Phase 3 iTransformer residual adapter, future-fusion schema, and alignment/provenance tests. No TimesNet, fusion, SCF-GAN, real battery data, or training. | pending real-data evidence | pending Phase 4 real-fidelity evidence | `FRAMEWORK_SCAFFOLD_STRUCTURAL_GATE=PASS`; real-data gate inherits STL, branch, fusion, and orchestration blockers | False |
-| 5 | NOT_STARTED | — | — | — | — | False |
+| 5 | STANDARD_CORE_STRUCTURALLY_IMPLEMENTED__BRANCH_FIDELITY_BLOCKED | Target-paper evidence/semantics audit and a parameterized standard TimesNet reference core tested on synthetic periodic fixtures. No real STL component, Trend-deep variant, Seasonal-lightweight variant, fusion, or real-data training. | pending real-data evidence | pending Phase 5 branch-fidelity evidence | `TIMESNET_STANDARD_CORE_STRUCTURAL_GATE=PASS`; `TIMESNET_BRANCH_VARIANT_FIDELITY_GATE=BLOCKED_BY_INPUT_TARGET_AND_VARIANT_PARAMETERS` | False |
 | 6 | NOT_STARTED | — | — | — | — | False |
 | 7 | NOT_STARTED | — | — | — | — | False |
 | 8 | NOT_STARTED | — | — | — | — | False |
@@ -1153,4 +1181,29 @@ PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
 PLAN_DEVIATION_LEVEL=1
 PLAN_CHANGE_REQUIRED=False
 NEXT_ACTION=PHASE_5_TIMESNET_SPECIFICATION_AND_SYNTHETIC_ONLY_STRUCTURAL_WORK__OR_PRIMARY_SOURCE_CLARIFICATION
+```
+
+## Append-only run log — Phase 5A TimesNet specification and synthetic standard core
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-13 | Phase 5A synthetic standard core | Phase 0/1 are complete; Phase 2–4 real-data gates remain blocked; Phase 4 synthetic scaffold was structurally valid and test locked. Human authorized only a generic TimesNet standard-core structural side-track. | Re-read the target paper, its Eqs.(18)–(20), Fig.5, Phase 2–4 artifacts, and official TimesNet reference architecture. Recovered evidence for FFT, top-k concept, 2D reshape, Inception, and AdaptiveMerge; audited all missing variant semantics. Implemented/tested a parameterized standard reference core only on deterministic synthetic fixtures (known periods, padding, forward/backward, fixed-seed determinism, tiny overfit, fail-closed and scaffold adapter tests). | The standard core software contract is structurally valid. The paper does not specify real branch input semantics, target alignment, k, Trend depth/configuration, Seasonal lightweight mechanism, Inception configuration, or AdaptiveMerge implementation. Thus neither target-paper TimesNet branch nor real-data fidelity is established. | `TIMESNET_STANDARD_CORE_STRUCTURAL_GATE=PASS`; `TIMESNET_BRANCH_VARIANT_FIDELITY_GATE=BLOCKED_BY_INPUT_TARGET_AND_VARIANT_PARAMETERS`. | `MASTER_PLAN_CHANGE_REQUEST_PLAN-CHANGE-0008.md`; `TIMESNET_PAPER_EVIDENCE.md`; `TIMESNET_INPUT_SEMANTICS_AUDIT.md`; `PHASE5_TIMESNET_STRUCTURAL_IMPLEMENTATION.md`; `scripts/timesnet_structural.py`; `scripts/run_timesnet_structural_tests.py`; `output/timesnet/timesnet_structural_audit.json`. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PLAN_CHANGE_ID=PLAN-CHANGE-0008
+PLAN_CHANGE_STATUS=APPLIED__USER_AUTHORIZED__PHASE_5A_SCOPE_FROZEN
+TIMESNET_STANDARD_CORE_STRUCTURAL_GATE=PASS
+TIMESNET_BRANCH_VARIANT_FIDELITY_GATE=BLOCKED_BY_INPUT_TARGET_AND_VARIANT_PARAMETERS
+REAL_STL_COMPONENTS_USED=False
+REAL_BATTERY_DATA_USED=False
+TEST_LOADED=False
+VALIDATION_VALUES_USED=False
+MODEL_TRAINED=False
+MODEL_METRICS_USED=False
+GRID_SEARCH_RUN=False
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=1
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=PHASE_6_SYNTHETIC_ONLY_FUSION_SPECIFICATION_AND_INTERFACE_AUDIT__OR_PRIMARY_SOURCE_CLARIFICATION
 ```

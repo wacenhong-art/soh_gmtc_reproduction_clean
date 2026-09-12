@@ -8,7 +8,7 @@ No entry below is eligible to become a paper parameter through framework default
 | Forecast horizon / stride | sample construction | MISSING | 10-step window stated, target horizon and stride absent | Yes | No | False |
 | STL period, seasonal/trend windows, robust, boundaries | STL | MISSING | Generic STL equation only | Yes | No | False |
 | STL fit scope/timing | STL | AMBIGUOUS | Train-only/full-life and before/after windowing absent | Yes | No | False |
-| TimesNet input/output dimensions, d_model, layers, top-k, kernels, dropout, normalization/head | TimesNet | MISSING | Generic TimesNet exposition only | Yes | No | False |
+| TimesNet input/output dimensions, d_model, layers, top-k, kernels, dropout, normalization/head; Trend deep configuration; Seasonal lightweight mechanism; AdaptiveMerge formula | TimesNet | MISSING | Generic TimesNet exposition only; Phase 5A confirms branch-specific values and merge construction remain unreported | Yes | No | False |
 | iTransformer d_model, heads, layers, d_ff, dropout, normalization, output head | iTransformer | MISSING | Generic equations only | Yes | No | False |
 | iTransformer residual-input variables / tensor axes | iTransformer | AMBIGUOUS | Residual branch is explicit, but voltage/temperature channel-mixing prose has no branch-input mapping | Yes | No | False |
 | Residual branch target | iTransformer | AMBIGUOUS | No concrete component-target tensor stated | Yes | No | False |

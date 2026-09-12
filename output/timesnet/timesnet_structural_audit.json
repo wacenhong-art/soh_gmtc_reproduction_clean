@@ -1,0 +1,123 @@
+{
+  "artifact_type": "SYNTHETIC_ONLY_PARAMETERIZED_STANDARD_TIMESNET_STRUCTURAL_AUDIT",
+  "real_stl_components_used": false,
+  "real_battery_data_used": false,
+  "validation_values_used": false,
+  "test_loaded": false,
+  "model_trained": false,
+  "model_metrics_used": false,
+  "grid_search_run": false,
+  "target_paper_topk_inference": false,
+  "real_target_alignment_inference": false,
+  "trend_real_variant_implemented": false,
+  "seasonal_real_variant_implemented": false,
+  "synthetic_topk_values_tested": [
+    1,
+    2
+  ],
+  "shape_backward_period_results": [
+    {
+      "n_vars": 1,
+      "top_k": 1,
+      "known_synthetic_periods": [
+        5
+      ],
+      "detected_periods": [
+        5
+      ],
+      "period_detection_status": true,
+      "input_shape": [
+        2,
+        10,
+        1
+      ],
+      "embedded_shape": [
+        2,
+        10,
+        8
+      ],
+      "output_shape": [
+        2,
+        1,
+        1
+      ],
+      "forward_pass": true,
+      "backward_pass": true,
+      "finite_loss": true,
+      "nonzero_gradient": true,
+      "finite_gradients": true
+    },
+    {
+      "n_vars": 3,
+      "top_k": 2,
+      "known_synthetic_periods": [
+        5,
+        2
+      ],
+      "detected_periods": [
+        5,
+        2
+      ],
+      "period_detection_status": true,
+      "input_shape": [
+        2,
+        10,
+        3
+      ],
+      "embedded_shape": [
+        2,
+        10,
+        8
+      ],
+      "output_shape": [
+        2,
+        1,
+        3
+      ],
+      "forward_pass": true,
+      "backward_pass": true,
+      "finite_loss": true,
+      "nonzero_gradient": true,
+      "finite_gradients": true
+    }
+  ],
+  "padding": {
+    "period": 3,
+    "padding_rule": "RIGHT_ZERO_PAD_TO_CEIL_T_OVER_PERIOD_MULTIPLE_THEN_CROP_BACK",
+    "padding": 2,
+    "reshaped_shape": [
+      2,
+      1,
+      4,
+      3
+    ],
+    "crop_back_shape": [
+      2,
+      10,
+      1
+    ],
+    "input_preserved_after_reshape_restore": true
+  },
+  "determinism": true,
+  "tiny_overfit": {
+    "max_steps": 32,
+    "rule": "final_loss < initial_loss",
+    "initial_loss": 0.4443506598472595,
+    "final_loss": 0.0018252721056342125,
+    "pass": true
+  },
+  "framework_adapter_integration": true,
+  "fail_closed": {
+    "strict_seq_len_not_10": true,
+    "missing_config": true,
+    "invalid_top_k": true,
+    "wrong_tensor_rank": true,
+    "nan_input": true,
+    "inf_input": true,
+    "real_data_provenance": true,
+    "validation_provenance": true,
+    "test_provenance": true,
+    "unknown_branch_variant": true
+  },
+  "all_structural_tests_passed": true
+}

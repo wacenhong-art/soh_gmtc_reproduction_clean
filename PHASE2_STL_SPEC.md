@@ -68,3 +68,13 @@ Phase 2C invalidated the Phase 2B global-ACF-argmax candidate rule for this pers
 `PLAN_MINOR_AMENDMENT=STL-PERIOD-0001`
 `PHASE_2_GATE=BLOCKED_BY_STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE`
 `NEXT_ACTION=HUMAN_FIXED_ENGINEERING_PERIOD_OR_PRIMARY_SOURCE_CLARIFICATION`
+
+## Phase 2D implementation separation
+
+The unresolved real-battery STL period blocks paper-aligned NASA/CALCE decomposition, not an explicit-period software contract exercised solely with deterministic synthetic fixtures. The fixture periods 4, 7, and 12 are unit-test inputs only and cannot establish a real-battery period.
+
+`STL_STRUCTURAL_IMPLEMENTATION_GATE=PASS` only after the synthetic audit passes.
+
+`STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD`
+
+`PAPER_ALIGNED_REAL_STL_OUTPUTS_CREATED=False`

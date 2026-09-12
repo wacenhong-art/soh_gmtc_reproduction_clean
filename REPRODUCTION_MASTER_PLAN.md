@@ -4,11 +4,11 @@
 
 **Plan authority:** This is the sole highest-level roadmap for this repository. Every future Codex task must read this complete file before acting and must obey its gates. Its core architecture, phase order, reproduction definitions, and protocol rules may not be silently changed.
 
-**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2A recovered its STL evidence and leakage contract, but the Phase 2 gate is blocked by missing STL configuration, fit-order, and component-target construction evidence.
+**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2 has a Human-authorized dual gate: a parameterized STL module may be structurally validated on deterministic synthetic fixtures, while real NASA/CALCE STL reproduction remains blocked because no paper-defensible real-battery period is available.
 
-`CURRENT_PLAN_VERSION=1.4.0`
+`CURRENT_PLAN_VERSION=1.4.1`
 
-`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0004`
+`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0005`
 
 ## NON-NEGOTIABLE RULES
 
@@ -271,7 +271,7 @@ REPRODUCTION MASTER PROGRESS
 
 Phase 0  Paper Specification      [##########] 100%
 Phase 1  Data Protocol            [##########] 100%
-Phase 2  STL                      [##........] 20%
+Phase 2  STL                      [#####.....] 50%
 Phase 3  iTransformer             [..........] 0%
 Phase 4  Framework Scaffold       [..........] 0%
 Phase 5  TimesNet                 [..........] 0%
@@ -281,11 +281,11 @@ Phase 8  Full G-MTC               [..........] 0%
 Phase 9  Numerical Reproduction   [..........] 0%
 Phase 10 Acceptance               [..........] 0%
 
-OVERALL_PROGRESS=20%
+OVERALL_PROGRESS=23%
 CURRENT_PHASE=Phase 2
-CURRENT_GATE=Blocked: STL period is not structurally identifiable; Phase 2B global-ACF argmax is retired as a persistence artifact
-LAST_COMPLETED=Phase 2C train-only STL period-discovery methodology audit and Level-1 amendment STL-PERIOD-0001
-NEXT_ACTION=HUMAN_FIXED_ENGINEERING_PERIOD_OR_PRIMARY_SOURCE_CLARIFICATION; do not implement or run STL
+CURRENT_GATE=STL_REAL_DATA_FIDELITY_GATE: BLOCKED_BY_MISSING_PAPER_PERIOD
+LAST_COMPLETED=Phase 2D parameterized synthetic STL structural implementation
+NEXT_ACTION=PRIMARY_SOURCE_CLARIFICATION_OR_SEPARATELY_HUMAN_AUTHORIZED_REAL_BATTERY_PERIOD_FALLBACK; no real-battery STL
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -297,6 +297,11 @@ COMPONENT_CONTRIBUTION_STATUS=NOT_STARTED
 HYPERPARAMETER_OPTIMIZATION_STATUS=NOT_STARTED
 TEST_SET_LOCKED=True
 TestLoaded=False
+STL_STRUCTURAL_IMPLEMENTATION_GATE=PASS
+STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD
+FRAMEWORK_STL_IMPLEMENTATION_STATUS=STRUCTURALLY_REPRODUCED
+PAPER_ALIGNED_REAL_STL_OUTPUTS_CREATED=False
+NUMERICAL_REPRODUCTION_BLOCKERS=STL_REAL_BATTERY_PERIOD_MISSING
 ========================================
 ```
 
@@ -366,9 +371,9 @@ Human-authorized fallback permits Phase 1 protocol-freeze work with two isolated
 
 **OBJECTIVE:** independently reproduce decomposition behavior before neural modeling.
 
-**INPUT:** Phase 1 frozen manifest and exact/approved STL parameters.
+**INPUT:** Phase 1 frozen manifest and exact/approved STL parameters. A synthetic-only parameterized software check may use explicit fixture parameters under PLAN-CHANGE-0005; it is not real-data parameter approval.
 
-**ALLOWED_ACTIONS:** implement and test STL only; inspect raw degradation sequence, Trend, Seasonal, and Residual; create component manifests and reconstruction checks.
+**ALLOWED_ACTIONS:** implement and test STL only; inspect raw degradation sequence, Trend, Seasonal, and Residual; create component manifests and reconstruction checks. Before real parameters are frozen, implementation tests are restricted to deterministic synthetic fixtures with an explicit period and no raw battery input.
 
 **FORBIDDEN_ACTIONS:** GAN, TimesNet, iTransformer, fusion, end-to-end model, training, and numerical-performance claims.
 
@@ -378,7 +383,15 @@ Human-authorized fallback permits Phase 1 protocol-freeze work with two isolated
 
 **FAILURE_CONDITIONS:** mismatched indexes, unexplained reconstruction error, full-lifetime fitting that contaminates held-out evaluation, or unlogged parameter substitution.
 
-**NEXT_PHASE_ENTRY_CONDITION:** Phase 2 gate passes and its `PHASE_COMPLETION_COMMIT` is recorded.
+**NEXT_PHASE_ENTRY_CONDITION:** the real-data fidelity gate passes and its `PHASE_COMPLETION_COMMIT` is recorded. A structural-only Phase 3 side-track may be authorized after the structural gate passes, but it must use synthetic components only and cannot claim real-data or paper-aligned reproduction.
+
+### Phase 2 dual-gate contract — PLAN-CHANGE-0005
+
+`STL_STRUCTURAL_IMPLEMENTATION_GATE` verifies a parameterized software contract on deterministic synthetic fixtures only: explicit period required; one declared partition; component and metadata schema; additive reconstruction; length preservation; finite outputs; determinism; and fail-closed rejection of missing/invalid periods or combined/full-lifecycle/TEST partitions.
+
+`STL_REAL_DATA_FIDELITY_GATE` verifies paper-defensible real-battery period, smoother configuration, split order, and component-target construction. Until authoritative evidence or separately authorized scientific fallback is available, set `STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD`, `REAL_BATTERY_STL_AUTHORIZED=False`, and `PAPER_ALIGNED_REAL_STL_OUTPUTS_CREATED=False`.
+
+Structural success is not Phase 2 paper reproduction or numerical reproduction success. It must not remove `STL_REAL_BATTERY_PERIOD_MISSING` from numerical-reproduction blockers.
 
 ## Phase 3 — Transformer / iTransformer Branch
 
@@ -704,7 +717,7 @@ COMMIT=36c7836fc2fa52cb3b1591f070b91b774dcaed85
 |---|---|---|---|---|---|---|
 | 0 | PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY | Paper specification plus Human-authorized PA-001 fallback and PA-004 dual-track protocol record | f354af6 | 65ad49b | PASS | True |
 | 1 | PASS__PRIMARY_SOURCE_OVERRIDE_PENDING | Frozen A/B protocols, source-keyed metadata membership manifest, population-conservation and leakage audits, and augmentation plan; no test values or synthetic rows materialized | 65ad49b | 36c7836 | PASS | True |
-| 2 | BLOCKED_BY_STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE | Capacity-domain STL input cross-evidence, partition-safe fallback, and Phase 2C method audit; global ACF argmax was invalidated as a persistence artifact and no replacement period is authorized | 27e4915 | — | — | False |
+| 2 | STRUCTURAL_IMPLEMENTATION_COMPLETE__REAL_DATA_FIDELITY_BLOCKED | Capacity-domain STL input cross-evidence; Phase 2C period-method audit; and a parameterized, synthetic-only STL module with explicit-period and fail-closed structural tests. No real NASA/CALCE period or decomposition is authorized. | 27e4915 | pending Phase 2 real-fidelity evidence | `STL_STRUCTURAL_IMPLEMENTATION_GATE=PASS`; `STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD` | False |
 | 3 | NOT_STARTED | — | — | — | — | False |
 | 4 | NOT_STARTED | — | — | — | — | False |
 | 5 | NOT_STARTED | — | — | — | — | False |
@@ -985,4 +998,33 @@ PLAN_DEVIATION_LEVEL=1
 PLAN_CHANGE_REQUIRED=False
 PLAN_MINOR_AMENDMENT=STL-PERIOD-0001
 NEXT_ACTION=HUMAN_FIXED_ENGINEERING_PERIOD_OR_PRIMARY_SOURCE_CLARIFICATION
+```
+
+## Append-only run log — Phase 2D parameterized STL structural implementation
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-12 | Phase 2D structural implementation | Phase 2C left real-battery period unresolved. Human authorized a result/performance-blind Level-1 separation of software structure from real-data parameter fidelity. | Audited and safely hardened the existing untracked STL draft into an explicit-period module. Ran deterministic synthetic fixture tests only for periods 4, 7, and 12; verified additive reconstruction, length, finite outputs, determinism, metadata, and fail-closed period/partition/input behavior. No NASA/CALCE, validation, or test values were read. | The structural module is valid, but no real-battery period, real STL output, or paper-aligned Phase 2 result exists. A synthetic-only Phase 3 structural side-track may be considered later without advancing real-data fidelity. | `STL_STRUCTURAL_IMPLEMENTATION_GATE=PASS`; `STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD`. | `MASTER_PLAN_CHANGE_REQUEST_PLAN-CHANGE-0005.md`; `PHASE2D_PARAMETERIZED_STL_STRUCTURAL_IMPLEMENTATION.md`; `output/stl/stl_structural_implementation_audit.json`; `scripts/stl_decomposition.py`. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PLAN_CHANGE_ID=PLAN-CHANGE-0005
+PLAN_CHANGE_STATUS=APPLIED__HUMAN_AUTHORIZED
+STL_PERIOD_IDENTIFIABLE=False
+NASA_STL_PERIOD=UNRESOLVED
+CALCE_STL_PERIOD=UNRESOLVED
+REAL_BATTERY_STL_EXECUTED=False
+SYNTHETIC_FIXTURE_PERIODS=4,7,12
+STL_STRUCTURAL_IMPLEMENTATION_GATE=PASS
+STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD
+FRAMEWORK_STL_IMPLEMENTATION_STATUS=STRUCTURALLY_REPRODUCED
+PAPER_ALIGNED_REAL_STL_OUTPUTS_CREATED=False
+NUMERICAL_REPRODUCTION_BLOCKERS=STL_REAL_BATTERY_PERIOD_MISSING
+TEST_LOADED=False
+VALIDATION_VALUES_USED=False
+TEST_VALUES_USED=False
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=1
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=PRIMARY_SOURCE_CLARIFICATION_OR_SEPARATELY_HUMAN_AUTHORIZED_REAL_BATTERY_PERIOD_FALLBACK
 ```

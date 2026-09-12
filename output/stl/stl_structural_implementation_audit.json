@@ -1,0 +1,108 @@
+{
+  "artifact_type": "SYNTHETIC_STL_UNIT_TEST_FIXTURE",
+  "synthetic_fixture_used_for_real_period_inference": false,
+  "p12_monthly_example_used_as_real_parameter": false,
+  "raw_battery_data_accessed": false,
+  "validation_values_used": false,
+  "test_values_used": false,
+  "model_metrics_used": false,
+  "reconstruction_tolerance_frozen_before_execution": {
+    "atol": 1e-12,
+    "rtol": 1e-12
+  },
+  "period_results": [
+    {
+      "fixture_period": 4,
+      "fixture_is_real_battery_data": false,
+      "max_abs_reconstruction_error": 2.220446049250313e-16,
+      "mean_abs_reconstruction_error": 9.251858538542971e-19,
+      "resolved_parameter_config": {
+        "period": 4,
+        "seasonal": 7,
+        "trend": 9,
+        "low_pass": 5,
+        "seasonal_deg": 1,
+        "trend_deg": 1,
+        "low_pass_deg": 1,
+        "robust": false,
+        "seasonal_jump": 1,
+        "trend_jump": 1,
+        "low_pass_jump": 1
+      },
+      "tests": {
+        "reconstruction_identity": true,
+        "input_output_length_equality": true,
+        "no_nan_or_inf": true,
+        "chronological_order_preserved": true,
+        "deterministic_repeat": true,
+        "metadata_period_correct": true,
+        "metadata_contract_complete": true
+      }
+    },
+    {
+      "fixture_period": 7,
+      "fixture_is_real_battery_data": false,
+      "max_abs_reconstruction_error": 2.220446049250313e-16,
+      "mean_abs_reconstruction_error": 2.7755575615628915e-18,
+      "resolved_parameter_config": {
+        "period": 7,
+        "seasonal": 7,
+        "trend": 15,
+        "low_pass": 9,
+        "seasonal_deg": 1,
+        "trend_deg": 1,
+        "low_pass_deg": 1,
+        "robust": false,
+        "seasonal_jump": 1,
+        "trend_jump": 1,
+        "low_pass_jump": 1
+      },
+      "tests": {
+        "reconstruction_identity": true,
+        "input_output_length_equality": true,
+        "no_nan_or_inf": true,
+        "chronological_order_preserved": true,
+        "deterministic_repeat": true,
+        "metadata_period_correct": true,
+        "metadata_contract_complete": true
+      }
+    },
+    {
+      "fixture_period": 12,
+      "fixture_is_real_battery_data": false,
+      "max_abs_reconstruction_error": 2.220446049250313e-16,
+      "mean_abs_reconstruction_error": 1.8503717077085942e-18,
+      "resolved_parameter_config": {
+        "period": 12,
+        "seasonal": 7,
+        "trend": 23,
+        "low_pass": 13,
+        "seasonal_deg": 1,
+        "trend_deg": 1,
+        "low_pass_deg": 1,
+        "robust": false,
+        "seasonal_jump": 1,
+        "trend_jump": 1,
+        "low_pass_jump": 1
+      },
+      "tests": {
+        "reconstruction_identity": true,
+        "input_output_length_equality": true,
+        "no_nan_or_inf": true,
+        "chronological_order_preserved": true,
+        "deterministic_repeat": true,
+        "metadata_period_correct": true,
+        "metadata_contract_complete": true
+      }
+    }
+  ],
+  "fail_closed_tests": {
+    "period_none_raises_STLPeriodNotSpecified": true,
+    "invalid_period_raises": true,
+    "empty_series_raises": true,
+    "too_short_series_raises": true,
+    "combined_partition_raises": true,
+    "full_lifecycle_partition_raises": true
+  },
+  "all_structural_tests_passed": true
+}

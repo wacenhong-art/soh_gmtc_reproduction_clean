@@ -67,3 +67,21 @@ TEST_CAPACITY_VALUES_ACCESSED=False
 ```
 
 No frozen period was obtained by the train-only structural rule, so neither train nor validation decomposition was executed. This preserves the test lock and avoids treating an unresolved period as a result to tune.
+
+## Phase 2D structural-module boundary
+
+`PLAN_CHANGE_ID=PLAN-CHANGE-0005`
+
+`STL_STRUCTURAL_IMPLEMENTATION_GATE=synthetic-only software verification`
+
+`STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD`
+
+The parameterized module accepts exactly one caller-declared partition and rejects `TEST`, `FULL_LIFECYCLE`, and combined-partition identifiers. This is a provenance guard; standard offline STL remains potentially non-causal within an allowed partition.
+
+`REAL_BATTERY_STL_EXECUTED=False`
+
+`TEST_LOADED=False`
+
+`VALIDATION_VALUES_USED=False`
+
+`TEST_VALUES_USED=False`

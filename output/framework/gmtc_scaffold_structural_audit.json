@@ -1,0 +1,60 @@
+{
+  "artifact_type": "SYNTHETIC_ONLY_GMTC_FRAMEWORK_SCAFFOLD_STRUCTURAL_AUDIT",
+  "real_battery_data_used": false,
+  "real_stl_components_used": false,
+  "real_timesnet_used": false,
+  "real_itransformer_used": false,
+  "validation_values_used": false,
+  "test_loaded": false,
+  "model_trained": false,
+  "model_metrics_used": false,
+  "grid_search_run": false,
+  "seq_len": 10,
+  "seq_len_provenance": "PAPER_EXACT",
+  "real_pred_len_inference": false,
+  "synthetic_pred_len": 1,
+  "component_ratio_definition_status": "UNRESOLVED",
+  "fusion_feature_d_status": "UNRESOLVED",
+  "integration": {
+    "three_component_inputs_accepted": true,
+    "fusion_payload_component_names": [
+      "RESIDUAL",
+      "SEASONAL",
+      "TREND"
+    ],
+    "fusion_payload_has_exactly_three_predictions": true,
+    "fusion_executed": false,
+    "branch_shapes": {
+      "TREND": [
+        2,
+        1,
+        3
+      ],
+      "SEASONAL": [
+        2,
+        1,
+        3
+      ],
+      "RESIDUAL": [
+        2,
+        1,
+        3
+      ]
+    },
+    "residual_branch_fidelity": "STRUCTURALLY_IMPLEMENTED_SYNTHETIC_ONLY",
+    "trend_branch_fidelity": "MOCK__NOT_MODEL_REPRODUCTION",
+    "seasonal_branch_fidelity": "MOCK__NOT_MODEL_REPRODUCTION"
+  },
+  "fail_closed": {
+    "trend_timesnet_port_unimplemented": true,
+    "seasonal_timesnet_port_unimplemented": true,
+    "missing_component": true,
+    "duplicate_component": true,
+    "mismatched_time_alignment": true,
+    "mismatched_batch_ids": true,
+    "wrong_seq_len": true,
+    "real_data_provenance": true,
+    "test_provenance": true
+  },
+  "all_structural_tests_passed": true
+}

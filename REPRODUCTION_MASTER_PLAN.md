@@ -4,11 +4,11 @@
 
 **Plan authority:** This is the sole highest-level roadmap for this repository. Every future Codex task must read this complete file before acting and must obey its gates. Its core architecture, phase order, reproduction definitions, and protocol rules may not be silently changed.
 
-**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2 has a Human-authorized dual gate: a parameterized STL module may be structurally validated on deterministic synthetic fixtures, while real NASA/CALCE STL reproduction remains blocked because no paper-defensible real-battery period is available.
+**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2 structural STL is complete only on deterministic synthetic fixtures; real NASA/CALCE STL remains blocked by its missing period. Phase 3A establishes that the iTransformer residual input and target alignment are not executable from the paper, so neither a synthetic module nor a real-data branch is presently authorized.
 
-`CURRENT_PLAN_VERSION=1.4.1`
+`CURRENT_PLAN_VERSION=1.4.2`
 
-`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0005`
+`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0006`
 
 ## NON-NEGOTIABLE RULES
 
@@ -272,7 +272,7 @@ REPRODUCTION MASTER PROGRESS
 Phase 0  Paper Specification      [##########] 100%
 Phase 1  Data Protocol            [##########] 100%
 Phase 2  STL                      [#####.....] 50%
-Phase 3  iTransformer             [..........] 0%
+Phase 3  iTransformer             [##........] 20%
 Phase 4  Framework Scaffold       [..........] 0%
 Phase 5  TimesNet                 [..........] 0%
 Phase 6  Adaptive Fusion          [..........] 0%
@@ -281,11 +281,11 @@ Phase 8  Full G-MTC               [..........] 0%
 Phase 9  Numerical Reproduction   [..........] 0%
 Phase 10 Acceptance               [..........] 0%
 
-OVERALL_PROGRESS=23%
-CURRENT_PHASE=Phase 2
-CURRENT_GATE=STL_REAL_DATA_FIDELITY_GATE: BLOCKED_BY_MISSING_PAPER_PERIOD
-LAST_COMPLETED=Phase 2D parameterized synthetic STL structural implementation
-NEXT_ACTION=PRIMARY_SOURCE_CLARIFICATION_OR_SEPARATELY_HUMAN_AUTHORIZED_REAL_BATTERY_PERIOD_FALLBACK; no real-battery STL
+OVERALL_PROGRESS=25%
+CURRENT_PHASE=Phase 3
+CURRENT_GATE=ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE: BLOCKED_BY_TARGET_ALIGNMENT_MISSING
+LAST_COMPLETED=Phase 3A iTransformer specification and dataflow contract
+NEXT_ACTION=PRIMARY_SOURCE_CLARIFICATION_OR_HUMAN_RESULT_BLIND_TARGET_ALIGNMENT_DECISION; no iTransformer implementation
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -302,6 +302,8 @@ STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD
 FRAMEWORK_STL_IMPLEMENTATION_STATUS=STRUCTURALLY_REPRODUCED
 PAPER_ALIGNED_REAL_STL_OUTPUTS_CREATED=False
 NUMERICAL_REPRODUCTION_BLOCKERS=STL_REAL_BATTERY_PERIOD_MISSING
+ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=BLOCKED_BY_TARGET_ALIGNMENT_MISSING
+ITRANSFORMER_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_STL_PERIOD_AND_INPUT_SEMANTICS_AND_MISSING_ARCH_PARAMETERS
 ========================================
 ```
 
@@ -410,6 +412,14 @@ Structural success is not Phase 2 paper reproduction or numerical reproduction s
 **FAILURE_CONDITIONS:** tensor mismatch, target leakage, implicit model substitution, or test-driven architecture selection.
 
 **NEXT_PHASE_ENTRY_CONDITION:** Phase 3 gate passes and its `PHASE_COMPLETION_COMMIT` is recorded.
+
+### Phase 3 dual-gate contract — PLAN-CHANGE-0006
+
+`ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE` can assess a synthetic-only tensor contract, strict paper-exact 10-step input length, forward/backward wiring, determinism, and fail-closed behavior only after an explicit target/horizon alignment contract is frozen. It cannot use real residuals, validation/test values, model metrics, or target-paper parameter defaults.
+
+`ITRANSFORMER_REAL_DATA_FIDELITY_GATE` can pass only after paper-defensible residual construction, input-channel semantics, target/horizon alignment, and architecture parameters are frozen. It inherits `STL_REAL_BATTERY_PERIOD_MISSING` and remains blocked by current iTransformer ambiguities.
+
+No structural work can establish iTransformer paper reproduction, framework reproduction, or numerical reproduction.
 
 ## Phase 4 — G-MTC Framework Scaffold
 
@@ -718,7 +728,7 @@ COMMIT=36c7836fc2fa52cb3b1591f070b91b774dcaed85
 | 0 | PASS_WITH_REGISTERED_PRIMARY_SOURCE_AMBIGUITY | Paper specification plus Human-authorized PA-001 fallback and PA-004 dual-track protocol record | f354af6 | 65ad49b | PASS | True |
 | 1 | PASS__PRIMARY_SOURCE_OVERRIDE_PENDING | Frozen A/B protocols, source-keyed metadata membership manifest, population-conservation and leakage audits, and augmentation plan; no test values or synthetic rows materialized | 65ad49b | 36c7836 | PASS | True |
 | 2 | STRUCTURAL_IMPLEMENTATION_COMPLETE__REAL_DATA_FIDELITY_BLOCKED | Capacity-domain STL input cross-evidence; Phase 2C period-method audit; and a parameterized, synthetic-only STL module with explicit-period and fail-closed structural tests. No real NASA/CALCE period or decomposition is authorized. | 27e4915 | pending Phase 2 real-fidelity evidence | `STL_STRUCTURAL_IMPLEMENTATION_GATE=PASS`; `STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD` | False |
-| 3 | NOT_STARTED | — | — | — | — | False |
+| 3 | SPECIFICATION_COMPLETE__STRUCTURAL_AND_REAL_DATA_GATES_BLOCKED | Target-paper iTransformer evidence, Fig.5 residual-routing audit, standard-vs-target boundary, parameter-evidence table, and dual-gate contract. No module or real residual data was used because input semantics and target alignment remain unresolved. | — | pending target-alignment evidence | `ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=BLOCKED_BY_TARGET_ALIGNMENT_MISSING`; real-data gate also inherits STL period blocker | False |
 | 4 | NOT_STARTED | — | — | — | — | False |
 | 5 | NOT_STARTED | — | — | — | — | False |
 | 6 | NOT_STARTED | — | — | — | — | False |
@@ -1027,4 +1037,32 @@ PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
 PLAN_DEVIATION_LEVEL=1
 PLAN_CHANGE_REQUIRED=False
 NEXT_ACTION=PRIMARY_SOURCE_CLARIFICATION_OR_SEPARATELY_HUMAN_AUTHORIZED_REAL_BATTERY_PERIOD_FALLBACK
+```
+
+## Append-only run log — Phase 3A iTransformer specification and dataflow contract
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-12 | Phase 3A specification | Phase 2 structural gate is pass-only on synthetic STL; real period remains blocked and test is locked. Phase 3 was limited to a synthetic-only structural eligibility review. | Re-read the full target paper and Fig.5, audited Eqs.(21)–(23), target-paper iTransformer claims, standard iTransformer boundaries, 10-step-window semantics, residual tensor candidates, graph-attention claim, and missing parameters. No model, real residual, validation/test value, metric, or search was used. | Fig.5 shows residual-only routing but no extra voltage/temperature/HF input; prose claims multivariate channel mixing without mapping it. Forecast/residual target alignment is missing. This is an unresolved tension, not a proven explicit paper contradiction. | Both Phase 3 gates remain blocked; no module is authorized. | `ITRANSFORMER_PAPER_EVIDENCE.md`; `ITRANSFORMER_INPUT_SEMANTICS_AUDIT.md`; `ITRANSFORMER_PARAMETER_EVIDENCE.md`; `PHASE3_ITRANSFORMER_SPEC.md`; `PLAN-CHANGE-0006`. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+CURRENT_STRUCTURAL_PHASE=Phase 3
+SEQUENCE_LENGTH=10
+SEQUENCE_LENGTH_PROVENANCE=PAPER_EXACT
+ITRANSFORMER_INPUT_SEMANTICS_STATUS=AMBIGUOUS_BLOCKING_REAL_DATA
+FORECAST_TARGET_ALIGNMENT_STATUS=MISSING_BLOCKING
+RESIDUAL_TARGET_ALIGNMENT=AMBIGUOUS_BLOCKING__PA-007
+ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=BLOCKED_BY_TARGET_ALIGNMENT_MISSING
+ITRANSFORMER_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_STL_PERIOD_AND_INPUT_SEMANTICS_AND_MISSING_ARCH_PARAMETERS
+REAL_RESIDUAL_DATA_USED=False
+TEST_LOADED=False
+VALIDATION_VALUES_USED=False
+TEST_VALUES_USED=False
+MODEL_METRICS_USED=False
+GRID_SEARCH_RUN=False
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=1
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=PRIMARY_SOURCE_CLARIFICATION_OR_HUMAN_RESULT_BLIND_TARGET_ALIGNMENT_DECISION
 ```

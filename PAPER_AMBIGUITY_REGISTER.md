@@ -38,6 +38,16 @@ All records are Phase 0 paper-evidence records. They do not authorize defaults o
 `BLOCKS_IMPLEMENTATION=True`
 `HUMAN_DECISION_REQUIRED=True`
 
+### Phase 3A audit update — residual branch dataflow
+
+`EVIDENCE_ADDED=PDF p.6 §3.3; p.8 Fig.5 visual audit; p.9 §3.7(2)`
+
+`FINDING=The capacity-domain STL cross-evidence and Fig.5 support residual-only routing, but the prose claims nonlinear interactions between voltage fluctuations and temperature variations. No residual-branch mapping supplies those channels.`
+
+`IMPLEMENTATION_IMPACT=The real iTransformer input tensor cannot be made paper-faithful without an unreported engineering addition.`
+
+`STATUS=RETAINED_AS_BLOCKING_FOR_REAL_DATA_ITRANSFORMER`
+
 ## PA-004 — split versus small-sample conflict
 
 `CATEGORY=critical_protocol`
@@ -98,6 +108,20 @@ All records are Phase 0 paper-evidence records. They do not authorize defaults o
 `IMPLEMENTATION_IMPACT=Loss and fusion interface differ.`
 `BLOCKS_IMPLEMENTATION=True`
 `HUMAN_DECISION_REQUIRED=True`
+
+### Phase 3A audit update — 2026-09-12
+
+`EVIDENCE_ADDED=PDF p.6 §3.3; p.7 Eqs.(21)–(23); p.8 Fig.5 visual audit; p.9 §3.7(2)`
+
+`FINDING=Fig.5 routes only the residual component to its residual representation and does not show voltage, temperature, or HF side inputs. The paper’s channel-mixing/voltage-temperature prose therefore cannot determine the residual input tensor.`
+
+`FORECAST_TARGET_ALIGNMENT_STATUS=MISSING_BLOCKING`
+
+`RESIDUAL_TARGET_ALIGNMENT=AMBIGUOUS_BLOCKING`
+
+`CORE_DATAFLOW_CONTRADICTION_FOUND=False__UNRESOLVED_TENSION_NOT_EXPLICIT_CONTRADICTION`
+
+`IMPLEMENTATION_STATUS=BLOCKED_PENDING_TARGET_ALIGNMENT`
 
 ## PA-008 — fusion errors and ratios provenance
 

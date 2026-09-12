@@ -10,6 +10,7 @@ No entry below is eligible to become a paper parameter through framework default
 | STL fit scope/timing | STL | AMBIGUOUS | Train-only/full-life and before/after windowing absent | Yes | No | False |
 | TimesNet input/output dimensions, d_model, layers, top-k, kernels, dropout, normalization/head | TimesNet | MISSING | Generic TimesNet exposition only | Yes | No | False |
 | iTransformer d_model, heads, layers, d_ff, dropout, normalization, output head | iTransformer | MISSING | Generic equations only | Yes | No | False |
+| iTransformer residual-input variables / tensor axes | iTransformer | AMBIGUOUS | Residual branch is explicit, but voltage/temperature channel-mixing prose has no branch-input mapping | Yes | No | False |
 | Residual branch target | iTransformer | AMBIGUOUS | No concrete component-target tensor stated | Yes | No | False |
 | Fusion L_pred/L_weight definitions and coefficient | Fusion | MISSING | Eq.(24) names terms without details | Yes | No | False |
 | Fusion errors/ratios definition | Fusion | AMBIGUOUS | 9d listed without inference-safe construction | Yes | No | False |

@@ -92,9 +92,9 @@ Every field records `VALUE`, `STATUS`, `SOURCE`, `SOURCE_LOCATION`, and `NOTES`.
 
 | Field | VALUE | STATUS | SOURCE_LOCATION | NOTES |
 |---|---|---|---|---|
-| ITRANSFORMER_ROLE / INPUT_BRANCH | Residual -> iTransformer; channel mixing for nonlinear dependencies. | EXACT | PDF pp.6–7, 9, 16 | — |
+| ITRANSFORMER_ROLE / INPUT_BRANCH | Residual -> iTransformer; channel mixing for nonlinear dependencies. | EXACT | PDF pp.6–7, 9, 16 | Phase 3A confirms the route but finds the executable residual tensor ambiguous: Fig.5 shows residual only, whereas §3.3 mentions voltage/temperature interactions without an input mapping. |
 | EMBEDDING_METHOD | MLP Embedding of `X_:,n`; MLP Projection after transformer blocks. | EXACT | PDF p.7 Eqs.(21)–(23) | — |
-| RESIDUAL_BRANCH_TARGET | Future variables `Y` in generic equation; exact SOH/component target tensor unspecified. | AMBIGUOUS | PDF p.7 Eqs.(21)–(23) | `PA-007`. |
+| RESIDUAL_BRANCH_TARGET | Future variables `Y` in generic equation; exact SOH/component target tensor unspecified. | AMBIGUOUS | PDF p.7 Eqs.(21)–(23) | `PA-007`; Phase 3A confirms no horizon/offset or residual-target construction is supplied. |
 | INPUT_DIM / D_MODEL / N_HEADS / N_LAYERS / D_FF / DROPOUT / ACTIVATION / NORMALIZATION / OUTPUT_HEAD | Not stated. | MISSING | PDF §3.5 | `PM-004`. |
 | SEQUENCE_LENGTH | 10-step branch windows. | EXACT | PDF p.6 §3.3 | — |
 

@@ -228,6 +228,14 @@ All records are Phase 0 paper-evidence records. They do not authorize defaults o
 
 This Human fallback is result/performance blind and does not convert any contradictory or missing paper statement into `PAPER_EXACT`.
 
+## Phase 8A integration-seam preservation note
+
+`SCALE_NORMALIZATION_SEAM=UNRESOLVED` — the paper’s Fig. 5 “Normalize” label does not identify a transformation or the statistical population used to fit it. The SCF-GAN Tanh output therefore cannot be mapped to branch-input HF scale without a new source-grounded decision.
+
+`TIME_ALIGNMENT_SEAM=UNRESOLVED` — the paper’s 10-step window establishes input length, not the branch target endpoint, forecast horizon, or prediction length.
+
+`FUSION_FEATURE_SEAM=UNRESOLVED` — prediction/error/ratio definitions, `d`, first-`3d` slot meaning, final output domain, total loss composition, and training orchestration remain non-executable. No Phase 8A artifact resolves or substitutes these semantics.
+
 The deterministic ACF/spectral agreement rule failed for every Protocol-A and Protocol-B target training track. It does not resolve the paper ambiguity and it does not supply a hidden period: `STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE=True`. Any fixed engineering period or bounded structural sensitivity study now requires a separate Human decision.
 
 ## Phase 7A cross-phase dataflow update — PA-009 / PA-010 and new interface blocker

@@ -1371,3 +1371,30 @@ PLAN_DEVIATION_LEVEL=0
 PLAN_CHANGE_REQUIRED=False
 NEXT_ACTION=PHASE_8_SYNTHETIC_OR_CONTRACT_LEVEL_INTEGRATION_REVIEW_ONLY
 ```
+
+## Append-only run log — Phase 8A Full G-MTC integration readiness and semantic seam audit
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-13 | Phase 8A contract integration readiness | The Phase 7B Human result-blind fallback makes the high-level input and target paths coherent, while every real-data fidelity gate remains blocked. | Audited all active Phase 2–7 interfaces without reading NASA/CALCE, validation/test values, or running a numeric pipeline. Added explicit scale, sample-identity/alignment, module-inventory, fusion-seam, and blocker-resolution contracts, plus a metadata-only fail-closed validator. | Contract-level integration is coherent, but its numeric seams are deliberately unresolved: SCF-GAN output scale/HF normalization, synthetic-cycle pairing, branch target alignment/prediction length, real STL targets, fusion feature semantics, final domain, total loss, and orchestration. | `GMTC_CONTRACT_INTEGRATION_GATE=PASS`; `GMTC_SYNTHETIC_NUMERIC_INTEGRATION_GATE=BLOCKED_BY_UNRESOLVED_SCALE_ALIGNMENT_AND_FUSION_SEMANTICS`; `GMTC_REAL_DATA_INTEGRATION_GATE=BLOCKED_BY_RETAINED_FIDELITY_BLOCKERS`. | `PHASE8_GMTC_INTEGRATION_READINESS_AUDIT.md`; `GMTC_SCALE_AND_NORMALIZATION_CONTRACT.md`; `GMTC_SAMPLE_IDENTITY_AND_ALIGNMENT_CONTRACT.md`; `NUMERICAL_REPRODUCTION_BLOCKER_RESOLUTION_MATRIX.md`; `scripts/gmtc_integration_contract.py`; `output/integration/gmtc_contract_integration_audit.json`. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+CURRENT_PHASE=Phase_8
+REAL_DATA_USED=False
+REAL_SCFGAN_TRAINING=False
+REAL_SYNTHETIC_ROWS_CREATED=False
+TEST_LOADED=False
+VALIDATION_VALUES_USED=False
+MODEL_TRAINED=False
+MODEL_METRICS_USED=False
+GRID_SEARCH_RUN=False
+CURRENT_MAX_LEGAL_INTEGRATION_LEVEL=LEVEL_1__SCHEMA_AND_CONTRACT_INTEGRATION
+FULL_SYNTHETIC_END_TO_END_EXECUTION=BLOCKED
+ADVANCEMENT_TO_PHASE_9=False
+STOP_STRUCTURAL_EXPANSION_RECOMMENDED=True
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS__STOP_STRUCTURAL_EXPANSION_RECOMMENDED
+PLAN_DEVIATION_LEVEL=0
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=RESOLVE_PRIMARY_SOURCE_FIDELITY_BLOCKERS_OR_OBTAIN_A_SEPARATE_HUMAN_RESULT_BLIND_FALLBACK
+```

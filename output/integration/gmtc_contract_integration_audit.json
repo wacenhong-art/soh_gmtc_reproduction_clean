@@ -1,0 +1,25 @@
+{
+  "artifact_type": "GMTC_LEVEL1_METADATA_ONLY_CONTRACT_AUDIT",
+  "real_data_used": false,
+  "real_synthetic_rows_created": false,
+  "test_loaded": false,
+  "validation_values_used": false,
+  "model_trained": false,
+  "grid_search_run": false,
+  "numeric_full_pipeline_executed": false,
+  "contract_integration_gate": "PASS",
+  "synthetic_numeric_integration_gate": "BLOCKED_BY_UNRESOLVED_SCALE_ALIGNMENT_AND_FUSION_SEMANTICS",
+  "real_data_integration_gate": "BLOCKED_BY_RETAINED_FIDELITY_BLOCKERS",
+  "fail_closed_tests": {
+    "missing_scale_metadata": true,
+    "unknown_target_alignment_numeric": true,
+    "mismatched_cycle_identity": true,
+    "mixed_partition": true,
+    "validation_provenance": true,
+    "test_provenance": true,
+    "feature_dim_not_3": true,
+    "synthetic_soh_request": true,
+    "fusion_semantics_unresolved_numeric": true
+  },
+  "all_tests_passed": true
+}

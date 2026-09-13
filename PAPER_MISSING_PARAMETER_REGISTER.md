@@ -25,6 +25,18 @@ No entry below is eligible to become a paper parameter through framework default
 
 **Rule:** where `DEFAULT_WOULD_BE_PAPER_FAITHFUL=False`, an engineering choice requires a `REPRODUCTION_DEVIATION_RECORD`; it cannot be labelled a paper-exact parameter.
 
+## Phase 8A scale, alignment, and integration seams
+
+`SCFGAN_OUTPUT_SCALE_STATUS=UNRESOLVED` — a Tanh generator output does not specify whether HF values are raw, normalized, or otherwise transformed.
+
+`HF_NORMALIZATION_METHOD_STATUS=MISSING` — Fig. 5 shows “Normalize” but does not report the method, fit population, parameters, validation/test transform treatment, or inverse transform.
+
+`BRANCH_INPUT_SCALE_STATUS=UNRESOLVED` and `REAL_SYNTHETIC_SCALE_COMPATIBILITY_STATUS=BLOCKED_BY_UNKNOWN_HF_NORMALIZATION_AND_GAN_OUTPUT_SCALE`.
+
+`SYNTHETIC_TO_LABEL_CYCLE_ALIGNMENT_STATUS=BLOCKED_BY_UNRESOLVED_CONDITION_ENCODING_AND_TARGET_ALIGNMENT`.
+
+These fields, together with the retained branch target alignment, STL-period, fusion feature-construction, final-domain, loss-composition, and orchestration rows, block both numeric synthetic integration and real-data Phase 9 work. They do not block metadata-only Level-1 contract validation.
+
 ## Phase 7B execution-policy note
 
 `PLAN_CHANGE_ID=PLAN-CHANGE-0010`

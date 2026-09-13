@@ -15,8 +15,10 @@ No entry below is eligible to become a paper parameter through framework default
 | Fusion L_pred/L_weight definitions and coefficient | Fusion | MISSING | Eq.(24) names terms without details; Phase 6A confirms lambda is not reported | Yes | No | False |
 | Fusion errors/ratios definition, d semantics, first-3d feature ordering, final output domain, attention axes, and placement details | Fusion | AMBIGUOUS | 9d/9/3d table tension and no inference-safe feature construction; Phase 6A records exact missing items | Yes | No | False |
 | GAN condition encoding | SCF-GAN | AMBIGUOUS | Cycle period, voltage range, and battery/usage descriptions differ | Yes | No | False |
+| GAN condition set and generated-feature fields/dimension | SCF-GAN | CONTRADICTORY | Fig.3 labels Cycle+Battery type and 4D HF1/HF2/HF3/SOH; Fig.5 labels Cycle+Voltage; §4.2 explicitly names HF1/HF2/HF3 | Yes | No | False |
 | GAN latent/hidden dimensions, epochs, batch, LR, Adam betas | SCF-GAN | MISSING | Not reported | Yes | No | False |
 | GAN SN/activation/layer-count conflict | SCF-GAN | AMBIGUOUS | Equations, tables, and prose differ | Yes | No | False |
+| SCF-GAN to STL/component branch interface | cross-phase G-MTC | AMBIGUOUS | No figure arrow/equation specifies generated fields, STL input domain, branch inputs, or component targets | Yes | No | False |
 | Augmented real/synthetic ratio and placement | augmentation | AMBIGUOUS | Five datasets/fivefold wording not operationalized | Yes | No | False |
 | Epoch count, initialization, scheduler, clipping, seed list | training | MISSING | Not reported | Yes | No | False |
 | Metric aggregation across ten runs | evaluation | MISSING | “Ten parallel experiments” without aggregation rule | Yes | No | False |

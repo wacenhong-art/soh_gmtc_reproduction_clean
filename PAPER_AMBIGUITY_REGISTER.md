@@ -189,3 +189,19 @@ All records are Phase 0 paper-evidence records. They do not authorize defaults o
 `AUTHOR_OVERRIDE_PENDING=True`
 
 The deterministic ACF/spectral agreement rule failed for every Protocol-A and Protocol-B target training track. It does not resolve the paper ambiguity and it does not supply a hidden period: `STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE=True`. Any fixed engineering period or bounded structural sensitivity study now requires a separate Human decision.
+
+## Phase 7A cross-phase dataflow update — PA-009 / PA-010 and new interface blocker
+
+`EVIDENCE_ADDED=PDF pp.4–5 §3.2; PDF p.8 Fig.5; PDF pp.8–10 §3.7/§4.2; visual Figure audit retained in output/phase7_figure_visual_evidence/`
+
+`PA009_STATUS=CONTRADICTORY__CYCLE_VOLTAGE_BATTERY_TYPE_CHEMISTRY_AND_USAGE`
+
+`PA010_STATUS=CONTRADICTORY__GENERATOR_ACTIVATION_BN_CBN_SN_SCOPE_AND_DISCRIMINATOR_DEPTH`
+
+`NEW_CROSS_PHASE_BLOCKER=GMTC_CROSS_PHASE_DATAFLOW_UNRESOLVED`
+
+`FINDING=Fig.3 labels SCF-GAN output as four fields HF1/HF2/HF3/SOH, whereas §4.2 explicitly names generated HF1/HF2/HF3 and Fig.5 contains no visible Generated-Features-to-STL arrow. Capacity-domain STL cross-evidence therefore cannot be reconciled with a generated-SOH path without an unreported conversion and component-target rule.`
+
+`STATUS=LEVEL2_PLAN_CHANGE_REQUEST_REQUIRED__DO_NOT_SELECT_A_REAL_DATAFLOW`
+
+`AUTHOR_OVERRIDE_PENDING=True`

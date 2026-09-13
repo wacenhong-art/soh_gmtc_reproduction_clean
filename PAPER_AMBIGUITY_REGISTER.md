@@ -145,6 +145,16 @@ All records are Phase 0 paper-evidence records. They do not authorize defaults o
 `BLOCKS_IMPLEMENTATION=True`
 `HUMAN_DECISION_REQUIRED=True`
 
+### Phase 6A audit update — fusion feature semantics and real-data boundary
+
+`EVIDENCE_ADDED=PDF p.7 Eqs.(24)–(29); p.9 Table 4; Fig.4`
+
+`FINDING=The topology, 9 named feature groups, 3-way Softmax, Bi-LSTM widths, weight-network widths, and final-head widths are explicit. The paper does not define component error or ratio formulas, their inference-time availability, d in 9d/3d, the ordering of first 3d slots, L_pred, L_weight, fusion lambda, or a capacity-to-SOH conversion.`
+
+`IMPLEMENTATION_IMPACT=A real fusion-feature builder would require unreported semantics and could introduce direct target leakage. Only synthetic preconstructed BxTx9 feature tensors are authorized for Phase 6A structural testing.`
+
+`STATUS=RETAINED_AS_BLOCKING_FOR_REAL_DATA_FUSION`
+
 ## PA-009 — GAN condition semantics
 
 `CATEGORY=gan_condition`

@@ -4,11 +4,11 @@
 
 **Plan authority:** This is the sole highest-level roadmap for this repository. Every future Codex task must read this complete file before acting and must obey its gates. Its core architecture, phase order, reproduction definitions, and protocol rules may not be silently changed.
 
-**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2 structural STL is complete only on deterministic synthetic fixtures; real NASA/CALCE STL remains blocked by its missing period. Phase 3 standard iTransformer core is structurally implemented and tested on a generic synthetic interface only; real residual input, target alignment, and target-paper architecture fidelity remain blocked. Phase 4 has a synthetic-only routing scaffold. Phase 5 now has a Human-authorized synthetic standard TimesNet-core side-track, but neither target-paper Trend/Seasonal variant nor real-data TimesNet fidelity is established.
+**Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2 structural STL is complete only on deterministic synthetic fixtures; real NASA/CALCE STL remains blocked by its missing period. Phase 3 standard iTransformer core is structurally implemented and tested on a generic synthetic interface only; real residual input, target alignment, and target-paper architecture fidelity remain blocked. Phase 4 has a synthetic-only routing scaffold. Phase 5 has a Human-authorized synthetic standard TimesNet-core side-track, but neither target-paper Trend/Seasonal variant nor real-data TimesNet fidelity is established. Phase 6 has a synthetic-only preconstructed-feature fusion structural contract; it does not define any real error, ratio, 9d, loss, or final-output semantics.
 
-`CURRENT_PLAN_VERSION=1.4.5`
+`CURRENT_PLAN_VERSION=1.4.6`
 
-`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0008`
+`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0009`
 
 ## NON-NEGOTIABLE RULES
 
@@ -275,17 +275,17 @@ Phase 2  STL                      [#####.....] 50%
 Phase 3  iTransformer             [#####.....] 50%
 Phase 4  Framework Scaffold       [#####.....] 50%
 Phase 5  TimesNet                 [#####.....] 50%
-Phase 6  Adaptive Fusion          [..........] 0%
+Phase 6  Adaptive Fusion          [#####.....] 50%
 Phase 7  SCF-GAN                  [..........] 0%
 Phase 8  Full G-MTC               [..........] 0%
 Phase 9  Numerical Reproduction   [..........] 0%
 Phase 10 Acceptance               [..........] 0%
 
-OVERALL_PROGRESS=36%
-CURRENT_PHASE=Phase 5
-CURRENT_GATE=TIMESNET_BRANCH_VARIANT_FIDELITY_GATE: BLOCKED_BY_INPUT_TARGET_AND_VARIANT_PARAMETERS
-LAST_COMPLETED=Phase 5A TimesNet specification and synthetic standard-core structural implementation
-NEXT_ACTION=PHASE_6_SYNTHETIC_ONLY_FUSION_SPECIFICATION_AND_INTERFACE_AUDIT__OR_PRIMARY_SOURCE_CLARIFICATION; no real-data framework claim
+OVERALL_PROGRESS=41%
+CURRENT_PHASE=Phase 6
+CURRENT_GATE=ADAPTIVE_FUSION_REAL_DATA_FIDELITY_GATE: BLOCKED_BY_FEATURE_SEMANTICS_LOSS_AND_BRANCH_ALIGNMENT
+LAST_COMPLETED=Phase 6A adaptive-fusion specification and synthetic preconstructed-feature structural implementation
+NEXT_ACTION=PHASE_7_SCF_GAN_SPECIFICATION_AND_SYNTHETIC_ONLY_STRUCTURAL_WORK__OR_PRIMARY_SOURCE_CLARIFICATION; no real-data framework claim
 
 PAPER_LOGIC_REPRODUCED=False
 FRAMEWORK_REPRODUCTION_STATUS=NOT_STARTED
@@ -301,7 +301,7 @@ STL_STRUCTURAL_IMPLEMENTATION_GATE=PASS
 STL_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_MISSING_PAPER_PERIOD
 FRAMEWORK_STL_IMPLEMENTATION_STATUS=STRUCTURALLY_REPRODUCED
 PAPER_ALIGNED_REAL_STL_OUTPUTS_CREATED=False
-NUMERICAL_REPRODUCTION_BLOCKERS=STL_REAL_BATTERY_PERIOD_MISSING;ITRANSFORMER_INPUT_SEMANTICS_MISSING;ITRANSFORMER_TARGET_ALIGNMENT_MISSING;ITRANSFORMER_ARCH_PARAMETERS_MISSING;TIMESNET_INPUT_SEMANTICS_MISSING;TIMESNET_TARGET_ALIGNMENT_MISSING;TIMESNET_TOPK_MISSING;TREND_TIMESNET_CONFIGURATION_MISSING;SEASONAL_LIGHTWEIGHT_DEFINITION_MISSING;INCEPTION_CONFIGURATION_MISSING;ADAPTIVE_MERGE_DETAIL_MISSING;FUSION_INTERFACE_SEMANTICS_INCOMPLETE;GMTC_TRAINING_ORCHESTRATION_UNSPECIFIED;SHARED_ADVERSARIAL_TRAINING_UNSPECIFIED
+NUMERICAL_REPRODUCTION_BLOCKERS=STL_REAL_BATTERY_PERIOD_MISSING;ITRANSFORMER_INPUT_SEMANTICS_MISSING;ITRANSFORMER_TARGET_ALIGNMENT_MISSING;ITRANSFORMER_ARCH_PARAMETERS_MISSING;TIMESNET_INPUT_SEMANTICS_MISSING;TIMESNET_TARGET_ALIGNMENT_MISSING;TIMESNET_TOPK_MISSING;TREND_TIMESNET_CONFIGURATION_MISSING;SEASONAL_LIGHTWEIGHT_DEFINITION_MISSING;INCEPTION_CONFIGURATION_MISSING;ADAPTIVE_MERGE_DETAIL_MISSING;FUSION_INTERFACE_SEMANTICS_INCOMPLETE;FUSION_ERROR_DEFINITION_MISSING;FUSION_RATIO_DEFINITION_MISSING;FUSION_D_SEMANTICS_MISSING;FUSION_FEATURE_SELECTION_AMBIGUOUS;FUSION_FINAL_OUTPUT_SEMANTICS_MISSING;FUSION_WEIGHT_REGULARIZATION_MISSING;FUSION_LAMBDA_MISSING;GMTC_TRAINING_ORCHESTRATION_UNSPECIFIED;SHARED_ADVERSARIAL_TRAINING_UNSPECIFIED
 ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=PASS
 ITRANSFORMER_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_STL_PERIOD_AND_INPUT_SEMANTICS_AND_TARGET_ALIGNMENT_AND_MISSING_ARCH_PARAMETERS
 FRAMEWORK_ITRANSFORMER_STATUS=STRUCTURALLY_IMPLEMENTED_SYNTHETIC_ONLY
@@ -500,6 +500,12 @@ No structural work can establish iTransformer paper reproduction, framework repr
 **FAILURE_CONDITIONS:** detached weight path, non-normalized weights, data leakage in error/ratio features, or non-paper fusion asserted as paper logic.
 
 **NEXT_PHASE_ENTRY_CONDITION:** Phase 6 gate passes and its `PHASE_COMPLETION_COMMIT` is recorded.
+
+### Phase 6 dual-gate contract — PLAN-CHANGE-0009
+
+`ADAPTIVE_FUSION_STRUCTURAL_GATE` may assess only a synthetic, preconstructed `B×T×9` tensor; the paper-supported component-attention, Bi-LSTM, temporal-attention, 3-way Softmax-weight, weighted-component, and final-head topology; gradients; normalization; deterministic wiring; and fail-closed provenance/configuration behavior. Its fixture may not calculate a real component prediction, error, ratio, `d`, real loss, or real final SOH/capacity output. Every unreported implementation choice must be visibly marked synthetic-fixture-only.
+
+`ADAPTIVE_FUSION_REAL_DATA_FIDELITY_GATE` can pass only after an inference-safe error and ratio definition, `d` semantics, first-`3d` feature selection, final-output domain/conversion, `L_pred`, `L_weight`, fusion lambda, real branch targets, and their time alignment are frozen. It inherits all numerical-reproduction blockers. A structural pass cannot establish adaptive fusion, framework, paper, or numerical reproduction. A synthetic-only Phase 7 structural side-track may be authorized after the structural gate passes, but it cannot establish SCF-GAN or a full framework.
 
 ## Phase 7 — SCF-GAN Reproduction
 
@@ -782,6 +788,25 @@ HUMAN_AUTHORIZED=True
 COMMIT=PENDING_CURRENT_RUN
 ```
 
+```text
+PLAN_CHANGE_ID=PLAN-CHANGE-0009
+NAME=ALLOW_SYNTHETIC_PRECONSTRUCTED_FUSION_FEATURE_STRUCTURAL_IMPLEMENTATION
+LEVEL=1
+TRIGGER=PHASE_6A_ADAPTIVE_FUSION_SPECIFICATION_AND_SYNTHETIC_STRUCTURAL_IMPLEMENTATION
+OLD_ASSUMPTION=Phase 6 had a single undifferentiated gate that could conflate a generic fusion topology test with its missing real prediction/error/ratio semantics.
+NEW_EVIDENCE=The paper specifies dual attention, Bi-LSTM and key Table 4 widths, but omits error/ratio definitions, d, feature ordering, real loss terms/lambda, and final-domain conversion.
+IMPACT=Adds a synthetic-preconstructed-feature structural-vs-real-data-fidelity dual gate only. It changes neither core architecture, data protocol, research goal, phase order, reproduction definition, nor evaluation population.
+OLD_PLAN=Version 1.4.5
+NEW_PLAN=Version 1.4.6
+WHY_CHANGE_NECESSARY=Allow contract testing without inventing real feature semantics or leaking targets.
+RESULT_DRIVEN=False
+PERFORMANCE_DRIVEN=False
+REAL_DATA_USED=False
+TEST_LOADED=False
+HUMAN_AUTHORIZED=True
+COMMIT=PENDING_CURRENT_RUN
+```
+
 ## Phase completion ledger
 
 | Phase | Gate status | Completion evidence | PHASE_START_COMMIT | PHASE_COMPLETION_COMMIT | PHASE_COMPLETION_PUSH_STATUS | PHASE_REMOTE_BACKUP_CONFIRMED |
@@ -792,7 +817,7 @@ COMMIT=PENDING_CURRENT_RUN
 | 3 | STRUCTURAL_IMPLEMENTATION_COMPLETE__REAL_DATA_FIDELITY_BLOCKED | Target-paper iTransformer evidence, Fig.5 residual-routing audit, standard-vs-target boundary, parameter evidence, and a parameterized standard core verified only on generic synthetic multivariate fixtures. No real residual input or paper target alignment was selected. | pending real-data evidence | pending real-data evidence | `ITRANSFORMER_STRUCTURAL_IMPLEMENTATION_GATE=PASS`; real-data gate inherits STL period and iTransformer ambiguity blockers | False |
 | 4 | STRUCTURAL_IMPLEMENTATION_COMPLETE__REAL_DATA_FIDELITY_BLOCKED | Synthetic-only component-routing/lineage interfaces, unimplemented TimesNet ports, a Phase 3 iTransformer residual adapter, future-fusion schema, and alignment/provenance tests. No TimesNet, fusion, SCF-GAN, real battery data, or training. | pending real-data evidence | pending Phase 4 real-fidelity evidence | `FRAMEWORK_SCAFFOLD_STRUCTURAL_GATE=PASS`; real-data gate inherits STL, branch, fusion, and orchestration blockers | False |
 | 5 | STANDARD_CORE_STRUCTURALLY_IMPLEMENTED__BRANCH_FIDELITY_BLOCKED | Target-paper evidence/semantics audit and a parameterized standard TimesNet reference core tested on synthetic periodic fixtures. No real STL component, Trend-deep variant, Seasonal-lightweight variant, fusion, or real-data training. | pending real-data evidence | pending Phase 5 branch-fidelity evidence | `TIMESNET_STANDARD_CORE_STRUCTURAL_GATE=PASS`; `TIMESNET_BRANCH_VARIANT_FIDELITY_GATE=BLOCKED_BY_INPUT_TARGET_AND_VARIANT_PARAMETERS` | False |
-| 6 | NOT_STARTED | — | — | — | — | False |
+| 6 | STRUCTURAL_FUSION_IMPLEMENTED__REAL_DATA_FIDELITY_BLOCKED | Paper-evidence/dimension audit and a synthetic-only parameterized fusion topology tested on preconstructed B×T×9 feature fixtures. No real branch prediction, error/ratio builder, battery data, model metric, or test access. | pending real-data evidence | pending Phase 6 real-fidelity evidence | `ADAPTIVE_FUSION_STRUCTURAL_GATE=PASS`; `ADAPTIVE_FUSION_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_FEATURE_SEMANTICS_LOSS_AND_BRANCH_ALIGNMENT` | False |
 | 7 | NOT_STARTED | — | — | — | — | False |
 | 8 | NOT_STARTED | — | — | — | — | False |
 | 9 | NOT_STARTED | — | — | — | — | False |
@@ -1206,4 +1231,31 @@ PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
 PLAN_DEVIATION_LEVEL=1
 PLAN_CHANGE_REQUIRED=False
 NEXT_ACTION=PHASE_6_SYNTHETIC_ONLY_FUSION_SPECIFICATION_AND_INTERFACE_AUDIT__OR_PRIMARY_SOURCE_CLARIFICATION
+```
+
+## Append-only run log — Phase 6A adaptive fusion specification and synthetic structural implementation
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-13 | Phase 6A synthetic adaptive fusion | Phase 0/1 complete; Phase 2–5 structural side-tracks passed while all real-data fidelity gates and the test lock remained active. Human authorized only a preconstructed synthetic fusion-feature side-track. | Re-read the target PDF (Eqs.(24)–(29), Fig.4, Table 4), recovered the fusion topology and audited feature/dimension/loss omissions. Implemented and tested only a parameterized synthetic B×T×9 core: component attention, Bi-LSTM, temporal attention, 3-way Softmax weights, weighted slots, and final head. No real feature builder, branch prediction, NASA/CALCE, validation/test value, performance metric, SCF-GAN, or search was used. | The structural wiring/normalization/gradient/provenance contract passes. Paper does not provide inference-safe errors/ratios, d semantics, feature selection, loss terms/lambda, or final output domain; real-data fidelity remains blocked and all inherited blockers persist. | `ADAPTIVE_FUSION_STRUCTURAL_GATE=PASS`; `ADAPTIVE_FUSION_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_FEATURE_SEMANTICS_LOSS_AND_BRANCH_ALIGNMENT`. | `MASTER_PLAN_CHANGE_REQUEST_PLAN-CHANGE-0009.md`; `FUSION_PAPER_EVIDENCE.md`; `FUSION_DIMENSION_SEMANTICS_AUDIT.md`; `PHASE6_ADAPTIVE_FUSION_STRUCTURAL_IMPLEMENTATION.md`; `scripts/adaptive_fusion_structural.py`; `scripts/run_adaptive_fusion_structural_tests.py`; `output/fusion/adaptive_fusion_structural_audit.json`. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PLAN_CHANGE_ID=PLAN-CHANGE-0009
+PLAN_CHANGE_STATUS=APPLIED__USER_AUTHORIZED__PHASE_6A_SCOPE_FROZEN
+ADAPTIVE_FUSION_STRUCTURAL_GATE=PASS
+ADAPTIVE_FUSION_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_FEATURE_SEMANTICS_LOSS_AND_BRANCH_ALIGNMENT
+REAL_BATTERY_DATA_USED=False
+REAL_STL_COMPONENTS_USED=False
+REAL_BRANCH_PREDICTIONS_USED=False
+REAL_FUSION_FEATURE_BUILDER_IMPLEMENTED=False
+TEST_LOADED=False
+VALIDATION_VALUES_USED=False
+MODEL_TRAINED=False
+MODEL_METRICS_USED=False
+GRID_SEARCH_RUN=False
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=1
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=PHASE_7_SCF_GAN_SPECIFICATION_AND_SYNTHETIC_ONLY_STRUCTURAL_WORK__OR_PRIMARY_SOURCE_CLARIFICATION
 ```

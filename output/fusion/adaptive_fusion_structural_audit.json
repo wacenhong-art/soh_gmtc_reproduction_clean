@@ -1,0 +1,115 @@
+{
+  "artifact_type": "SYNTHETIC_ONLY_PARAMETERIZED_ADAPTIVE_FUSION_STRUCTURAL_AUDIT",
+  "real_battery_data_used": false,
+  "real_stl_components_used": false,
+  "real_branch_predictions_used": false,
+  "real_fusion_feature_builder_implemented": false,
+  "validation_values_used": false,
+  "test_loaded": false,
+  "model_trained": false,
+  "model_metrics_used": false,
+  "grid_search_run": false,
+  "synthetic_feature_fixture": {
+    "shape": [
+      4,
+      4,
+      9
+    ],
+    "semantics": "THREE_PREDICTION_LIKE__THREE_ERROR_LIKE__THREE_RATIO_LIKE_PLACEHOLDERS"
+  },
+  "known_table4_parameters": {
+    "input_dim": 9,
+    "hidden_size": 16,
+    "bidirectional_combined": 32,
+    "num_layers": 1,
+    "paper_dropout": 0.3,
+    "weight_network": [
+      32,
+      128,
+      64,
+      32,
+      3
+    ],
+    "leaky_relu_alpha": 0.1,
+    "final_prediction_network": [
+      3,
+      16,
+      1
+    ]
+  },
+  "library_single_layer_dropout_effect": "PYTORCH_LSTM_INTERNAL_DROPOUT_NOT_APPLIED_WHEN_NUM_LAYERS_1",
+  "fixture_only_choices": {
+    "input_dim": 9,
+    "hidden_size": 16,
+    "num_layers": 1,
+    "paper_dropout": 0.3,
+    "leaky_relu_slope": 0.1,
+    "strict_input_dim": true,
+    "synthetic_only_mode": true,
+    "component_attention_axis": "FEATURE_AXIS_ENGINEERING_FIXTURE_ONLY",
+    "weight_network_placement": "LINEAR_BN_LEAKYRELU_DROPOUT__ENGINEERING_FIXTURE_ONLY",
+    "final_activation_placement": "HIDDEN_RELU_ONLY_ENGINEERING_FIXTURE_ONLY"
+  },
+  "forward_backward": {
+    "input_shape": [
+      4,
+      4,
+      9
+    ],
+    "component_attention_shape": [
+      9
+    ],
+    "bilstm_output_shape": [
+      4,
+      4,
+      32
+    ],
+    "temporal_attention_shape": [
+      4,
+      4
+    ],
+    "fusion_weight_shape": [
+      4,
+      3
+    ],
+    "weighted_component_shape": [
+      4,
+      3
+    ],
+    "output_shape": [
+      4,
+      1
+    ],
+    "component_attention_normalized": true,
+    "temporal_attention_normalized": true,
+    "fusion_weight_normalized": true,
+    "fusion_weights_nonnegative": true,
+    "forward_pass": true,
+    "finite_loss": true,
+    "backward_pass": true,
+    "nonzero_gradient": true,
+    "finite_gradients": true,
+    "synthetic_wiring_loss": "MSE__NOT_PAPER_LOSS"
+  },
+  "determinism": true,
+  "tiny_overfit": {
+    "max_steps": 32,
+    "rule": "final_loss < initial_loss",
+    "initial_loss": 0.10773076117038727,
+    "final_loss": 0.006045588292181492,
+    "pass": true
+  },
+  "framework_scaffold_schema_integration": true,
+  "fail_closed": {
+    "wrong_feature_dimension": true,
+    "wrong_tensor_rank": true,
+    "nan_input": true,
+    "inf_input": true,
+    "real_data_provenance": true,
+    "validation_provenance": true,
+    "test_provenance": true,
+    "missing_config": true,
+    "real_mode_configuration": true
+  },
+  "all_structural_tests_passed": true
+}

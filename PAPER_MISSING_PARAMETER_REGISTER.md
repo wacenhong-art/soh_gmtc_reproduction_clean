@@ -12,8 +12,8 @@ No entry below is eligible to become a paper parameter through framework default
 | iTransformer d_model, heads, layers, d_ff, dropout, normalization, output head | iTransformer | MISSING | Generic equations only | Yes | No | False |
 | iTransformer residual-input variables / tensor axes | iTransformer | AMBIGUOUS | Residual branch is explicit, but voltage/temperature channel-mixing prose has no branch-input mapping | Yes | No | False |
 | Residual branch target | iTransformer | AMBIGUOUS | No concrete component-target tensor stated | Yes | No | False |
-| Fusion L_pred/L_weight definitions and coefficient | Fusion | MISSING | Eq.(24) names terms without details | Yes | No | False |
-| Fusion errors/ratios definition | Fusion | AMBIGUOUS | 9d listed without inference-safe construction | Yes | No | False |
+| Fusion L_pred/L_weight definitions and coefficient | Fusion | MISSING | Eq.(24) names terms without details; Phase 6A confirms lambda is not reported | Yes | No | False |
+| Fusion errors/ratios definition, d semantics, first-3d feature ordering, final output domain, attention axes, and placement details | Fusion | AMBIGUOUS | 9d/9/3d table tension and no inference-safe feature construction; Phase 6A records exact missing items | Yes | No | False |
 | GAN condition encoding | SCF-GAN | AMBIGUOUS | Cycle period, voltage range, and battery/usage descriptions differ | Yes | No | False |
 | GAN latent/hidden dimensions, epochs, batch, LR, Adam betas | SCF-GAN | MISSING | Not reported | Yes | No | False |
 | GAN SN/activation/layer-count conflict | SCF-GAN | AMBIGUOUS | Equations, tables, and prose differ | Yes | No | False |

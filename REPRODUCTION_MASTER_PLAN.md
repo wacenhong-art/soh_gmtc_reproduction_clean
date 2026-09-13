@@ -1518,3 +1518,17 @@ NORMALIZATION_FIT_SCOPE=TRAIN_ONLY
 PRIMARY_HIDDEN_WIDTH=64
 
 PLAN-CHANGE-0013 corrects PLAN-CHANGE-0012's semantic reading of 7:2:1 before any numerical execution. The paper's original split history and unresolved 9-feature fusion semantics remain preserved as Tier 1 evidence.
+# Phase 9A preflight — fail-closed before real-data access (2026-09-13)
+
+PHASE9A_STATUS=BLOCKED_BEFORE_REAL_DATA_ACCESS
+PHASE9A_BLOCKED_BY_STL_TEMPORAL_LEAKAGE=True
+STL_TEMPORAL_LEAKAGE_AUDIT=FAIL__INTRA_PARTITION_FUTURE_CONTEXT_POSSIBLE
+UNRESOLVED_EXECUTION_PARAMETER=TIMESNET_TOP_K,D_MODEL,D_FF,E_LAYERS,NUM_KERNELS,DROPOUT;ITRANSFORMER_D_MODEL,N_HEADS,E_LAYERS,D_FF,DROPOUT,ACTIVATION,NORMALIZATION
+REAL_DATA_USED=False
+TRAIN_DATA_USED=False
+VALIDATION_DATA_USED=False
+TEST_LOADED=False
+TEST_VALUE_ACCESS_COUNT=0
+PHASE9A_PIPELINE_GATE=BLOCKED
+
+No real values were accessed. The blocker is an execution-contract gap: the existing STL contract permits offline intra-partition future context, while Phase 9A requires no-future target construction; branch architecture parameters needed to move synthetic-only structural modules into a Tier 2 real-data path also remain unfrozen.

@@ -17,11 +17,12 @@ This record preserves the advisor's explicit preparation guidance. It is not an 
 | STL period | 7, midpoint of the advisor's 6–8 range | Result-blind midpoint freeze; no period performance comparison |
 | Normalization | Per-feature min–max to 0–1, fit on TRAIN only | Validation/test only transform with TRAIN min/max; out-of-range policy is explicit clipping to [0,1] |
 | Hidden width | 64 | Smaller endpoint of advisor's 64–128 range; complexity-minimizing, not result-selected |
-| Fusion | Direct weighted component fusion, T/S/R = 0.7/0.2/0.1 | Tier 2 execution fallback; does not replace the paper's unresolved 9-feature fusion |
+| Split | Chronological TRAIN:VALIDATION:TEST = 7:2:1 | Corrected by PLAN-CHANGE-0013; half-open 70/20/10 boundaries; no shuffle |
+| Fusion | Direct component sum, `T_hat + S_hat + R_hat` | Corrected by PLAN-CHANGE-0013; weights are NONE and paper 9-feature fusion remains unresolved |
 | Loss | MSE, `mean((target-prediction)^2)` | Tier 2 training/evaluation loss; undefined paper error/ratio features remain unresolved |
 
 ## Dataflow boundary
 
 Future Tier 2 preparation uses `[HF1, HF2, HF3]` 10-step windows as branch inputs. Observed TRAIN capacity is the source for STL targets (period 7). SCF-GAN may only produce HF1/HF2/HF3; synthetic SOH is prohibited. No real rows or model training are authorized by this record.
 
-Any change to these frozen decisions requires a new Plan Change. Author clarification, if later received, must first pass the primary-source reconciliation audit.
+Revision history: PLAN-CHANGE-0012's original fusion-weight interpretation is explicitly retracted before numerical execution by PLAN-CHANGE-0013. Any further change requires a new Plan Change. Author clarification, if later received, must first pass the primary-source reconciliation audit.

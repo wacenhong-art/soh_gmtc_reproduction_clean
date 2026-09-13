@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "synthetic_only": true,
+  "checks": [
+    "chronological_70_20_10",
+    "disjoint_order",
+    "train_only_scaler",
+    "component_sum",
+    "10_to_1",
+    "test_lock"
+  ]
+}

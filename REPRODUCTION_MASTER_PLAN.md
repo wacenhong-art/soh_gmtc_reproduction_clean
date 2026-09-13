@@ -1398,3 +1398,33 @@ PLAN_DEVIATION_LEVEL=0
 PLAN_CHANGE_REQUIRED=False
 NEXT_ACTION=RESOLVE_PRIMARY_SOURCE_FIDELITY_BLOCKERS_OR_OBTAIN_A_SEPARATE_HUMAN_RESULT_BLIND_FALLBACK
 ```
+
+## Append-only run log — Phase 8B numerical fidelity blocker triage and fallback decision package
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-13 | Phase 8B fidelity governance | Phase 8A correctly restricts the project to metadata-level integration and recommends no more structural expansion. | Classified all 28 active numerical blockers into cross-evidence, fallback-feasible, primary-source-preferred, and internal-nonexecutability categories. Audited HF scale, target endpoint, fusion inference feasibility, SCF-GAN configuration evidence priority, and strict reproduction ceiling. No fallback or active protocol was applied. | Strict paper-exact numerical reproduction is not credible to advance without primary-source clarification: four high-impact semantic seams cannot be filled without changing the method or risking label leakage. A Level-1 governance clarification is proposed, not applied, to separate framework, fallback numerical, and paper-exact reproduction claims. | `GMTC_CONTRACT_INTEGRATION_GATE=PASS`; Phase 9 remains false; `PLAN-CHANGE-0011=PROPOSED_NOT_APPLIED`. | `PHASE8_NUMERICAL_FIDELITY_BLOCKER_TRIAGE.md`; `PHASE8_HUMAN_FALLBACK_DECISION_PACKAGE.md`; `AUTHOR_CLARIFICATION_PHASE8_SHORTLIST.md`; `MASTER_PLAN_CHANGE_REQUEST_PLAN-CHANGE-0011.md`. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+TOTAL_ACTIVE_BLOCKERS=28
+CLASS_A_COUNT=2
+CLASS_B_COUNT=12
+CLASS_C_COUNT=11
+CLASS_D_COUNT=3
+HUMAN_FALLBACKS_APPLIED=0
+STRICT_REPRODUCTION_CEILING_WITHOUT_AUTHOR=FRAMEWORK_REPRODUCTION_ONLY
+STRICT_NUMERICAL_REPRODUCTION_CONTINUATION_RECOMMENDATION=PAUSE_FOR_PRIMARY_SOURCE
+GMTC_CONTRACT_INTEGRATION_GATE=PASS
+ADVANCEMENT_TO_PHASE_9=False
+STOP_STRUCTURAL_EXPANSION_RECOMMENDED=True
+REAL_DATA_USED=False
+MODEL_TRAINED=False
+TEST_LOADED=False
+VALIDATION_VALUES_USED=False
+GRID_SEARCH_RUN=False
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS_WITH_PROPOSED_LEVEL1_GOVERNANCE_AMENDMENT
+PLAN_DEVIATION_LEVEL=1
+PLAN_CHANGE_REQUIRED=True__PLAN_CHANGE_0011_PROPOSED_NOT_APPLIED
+NEXT_ACTION=WAIT_FOR_PRIMARY_SOURCE_OR_HUMAN_DECISION_ON_A_NARROW_DISCLOSED_FALLBACK_PACKAGE
+```

@@ -1345,3 +1345,29 @@ PLAN_DEVIATION_LEVEL=0
 PLAN_CHANGE_REQUIRED=False
 NEXT_ACTION=PHASE_7C_AMBIGUITY_PRESERVING_SYNTHETIC_SCFGAN_STRUCTURAL_IMPLEMENTATION
 ```
+
+## Append-only run log — Phase 7C ambiguity-preserving synthetic SCF-GAN structural implementation
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-13 | Phase 7C synthetic SCF-GAN core | PLAN-CHANGE-0010 is applied; the Human fallback permits only a synthetic structural implementation while real SCF-GAN conditions, architecture, output semantics, and augmentation remain blocked. | Implemented a fully explicit, synthetic-only conditional GAN core and a finite coverage matrix over ReLU/LeakyReLU, BN/conditional-affine BN, generator SN off/on, discriminator depth 3/4, and generic feature width 3/4. Tested routing, Tanh/Sigmoid bounds, condition paths, SN wrappers, third-hidden feature matching, stable-equivalent losses with paper lambda 0.1, gradients, determinism, a three-step optimizer smoke, and fail-closed provenance/request guards. | No ambiguity option was selected; no quality metric, real battery data, validation/test value, synthetic SOH, real GAN training, or real synthetic row was used. The structural implementation is valid; the real-data fidelity gate retains all paper contradictions/missing fields. | `SCFGAN_STRUCTURAL_IMPLEMENTATION_GATE=PASS`; `SCFGAN_REAL_DATA_FIDELITY_GATE=BLOCKED_BY_CONDITION_OUTPUT_ARCHITECTURE_AND_AUGMENTATION_AMBIGUITIES`. | `scripts/scfgan_structural.py`; `scripts/run_scfgan_structural_tests.py`; `SCFGAN_PARAMETERIZED_ARCHITECTURE_CONTRACT.md`; `PHASE7C_AMBIGUITY_PRESERVING_SCFGAN_STRUCTURAL_IMPLEMENTATION.md`; `output/scfgan/scfgan_structural_audit.json`. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PARAMETERIZED_SCFGAN_IMPLEMENTED=True
+AMBIGUITY_PRESERVING_IMPLEMENTATION=True
+AMBIGUITY_SELECTION_PERFORMED=False
+REAL_DATA_USED=False
+REAL_SCFGAN_TRAINING=False
+REAL_SYNTHETIC_ROWS_CREATED=False
+SYNTHETIC_SOH_GENERATION=False
+TEST_LOADED=False
+VALIDATION_VALUES_USED=False
+MODEL_TRAINED=False
+MODEL_METRICS_USED=False
+GRID_SEARCH_RUN=False
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=0
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=PHASE_8_SYNTHETIC_OR_CONTRACT_LEVEL_INTEGRATION_REVIEW_ONLY
+```

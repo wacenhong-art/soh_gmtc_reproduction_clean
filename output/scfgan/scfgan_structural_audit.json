@@ -1,0 +1,186 @@
+{
+  "artifact_type": "AMBIGUITY_PRESERVING_SYNTHETIC_SCFGAN_STRUCTURAL_AUDIT",
+  "noise_distribution": "STANDARD_NORMAL",
+  "noise_dimension_provenance": "SYNTHETIC_STRUCTURAL_FIXTURE_ONLY__PAPER_DIMENSION_MISSING",
+  "condition_mode": "ABSTRACT_SYNTHETIC_CONDITION_VECTOR",
+  "real_condition_semantics_inference": false,
+  "real_condition_encoding_inference": false,
+  "feature_dimensions_structurally_tested": [
+    3,
+    4
+  ],
+  "generic_feature_4_is_soh": false,
+  "real_feature_dim_inference": false,
+  "synthetic_soh_generation": false,
+  "generator_activations_tested": [
+    "relu",
+    "leaky_relu"
+  ],
+  "generator_normalization_modes_tested": [
+    "bn_structural",
+    "conditional_affine_bn_structural"
+  ],
+  "generator_sn_options_tested": [
+    false,
+    true
+  ],
+  "discriminator_depths_tested": [
+    3,
+    4
+  ],
+  "generator_output_activation": "TANH__PAPER_EXACT",
+  "discriminator_output_activation": "SIGMOID__PAPER_EXACT",
+  "feature_match_layer": "THIRD_HIDDEN_LAYER__PAPER_EXACT_WITH_DEPTH_CONTRADICTION_RETAINED",
+  "feature_match_lambda": 0.1,
+  "feature_match_lambda_provenance": "PAPER_EXACT",
+  "loss_implementation_form": "PAPER_EQUATION_EQUIVALENT_NUMERIC_STABLE_BINARY_CROSS_ENTROPY",
+  "ambiguity_selection_performed": false,
+  "generation_quality_metrics_run": false,
+  "real_scfgan_training": false,
+  "real_synthetic_rows_created": false,
+  "real_battery_features_used": false,
+  "validation_values_used": false,
+  "test_loaded": false,
+  "model_metrics_used": false,
+  "grid_search_run": false,
+  "coverage_matrix": [
+    {
+      "case_id": "AMBIGUITY_COVERAGE_1",
+      "config": {
+        "noise_dim": 5,
+        "condition_dim": 2,
+        "feature_dim": 3,
+        "generator_hidden_dims": [
+          7,
+          6
+        ],
+        "generator_activation": "relu",
+        "generator_norm_mode": "bn_structural",
+        "generator_use_sn": false,
+        "discriminator_hidden_dims": [
+          8,
+          7,
+          6
+        ],
+        "discriminator_use_sn": true,
+        "feature_match_layer_index": 2,
+        "leaky_relu_slope": 0.2,
+        "synthetic_only_mode": true
+      },
+      "feature_dimension_semantics": "GENERIC_FEATURE_VECTOR_3",
+      "generator_forward": true,
+      "discriminator_forward": true,
+      "tanh_bounds": true,
+      "sigmoid_bounds": true,
+      "condition_concatenation": true,
+      "feature_match_extraction": true,
+      "finite_losses": true,
+      "loss_scalar_shapes": true,
+      "lambda_applied": true,
+      "generator_backward": true,
+      "discriminator_backward": true,
+      "feature_match_gradient_to_generator": true,
+      "spectral_norm_layers": {
+        "generator": [],
+        "discriminator": [
+          "hidden_layers.0",
+          "hidden_layers.1",
+          "hidden_layers.2"
+        ]
+      },
+      "generator_sn_support": true,
+      "discriminator_sn_support": true
+    },
+    {
+      "case_id": "AMBIGUITY_COVERAGE_2",
+      "config": {
+        "noise_dim": 5,
+        "condition_dim": 2,
+        "feature_dim": 4,
+        "generator_hidden_dims": [
+          7,
+          6
+        ],
+        "generator_activation": "leaky_relu",
+        "generator_norm_mode": "conditional_affine_bn_structural",
+        "generator_use_sn": true,
+        "discriminator_hidden_dims": [
+          8,
+          7,
+          6,
+          5
+        ],
+        "discriminator_use_sn": true,
+        "feature_match_layer_index": 2,
+        "leaky_relu_slope": 0.2,
+        "synthetic_only_mode": true
+      },
+      "feature_dimension_semantics": "GENERIC_FEATURE_4",
+      "generator_forward": true,
+      "discriminator_forward": true,
+      "tanh_bounds": true,
+      "sigmoid_bounds": true,
+      "condition_concatenation": true,
+      "feature_match_extraction": true,
+      "finite_losses": true,
+      "loss_scalar_shapes": true,
+      "lambda_applied": true,
+      "generator_backward": true,
+      "discriminator_backward": true,
+      "feature_match_gradient_to_generator": true,
+      "spectral_norm_layers": {
+        "generator": [
+          "hidden_layers.0",
+          "hidden_layers.1",
+          "output_layer"
+        ],
+        "discriminator": [
+          "hidden_layers.0",
+          "hidden_layers.1",
+          "hidden_layers.2",
+          "hidden_layers.3"
+        ]
+      },
+      "generator_sn_support": true,
+      "discriminator_sn_support": true
+    }
+  ],
+  "condition_path": {
+    "generator_condition_changes_output": true,
+    "discriminator_condition_changes_score": true,
+    "conditional_affine_modules_present": true,
+    "conditional_affine_parameters_present": true
+  },
+  "optimizer_smoke": {
+    "optimizer": "Adam",
+    "configuration_provenance": "SYNTHETIC_SMOKE_CONFIG_ONLY",
+    "steps": 3,
+    "losses_finite": true,
+    "parameters_changed": true,
+    "gan_convergence_evaluated": false,
+    "generation_quality_evaluated": false,
+    "pass": true
+  },
+  "determinism_test": true,
+  "fail_closed_tests": {
+    "missing_config": true,
+    "missing_noise_dim": true,
+    "missing_condition_dim": true,
+    "missing_feature_dim": true,
+    "unsupported_activation": true,
+    "invalid_discriminator_depth": true,
+    "wrong_noise_shape": true,
+    "wrong_condition_shape": true,
+    "wrong_feature_shape": true,
+    "nan_input": true,
+    "inf_input": true,
+    "nasa_provenance": true,
+    "calce_provenance": true,
+    "validation_provenance": true,
+    "test_provenance": true,
+    "real_augmentation_request": true,
+    "synthetic_soh_request": true
+  },
+  "real_data_guard_test": true,
+  "all_structural_tests_passed": true
+}

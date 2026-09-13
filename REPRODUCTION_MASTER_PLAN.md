@@ -1428,3 +1428,49 @@ PLAN_DEVIATION_LEVEL=1
 PLAN_CHANGE_REQUIRED=True__PLAN_CHANGE_0011_PROPOSED_NOT_APPLIED
 NEXT_ACTION=WAIT_FOR_PRIMARY_SOURCE_OR_HUMAN_DECISION_ON_A_NARROW_DISCLOSED_FALLBACK_PACKAGE
 ```
+
+## Append-only governance update — Phase 8C apply PLAN-CHANGE-0011
+
+`PLAN_CHANGE_ID=PLAN-CHANGE-0011`
+
+`PLAN_CHANGE_STATUS=APPLIED__HUMAN_AUTHORIZED__GOVERNANCE_ONLY`
+
+`HUMAN_AUTHORIZATION=True`
+
+### TIER 1 — FRAMEWORK_REPRODUCTION
+
+Core module roles, topology, data-domain roles, structural algorithms, and interfaces may be structurally reproduced without inventing missing paper information. Synthetic structural validation, parameterized ambiguity-preserving modules, contract validation, and explicitly-labelled Human-fallback dataflow are permitted. Tier 1 is not paper numerical reproduction.
+
+### TIER 2 — FALLBACK_NUMERICAL_REPRODUCTION
+
+Real-data experiments may proceed only after every required Human result-blind fallback is pre-registered, performance-blind, leakage-safe, fully disclosed, reversible, and author-overridable. Tier 2 must never be reported as paper exact.
+
+### TIER 3 — PAPER_EXACT_NUMERICAL_REPRODUCTION
+
+Only paper-exact/strong cross-evidence or author clarification may establish high-impact data protocol, target alignment, feature construction, fusion semantics, normalization, architecture-critical parameters, and training orchestration. Only Tier 3 may set `PAPER_NUMERICAL_REPRODUCTION=PASS`.
+
+```text
+CURRENT_REPRODUCTION_TIER=FRAMEWORK_REPRODUCTION
+FRAMEWORK_REPRODUCTION_STATUS=STRUCTURALLY_SUBSTANTIAL__CONTRACT_LEVEL_COMPLETE
+FALLBACK_NUMERICAL_REPRODUCTION_STATUS=NOT_AUTHORIZED
+PAPER_EXACT_NUMERICAL_REPRODUCTION_STATUS=BLOCKED_PENDING_PRIMARY_SOURCE
+STRICT_REPRODUCTION_CEILING_WITHOUT_AUTHOR=FRAMEWORK_REPRODUCTION
+STOP_STRUCTURAL_EXPANSION=True
+HUMAN_FALLBACKS_APPLIED=0
+ADVANCEMENT_TO_PHASE_9=False
+PHASE_9_STATUS=NOT_AUTHORIZED
+PHASE_9_GATE=BLOCKED_BY_CLASS_C_AND_CLASS_D_FIDELITY_ISSUES
+CURRENT_TARGET_ERROR_CAUSES_LABEL_LEAKAGE=True
+FUSION_ERROR_EXECUTABLE_CANDIDATE_EXISTS=False
+FUSION_RATIO_EXECUTABLE_CANDIDATE_EXISTS=False
+FUSION_NUMERICAL_PIPELINE_EXECUTABLE=False
+AUTHOR_REPLY_STATUS=CONTACTED_WAITING
+REAL_DATA_USED=False
+MODEL_TRAINED=False
+TEST_LOADED=False
+VALIDATION_VALUES_USED=False
+GRID_SEARCH_RUN=False
+NEXT_SCIENTIFIC_ACTION=WAIT_FOR_PRIMARY_SOURCE_OR_EXPLICIT_HUMAN_FALLBACK_AUTHORIZATION
+```
+
+The Phase 8B fallback decision package remains only a decision package. Class D fusion semantics are not weakened; no numerical fallback, real-data protocol, model architecture, or Phase 9 authorization is added by this update.

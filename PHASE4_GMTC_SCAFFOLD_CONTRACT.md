@@ -77,3 +77,19 @@ All three branch predictions must agree exactly on `batch_ids`, `time_alignment`
 `FRAMEWORK_SCAFFOLD_STRUCTURAL_GATE` concerns only synthetic topology, ports, routing, alignment, and provenance guards.
 
 `FRAMEWORK_REAL_DATA_FIDELITY_GATE` remains blocked by the inherited unresolved paper/data conditions, including STL period, TimesNet implementation/specification, iTransformer real-data semantics/target alignment/parameters, fusion semantic gaps, training orchestration, and shared adversarial-training detail.
+
+## Phase 7B active real-data route — PLAN-CHANGE-0010
+
+`PHASE4_REAL_INTERFACE_ROLE_REVISED=True`
+
+`SYNTHETIC_SCAFFOLD_INVALIDATED=False`
+
+The synthetic component-to-port fixture remains test-only. The active authorized real-data route is deliberately split:
+
+```text
+HF1/HF2/HF3 temporal window → Trend / Seasonal / Residual branch inputs
+observed TRAIN capacity → STL → Trend / Seasonal / Residual branch targets
+three branch predictions → fusion inputs
+```
+
+No arrow in this real-data contract means “component input to branch.” Component predictions, not raw STL components, remain the future fusion inputs. All alignment, provenance, synthetic-only, and TEST guards remain in force.

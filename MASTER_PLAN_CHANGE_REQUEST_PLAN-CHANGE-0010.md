@@ -54,3 +54,25 @@ Choose a documented, result-blind path after reviewing the evidence packet: seek
 - `SCFGAN_CONDITION_SEMANTICS_AUDIT.md`
 - `CROSS_PHASE_GMTC_DATAFLOW_RECONCILIATION.md`
 - target-paper Fig.3 / Fig.5 rendered evidence in `output/phase7_figure_visual_evidence/`
+
+## Application record — 2026-09-13
+
+`HUMAN_AUTHORIZATION=True`
+
+`STATUS=APPLIED__HUMAN_AUTHORIZED__RESULT_BLIND_CROSS_PHASE_FALLBACK`
+
+`APPLIED_POLICY=HF_INPUT_TO_COMPONENT_TARGET_MODE`
+
+`PROVENANCE=HUMAN_RESULT_BLIND_CROSS_PHASE_FALLBACK`
+
+`RESULT_BLIND=True`
+
+`PERFORMANCE_BLIND=True`
+
+`TEXT_EVIDENCE_PRIORITY=True`
+
+`NO_SYNTHETIC_SOH_ASSUMPTION=True`
+
+`AUTHOR_OVERRIDE_PENDING=True`
+
+The authorized fallback uses HF1/HF2/HF3 windows as future branch inputs and observed training capacity through STL as future T/S/R component supervision targets. It does not resolve the paper contradiction, authorize a real SCF-GAN configuration, select a condition encoder, set an STL period, or determine branch target alignment. See `GMTC_REAL_DATAFLOW_FALLBACK_CONTRACT.md`.

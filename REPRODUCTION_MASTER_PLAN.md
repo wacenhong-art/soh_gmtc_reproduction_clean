@@ -1284,3 +1284,64 @@ PLAN_DEVIATION_LEVEL=2
 PLAN_CHANGE_REQUIRED=True
 NEXT_ACTION=HUMAN_REVIEW_AND_AUTHORIZE_OR_REJECT_PLAN_CHANGE_0010
 ```
+
+## PLAN-CHANGE-0010 — applied cross-phase real-dataflow fallback
+
+`PLAN_CHANGE_ID=PLAN-CHANGE-0010`
+
+`NAME=SCFGAN_AUGMENTED_HF_TO_DECOMPOSED_TARGET_DATAFLOW_RECONCILIATION`
+
+`LEVEL=2`
+
+`CURRENT_STRUCTURAL_PHASE=Phase_7`
+
+`CURRENT_GATE=GMTC_CROSS_PHASE_DATAFLOW_GATE`
+
+`HUMAN_AUTHORIZED=True`
+
+`STATUS=APPLIED__HUMAN_AUTHORIZED__RESULT_BLIND_CROSS_PHASE_FALLBACK`
+
+`CROSS_PHASE_EXECUTION_FALLBACK=HF_INPUT_TO_COMPONENT_TARGET_MODE`
+
+`PROVENANCE=HUMAN_RESULT_BLIND_CROSS_PHASE_FALLBACK`
+
+`RESULT_DRIVEN=False`
+
+`PERFORMANCE_DRIVEN=False`
+
+`TEST_LOADED=False`
+
+`REAL_DATA_USED=False`
+
+`SYNTHETIC_SOH_ASSUMPTION=False`
+
+`STRUCTURAL_MODULES_INVALIDATED=False`
+
+The applied fallback separates the active real-data paths: HF1/HF2/HF3 multivariate windows are future inputs for all three branches; observed training capacity is the STL input and supplies trend/seasonal/residual targets; branch predictions, rather than raw components, supply future fusion inputs. It does not choose SCF-GAN conditions/architecture, synthesize SOH, set an STL period, set prediction alignment, or clear any fidelity blocker.
+
+## Append-only run log — Phase 7B apply PLAN-CHANGE-0010 and reconcile real-dataflow contracts
+
+| Timestamp | Phase | PLAN_AUDIT_BEFORE_RUN | Action | PLAN_AUDIT_AFTER_RUN | Gate result | Evidence |
+|---|---|---|---|---|---|---|
+| 2026-09-13 | Phase 7B governance and contract reconciliation | Phase 7A correctly stopped at a Level-2 cross-phase dataflow defect. Human has now authorized a result/performance-blind Candidate-A execution fallback with no synthetic-SOH assumption. | Applied the fallback solely as an append-only real-data contract: HF1/HF2/HF3 windows are future inputs; observed TRAIN capacity through STL supplies T/S/R supervision targets; future fusion consumes branch predictions. Updated Phase 2–6 active contracts without modifying or invalidating synthetic structural tests. No NASA/CALCE, validation/test value, real GAN, synthetic row, STL decomposition, model, metric, or search was used. | Input and target paths are now explicitly distinct and internally coherent under a Human fallback. Paper contradictions, all real-data fidelity blockers, test lock, and author override remain. | `GMTC_CROSS_PHASE_DATAFLOW_GATE=PASS_WITH_HUMAN_RESULT_BLIND_FALLBACK`; no Phase 7C implementation in this run. | `GMTC_REAL_DATAFLOW_FALLBACK_CONTRACT.md`; `MASTER_PLAN_CHANGE_REQUEST_PLAN-CHANGE-0010.md`; Phase 2–6 append-only interface records. |
+
+```text
+PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS
+PLAN_CHANGE_ID=PLAN-CHANGE-0010
+PLAN_CHANGE_STATUS=APPLIED__HUMAN_AUTHORIZED__RESULT_BLIND_CROSS_PHASE_FALLBACK
+GMTC_CROSS_PHASE_DATAFLOW_GATE=PASS_WITH_HUMAN_RESULT_BLIND_FALLBACK
+FRAMEWORK_REPRODUCTION_DATAFLOW=EXECUTABLE_UNDER_HUMAN_FALLBACK
+NUMERICAL_REPRODUCTION_DATAFLOW=NOT_PAPER_EXACT__AUTHOR_OVERRIDE_PENDING
+REAL_DATA_USED=False
+REAL_SCFGAN_TRAINING=False
+REAL_SYNTHETIC_ROWS_CREATED=False
+TEST_LOADED=False
+VALIDATION_VALUES_USED=False
+MODEL_TRAINED=False
+MODEL_METRICS_USED=False
+GRID_SEARCH_RUN=False
+PLAN_HEALTH_AUDIT_AFTER_RUN=PASS
+PLAN_DEVIATION_LEVEL=0
+PLAN_CHANGE_REQUIRED=False
+NEXT_ACTION=PHASE_7C_AMBIGUITY_PRESERVING_SYNTHETIC_SCFGAN_STRUCTURAL_IMPLEMENTATION
+```

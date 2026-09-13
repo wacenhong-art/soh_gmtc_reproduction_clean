@@ -65,3 +65,19 @@ Human authorized a pre-registered generic synthetic multivariate interface and a
 ## Next gate
 
 Before any synthetic-only iTransformer module, Human or primary evidence must freeze an explicit target-alignment contract. Any configuration then used must be a `STRUCTURAL_ENGINEERING_FIXTURE_ONLY`, not a target-paper architecture parameter.
+
+## Phase 7B real-data interface reconciliation — PLAN-CHANGE-0010
+
+`PHASE3_REAL_INTERFACE_ROLE_REVISED=True`
+
+`ITRANSFORMER_STRUCTURAL_MODULE_INVALIDATED=False`
+
+`REAL_INPUT_FALLBACK=HF1_HF2_HF3_MULTIVARIATE_WINDOW`
+
+`REAL_SUPERVISION_FALLBACK=STL_RESIDUAL_COMPONENT`
+
+The previous synthetic-only residual-component fixture remains a structural test, not a real-data default. The authorized real-data fallback does not use a residual-capacity sequence as the branch input: a multivariate HF1/HF2/HF3 window is the future input and the observed-capacity STL residual is the future target.
+
+`ITRANSFORMER_TARGET_ALIGNMENT_MISSING=True`
+
+`ITRANSFORMER_REAL_DATA_FIDELITY_GATE=BLOCKED`

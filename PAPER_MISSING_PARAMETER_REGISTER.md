@@ -24,3 +24,9 @@ No entry below is eligible to become a paper parameter through framework default
 | Metric aggregation across ten runs | evaluation | MISSING | “Ten parallel experiments” without aggregation rule | Yes | No | False |
 
 **Rule:** where `DEFAULT_WOULD_BE_PAPER_FAITHFUL=False`, an engineering choice requires a `REPRODUCTION_DEVIATION_RECORD`; it cannot be labelled a paper-exact parameter.
+
+## Phase 7B execution-policy note
+
+`PLAN_CHANGE_ID=PLAN-CHANGE-0010`
+
+The Human-authorized HF-input/component-target fallback operationalizes only the previously missing cross-phase bridge. It does not fill the GAN condition encoding, GAN fields/dimensions, GAN architecture, STL period, branch target alignment, or fusion semantics rows above. All remain non-paper-exact and subject to author override.

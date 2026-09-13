@@ -188,6 +188,30 @@ All records are Phase 0 paper-evidence records. They do not authorize defaults o
 `TEST_LOADED=False`
 `AUTHOR_OVERRIDE_PENDING=True`
 
+## Phase 7B authorized execution fallback — cross-phase dataflow only
+
+`PLAN_CHANGE_ID=PLAN-CHANGE-0010`
+
+`STATUS=APPLIED__HUMAN_AUTHORIZED__RESULT_BLIND_CROSS_PHASE_FALLBACK`
+
+`EXECUTION_FALLBACK=HF_INPUT_TO_COMPONENT_TARGET_MODE`
+
+`SCFGAN_REAL_OUTPUT_EXECUTION_POLICY=HF1_HF2_HF3_ONLY__HUMAN_FALLBACK`
+
+`SYNTHETIC_SOH_GENERATION=PROHIBITED_UNDER_CURRENT_FALLBACK`
+
+`PAPER_OUTPUT_SEMANTICS_STATUS=CONTRADICTORY__RETAINED`
+
+`BRANCH_INPUT_FALLBACK=HF1_HF2_HF3_MULTIVARIATE_WINDOW`
+
+`BRANCH_TARGET_FALLBACK=OBSERVED_TRAIN_CAPACITY_STL_COMPONENTS`
+
+`BRANCH_TARGET_ALIGNMENT_STATUS=UNRESOLVED__RETAINED`
+
+`AUTHOR_OVERRIDE_PENDING=True`
+
+This Human fallback is result/performance blind and does not convert any contradictory or missing paper statement into `PAPER_EXACT`.
+
 The deterministic ACF/spectral agreement rule failed for every Protocol-A and Protocol-B target training track. It does not resolve the paper ambiguity and it does not supply a hidden period: `STL_PERIOD_NOT_STRUCTURALLY_IDENTIFIABLE=True`. Any fixed engineering period or bounded structural sensitivity study now requires a separate Human decision.
 
 ## Phase 7A cross-phase dataflow update — PA-009 / PA-010 and new interface blocker

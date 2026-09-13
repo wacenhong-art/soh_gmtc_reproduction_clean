@@ -81,3 +81,11 @@ Real fidelity additionally inherits unresolved real branch targets, iTransformer
 `ADVANCEMENT_TO_PHASE_7_STRUCTURAL_WORK=True`
 
 This only permits a future, separately authorized synthetic SCF-GAN specification/structural audit. It does not start Phase 7 or permit real SCF-GAN training or an end-to-end G-MTC claim.
+
+## Phase 7B real-data interface reconciliation — PLAN-CHANGE-0010
+
+`PHASE6_REAL_INTERFACE_ROLE_REVISED=True`
+
+`ADAPTIVE_FUSION_STRUCTURAL_MODULE_INVALIDATED=False`
+
+Fusion consumes future branch predictions and its unresolved prediction/error/ratio features; it does not consume raw STL component arrays as its input. The input/target separation introduced by `GMTC_REAL_DATAFLOW_FALLBACK_CONTRACT.md` does not resolve component error, ratio, d, loss, final output, or branch-alignment fidelity blockers.

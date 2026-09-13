@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "synthetic_only": true,
+  "config": {
+    "seq_len": 10,
+    "pred_len": 1,
+    "stl_period": 7,
+    "normalization": "MINMAX_0_1",
+    "fit_scope": "TRAIN_ONLY",
+    "out_of_range_policy": "CLIP_TO_0_1",
+    "hidden_width": 64,
+    "fusion_weights": {
+      "trend": 0.7,
+      "seasonal": 0.2,
+      "residual": 0.1
+    },
+    "loss": "MSE",
+    "scfgan_outputs": [
+      "HF1",
+      "HF2",
+      "HF3"
+    ]
+  },
+  "checks": [
+    "config",
+    "one_step_alignment",
+    "train_only_minmax",
+    "weighted_fusion",
+    "mse",
+    "test_lock"
+  ]
+}

@@ -61,3 +61,7 @@ Paper-exact numerical reproduction requires paper-exact/strong cross-evidence or
 `FUSION_NUMERICAL_PIPELINE_EXECUTABLE=False`
 
 The Class D fusion blockers may reopen only through primary-source clarification or leakage-free, paper-supported inference semantics. This governance change does not design, authorize, or apply an error/ratio fallback.
+
+## PLAN-CHANGE-0012 appended authorization (2026-09-13)
+
+Advisor guidance authorizes preparation of a result-blind Tier 2 fallback protocol. Historical governance above is retained. The active preparation record is `ADVISOR_AUTHORIZED_NUMERICAL_PROTOCOL_V1.md`; formal numerical training remains unauthorized in this step and Tier 3 remains blocked pending primary-source clarification.

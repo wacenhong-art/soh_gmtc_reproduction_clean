@@ -1,0 +1,11 @@
+# Phase 9A Fallback Numerical Pipeline Dry-Run Specification
+
+STATUS=NEXT_ACTION_ONLY__NOT_EXECUTED  
+PROVENANCE=ADVISOR_AUTHORIZED_FALLBACK  
+TEST_LOCKED=True
+
+The next authorized step is a TRAIN+VALIDATION dry run under `ADVISOR_AUTHORIZED_NUMERICAL_PROTOCOL_V1.md`. It must begin with configuration parsing and contract checks, then use only TRAIN-fitted normalization parameters. The TEST partition remains inaccessible until a separate authorization.
+
+Pre-registered checks: 10-to-1 window alignment, STL period metadata equal to 7, min–max fit scope equal to TRAIN_ONLY, explicit clipping policy, fusion weights summing to 1, MSE finiteness, and absence of any 9-feature error/ratio builder. No parameter comparison, model-metric tuning, or author-exact claim is allowed.
+
+This specification does not authorize execution in the current phase.

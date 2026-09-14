@@ -1,0 +1,3347 @@
+{
+  "task": "PHASE9C_SCFGAN_SOURCE_TARGET_ALIGNMENT_DIAGNOSTIC",
+  "source_batteries": [
+    "B0005",
+    "B0006"
+  ],
+  "target_batteries": [
+    "B0007",
+    "B0018"
+  ],
+  "source_real_hf_training_scope": "B0005_B0006__EXISTING_LEGAL_SCFGAN_SOURCE_RANGE",
+  "target_reference_hf_scope": "FIRST_20_PERCENT_LIFE__POST_HOC_DIAGNOSTIC_ONLY",
+  "scfgan_retrained": false,
+  "synthetic_regenerated": false,
+  "downstream_model_trained": false,
+  "test_loaded": false,
+  "test_access_count": 0,
+  "condition_provenance_audit": {
+    "current_condition_implementation": "NORMALIZED_CYCLE_POSITION",
+    "paper_eq5_condition_text": "CYCLE_PERIOD",
+    "paper_experiment_condition_text": "VOLTAGE_RANGE",
+    "paper_condition_semantics_contradiction": true
+  },
+  "metric_implementation": "SAME_AS_PHASE9C_GENERATION_QUALITY_DIAGNOSTIC__20_BIN_COMMON_RANGE_KL__EPSILON_1E_MINUS_8__PHYSICAL_WASSERSTEIN__REFERENCE_IQR_OUTLIER_RATIO",
+  "source_detail": {
+    "B0005": {
+      "valid_source_hf_count": 168,
+      "condition_min": 0.0,
+      "condition_max": 1.0,
+      "hf2_final_timestamp_fallback_count": 0,
+      "capacity_or_soh_accessed": false
+    },
+    "B0006": {
+      "valid_source_hf_count": 168,
+      "condition_min": 0.0,
+      "condition_max": 1.0,
+      "hf2_final_timestamp_fallback_count": 138,
+      "capacity_or_soh_accessed": false
+    }
+  },
+  "battery_results": {
+    "B0007": {
+      "target_reference": {
+        "reference_scope": "TARGET_FIRST_20_PERCENT_LIFE__PAIRED_CHARGE_HF__POST_HOC_QUALITY_EVALUATION_ONLY",
+        "valid_pair_count_metadata": 168,
+        "reference_pair_count": 33,
+        "frozen_train_pair_count": 117,
+        "reference_fully_within_train": true,
+        "capacity_or_soh_values_accessed": false,
+        "hf2_final_timestamp_fallback_count": 0
+      },
+      "comparisons": {
+        "A_GENERATED_VS_SOURCE": {
+          "outlier_boundary_reference": "SOURCE_REAL_HF",
+          "per_set": {
+            "set_01": {
+              "rows_real": 336,
+              "rows_synthetic": 33,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2227.9949047619048,
+                  "mean_synthetic": 3383.530438387075,
+                  "std_real": 750.9708484744275,
+                  "std_synthetic": 114.77172924127859,
+                  "mean_percentage_difference": 51.86437056725032,
+                  "std_percentage_difference": 84.71688621809574,
+                  "kl_divergence_real_to_synthetic": 15.164547549664677,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3617.391
+                  },
+                  "wasserstein_distance_physical_domain": 1155.5384598057453,
+                  "real_q1": 1627.4379999999999,
+                  "real_q3": 2941.72675,
+                  "real_iqr": 1314.28875,
+                  "outlier_lower_bound": -343.99512500000014,
+                  "outlier_upper_bound": 4913.159874999999,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 3617.391,
+                  "synthetic_min": 3218.8599905190467,
+                  "synthetic_max": 3616.8994016633033,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 563957.2152584016,
+                  "synthetic_variance": 13172.549833033365,
+                  "synthetic_to_real_variance_ratio": 0.023357356687063197
+                },
+                "HF2": {
+                  "mean_real": 7815.127842261905,
+                  "mean_synthetic": 8948.087316748715,
+                  "std_real": 1203.6364996962166,
+                  "std_synthetic": 371.3600385975506,
+                  "mean_percentage_difference": 14.497005005600796,
+                  "std_percentage_difference": 69.14682807547982,
+                  "kl_divergence_real_to_synthetic": 8.660380408469527,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9722.625
+                  },
+                  "wasserstein_distance_physical_domain": 1133.4375602893351,
+                  "real_q1": 6827.492249999999,
+                  "real_q3": 8702.633250000003,
+                  "real_iqr": 1875.1410000000033,
+                  "outlier_lower_bound": 4014.7807499999944,
+                  "outlier_upper_bound": 11515.344750000007,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 9722.625,
+                  "synthetic_min": 8205.782638104678,
+                  "synthetic_max": 9678.473792588054,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1448740.8234009605,
+                  "synthetic_variance": 137908.27826717426,
+                  "synthetic_to_real_variance_ratio": 0.09519182178040005
+                },
+                "HF3": {
+                  "mean_real": 785.8558750000001,
+                  "mean_synthetic": 640.203985990056,
+                  "std_real": 487.3805121610295,
+                  "std_synthetic": 512.2203405666078,
+                  "mean_percentage_difference": 18.534173204462466,
+                  "std_percentage_difference": 5.096598609460042,
+                  "kl_divergence_real_to_synthetic": 4.985707684153747,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1586.2659999999998
+                  },
+                  "wasserstein_distance_physical_domain": 147.5370538299026,
+                  "real_q1": 365.29625,
+                  "real_q3": 1292.6567499999992,
+                  "real_iqr": 927.3604999999992,
+                  "outlier_lower_bound": -1025.7444999999989,
+                  "outlier_upper_bound": 2683.697499999998,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 1586.2659999999998,
+                  "synthetic_min": 3.9764397836923595,
+                  "synthetic_max": 1585.7007398709654,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 237539.76363434744,
+                  "synthetic_variance": 262369.6772901717,
+                  "synthetic_to_real_variance_ratio": 1.1045295039277958
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 13172.549833033365,
+                "HF2": 137908.27826717426,
+                "HF3": 262369.6772901717
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3218.8599905190467,
+                "HF2": 8205.782638104678,
+                "HF3": 3.9764397836923595
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3616.8994016633033,
+                "HF2": 9678.473792588054,
+                "HF3": 1585.7007398709654
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_02": {
+              "rows_real": 336,
+              "rows_synthetic": 33,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2227.9949047619048,
+                  "mean_synthetic": 3351.7510103346813,
+                  "std_real": 750.9708484744275,
+                  "std_synthetic": 111.27237682183248,
+                  "mean_percentage_difference": 50.43800159376338,
+                  "std_percentage_difference": 85.182863349772,
+                  "kl_divergence_real_to_synthetic": 15.104079903510819,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3617.391
+                  },
+                  "wasserstein_distance_physical_domain": 1123.7647589817816,
+                  "real_q1": 1627.4379999999999,
+                  "real_q3": 2941.72675,
+                  "real_iqr": 1314.28875,
+                  "outlier_lower_bound": -343.99512500000014,
+                  "outlier_upper_bound": 4913.159874999999,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 3617.391,
+                  "synthetic_min": 3222.4010078364017,
+                  "synthetic_max": 3615.9372272872033,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 563957.2152584016,
+                  "synthetic_variance": 12381.541843579884,
+                  "synthetic_to_real_variance_ratio": 0.021954753851152947
+                },
+                "HF2": {
+                  "mean_real": 7815.127842261905,
+                  "mean_synthetic": 8919.950090768305,
+                  "std_real": 1203.6364996962166,
+                  "std_synthetic": 422.96005779434023,
+                  "mean_percentage_difference": 14.13696961592678,
+                  "std_percentage_difference": 64.85981790174274,
+                  "kl_divergence_real_to_synthetic": 8.690011516802581,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9722.625
+                  },
+                  "wasserstein_distance_physical_domain": 1105.499048835016,
+                  "real_q1": 6827.492249999999,
+                  "real_q3": 8702.633250000003,
+                  "real_iqr": 1875.1410000000033,
+                  "outlier_lower_bound": 4014.7807499999944,
+                  "outlier_upper_bound": 11515.344750000007,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 9722.625,
+                  "synthetic_min": 8113.38992226541,
+                  "synthetic_max": 9661.781772396267,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1448740.8234009605,
+                  "synthetic_variance": 178895.21048939164,
+                  "synthetic_to_real_variance_ratio": 0.12348323978986801
+                },
+                "HF3": {
+                  "mean_real": 785.8558750000001,
+                  "mean_synthetic": 555.3515121094088,
+                  "std_real": 487.3805121610295,
+                  "std_synthetic": 474.61791296904624,
+                  "mean_percentage_difference": 29.331633219716185,
+                  "std_percentage_difference": 2.6186108950877656,
+                  "kl_divergence_real_to_synthetic": 7.77707858115008,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1586.2659999999998
+                  },
+                  "wasserstein_distance_physical_domain": 233.39998042557625,
+                  "real_q1": 365.29625,
+                  "real_q3": 1292.6567499999992,
+                  "real_iqr": 927.3604999999992,
+                  "outlier_lower_bound": -1025.7444999999989,
+                  "outlier_upper_bound": 2683.697499999998,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 1586.2659999999998,
+                  "synthetic_min": 5.451401398301124,
+                  "synthetic_max": 1582.9577840119002,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 237539.76363434744,
+                  "synthetic_variance": 225262.16331109317,
+                  "synthetic_to_real_variance_ratio": 0.9483134944002319
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 12381.541843579884,
+                "HF2": 178895.21048939164,
+                "HF3": 225262.16331109317
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3222.4010078364017,
+                "HF2": 8113.38992226541,
+                "HF3": 5.451401398301124
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3615.9372272872033,
+                "HF2": 9661.781772396267,
+                "HF3": 1582.9577840119002
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_03": {
+              "rows_real": 336,
+              "rows_synthetic": 33,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2227.9949047619048,
+                  "mean_synthetic": 3369.555092830525,
+                  "std_real": 750.9708484744275,
+                  "std_synthetic": 101.93889824965241,
+                  "mean_percentage_difference": 51.237109457869856,
+                  "std_percentage_difference": 86.42571832758384,
+                  "kl_divergence_real_to_synthetic": 15.207476374034881,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3617.391
+                  },
+                  "wasserstein_distance_physical_domain": 1141.8215616731495,
+                  "real_q1": 1627.4379999999999,
+                  "real_q3": 2941.72675,
+                  "real_iqr": 1314.28875,
+                  "outlier_lower_bound": -343.99512500000014,
+                  "outlier_upper_bound": 4913.159874999999,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 3617.391,
+                  "synthetic_min": 3173.94396573624,
+                  "synthetic_max": 3591.1461172195673,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 563957.2152584016,
+                  "synthetic_variance": 10391.538976352987,
+                  "synthetic_to_real_variance_ratio": 0.01842611229220935
+                },
+                "HF2": {
+                  "mean_real": 7815.127842261905,
+                  "mean_synthetic": 9004.434943980516,
+                  "std_real": 1203.6364996962166,
+                  "std_synthetic": 353.36784389323833,
+                  "mean_percentage_difference": 15.218012113470344,
+                  "std_percentage_difference": 70.6416477082222,
+                  "kl_divergence_real_to_synthetic": 8.733154566170374,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9722.625
+                  },
+                  "wasserstein_distance_physical_domain": 1189.354600842647,
+                  "real_q1": 6827.492249999999,
+                  "real_q3": 8702.633250000003,
+                  "real_iqr": 1875.1410000000033,
+                  "outlier_lower_bound": 4014.7807499999944,
+                  "outlier_upper_bound": 11515.344750000007,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 9722.625,
+                  "synthetic_min": 8163.827505196809,
+                  "synthetic_max": 9714.645147162139,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1448740.8234009605,
+                  "synthetic_variance": 124868.83309775605,
+                  "synthetic_to_real_variance_ratio": 0.08619128492881349
+                },
+                "HF3": {
+                  "mean_real": 785.8558750000001,
+                  "mean_synthetic": 473.3831038725902,
+                  "std_real": 487.3805121610295,
+                  "std_synthetic": 504.2277098834499,
+                  "mean_percentage_difference": 39.76209646933159,
+                  "std_percentage_difference": 3.4566826744303865,
+                  "kl_divergence_real_to_synthetic": 4.487023001415441,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1586.2659999999998
+                  },
+                  "wasserstein_distance_physical_domain": 312.4751320339931,
+                  "real_q1": 365.29625,
+                  "real_q3": 1292.6567499999992,
+                  "real_iqr": 927.3604999999992,
+                  "outlier_lower_bound": -1025.7444999999989,
+                  "outlier_upper_bound": 2683.697499999998,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 1586.2659999999998,
+                  "synthetic_min": 0.19831615298986432,
+                  "synthetic_max": 1535.3633728010652,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 237539.76363434744,
+                  "synthetic_variance": 254245.58341430855,
+                  "synthetic_to_real_variance_ratio": 1.0703285189997784
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 10391.538976352987,
+                "HF2": 124868.83309775605,
+                "HF3": 254245.58341430855
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3173.94396573624,
+                "HF2": 8163.827505196809,
+                "HF3": 0.19831615298986432
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3591.1461172195673,
+                "HF2": 9714.645147162139,
+                "HF3": 1535.3633728010652
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_04": {
+              "rows_real": 336,
+              "rows_synthetic": 33,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2227.9949047619048,
+                  "mean_synthetic": 3337.4338915538606,
+                  "std_real": 750.9708484744275,
+                  "std_synthetic": 129.65044494378964,
+                  "mean_percentage_difference": 49.79540053797907,
+                  "std_percentage_difference": 82.7356221340455,
+                  "kl_divergence_real_to_synthetic": 15.047458963341608,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3617.391
+                  },
+                  "wasserstein_distance_physical_domain": 1109.4418346843663,
+                  "real_q1": 1627.4379999999999,
+                  "real_q3": 2941.72675,
+                  "real_iqr": 1314.28875,
+                  "outlier_lower_bound": -343.99512500000014,
+                  "outlier_upper_bound": 4913.159874999999,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 3617.391,
+                  "synthetic_min": 3162.3498992625478,
+                  "synthetic_max": 3616.9125540749433,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 563957.2152584016,
+                  "synthetic_variance": 16809.23787412263,
+                  "synthetic_to_real_variance_ratio": 0.02980587430984591
+                },
+                "HF2": {
+                  "mean_real": 7815.127842261905,
+                  "mean_synthetic": 8857.813778175792,
+                  "std_real": 1203.6364996962166,
+                  "std_synthetic": 444.86705275640344,
+                  "mean_percentage_difference": 13.341892249994288,
+                  "std_percentage_difference": 63.03975055021325,
+                  "kl_divergence_real_to_synthetic": 8.525094711109656,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9722.625
+                  },
+                  "wasserstein_distance_physical_domain": 1043.5208430088264,
+                  "real_q1": 6827.492249999999,
+                  "real_q3": 8702.633250000003,
+                  "real_iqr": 1875.1410000000033,
+                  "outlier_lower_bound": 4014.7807499999944,
+                  "outlier_upper_bound": 11515.344750000007,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 9722.625,
+                  "synthetic_min": 8160.271666318356,
+                  "synthetic_max": 9649.510869350135,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1448740.8234009605,
+                  "synthetic_variance": 197906.69462816863,
+                  "synthetic_to_real_variance_ratio": 0.13660600393904618
+                },
+                "HF3": {
+                  "mean_real": 785.8558750000001,
+                  "mean_synthetic": 689.2456762009282,
+                  "std_real": 487.3805121610295,
+                  "std_synthetic": 483.4648349241907,
+                  "mean_percentage_difference": 12.293628115851636,
+                  "std_percentage_difference": 0.8034127625408772,
+                  "kl_divergence_real_to_synthetic": 2.2643825833758884,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1586.2659999999998
+                  },
+                  "wasserstein_distance_physical_domain": 101.40415736212876,
+                  "real_q1": 365.29625,
+                  "real_q3": 1292.6567499999992,
+                  "real_iqr": 927.3604999999992,
+                  "outlier_lower_bound": -1025.7444999999989,
+                  "outlier_upper_bound": 2683.697499999998,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 1586.2659999999998,
+                  "synthetic_min": 2.5206715798377988,
+                  "synthetic_max": 1584.0274621033666,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 237539.76363434744,
+                  "synthetic_variance": 233738.246608275,
+                  "synthetic_to_real_variance_ratio": 0.9839962919558839
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 16809.23787412263,
+                "HF2": 197906.69462816863,
+                "HF3": 233738.246608275
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3162.3498992625478,
+                "HF2": 8160.271666318356,
+                "HF3": 2.5206715798377988
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3616.9125540749433,
+                "HF2": 9649.510869350135,
+                "HF3": 1584.0274621033666
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_05": {
+              "rows_real": 336,
+              "rows_synthetic": 33,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2227.9949047619048,
+                  "mean_synthetic": 3364.0862312119248,
+                  "std_real": 750.9708484744275,
+                  "std_synthetic": 122.07818649984281,
+                  "mean_percentage_difference": 50.991648321180904,
+                  "std_percentage_difference": 83.74395134673462,
+                  "kl_divergence_real_to_synthetic": 15.09314142608582,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3617.391
+                  },
+                  "wasserstein_distance_physical_domain": 1136.0927471876946,
+                  "real_q1": 1627.4379999999999,
+                  "real_q3": 2941.72675,
+                  "real_iqr": 1314.28875,
+                  "outlier_lower_bound": -343.99512500000014,
+                  "outlier_upper_bound": 4913.159874999999,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 3617.391,
+                  "synthetic_min": 3178.8289007872045,
+                  "synthetic_max": 3617.1523160707357,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 563957.2152584016,
+                  "synthetic_variance": 14903.083619090403,
+                  "synthetic_to_real_variance_ratio": 0.026425911781733133
+                },
+                "HF2": {
+                  "mean_real": 7815.127842261905,
+                  "mean_synthetic": 8990.759639293587,
+                  "std_real": 1203.6364996962166,
+                  "std_synthetic": 401.9510176396145,
+                  "mean_percentage_difference": 15.043027072112775,
+                  "std_percentage_difference": 66.60528176562757,
+                  "kl_divergence_real_to_synthetic": 8.733154566170374,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9722.625
+                  },
+                  "wasserstein_distance_physical_domain": 1175.8659262847905,
+                  "real_q1": 6827.492249999999,
+                  "real_q3": 8702.633250000003,
+                  "real_iqr": 1875.1410000000033,
+                  "outlier_lower_bound": 4014.7807499999944,
+                  "outlier_upper_bound": 11515.344750000007,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 9722.625,
+                  "synthetic_min": 8182.649262857794,
+                  "synthetic_max": 9698.966142738818,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1448740.8234009605,
+                  "synthetic_variance": 161564.62058152168,
+                  "synthetic_to_real_variance_ratio": 0.11152072059531264
+                },
+                "HF3": {
+                  "mean_real": 785.8558750000001,
+                  "mean_synthetic": 540.0052749034676,
+                  "std_real": 487.3805121610295,
+                  "std_synthetic": 511.57989204697554,
+                  "mean_percentage_difference": 31.284438777852554,
+                  "std_percentage_difference": 4.965192346047395,
+                  "kl_divergence_real_to_synthetic": 4.0636010353034795,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1586.2659999999998
+                  },
+                  "wasserstein_distance_physical_domain": 247.24477980286332,
+                  "real_q1": 365.29625,
+                  "real_q3": 1292.6567499999992,
+                  "real_iqr": 927.3604999999992,
+                  "outlier_lower_bound": -1025.7444999999989,
+                  "outlier_upper_bound": 2683.697499999998,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 1586.2659999999998,
+                  "synthetic_min": 2.2758846811056137,
+                  "synthetic_max": 1584.0876424282192,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 237539.76363434744,
+                  "synthetic_variance": 261713.98594679515,
+                  "synthetic_to_real_variance_ratio": 1.1017691604242725
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 14903.083619090403,
+                "HF2": 161564.62058152168,
+                "HF3": 261713.98594679515
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3178.8289007872045,
+                "HF2": 8182.649262857794,
+                "HF3": 2.2758846811056137
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3617.1523160707357,
+                "HF2": 9698.966142738818,
+                "HF3": 1584.0876424282192
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            }
+          },
+          "pooled": {
+            "rows_real": 336,
+            "rows_synthetic": 165,
+            "feature_metrics": {
+              "HF1": {
+                "mean_real": 2227.9949047619048,
+                "mean_synthetic": 3361.2713328636137,
+                "std_real": 750.9708484744275,
+                "std_synthetic": 117.37872414201426,
+                "mean_percentage_difference": 50.86530609560872,
+                "std_percentage_difference": 84.36973627132595,
+                "kl_divergence_real_to_synthetic": 16.392455392790193,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 0.0,
+                  "common_max": 3617.391
+                },
+                "wasserstein_distance_physical_domain": 1133.2778488393828,
+                "real_q1": 1627.4379999999999,
+                "real_q3": 2941.72675,
+                "real_iqr": 1314.28875,
+                "outlier_lower_bound": -343.99512500000014,
+                "outlier_upper_bound": 4913.159874999999,
+                "synthetic_outlier_ratio": 0.0,
+                "real_min": 0.0,
+                "real_max": 3617.391,
+                "synthetic_min": 3162.3498992625478,
+                "synthetic_max": 3617.1523160707357,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 563957.2152584016,
+                "synthetic_variance": 13777.764881207082,
+                "synthetic_to_real_variance_ratio": 0.024430514422790386
+              },
+              "HF2": {
+                "mean_real": 7815.127842261905,
+                "mean_synthetic": 8944.209153793385,
+                "std_real": 1203.6364996962166,
+                "std_synthetic": 403.73393064810614,
+                "mean_percentage_difference": 14.447381211421021,
+                "std_percentage_difference": 66.45715456867553,
+                "kl_divergence_real_to_synthetic": 9.351422788088074,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 2.530999999999999,
+                  "common_max": 9722.625
+                },
+                "wasserstein_distance_physical_domain": 1129.128810655514,
+                "real_q1": 6827.492249999999,
+                "real_q3": 8702.633250000003,
+                "real_iqr": 1875.1410000000033,
+                "outlier_lower_bound": 4014.7807499999944,
+                "outlier_upper_bound": 11515.344750000007,
+                "synthetic_outlier_ratio": 0.0,
+                "real_min": 2.530999999999999,
+                "real_max": 9722.625,
+                "synthetic_min": 8113.38992226541,
+                "synthetic_max": 9714.645147162139,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 1448740.8234009605,
+                "synthetic_variance": 163001.08675656977,
+                "synthetic_to_real_variance_ratio": 0.11251224796297246
+              },
+              "HF3": {
+                "mean_real": 785.8558750000001,
+                "mean_synthetic": 579.6379106152901,
+                "std_real": 487.3805121610295,
+                "std_synthetic": 503.2817157925375,
+                "mean_percentage_difference": 26.24119395744289,
+                "std_percentage_difference": 3.2625850305344732,
+                "kl_divergence_real_to_synthetic": 0.326683154999367,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 0.0,
+                  "common_max": 1586.2659999999998
+                },
+                "wasserstein_distance_physical_domain": 207.43850688526214,
+                "real_q1": 365.29625,
+                "real_q3": 1292.6567499999992,
+                "real_iqr": 927.3604999999992,
+                "outlier_lower_bound": -1025.7444999999989,
+                "outlier_upper_bound": 2683.697499999998,
+                "synthetic_outlier_ratio": 0.0,
+                "real_min": 0.0,
+                "real_max": 1586.2659999999998,
+                "synthetic_min": 0.19831615298986432,
+                "synthetic_max": 1585.7007398709654,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 237539.76363434744,
+                "synthetic_variance": 253292.4854510805,
+                "synthetic_to_real_variance_ratio": 1.0663161467188362
+              }
+            },
+            "synthetic_variance_by_feature": {
+              "HF1": 13777.764881207082,
+              "HF2": 163001.08675656977,
+              "HF3": 253292.4854510805
+            },
+            "synthetic_min_by_feature": {
+              "HF1": 3162.3498992625478,
+              "HF2": 8113.38992226541,
+              "HF3": 0.19831615298986432
+            },
+            "synthetic_max_by_feature": {
+              "HF1": 3617.1523160707357,
+              "HF2": 9714.645147162139,
+              "HF3": 1585.7007398709654
+            },
+            "synthetic_nan_inf_count": 0,
+            "zero_variance_feature_count": 0
+          }
+        },
+        "B_SOURCE_VS_TARGET": {
+          "outlier_boundary_reference": "TARGET_REFERENCE_HF",
+          "pooled": {
+            "rows_real": 33,
+            "rows_synthetic": 336,
+            "feature_metrics": {
+              "HF1": {
+                "mean_real": 3135.7329696969696,
+                "mean_synthetic": 2227.9949047619048,
+                "std_real": 716.607544511046,
+                "std_synthetic": 750.9708484744275,
+                "mean_percentage_difference": 28.948194049277948,
+                "std_percentage_difference": 4.795275213970605,
+                "kl_divergence_real_to_synthetic": 2.95028814476595,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 0.0,
+                  "common_max": 3617.391
+                },
+                "wasserstein_distance_physical_domain": 984.9325113636363,
+                "real_q1": 3302.109,
+                "real_q3": 3346.203,
+                "real_iqr": 44.09400000000005,
+                "outlier_lower_bound": 3235.968,
+                "outlier_upper_bound": 3412.344,
+                "synthetic_outlier_ratio": 0.9523809523809523,
+                "real_min": 0.0,
+                "real_max": 3407.047,
+                "synthetic_min": 0.0,
+                "synthetic_max": 3617.391,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 513526.3728501507,
+                "synthetic_variance": 563957.2152584016,
+                "synthetic_to_real_variance_ratio": 1.0982049707171844
+              },
+              "HF2": {
+                "mean_real": 5884.346545454546,
+                "mean_synthetic": 7815.127842261905,
+                "std_real": 1048.8875515054203,
+                "std_synthetic": 1203.6364996962166,
+                "mean_percentage_difference": 32.8121615865541,
+                "std_percentage_difference": 14.753626160277348,
+                "kl_divergence_real_to_synthetic": 2.5558655789645397,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 2.530999999999999,
+                  "common_max": 9722.625
+                },
+                "wasserstein_distance_physical_domain": 1930.781296807359,
+                "real_q1": 5982.156,
+                "real_q3": 6133.375,
+                "real_iqr": 151.21900000000005,
+                "outlier_lower_bound": 5755.327499999999,
+                "outlier_upper_bound": 6360.2035,
+                "synthetic_outlier_ratio": 0.9285714285714286,
+                "real_min": 2.530999999999999,
+                "real_max": 6476.625,
+                "synthetic_min": 2.530999999999999,
+                "synthetic_max": 9722.625,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 1100165.0957030358,
+                "synthetic_variance": 1448740.8234009605,
+                "synthetic_to_real_variance_ratio": 1.3168394716932692
+              },
+              "HF3": {
+                "mean_real": 1418.9895757575757,
+                "mean_synthetic": 785.8558750000001,
+                "std_real": 361.9520757518774,
+                "std_synthetic": 487.3805121610295,
+                "mean_percentage_difference": 44.61862945113996,
+                "std_percentage_difference": 34.65332700430067,
+                "kl_divergence_real_to_synthetic": 1.978380525328915,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 0.0,
+                  "common_max": 1586.2659999999998
+                },
+                "wasserstein_distance_physical_domain": 645.1113257575757,
+                "real_q1": 1495.844,
+                "real_q3": 1534.031,
+                "real_iqr": 38.1869999999999,
+                "outlier_lower_bound": 1438.5635000000002,
+                "outlier_upper_bound": 1591.3114999999998,
+                "synthetic_outlier_ratio": 0.8511904761904762,
+                "real_min": 0.0,
+                "real_max": 1564.844,
+                "synthetic_min": 0.0,
+                "synthetic_max": 1586.2659999999998,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 131009.30514109276,
+                "synthetic_variance": 237539.76363434744,
+                "synthetic_to_real_variance_ratio": 1.813151847332713
+              }
+            },
+            "synthetic_variance_by_feature": {
+              "HF1": 563957.2152584016,
+              "HF2": 1448740.8234009605,
+              "HF3": 237539.76363434744
+            },
+            "synthetic_min_by_feature": {
+              "HF1": 0.0,
+              "HF2": 2.530999999999999,
+              "HF3": 0.0
+            },
+            "synthetic_max_by_feature": {
+              "HF1": 3617.391,
+              "HF2": 9722.625,
+              "HF3": 1586.2659999999998
+            },
+            "synthetic_nan_inf_count": 0,
+            "zero_variance_feature_count": 0
+          }
+        },
+        "C_GENERATED_VS_TARGET": {
+          "outlier_boundary_reference": "TARGET_REFERENCE_HF",
+          "per_set": {
+            "set_01": {
+              "rows_real": 33,
+              "rows_synthetic": 33,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 3135.7329696969696,
+                  "mean_synthetic": 3383.530438387075,
+                  "std_real": 716.607544511046,
+                  "std_synthetic": 114.77172924127859,
+                  "mean_percentage_difference": 7.90237788372815,
+                  "std_percentage_difference": 83.98401885098916,
+                  "kl_divergence_real_to_synthetic": 1.9591239692348026,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3616.8994016633033
+                  },
+                  "wasserstein_distance_physical_domain": 250.03342148660352,
+                  "real_q1": 3302.109,
+                  "real_q3": 3346.203,
+                  "real_iqr": 44.09400000000005,
+                  "outlier_lower_bound": 3235.968,
+                  "outlier_upper_bound": 3412.344,
+                  "synthetic_outlier_ratio": 0.36363636363636365,
+                  "real_min": 0.0,
+                  "real_max": 3407.047,
+                  "synthetic_min": 3218.8599905190467,
+                  "synthetic_max": 3616.8994016633033,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 513526.3728501507,
+                  "synthetic_variance": 13172.549833033365,
+                  "synthetic_to_real_variance_ratio": 0.025651165216547065
+                },
+                "HF2": {
+                  "mean_real": 5884.346545454546,
+                  "mean_synthetic": 8948.087316748715,
+                  "std_real": 1048.8875515054203,
+                  "std_synthetic": 371.3600385975506,
+                  "mean_percentage_difference": 52.06594729980346,
+                  "std_percentage_difference": 64.59486643114846,
+                  "kl_divergence_real_to_synthetic": 21.479693212507023,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9678.473792588054
+                  },
+                  "wasserstein_distance_physical_domain": 3063.7407712941713,
+                  "real_q1": 5982.156,
+                  "real_q3": 6133.375,
+                  "real_iqr": 151.21900000000005,
+                  "outlier_lower_bound": 5755.327499999999,
+                  "outlier_upper_bound": 6360.2035,
+                  "synthetic_outlier_ratio": 1.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 6476.625,
+                  "synthetic_min": 8205.782638104678,
+                  "synthetic_max": 9678.473792588054,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1100165.0957030358,
+                  "synthetic_variance": 137908.27826717426,
+                  "synthetic_to_real_variance_ratio": 0.12535234830282183
+                },
+                "HF3": {
+                  "mean_real": 1418.9895757575757,
+                  "mean_synthetic": 640.203985990056,
+                  "std_real": 361.9520757518774,
+                  "std_synthetic": 512.2203405666078,
+                  "mean_percentage_difference": 54.88310859167085,
+                  "std_percentage_difference": 41.516066595993536,
+                  "kl_divergence_real_to_synthetic": 3.560022128380145,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1585.7007398709654
+                  },
+                  "wasserstein_distance_physical_domain": 780.290630958711,
+                  "real_q1": 1495.844,
+                  "real_q3": 1534.031,
+                  "real_iqr": 38.1869999999999,
+                  "outlier_lower_bound": 1438.5635000000002,
+                  "outlier_upper_bound": 1591.3114999999998,
+                  "synthetic_outlier_ratio": 0.8787878787878788,
+                  "real_min": 0.0,
+                  "real_max": 1564.844,
+                  "synthetic_min": 3.9764397836923595,
+                  "synthetic_max": 1585.7007398709654,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 131009.30514109276,
+                  "synthetic_variance": 262369.6772901717,
+                  "synthetic_to_real_variance_ratio": 2.002679710480168
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 13172.549833033365,
+                "HF2": 137908.27826717426,
+                "HF3": 262369.6772901717
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3218.8599905190467,
+                "HF2": 8205.782638104678,
+                "HF3": 3.9764397836923595
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3616.8994016633033,
+                "HF2": 9678.473792588054,
+                "HF3": 1585.7007398709654
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_02": {
+              "rows_real": 33,
+              "rows_synthetic": 33,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 3135.7329696969696,
+                  "mean_synthetic": 3351.7510103346813,
+                  "std_real": 716.607544511046,
+                  "std_synthetic": 111.27237682183248,
+                  "mean_percentage_difference": 6.888916968544907,
+                  "std_percentage_difference": 84.47234086856348,
+                  "kl_divergence_real_to_synthetic": 1.9421659151434725,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3615.9372272872033
+                  },
+                  "wasserstein_distance_physical_domain": 239.41210638227608,
+                  "real_q1": 3302.109,
+                  "real_q3": 3346.203,
+                  "real_iqr": 44.09400000000005,
+                  "outlier_lower_bound": 3235.968,
+                  "outlier_upper_bound": 3412.344,
+                  "synthetic_outlier_ratio": 0.36363636363636365,
+                  "real_min": 0.0,
+                  "real_max": 3407.047,
+                  "synthetic_min": 3222.4010078364017,
+                  "synthetic_max": 3615.9372272872033,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 513526.3728501507,
+                  "synthetic_variance": 12381.541843579884,
+                  "synthetic_to_real_variance_ratio": 0.02411081981020841
+                },
+                "HF2": {
+                  "mean_real": 5884.346545454546,
+                  "mean_synthetic": 8919.950090768305,
+                  "std_real": 1048.8875515054203,
+                  "std_synthetic": 422.96005779434023,
+                  "mean_percentage_difference": 51.587776516300835,
+                  "std_percentage_difference": 59.675366802925154,
+                  "kl_divergence_real_to_synthetic": 21.479693212413725,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9661.781772396267
+                  },
+                  "wasserstein_distance_physical_domain": 3035.603545313759,
+                  "real_q1": 5982.156,
+                  "real_q3": 6133.375,
+                  "real_iqr": 151.21900000000005,
+                  "outlier_lower_bound": 5755.327499999999,
+                  "outlier_upper_bound": 6360.2035,
+                  "synthetic_outlier_ratio": 1.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 6476.625,
+                  "synthetic_min": 8113.38992226541,
+                  "synthetic_max": 9661.781772396267,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1100165.0957030358,
+                  "synthetic_variance": 178895.21048939164,
+                  "synthetic_to_real_variance_ratio": 0.16260760424786305
+                },
+                "HF3": {
+                  "mean_real": 1418.9895757575757,
+                  "mean_synthetic": 555.3515121094088,
+                  "std_real": 361.9520757518774,
+                  "std_synthetic": 474.61791296904624,
+                  "mean_percentage_difference": 60.862889932583506,
+                  "std_percentage_difference": 31.127280312767898,
+                  "kl_divergence_real_to_synthetic": 5.89851355347211,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1582.9577840119002
+                  },
+                  "wasserstein_distance_physical_domain": 865.4538738762366,
+                  "real_q1": 1495.844,
+                  "real_q3": 1534.031,
+                  "real_iqr": 38.1869999999999,
+                  "outlier_lower_bound": 1438.5635000000002,
+                  "outlier_upper_bound": 1591.3114999999998,
+                  "synthetic_outlier_ratio": 0.9393939393939394,
+                  "real_min": 0.0,
+                  "real_max": 1564.844,
+                  "synthetic_min": 5.451401398301124,
+                  "synthetic_max": 1582.9577840119002,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 131009.30514109276,
+                  "synthetic_variance": 225262.16331109317,
+                  "synthetic_to_real_variance_ratio": 1.7194363642223212
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 12381.541843579884,
+                "HF2": 178895.21048939164,
+                "HF3": 225262.16331109317
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3222.4010078364017,
+                "HF2": 8113.38992226541,
+                "HF3": 5.451401398301124
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3615.9372272872033,
+                "HF2": 9661.781772396267,
+                "HF3": 1582.9577840119002
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_03": {
+              "rows_real": 33,
+              "rows_synthetic": 33,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 3135.7329696969696,
+                  "mean_synthetic": 3369.555092830525,
+                  "std_real": 716.607544511046,
+                  "std_synthetic": 101.93889824965241,
+                  "mean_percentage_difference": 7.456697537486797,
+                  "std_percentage_difference": 85.7747941630719,
+                  "kl_divergence_real_to_synthetic": 1.8774651085860008,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3591.1461172195673
+                  },
+                  "wasserstein_distance_physical_domain": 236.78652199844436,
+                  "real_q1": 3302.109,
+                  "real_q3": 3346.203,
+                  "real_iqr": 44.09400000000005,
+                  "outlier_lower_bound": 3235.968,
+                  "outlier_upper_bound": 3412.344,
+                  "synthetic_outlier_ratio": 0.30303030303030304,
+                  "real_min": 0.0,
+                  "real_max": 3407.047,
+                  "synthetic_min": 3173.94396573624,
+                  "synthetic_max": 3591.1461172195673,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 513526.3728501507,
+                  "synthetic_variance": 10391.538976352987,
+                  "synthetic_to_real_variance_ratio": 0.02023564811029732
+                },
+                "HF2": {
+                  "mean_real": 5884.346545454546,
+                  "mean_synthetic": 9004.434943980516,
+                  "std_real": 1048.8875515054203,
+                  "std_synthetic": 353.36784389323833,
+                  "mean_percentage_difference": 53.02353242495771,
+                  "std_percentage_difference": 66.31022616427607,
+                  "kl_divergence_real_to_synthetic": 21.4796932124949,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9714.645147162139
+                  },
+                  "wasserstein_distance_physical_domain": 3120.088398525971,
+                  "real_q1": 5982.156,
+                  "real_q3": 6133.375,
+                  "real_iqr": 151.21900000000005,
+                  "outlier_lower_bound": 5755.327499999999,
+                  "outlier_upper_bound": 6360.2035,
+                  "synthetic_outlier_ratio": 1.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 6476.625,
+                  "synthetic_min": 8163.827505196809,
+                  "synthetic_max": 9714.645147162139,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1100165.0957030358,
+                  "synthetic_variance": 124868.83309775605,
+                  "synthetic_to_real_variance_ratio": 0.11350008611022278
+                },
+                "HF3": {
+                  "mean_real": 1418.9895757575757,
+                  "mean_synthetic": 473.3831038725902,
+                  "std_real": 361.9520757518774,
+                  "std_synthetic": 504.2277098834499,
+                  "mean_percentage_difference": 66.63942343481568,
+                  "std_percentage_difference": 39.307865229402424,
+                  "kl_divergence_real_to_synthetic": 3.7277310094494815,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1564.844
+                  },
+                  "wasserstein_distance_physical_domain": 945.6184910457728,
+                  "real_q1": 1495.844,
+                  "real_q3": 1534.031,
+                  "real_iqr": 38.1869999999999,
+                  "outlier_lower_bound": 1438.5635000000002,
+                  "outlier_upper_bound": 1591.3114999999998,
+                  "synthetic_outlier_ratio": 0.9393939393939394,
+                  "real_min": 0.0,
+                  "real_max": 1564.844,
+                  "synthetic_min": 0.19831615298986432,
+                  "synthetic_max": 1535.3633728010652,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 131009.30514109276,
+                  "synthetic_variance": 254245.58341430855,
+                  "synthetic_to_real_variance_ratio": 1.9406681314773353
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 10391.538976352987,
+                "HF2": 124868.83309775605,
+                "HF3": 254245.58341430855
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3173.94396573624,
+                "HF2": 8163.827505196809,
+                "HF3": 0.19831615298986432
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3591.1461172195673,
+                "HF2": 9714.645147162139,
+                "HF3": 1535.3633728010652
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_04": {
+              "rows_real": 33,
+              "rows_synthetic": 33,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 3135.7329696969696,
+                  "mean_synthetic": 3337.4338915538606,
+                  "std_real": 716.607544511046,
+                  "std_synthetic": 129.65044494378964,
+                  "mean_percentage_difference": 6.432337313351747,
+                  "std_percentage_difference": 81.90774770139319,
+                  "kl_divergence_real_to_synthetic": 2.181280912780963,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3616.9125540749433
+                  },
+                  "wasserstein_distance_physical_domain": 253.88329207092258,
+                  "real_q1": 3302.109,
+                  "real_q3": 3346.203,
+                  "real_iqr": 44.09400000000005,
+                  "outlier_lower_bound": 3235.968,
+                  "outlier_upper_bound": 3412.344,
+                  "synthetic_outlier_ratio": 0.5151515151515151,
+                  "real_min": 0.0,
+                  "real_max": 3407.047,
+                  "synthetic_min": 3162.3498992625478,
+                  "synthetic_max": 3616.9125540749433,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 513526.3728501507,
+                  "synthetic_variance": 16809.23787412263,
+                  "synthetic_to_real_variance_ratio": 0.0327329593236444
+                },
+                "HF2": {
+                  "mean_real": 5884.346545454546,
+                  "mean_synthetic": 8857.813778175792,
+                  "std_real": 1048.8875515054203,
+                  "std_synthetic": 444.86705275640344,
+                  "mean_percentage_difference": 50.53181708032045,
+                  "std_percentage_difference": 57.58677351848574,
+                  "kl_divergence_real_to_synthetic": 21.4796932121561,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9649.510869350135
+                  },
+                  "wasserstein_distance_physical_domain": 2973.4672327212475,
+                  "real_q1": 5982.156,
+                  "real_q3": 6133.375,
+                  "real_iqr": 151.21900000000005,
+                  "outlier_lower_bound": 5755.327499999999,
+                  "outlier_upper_bound": 6360.2035,
+                  "synthetic_outlier_ratio": 1.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 6476.625,
+                  "synthetic_min": 8160.271666318356,
+                  "synthetic_max": 9649.510869350135,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1100165.0957030358,
+                  "synthetic_variance": 197906.69462816863,
+                  "synthetic_to_real_variance_ratio": 0.1798881780572222
+                },
+                "HF3": {
+                  "mean_real": 1418.9895757575757,
+                  "mean_synthetic": 689.2456762009282,
+                  "std_real": 361.9520757518774,
+                  "std_synthetic": 483.4648349241907,
+                  "mean_percentage_difference": 51.42700919187859,
+                  "std_percentage_difference": 33.57150498996222,
+                  "kl_divergence_real_to_synthetic": 1.7246977813997248,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1584.0274621033666
+                  },
+                  "wasserstein_distance_physical_domain": 732.1288163317153,
+                  "real_q1": 1495.844,
+                  "real_q3": 1534.031,
+                  "real_iqr": 38.1869999999999,
+                  "outlier_lower_bound": 1438.5635000000002,
+                  "outlier_upper_bound": 1591.3114999999998,
+                  "synthetic_outlier_ratio": 0.8787878787878788,
+                  "real_min": 0.0,
+                  "real_max": 1564.844,
+                  "synthetic_min": 2.5206715798377988,
+                  "synthetic_max": 1584.0274621033666,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 131009.30514109276,
+                  "synthetic_variance": 233738.246608275,
+                  "synthetic_to_real_variance_ratio": 1.7841346945283505
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 16809.23787412263,
+                "HF2": 197906.69462816863,
+                "HF3": 233738.246608275
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3162.3498992625478,
+                "HF2": 8160.271666318356,
+                "HF3": 2.5206715798377988
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3616.9125540749433,
+                "HF2": 9649.510869350135,
+                "HF3": 1584.0274621033666
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_05": {
+              "rows_real": 33,
+              "rows_synthetic": 33,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 3135.7329696969696,
+                  "mean_synthetic": 3364.0862312119248,
+                  "std_real": 716.607544511046,
+                  "std_synthetic": 122.07818649984281,
+                  "mean_percentage_difference": 7.282292966962131,
+                  "std_percentage_difference": 82.96442907489357,
+                  "kl_divergence_real_to_synthetic": 2.138261761882596,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3617.1523160707357
+                  },
+                  "wasserstein_distance_physical_domain": 247.48515475423864,
+                  "real_q1": 3302.109,
+                  "real_q3": 3346.203,
+                  "real_iqr": 44.09400000000005,
+                  "outlier_lower_bound": 3235.968,
+                  "outlier_upper_bound": 3412.344,
+                  "synthetic_outlier_ratio": 0.5151515151515151,
+                  "real_min": 0.0,
+                  "real_max": 3407.047,
+                  "synthetic_min": 3178.8289007872045,
+                  "synthetic_max": 3617.1523160707357,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 513526.3728501507,
+                  "synthetic_variance": 14903.083619090403,
+                  "synthetic_to_real_variance_ratio": 0.02902106767443313
+                },
+                "HF2": {
+                  "mean_real": 5884.346545454546,
+                  "mean_synthetic": 8990.759639293587,
+                  "std_real": 1048.8875515054203,
+                  "std_synthetic": 401.9510176396145,
+                  "mean_percentage_difference": 52.791131009077596,
+                  "std_percentage_difference": 61.678349880050284,
+                  "kl_divergence_real_to_synthetic": 21.47969321246656,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9698.966142738818
+                  },
+                  "wasserstein_distance_physical_domain": 3106.4130938390404,
+                  "real_q1": 5982.156,
+                  "real_q3": 6133.375,
+                  "real_iqr": 151.21900000000005,
+                  "outlier_lower_bound": 5755.327499999999,
+                  "outlier_upper_bound": 6360.2035,
+                  "synthetic_outlier_ratio": 1.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 6476.625,
+                  "synthetic_min": 8182.649262857794,
+                  "synthetic_max": 9698.966142738818,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1100165.0957030358,
+                  "synthetic_variance": 161564.62058152168,
+                  "synthetic_to_real_variance_ratio": 0.14685488679158415
+                },
+                "HF3": {
+                  "mean_real": 1418.9895757575757,
+                  "mean_synthetic": 540.0052749034676,
+                  "std_real": 361.9520757518774,
+                  "std_synthetic": 511.57989204697554,
+                  "mean_percentage_difference": 61.944380414833745,
+                  "std_percentage_difference": 41.33912369041638,
+                  "kl_divergence_real_to_synthetic": 1.9245138798607948,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1584.0876424282192
+                  },
+                  "wasserstein_distance_physical_domain": 880.2885146183097,
+                  "real_q1": 1495.844,
+                  "real_q3": 1534.031,
+                  "real_iqr": 38.1869999999999,
+                  "outlier_lower_bound": 1438.5635000000002,
+                  "outlier_upper_bound": 1591.3114999999998,
+                  "synthetic_outlier_ratio": 0.8787878787878788,
+                  "real_min": 0.0,
+                  "real_max": 1564.844,
+                  "synthetic_min": 2.2758846811056137,
+                  "synthetic_max": 1584.0876424282192,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 131009.30514109276,
+                  "synthetic_variance": 261713.98594679515,
+                  "synthetic_to_real_variance_ratio": 1.9976747885574822
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 14903.083619090403,
+                "HF2": 161564.62058152168,
+                "HF3": 261713.98594679515
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3178.8289007872045,
+                "HF2": 8182.649262857794,
+                "HF3": 2.2758846811056137
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3617.1523160707357,
+                "HF2": 9698.966142738818,
+                "HF3": 1584.0876424282192
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            }
+          },
+          "pooled": {
+            "rows_real": 33,
+            "rows_synthetic": 165,
+            "feature_metrics": {
+              "HF1": {
+                "mean_real": 3135.7329696969696,
+                "mean_synthetic": 3361.2713328636137,
+                "std_real": 716.607544511046,
+                "std_synthetic": 117.37872414201426,
+                "mean_percentage_difference": 7.192524534014759,
+                "std_percentage_difference": 83.6202221088666,
+                "kl_divergence_real_to_synthetic": 2.145569329936275,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 0.0,
+                  "common_max": 3617.1523160707357
+                },
+                "wasserstein_distance_physical_domain": 241.12018600058255,
+                "real_q1": 3302.109,
+                "real_q3": 3346.203,
+                "real_iqr": 44.09400000000005,
+                "outlier_lower_bound": 3235.968,
+                "outlier_upper_bound": 3412.344,
+                "synthetic_outlier_ratio": 0.4121212121212121,
+                "real_min": 0.0,
+                "real_max": 3407.047,
+                "synthetic_min": 3162.3498992625478,
+                "synthetic_max": 3617.1523160707357,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 513526.3728501507,
+                "synthetic_variance": 13777.764881207082,
+                "synthetic_to_real_variance_ratio": 0.026829712376286265
+              },
+              "HF2": {
+                "mean_real": 5884.346545454546,
+                "mean_synthetic": 8944.209153793385,
+                "std_real": 1048.8875515054203,
+                "std_synthetic": 403.73393064810614,
+                "mean_percentage_difference": 52.000040866092036,
+                "std_percentage_difference": 61.50836855021825,
+                "kl_divergence_real_to_synthetic": 23.089131117918246,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 2.530999999999999,
+                  "common_max": 9714.645147162139
+                },
+                "wasserstein_distance_physical_domain": 3059.8626083388385,
+                "real_q1": 5982.156,
+                "real_q3": 6133.375,
+                "real_iqr": 151.21900000000005,
+                "outlier_lower_bound": 5755.327499999999,
+                "outlier_upper_bound": 6360.2035,
+                "synthetic_outlier_ratio": 1.0,
+                "real_min": 2.530999999999999,
+                "real_max": 6476.625,
+                "synthetic_min": 8113.38992226541,
+                "synthetic_max": 9714.645147162139,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 1100165.0957030358,
+                "synthetic_variance": 163001.08675656977,
+                "synthetic_to_real_variance_ratio": 0.14816056916658274
+              },
+              "HF3": {
+                "mean_real": 1418.9895757575757,
+                "mean_synthetic": 579.6379106152901,
+                "std_real": 361.9520757518774,
+                "std_synthetic": 503.2817157925375,
+                "mean_percentage_difference": 59.151362313156476,
+                "std_percentage_difference": 39.04650629425962,
+                "kl_divergence_real_to_synthetic": 2.0274763113747887,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 0.0,
+                  "common_max": 1585.7007398709654
+                },
+                "wasserstein_distance_physical_domain": 840.5336988611881,
+                "real_q1": 1495.844,
+                "real_q3": 1534.031,
+                "real_iqr": 38.1869999999999,
+                "outlier_lower_bound": 1438.5635000000002,
+                "outlier_upper_bound": 1591.3114999999998,
+                "synthetic_outlier_ratio": 0.9030303030303031,
+                "real_min": 0.0,
+                "real_max": 1564.844,
+                "synthetic_min": 0.19831615298986432,
+                "synthetic_max": 1585.7007398709654,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 131009.30514109276,
+                "synthetic_variance": 253292.4854510805,
+                "synthetic_to_real_variance_ratio": 1.933393091263958
+              }
+            },
+            "synthetic_variance_by_feature": {
+              "HF1": 13777.764881207082,
+              "HF2": 163001.08675656977,
+              "HF3": 253292.4854510805
+            },
+            "synthetic_min_by_feature": {
+              "HF1": 3162.3498992625478,
+              "HF2": 8113.38992226541,
+              "HF3": 0.19831615298986432
+            },
+            "synthetic_max_by_feature": {
+              "HF1": 3617.1523160707357,
+              "HF2": 9714.645147162139,
+              "HF3": 1585.7007398709654
+            },
+            "synthetic_nan_inf_count": 0,
+            "zero_variance_feature_count": 0
+          }
+        }
+      },
+      "condition_bin_source_vs_generated": {
+        "bin_1": {
+          "interval": "[0.0,0.2)",
+          "source": {
+            "count": 68,
+            "mean": {
+              "HF1": 3095.889514705882,
+              "HF2": 6359.046382352941,
+              "HF3": 1385.9097205882354
+            },
+            "std": {
+              "HF1": 704.9127523688031,
+              "HF2": 1178.2031005712374,
+              "HF3": 352.7413698820011
+            }
+          },
+          "synthetic": {
+            "count": 165,
+            "mean": {
+              "HF1": 3361.2713328636137,
+              "HF2": 8944.209153793385,
+              "HF3": 579.6379106152901
+            },
+            "std": {
+              "HF1": 117.37872414201426,
+              "HF2": 403.73393064810614,
+              "HF3": 503.2817157925375
+            }
+          }
+        },
+        "bin_2": {
+          "interval": "[0.2,0.4)",
+          "source": {
+            "count": 66,
+            "mean": {
+              "HF1": 2789.353681818182,
+              "HF2": 7182.972257575759,
+              "HF3": 1141.0667424242422
+            },
+            "std": {
+              "HF1": 230.59032098068317,
+              "HF2": 661.9066574586635,
+              "HF3": 226.2790706826626
+            }
+          },
+          "synthetic": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          }
+        },
+        "bin_3": {
+          "interval": "[0.4,0.6)",
+          "source": {
+            "count": 68,
+            "mean": {
+              "HF1": 2145.2700000000004,
+              "HF2": 8107.167073529412,
+              "HF3": 686.931294117647
+            },
+            "std": {
+              "HF1": 311.09842201932133,
+              "HF2": 711.4001442869617,
+              "HF3": 272.0540189215812
+            }
+          },
+          "synthetic": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          }
+        },
+        "bin_4": {
+          "interval": "[0.6,0.8)",
+          "source": {
+            "count": 66,
+            "mean": {
+              "HF1": 1709.8125909090907,
+              "HF2": 8564.37271212121,
+              "HF3": 432.78703030303035
+            },
+            "std": {
+              "HF1": 253.40221533860856,
+              "HF2": 602.7162459985369,
+              "HF3": 195.93440247741313
+            }
+          },
+          "synthetic": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          }
+        },
+        "bin_5": {
+          "interval": "[0.8,1.0]",
+          "source": {
+            "count": 68,
+            "mean": {
+              "HF1": 1400.9186323529411,
+              "HF2": 8865.524588235292,
+              "HF3": 282.6475882352941
+            },
+            "std": {
+              "HF1": 261.50599485592187,
+              "HF2": 494.8703183277125,
+              "HF3": 147.66305069972006
+            }
+          },
+          "synthetic": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          }
+        }
+      }
+    },
+    "B0018": {
+      "target_reference": {
+        "reference_scope": "TARGET_FIRST_20_PERCENT_LIFE__PAIRED_CHARGE_HF__POST_HOC_QUALITY_EVALUATION_ONLY",
+        "valid_pair_count_metadata": 132,
+        "reference_pair_count": 26,
+        "frozen_train_pair_count": 92,
+        "reference_fully_within_train": true,
+        "capacity_or_soh_values_accessed": false,
+        "hf2_final_timestamp_fallback_count": 1
+      },
+      "comparisons": {
+        "A_GENERATED_VS_SOURCE": {
+          "outlier_boundary_reference": "SOURCE_REAL_HF",
+          "per_set": {
+            "set_01": {
+              "rows_real": 336,
+              "rows_synthetic": 26,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2227.9949047619048,
+                  "mean_synthetic": 3342.2328707773845,
+                  "std_real": 750.9708484744275,
+                  "std_synthetic": 104.73915841204457,
+                  "mean_percentage_difference": 50.01079507112037,
+                  "std_percentage_difference": 86.0528329928094,
+                  "kl_divergence_real_to_synthetic": 14.902243709236519,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3617.391
+                  },
+                  "wasserstein_distance_physical_domain": 1114.6691312479065,
+                  "real_q1": 1627.4379999999999,
+                  "real_q3": 2941.72675,
+                  "real_iqr": 1314.28875,
+                  "outlier_lower_bound": -343.99512500000014,
+                  "outlier_upper_bound": 4913.159874999999,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 3617.391,
+                  "synthetic_min": 3207.019154617131,
+                  "synthetic_max": 3576.8836204761565,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 563957.2152584016,
+                  "synthetic_variance": 10970.291304863369,
+                  "synthetic_to_real_variance_ratio": 0.019452346752646565
+                },
+                "HF2": {
+                  "mean_real": 7815.127842261905,
+                  "mean_synthetic": 8743.404519193415,
+                  "std_real": 1203.6364996962166,
+                  "std_synthetic": 354.574340178922,
+                  "mean_percentage_difference": 11.877946153505809,
+                  "std_percentage_difference": 70.5414101127365,
+                  "kl_divergence_real_to_synthetic": 8.454429753950379,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9722.625
+                  },
+                  "wasserstein_distance_physical_domain": 946.2855432630095,
+                  "real_q1": 6827.492249999999,
+                  "real_q3": 8702.633250000003,
+                  "real_iqr": 1875.1410000000033,
+                  "outlier_lower_bound": 4014.7807499999944,
+                  "outlier_upper_bound": 11515.344750000007,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 9722.625,
+                  "synthetic_min": 8054.839233063637,
+                  "synthetic_max": 9431.57111461842,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1448740.8234009605,
+                  "synthetic_variance": 125722.96271331789,
+                  "synthetic_to_real_variance_ratio": 0.0867808518145983
+                },
+                "HF3": {
+                  "mean_real": 785.8558750000001,
+                  "mean_synthetic": 642.4453067629919,
+                  "std_real": 487.3805121610295,
+                  "std_synthetic": 449.2532037308556,
+                  "mean_percentage_difference": 18.248965592705936,
+                  "std_percentage_difference": 7.822903763861762,
+                  "kl_divergence_real_to_synthetic": 6.112050999340692,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1586.2659999999998
+                  },
+                  "wasserstein_distance_physical_domain": 145.51063857589008,
+                  "real_q1": 365.29625,
+                  "real_q3": 1292.6567499999992,
+                  "real_iqr": 927.3604999999992,
+                  "outlier_lower_bound": -1025.7444999999989,
+                  "outlier_upper_bound": 2683.697499999998,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 1586.2659999999998,
+                  "synthetic_min": 27.01155825102329,
+                  "synthetic_max": 1434.1177056029437,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 237539.76363434744,
+                  "synthetic_variance": 201828.44106243763,
+                  "synthetic_to_real_variance_ratio": 0.8496617070526289
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 10970.291304863369,
+                "HF2": 125722.96271331789,
+                "HF3": 201828.44106243763
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3207.019154617131,
+                "HF2": 8054.839233063637,
+                "HF3": 27.01155825102329
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3576.8836204761565,
+                "HF2": 9431.57111461842,
+                "HF3": 1434.1177056029437
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_02": {
+              "rows_real": 336,
+              "rows_synthetic": 26,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2227.9949047619048,
+                  "mean_synthetic": 3378.8835626652917,
+                  "std_real": 750.9708484744275,
+                  "std_synthetic": 146.5003630788774,
+                  "mean_percentage_difference": 51.655802957340114,
+                  "std_percentage_difference": 80.49187083939569,
+                  "kl_divergence_real_to_synthetic": 14.89140520995053,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3617.391
+                  },
+                  "wasserstein_distance_physical_domain": 1150.8899496581018,
+                  "real_q1": 1627.4379999999999,
+                  "real_q3": 2941.72675,
+                  "real_iqr": 1314.28875,
+                  "outlier_lower_bound": -343.99512500000014,
+                  "outlier_upper_bound": 4913.159874999999,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 3617.391,
+                  "synthetic_min": 3167.609785851896,
+                  "synthetic_max": 3617.1739852079454,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 563957.2152584016,
+                  "synthetic_variance": 21462.356382242906,
+                  "synthetic_to_real_variance_ratio": 0.038056710334682026
+                },
+                "HF2": {
+                  "mean_real": 7815.127842261905,
+                  "mean_synthetic": 9118.396557793869,
+                  "std_real": 1203.6364996962166,
+                  "std_synthetic": 420.47778938564227,
+                  "mean_percentage_difference": 16.67623027846417,
+                  "std_percentage_difference": 65.06604863746107,
+                  "kl_divergence_real_to_synthetic": 8.656119319858313,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9722.625
+                  },
+                  "wasserstein_distance_physical_domain": 1303.2913641323278,
+                  "real_q1": 6827.492249999999,
+                  "real_q3": 8702.633250000003,
+                  "real_iqr": 1875.1410000000033,
+                  "outlier_lower_bound": 4014.7807499999944,
+                  "outlier_upper_bound": 11515.344750000007,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 9722.625,
+                  "synthetic_min": 8248.965440679907,
+                  "synthetic_max": 9718.820035139024,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1448740.8234009605,
+                  "synthetic_variance": 176801.57136663652,
+                  "synthetic_to_real_variance_ratio": 0.12203809578002349
+                },
+                "HF3": {
+                  "mean_real": 785.8558750000001,
+                  "mean_synthetic": 567.2470466072622,
+                  "std_real": 487.3805121610295,
+                  "std_synthetic": 579.3922407475292,
+                  "mean_percentage_difference": 27.81792887821038,
+                  "std_percentage_difference": 18.878827997968695,
+                  "kl_divergence_real_to_synthetic": 4.657346774898166,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1586.2659999999998
+                  },
+                  "wasserstein_distance_physical_domain": 235.8380332673816,
+                  "real_q1": 365.29625,
+                  "real_q3": 1292.6567499999992,
+                  "real_iqr": 927.3604999999992,
+                  "outlier_lower_bound": -1025.7444999999989,
+                  "outlier_upper_bound": 2683.697499999998,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 1586.2659999999998,
+                  "synthetic_min": 0.35469990366697307,
+                  "synthetic_max": 1584.3964861534832,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 237539.76363434744,
+                  "synthetic_variance": 335695.36863844283,
+                  "synthetic_to_real_variance_ratio": 1.4132175746170625
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 21462.356382242906,
+                "HF2": 176801.57136663652,
+                "HF3": 335695.36863844283
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3167.609785851896,
+                "HF2": 8248.965440679907,
+                "HF3": 0.35469990366697307
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3617.1739852079454,
+                "HF2": 9718.820035139024,
+                "HF3": 1584.3964861534832
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_03": {
+              "rows_real": 336,
+              "rows_synthetic": 26,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2227.9949047619048,
+                  "mean_synthetic": 3393.902828939971,
+                  "std_real": 750.9708484744275,
+                  "std_synthetic": 113.73357197997626,
+                  "mean_percentage_difference": 52.329918784202135,
+                  "std_percentage_difference": 84.85512823686534,
+                  "kl_divergence_real_to_synthetic": 15.119106244974821,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3617.391
+                  },
+                  "wasserstein_distance_physical_domain": 1165.916438336811,
+                  "real_q1": 1627.4379999999999,
+                  "real_q3": 2941.72675,
+                  "real_iqr": 1314.28875,
+                  "outlier_lower_bound": -343.99512500000014,
+                  "outlier_upper_bound": 4913.159874999999,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 3617.391,
+                  "synthetic_min": 3199.303001250744,
+                  "synthetic_max": 3615.9606213308575,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 563957.2152584016,
+                  "synthetic_variance": 12935.325395324442,
+                  "synthetic_to_real_variance_ratio": 0.022936714072179322
+                },
+                "HF2": {
+                  "mean_real": 7815.127842261905,
+                  "mean_synthetic": 9209.589413377775,
+                  "std_real": 1203.6364996962166,
+                  "std_synthetic": 406.223570704826,
+                  "mean_percentage_difference": 17.84310633506253,
+                  "std_percentage_difference": 66.25031138492793,
+                  "kl_divergence_real_to_synthetic": 11.244349196338893,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9722.625
+                  },
+                  "wasserstein_distance_physical_domain": 1394.710467221931,
+                  "real_q1": 6827.492249999999,
+                  "real_q3": 8702.633250000003,
+                  "real_iqr": 1875.1410000000033,
+                  "outlier_lower_bound": 4014.7807499999944,
+                  "outlier_upper_bound": 11515.344750000007,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 9722.625,
+                  "synthetic_min": 8423.814221832276,
+                  "synthetic_max": 9697.725727090954,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1448740.8234009605,
+                  "synthetic_variance": 165017.58939617878,
+                  "synthetic_to_real_variance_ratio": 0.11390414816143254
+                },
+                "HF3": {
+                  "mean_real": 785.8558750000001,
+                  "mean_synthetic": 435.7563578319762,
+                  "std_real": 487.3805121610295,
+                  "std_synthetic": 535.8657668954786,
+                  "mean_percentage_difference": 44.55009223771775,
+                  "std_percentage_difference": 9.94813159834131,
+                  "kl_divergence_real_to_synthetic": 6.422247537929822,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1586.2659999999998
+                  },
+                  "wasserstein_distance_physical_domain": 356.3614373646871,
+                  "real_q1": 365.29625,
+                  "real_q3": 1292.6567499999992,
+                  "real_iqr": 927.3604999999992,
+                  "outlier_lower_bound": -1025.7444999999989,
+                  "outlier_upper_bound": 2683.697499999998,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 1586.2659999999998,
+                  "synthetic_min": 0.6546560397148131,
+                  "synthetic_max": 1575.4993475062845,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 237539.76363434744,
+                  "synthetic_variance": 287152.1201304794,
+                  "synthetic_to_real_variance_ratio": 1.2088591641966178
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 12935.325395324442,
+                "HF2": 165017.58939617878,
+                "HF3": 287152.1201304794
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3199.303001250744,
+                "HF2": 8423.814221832276,
+                "HF3": 0.6546560397148131
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3615.9606213308575,
+                "HF2": 9697.725727090954,
+                "HF3": 1575.4993475062845
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_04": {
+              "rows_real": 336,
+              "rows_synthetic": 26,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2227.9949047619048,
+                  "mean_synthetic": 3395.8081995748717,
+                  "std_real": 750.9708484744275,
+                  "std_synthetic": 128.1505608310699,
+                  "mean_percentage_difference": 52.415438308094586,
+                  "std_percentage_difference": 82.93534814415186,
+                  "kl_divergence_real_to_synthetic": 14.976342234994837,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3617.391
+                  },
+                  "wasserstein_distance_physical_domain": 1167.818291779665,
+                  "real_q1": 1627.4379999999999,
+                  "real_q3": 2941.72675,
+                  "real_iqr": 1314.28875,
+                  "outlier_lower_bound": -343.99512500000014,
+                  "outlier_upper_bound": 4913.159874999999,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 3617.391,
+                  "synthetic_min": 3214.1926092934013,
+                  "synthetic_max": 3616.5515095947685,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 563957.2152584016,
+                  "synthetic_variance": 16422.56624131775,
+                  "synthetic_to_real_variance_ratio": 0.029120234296130133
+                },
+                "HF2": {
+                  "mean_real": 7815.127842261905,
+                  "mean_synthetic": 9001.143553473683,
+                  "std_real": 1203.6364996962166,
+                  "std_synthetic": 362.5437624859649,
+                  "mean_percentage_difference": 15.17589648115741,
+                  "std_percentage_difference": 69.8792980623746,
+                  "kl_divergence_real_to_synthetic": 11.223118158036668,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9722.625
+                  },
+                  "wasserstein_distance_physical_domain": 1186.630054166784,
+                  "real_q1": 6827.492249999999,
+                  "real_q3": 8702.633250000003,
+                  "real_iqr": 1875.1410000000033,
+                  "outlier_lower_bound": 4014.7807499999944,
+                  "outlier_upper_bound": 11515.344750000007,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 9722.625,
+                  "synthetic_min": 8296.794153147817,
+                  "synthetic_max": 9667.028191779375,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1448740.8234009605,
+                  "synthetic_variance": 131437.97971747973,
+                  "synthetic_to_real_variance_ratio": 0.09072566852152707
+                },
+                "HF3": {
+                  "mean_real": 785.8558750000001,
+                  "mean_synthetic": 659.1898882115859,
+                  "std_real": 487.3805121610295,
+                  "std_synthetic": 540.4531559001679,
+                  "mean_percentage_difference": 16.11822101456125,
+                  "std_percentage_difference": 10.889365170514505,
+                  "kl_divergence_real_to_synthetic": 4.693826856966615,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1586.2659999999998
+                  },
+                  "wasserstein_distance_physical_domain": 140.287089153923,
+                  "real_q1": 365.29625,
+                  "real_q3": 1292.6567499999992,
+                  "real_iqr": 927.3604999999992,
+                  "outlier_lower_bound": -1025.7444999999989,
+                  "outlier_upper_bound": 2683.697499999998,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 1586.2659999999998,
+                  "synthetic_min": 3.279425871968269,
+                  "synthetic_max": 1583.8889480799435,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 237539.76363434744,
+                  "synthetic_variance": 292089.61372245115,
+                  "synthetic_to_real_variance_ratio": 1.2296451307919714
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 16422.56624131775,
+                "HF2": 131437.97971747973,
+                "HF3": 292089.61372245115
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3214.1926092934013,
+                "HF2": 8296.794153147817,
+                "HF3": 3.279425871968269
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3616.5515095947685,
+                "HF2": 9667.028191779375,
+                "HF3": 1583.8889480799435
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_05": {
+              "rows_real": 336,
+              "rows_synthetic": 26,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2227.9949047619048,
+                  "mean_synthetic": 3347.419647870506,
+                  "std_real": 750.9708484744275,
+                  "std_synthetic": 102.330605174568,
+                  "mean_percentage_difference": 50.24359529351029,
+                  "std_percentage_difference": 86.37355825696174,
+                  "kl_divergence_real_to_synthetic": 14.958547623840175,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 3617.391
+                  },
+                  "wasserstein_distance_physical_domain": 1119.4664411818037,
+                  "real_q1": 1627.4379999999999,
+                  "real_q3": 2941.72675,
+                  "real_iqr": 1314.28875,
+                  "outlier_lower_bound": -343.99512500000014,
+                  "outlier_upper_bound": 4913.159874999999,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 3617.391,
+                  "synthetic_min": 3177.0347824715673,
+                  "synthetic_max": 3610.3857237020734,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 563957.2152584016,
+                  "synthetic_variance": 10471.552755393324,
+                  "synthetic_to_real_variance_ratio": 0.018567991457641563
+                },
+                "HF2": {
+                  "mean_real": 7815.127842261905,
+                  "mean_synthetic": 8848.5427698702,
+                  "std_real": 1203.6364996962166,
+                  "std_synthetic": 371.67391104929646,
+                  "mean_percentage_difference": 13.223263246186356,
+                  "std_percentage_difference": 69.12075106204385,
+                  "kl_divergence_real_to_synthetic": 8.481998277445578,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 2.530999999999999,
+                    "common_max": 9722.625
+                  },
+                  "wasserstein_distance_physical_domain": 1036.29789049005,
+                  "real_q1": 6827.492249999999,
+                  "real_q3": 8702.633250000003,
+                  "real_iqr": 1875.1410000000033,
+                  "outlier_lower_bound": 4014.7807499999944,
+                  "outlier_upper_bound": 11515.344750000007,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 2.530999999999999,
+                  "real_max": 9722.625,
+                  "synthetic_min": 8078.2999482643,
+                  "synthetic_max": 9586.621911875964,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 1448740.8234009605,
+                  "synthetic_variance": 138141.49615468032,
+                  "synthetic_to_real_variance_ratio": 0.09535280149722654
+                },
+                "HF3": {
+                  "mean_real": 785.8558750000001,
+                  "mean_synthetic": 600.0929024484204,
+                  "std_real": 487.3805121610295,
+                  "std_synthetic": 462.9296585329117,
+                  "mean_percentage_difference": 23.63830041374694,
+                  "std_percentage_difference": 5.016789350009819,
+                  "kl_divergence_real_to_synthetic": 6.69432974693923,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.0,
+                    "common_max": 1586.2659999999998
+                  },
+                  "wasserstein_distance_physical_domain": 187.5178253061527,
+                  "real_q1": 365.29625,
+                  "real_q3": 1292.6567499999992,
+                  "real_iqr": 927.3604999999992,
+                  "outlier_lower_bound": -1025.7444999999989,
+                  "outlier_upper_bound": 2683.697499999998,
+                  "synthetic_outlier_ratio": 0.0,
+                  "real_min": 0.0,
+                  "real_max": 1586.2659999999998,
+                  "synthetic_min": 16.71098417264223,
+                  "synthetic_max": 1547.6215802275537,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 237539.76363434744,
+                  "synthetic_variance": 214303.8687493982,
+                  "synthetic_to_real_variance_ratio": 0.9021810305380409
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 10471.552755393324,
+                "HF2": 138141.49615468032,
+                "HF3": 214303.8687493982
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3177.0347824715673,
+                "HF2": 8078.2999482643,
+                "HF3": 16.71098417264223
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3610.3857237020734,
+                "HF2": 9586.621911875964,
+                "HF3": 1547.6215802275537
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            }
+          },
+          "pooled": {
+            "rows_real": 336,
+            "rows_synthetic": 130,
+            "feature_metrics": {
+              "HF1": {
+                "mean_real": 2227.9949047619048,
+                "mean_synthetic": 3371.6494219656047,
+                "std_real": 750.9708484744275,
+                "std_synthetic": 122.34843764008932,
+                "mean_percentage_difference": 51.331110082853485,
+                "std_percentage_difference": 83.70796444513977,
+                "kl_divergence_real_to_synthetic": 16.22768187673112,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 0.0,
+                  "common_max": 3617.391
+                },
+                "wasserstein_distance_physical_domain": 1143.655808958415,
+                "real_q1": 1627.4379999999999,
+                "real_q3": 2941.72675,
+                "real_iqr": 1314.28875,
+                "outlier_lower_bound": -343.99512500000014,
+                "outlier_upper_bound": 4913.159874999999,
+                "synthetic_outlier_ratio": 0.0,
+                "real_min": 0.0,
+                "real_max": 3617.391,
+                "synthetic_min": 3167.609785851896,
+                "synthetic_max": 3617.1739852079454,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 563957.2152584016,
+                "synthetic_variance": 14969.140192970825,
+                "synthetic_to_real_variance_ratio": 0.026543042252083007
+              },
+              "HF2": {
+                "mean_real": 7815.127842261905,
+                "mean_synthetic": 8984.215362741787,
+                "std_real": 1203.6364996962166,
+                "std_synthetic": 420.1435787019493,
+                "mean_percentage_difference": 14.959288498875232,
+                "std_percentage_difference": 65.09381538296749,
+                "kl_divergence_real_to_synthetic": 9.260208225374496,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 2.530999999999999,
+                  "common_max": 9722.625
+                },
+                "wasserstein_distance_physical_domain": 1169.1101690802464,
+                "real_q1": 6827.492249999999,
+                "real_q3": 8702.633250000003,
+                "real_iqr": 1875.1410000000033,
+                "outlier_lower_bound": 4014.7807499999944,
+                "outlier_upper_bound": 11515.344750000007,
+                "synthetic_outlier_ratio": 0.0,
+                "real_min": 2.530999999999999,
+                "real_max": 9722.625,
+                "synthetic_min": 8054.839233063637,
+                "synthetic_max": 9718.820035139024,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 1448740.8234009605,
+                "synthetic_variance": 176520.62672448106,
+                "synthetic_to_real_variance_ratio": 0.12184417245183568
+              },
+              "HF3": {
+                "mean_real": 785.8558750000001,
+                "mean_synthetic": 580.9463003724472,
+                "std_real": 487.3805121610295,
+                "std_synthetic": 522.0360103417883,
+                "mean_percentage_difference": 26.074701627388457,
+                "std_percentage_difference": 7.110562961801115,
+                "kl_divergence_real_to_synthetic": 0.33257157623069666,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 0.0,
+                  "common_max": 1586.2659999999998
+                },
+                "wasserstein_distance_physical_domain": 208.0139226121318,
+                "real_q1": 365.29625,
+                "real_q3": 1292.6567499999992,
+                "real_iqr": 927.3604999999992,
+                "outlier_lower_bound": -1025.7444999999989,
+                "outlier_upper_bound": 2683.697499999998,
+                "synthetic_outlier_ratio": 0.0,
+                "real_min": 0.0,
+                "real_max": 1586.2659999999998,
+                "synthetic_min": 0.35469990366697307,
+                "synthetic_max": 1584.3964861534832,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 237539.76363434744,
+                "synthetic_variance": 272521.5960935716,
+                "synthetic_to_real_variance_ratio": 1.147267269799396
+              }
+            },
+            "synthetic_variance_by_feature": {
+              "HF1": 14969.140192970825,
+              "HF2": 176520.62672448106,
+              "HF3": 272521.5960935716
+            },
+            "synthetic_min_by_feature": {
+              "HF1": 3167.609785851896,
+              "HF2": 8054.839233063637,
+              "HF3": 0.35469990366697307
+            },
+            "synthetic_max_by_feature": {
+              "HF1": 3617.1739852079454,
+              "HF2": 9718.820035139024,
+              "HF3": 1584.3964861534832
+            },
+            "synthetic_nan_inf_count": 0,
+            "zero_variance_feature_count": 0
+          }
+        },
+        "B_SOURCE_VS_TARGET": {
+          "outlier_boundary_reference": "TARGET_REFERENCE_HF",
+          "pooled": {
+            "rows_real": 26,
+            "rows_synthetic": 336,
+            "feature_metrics": {
+              "HF1": {
+                "mean_real": 2938.070423076923,
+                "mean_synthetic": 2227.9949047619048,
+                "std_real": 478.3241614188157,
+                "std_synthetic": 750.9708484744275,
+                "mean_percentage_difference": 24.168090483392316,
+                "std_percentage_difference": 57.000400365911084,
+                "kl_divergence_real_to_synthetic": 1.4036759450138836,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 0.0,
+                  "common_max": 3617.391
+                },
+                "wasserstein_distance_physical_domain": 773.9480489926735,
+                "real_q1": 2916.3635,
+                "real_q3": 3130.0625,
+                "real_iqr": 213.69900000000007,
+                "outlier_lower_bound": 2595.8149999999996,
+                "outlier_upper_bound": 3450.611,
+                "synthetic_outlier_ratio": 0.6726190476190477,
+                "real_min": 621.219,
+                "real_max": 3180.188,
+                "synthetic_min": 0.0,
+                "synthetic_max": 3617.391,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 228794.00339701326,
+                "synthetic_variance": 563957.2152584016,
+                "synthetic_to_real_variance_ratio": 2.464912571505638
+              },
+              "HF2": {
+                "mean_real": 7039.032000000002,
+                "mean_synthetic": 7815.127842261905,
+                "std_real": 367.23771726017185,
+                "std_synthetic": 1203.6364996962166,
+                "mean_percentage_difference": 11.025604689137698,
+                "std_percentage_difference": 227.75405224608036,
+                "kl_divergence_real_to_synthetic": 1.2264325707575905,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 2.530999999999999,
+                  "common_max": 9722.625
+                },
+                "wasserstein_distance_physical_domain": 969.4495272435892,
+                "real_q1": 6832.813250000009,
+                "real_q3": 7350.183750000011,
+                "real_iqr": 517.3705000000018,
+                "outlier_lower_bound": 6056.757500000007,
+                "outlier_upper_bound": 8126.239500000014,
+                "synthetic_outlier_ratio": 0.4732142857142857,
+                "real_min": 5845.843999999999,
+                "real_max": 7799.094000000001,
+                "synthetic_min": 2.530999999999999,
+                "synthetic_max": 9722.625,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 134863.5409784619,
+                "synthetic_variance": 1448740.8234009605,
+                "synthetic_to_real_variance_ratio": 10.74227187637264
+              },
+              "HF3": {
+                "mean_real": 1241.9345384615388,
+                "mean_synthetic": 785.8558750000001,
+                "std_real": 261.8282451447059,
+                "std_synthetic": 487.3805121610295,
+                "mean_percentage_difference": 36.72324501309961,
+                "std_percentage_difference": 86.14512421746805,
+                "kl_divergence_real_to_synthetic": 1.8438774663100699,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 0.0,
+                  "common_max": 1586.2659999999998
+                },
+                "wasserstein_distance_physical_domain": 493.8250274725277,
+                "real_q1": 1223.65625,
+                "real_q3": 1366.47325,
+                "real_iqr": 142.817,
+                "outlier_lower_bound": 1009.43075,
+                "outlier_upper_bound": 1580.69875,
+                "synthetic_outlier_ratio": 0.6547619047619048,
+                "real_min": 5.109000000000002,
+                "real_max": 1411.797,
+                "synthetic_min": 0.0,
+                "synthetic_max": 1586.2659999999998,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 68554.02995555621,
+                "synthetic_variance": 237539.76363434744,
+                "synthetic_to_real_variance_ratio": 3.4650007269936607
+              }
+            },
+            "synthetic_variance_by_feature": {
+              "HF1": 563957.2152584016,
+              "HF2": 1448740.8234009605,
+              "HF3": 237539.76363434744
+            },
+            "synthetic_min_by_feature": {
+              "HF1": 0.0,
+              "HF2": 2.530999999999999,
+              "HF3": 0.0
+            },
+            "synthetic_max_by_feature": {
+              "HF1": 3617.391,
+              "HF2": 9722.625,
+              "HF3": 1586.2659999999998
+            },
+            "synthetic_nan_inf_count": 0,
+            "zero_variance_feature_count": 0
+          }
+        },
+        "C_GENERATED_VS_TARGET": {
+          "outlier_boundary_reference": "TARGET_REFERENCE_HF",
+          "per_set": {
+            "set_01": {
+              "rows_real": 26,
+              "rows_synthetic": 26,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2938.070423076923,
+                  "mean_synthetic": 3342.2328707773845,
+                  "std_real": 478.3241614188157,
+                  "std_synthetic": 104.73915841204457,
+                  "mean_percentage_difference": 13.756050383475781,
+                  "std_percentage_difference": 78.10289195900853,
+                  "kl_divergence_real_to_synthetic": 15.651050436116957,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 621.219,
+                    "common_max": 3576.8836204761565
+                  },
+                  "wasserstein_distance_physical_domain": 404.162447700462,
+                  "real_q1": 2916.3635,
+                  "real_q3": 3130.0625,
+                  "real_iqr": 213.69900000000007,
+                  "outlier_lower_bound": 2595.8149999999996,
+                  "outlier_upper_bound": 3450.611,
+                  "synthetic_outlier_ratio": 0.19230769230769232,
+                  "real_min": 621.219,
+                  "real_max": 3180.188,
+                  "synthetic_min": 3207.019154617131,
+                  "synthetic_max": 3576.8836204761565,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 228794.00339701326,
+                  "synthetic_variance": 10970.291304863369,
+                  "synthetic_to_real_variance_ratio": 0.04794833405588539
+                },
+                "HF2": {
+                  "mean_real": 7039.032000000002,
+                  "mean_synthetic": 8743.404519193415,
+                  "std_real": 367.23771726017185,
+                  "std_synthetic": 354.574340178922,
+                  "mean_percentage_difference": 24.213166230717693,
+                  "std_percentage_difference": 3.448277909939844,
+                  "kl_divergence_real_to_synthetic": 19.906910941043158,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 5845.843999999999,
+                    "common_max": 9431.57111461842
+                  },
+                  "wasserstein_distance_physical_domain": 1704.372519193412,
+                  "real_q1": 6832.813250000009,
+                  "real_q3": 7350.183750000011,
+                  "real_iqr": 517.3705000000018,
+                  "outlier_lower_bound": 6056.757500000007,
+                  "outlier_upper_bound": 8126.239500000014,
+                  "synthetic_outlier_ratio": 0.9615384615384616,
+                  "real_min": 5845.843999999999,
+                  "real_max": 7799.094000000001,
+                  "synthetic_min": 8054.839233063637,
+                  "synthetic_max": 9431.57111461842,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 134863.5409784619,
+                  "synthetic_variance": 125722.96271331789,
+                  "synthetic_to_real_variance_ratio": 0.932223503855621
+                },
+                "HF3": {
+                  "mean_real": 1241.9345384615388,
+                  "mean_synthetic": 642.4453067629919,
+                  "std_real": 261.8282451447059,
+                  "std_synthetic": 449.2532037308556,
+                  "mean_percentage_difference": 48.2705982588399,
+                  "std_percentage_difference": 71.58317028881459,
+                  "kl_divergence_real_to_synthetic": 6.178233463449349,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 5.109000000000002,
+                    "common_max": 1434.1177056029437
+                  },
+                  "wasserstein_distance_physical_domain": 604.2479496825536,
+                  "real_q1": 1223.65625,
+                  "real_q3": 1366.47325,
+                  "real_iqr": 142.817,
+                  "outlier_lower_bound": 1009.43075,
+                  "outlier_upper_bound": 1580.69875,
+                  "synthetic_outlier_ratio": 0.7307692307692307,
+                  "real_min": 5.109000000000002,
+                  "real_max": 1411.797,
+                  "synthetic_min": 27.01155825102329,
+                  "synthetic_max": 1434.1177056029437,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 68554.02995555621,
+                  "synthetic_variance": 201828.44106243763,
+                  "synthetic_to_real_variance_ratio": 2.944078432636034
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 10970.291304863369,
+                "HF2": 125722.96271331789,
+                "HF3": 201828.44106243763
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3207.019154617131,
+                "HF2": 8054.839233063637,
+                "HF3": 27.01155825102329
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3576.8836204761565,
+                "HF2": 9431.57111461842,
+                "HF3": 1434.1177056029437
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_02": {
+              "rows_real": 26,
+              "rows_synthetic": 26,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2938.070423076923,
+                  "mean_synthetic": 3378.8835626652917,
+                  "std_real": 478.3241614188157,
+                  "std_synthetic": 146.5003630788774,
+                  "mean_percentage_difference": 15.003491275294992,
+                  "std_percentage_difference": 69.37215911395218,
+                  "kl_divergence_real_to_synthetic": 9.440989429415533,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 621.219,
+                    "common_max": 3617.1739852079454
+                  },
+                  "wasserstein_distance_physical_domain": 440.8131395883691,
+                  "real_q1": 2916.3635,
+                  "real_q3": 3130.0625,
+                  "real_iqr": 213.69900000000007,
+                  "outlier_lower_bound": 2595.8149999999996,
+                  "outlier_upper_bound": 3450.611,
+                  "synthetic_outlier_ratio": 0.34615384615384615,
+                  "real_min": 621.219,
+                  "real_max": 3180.188,
+                  "synthetic_min": 3167.609785851896,
+                  "synthetic_max": 3617.1739852079454,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 228794.00339701326,
+                  "synthetic_variance": 21462.356382242906,
+                  "synthetic_to_real_variance_ratio": 0.09380646373410624
+                },
+                "HF2": {
+                  "mean_real": 7039.032000000002,
+                  "mean_synthetic": 9118.396557793869,
+                  "std_real": 367.23771726017185,
+                  "std_synthetic": 420.47778938564227,
+                  "mean_percentage_difference": 29.540490195155616,
+                  "std_percentage_difference": 14.497441200396135,
+                  "kl_divergence_real_to_synthetic": 19.917317740490102,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 5845.843999999999,
+                    "common_max": 9718.820035139024
+                  },
+                  "wasserstein_distance_physical_domain": 2079.364557793868,
+                  "real_q1": 6832.813250000009,
+                  "real_q3": 7350.183750000011,
+                  "real_iqr": 517.3705000000018,
+                  "outlier_lower_bound": 6056.757500000007,
+                  "outlier_upper_bound": 8126.239500000014,
+                  "synthetic_outlier_ratio": 1.0,
+                  "real_min": 5845.843999999999,
+                  "real_max": 7799.094000000001,
+                  "synthetic_min": 8248.965440679907,
+                  "synthetic_max": 9718.820035139024,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 134863.5409784619,
+                  "synthetic_variance": 176801.57136663652,
+                  "synthetic_to_real_variance_ratio": 1.310966404143817
+                },
+                "HF3": {
+                  "mean_real": 1241.9345384615388,
+                  "mean_synthetic": 567.2470466072622,
+                  "std_real": 261.8282451447059,
+                  "std_synthetic": 579.3922407475292,
+                  "mean_percentage_difference": 54.325527711795,
+                  "std_percentage_difference": 121.28714204508901,
+                  "kl_divergence_real_to_synthetic": 12.383135736721629,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.35469990366697307,
+                    "common_max": 1584.3964861534832
+                  },
+                  "wasserstein_distance_physical_domain": 723.040331352159,
+                  "real_q1": 1223.65625,
+                  "real_q3": 1366.47325,
+                  "real_iqr": 142.817,
+                  "outlier_lower_bound": 1009.43075,
+                  "outlier_upper_bound": 1580.69875,
+                  "synthetic_outlier_ratio": 0.7692307692307693,
+                  "real_min": 5.109000000000002,
+                  "real_max": 1411.797,
+                  "synthetic_min": 0.35469990366697307,
+                  "synthetic_max": 1584.3964861534832,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 68554.02995555621,
+                  "synthetic_variance": 335695.36863844283,
+                  "synthetic_to_real_variance_ratio": 4.89679992344834
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 21462.356382242906,
+                "HF2": 176801.57136663652,
+                "HF3": 335695.36863844283
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3167.609785851896,
+                "HF2": 8248.965440679907,
+                "HF3": 0.35469990366697307
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3617.1739852079454,
+                "HF2": 9718.820035139024,
+                "HF3": 1584.3964861534832
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_03": {
+              "rows_real": 26,
+              "rows_synthetic": 26,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2938.070423076923,
+                  "mean_synthetic": 3393.902828939971,
+                  "std_real": 478.3241614188157,
+                  "std_synthetic": 113.73357197997626,
+                  "mean_percentage_difference": 15.514686179158135,
+                  "std_percentage_difference": 76.22249069697479,
+                  "kl_divergence_real_to_synthetic": 17.965996337540012,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 621.219,
+                    "common_max": 3615.9606213308575
+                  },
+                  "wasserstein_distance_physical_domain": 455.8324058630483,
+                  "real_q1": 2916.3635,
+                  "real_q3": 3130.0625,
+                  "real_iqr": 213.69900000000007,
+                  "outlier_lower_bound": 2595.8149999999996,
+                  "outlier_upper_bound": 3450.611,
+                  "synthetic_outlier_ratio": 0.2692307692307692,
+                  "real_min": 621.219,
+                  "real_max": 3180.188,
+                  "synthetic_min": 3199.303001250744,
+                  "synthetic_max": 3615.9606213308575,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 228794.00339701326,
+                  "synthetic_variance": 12935.325395324442,
+                  "synthetic_to_real_variance_ratio": 0.05653699486554508
+                },
+                "HF2": {
+                  "mean_real": 7039.032000000002,
+                  "mean_synthetic": 9209.589413377775,
+                  "std_real": 367.23771726017185,
+                  "std_synthetic": 406.223570704826,
+                  "mean_percentage_difference": 30.836021392966707,
+                  "std_percentage_difference": 10.615972056332756,
+                  "kl_divergence_real_to_synthetic": 19.91731774100453,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 5845.843999999999,
+                    "common_max": 9697.725727090954
+                  },
+                  "wasserstein_distance_physical_domain": 2170.5574133777745,
+                  "real_q1": 6832.813250000009,
+                  "real_q3": 7350.183750000011,
+                  "real_iqr": 517.3705000000018,
+                  "outlier_lower_bound": 6056.757500000007,
+                  "outlier_upper_bound": 8126.239500000014,
+                  "synthetic_outlier_ratio": 1.0,
+                  "real_min": 5845.843999999999,
+                  "real_max": 7799.094000000001,
+                  "synthetic_min": 8423.814221832276,
+                  "synthetic_max": 9697.725727090954,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 134863.5409784619,
+                  "synthetic_variance": 165017.58939617878,
+                  "synthetic_to_real_variance_ratio": 1.223589327396739
+                },
+                "HF3": {
+                  "mean_real": 1241.9345384615388,
+                  "mean_synthetic": 435.7563578319762,
+                  "std_real": 261.8282451447059,
+                  "std_synthetic": 535.8657668954786,
+                  "mean_percentage_difference": 64.91309772479839,
+                  "std_percentage_difference": 104.66308613851767,
+                  "kl_divergence_real_to_synthetic": 10.248236664076284,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 0.6546560397148131,
+                    "common_max": 1575.4993475062845
+                  },
+                  "wasserstein_distance_physical_domain": 835.2493079947208,
+                  "real_q1": 1223.65625,
+                  "real_q3": 1366.47325,
+                  "real_iqr": 142.817,
+                  "outlier_lower_bound": 1009.43075,
+                  "outlier_upper_bound": 1580.69875,
+                  "synthetic_outlier_ratio": 0.8076923076923077,
+                  "real_min": 5.109000000000002,
+                  "real_max": 1411.797,
+                  "synthetic_min": 0.6546560397148131,
+                  "synthetic_max": 1575.4993475062845,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 68554.02995555621,
+                  "synthetic_variance": 287152.1201304794,
+                  "synthetic_to_real_variance_ratio": 4.188697882774229
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 12935.325395324442,
+                "HF2": 165017.58939617878,
+                "HF3": 287152.1201304794
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3199.303001250744,
+                "HF2": 8423.814221832276,
+                "HF3": 0.6546560397148131
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3615.9606213308575,
+                "HF2": 9697.725727090954,
+                "HF3": 1575.4993475062845
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_04": {
+              "rows_real": 26,
+              "rows_synthetic": 26,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2938.070423076923,
+                  "mean_synthetic": 3395.8081995748717,
+                  "std_real": 478.3241614188157,
+                  "std_synthetic": 128.1505608310699,
+                  "mean_percentage_difference": 15.57953726713529,
+                  "std_percentage_difference": 73.20842826526955,
+                  "kl_divergence_real_to_synthetic": 17.942842026712583,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 621.219,
+                    "common_max": 3616.5515095947685
+                  },
+                  "wasserstein_distance_physical_domain": 457.7377764979492,
+                  "real_q1": 2916.3635,
+                  "real_q3": 3130.0625,
+                  "real_iqr": 213.69900000000007,
+                  "outlier_lower_bound": 2595.8149999999996,
+                  "outlier_upper_bound": 3450.611,
+                  "synthetic_outlier_ratio": 0.3076923076923077,
+                  "real_min": 621.219,
+                  "real_max": 3180.188,
+                  "synthetic_min": 3214.1926092934013,
+                  "synthetic_max": 3616.5515095947685,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 228794.00339701326,
+                  "synthetic_variance": 16422.56624131775,
+                  "synthetic_to_real_variance_ratio": 0.07177883160172079
+                },
+                "HF2": {
+                  "mean_real": 7039.032000000002,
+                  "mean_synthetic": 9001.143553473683,
+                  "std_real": 367.23771726017185,
+                  "std_synthetic": 362.5437624859649,
+                  "mean_percentage_difference": 27.874735524340284,
+                  "std_percentage_difference": 1.2781788344690825,
+                  "kl_divergence_real_to_synthetic": 20.011277106524037,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 5845.843999999999,
+                    "common_max": 9667.028191779375
+                  },
+                  "wasserstein_distance_physical_domain": 1962.11155347368,
+                  "real_q1": 6832.813250000009,
+                  "real_q3": 7350.183750000011,
+                  "real_iqr": 517.3705000000018,
+                  "outlier_lower_bound": 6056.757500000007,
+                  "outlier_upper_bound": 8126.239500000014,
+                  "synthetic_outlier_ratio": 1.0,
+                  "real_min": 5845.843999999999,
+                  "real_max": 7799.094000000001,
+                  "synthetic_min": 8296.794153147817,
+                  "synthetic_max": 9667.028191779375,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 134863.5409784619,
+                  "synthetic_variance": 131437.97971747973,
+                  "synthetic_to_real_variance_ratio": 0.9745997974239068
+                },
+                "HF3": {
+                  "mean_real": 1241.9345384615388,
+                  "mean_synthetic": 659.1898882115859,
+                  "std_real": 261.8282451447059,
+                  "std_synthetic": 540.4531559001679,
+                  "mean_percentage_difference": 46.922332232730625,
+                  "std_percentage_difference": 106.41514654061596,
+                  "kl_divergence_real_to_synthetic": 15.196355958708265,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 3.279425871968269,
+                    "common_max": 1583.8889480799435
+                  },
+                  "wasserstein_distance_physical_domain": 628.423505627095,
+                  "real_q1": 1223.65625,
+                  "real_q3": 1366.47325,
+                  "real_iqr": 142.817,
+                  "outlier_lower_bound": 1009.43075,
+                  "outlier_upper_bound": 1580.69875,
+                  "synthetic_outlier_ratio": 0.7307692307692307,
+                  "real_min": 5.109000000000002,
+                  "real_max": 1411.797,
+                  "synthetic_min": 3.279425871968269,
+                  "synthetic_max": 1583.8889480799435,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 68554.02995555621,
+                  "synthetic_variance": 292089.61372245115,
+                  "synthetic_to_real_variance_ratio": 4.260721272138396
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 16422.56624131775,
+                "HF2": 131437.97971747973,
+                "HF3": 292089.61372245115
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3214.1926092934013,
+                "HF2": 8296.794153147817,
+                "HF3": 3.279425871968269
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3616.5515095947685,
+                "HF2": 9667.028191779375,
+                "HF3": 1583.8889480799435
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            },
+            "set_05": {
+              "rows_real": 26,
+              "rows_synthetic": 26,
+              "feature_metrics": {
+                "HF1": {
+                  "mean_real": 2938.070423076923,
+                  "mean_synthetic": 3347.419647870506,
+                  "std_real": 478.3241614188157,
+                  "std_synthetic": 102.330605174568,
+                  "mean_percentage_difference": 13.932587237472966,
+                  "std_percentage_difference": 78.6064319078023,
+                  "kl_divergence_real_to_synthetic": 17.1109179365571,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 621.219,
+                    "common_max": 3610.3857237020734
+                  },
+                  "wasserstein_distance_physical_domain": 409.3492247935837,
+                  "real_q1": 2916.3635,
+                  "real_q3": 3130.0625,
+                  "real_iqr": 213.69900000000007,
+                  "outlier_lower_bound": 2595.8149999999996,
+                  "outlier_upper_bound": 3450.611,
+                  "synthetic_outlier_ratio": 0.11538461538461539,
+                  "real_min": 621.219,
+                  "real_max": 3180.188,
+                  "synthetic_min": 3177.0347824715673,
+                  "synthetic_max": 3610.3857237020734,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 228794.00339701326,
+                  "synthetic_variance": 10471.552755393324,
+                  "synthetic_to_real_variance_ratio": 0.04576847557154998
+                },
+                "HF2": {
+                  "mean_real": 7039.032000000002,
+                  "mean_synthetic": 8848.5427698702,
+                  "std_real": 367.23771726017185,
+                  "std_synthetic": 371.67391104929646,
+                  "mean_percentage_difference": 25.706812667852596,
+                  "std_percentage_difference": 1.2079896973060005,
+                  "kl_divergence_real_to_synthetic": 20.133256136829978,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 5845.843999999999,
+                    "common_max": 9586.621911875964
+                  },
+                  "wasserstein_distance_physical_domain": 1809.5107698701997,
+                  "real_q1": 6832.813250000009,
+                  "real_q3": 7350.183750000011,
+                  "real_iqr": 517.3705000000018,
+                  "outlier_lower_bound": 6056.757500000007,
+                  "outlier_upper_bound": 8126.239500000014,
+                  "synthetic_outlier_ratio": 0.9615384615384616,
+                  "real_min": 5845.843999999999,
+                  "real_max": 7799.094000000001,
+                  "synthetic_min": 8078.2999482643,
+                  "synthetic_max": 9586.621911875964,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 134863.5409784619,
+                  "synthetic_variance": 138141.49615468032,
+                  "synthetic_to_real_variance_ratio": 1.0243057178569996
+                },
+                "HF3": {
+                  "mean_real": 1241.9345384615388,
+                  "mean_synthetic": 600.0929024484204,
+                  "std_real": 261.8282451447059,
+                  "std_synthetic": 462.9296585329117,
+                  "mean_percentage_difference": 51.68079444897372,
+                  "std_percentage_difference": 76.80661545016356,
+                  "kl_divergence_real_to_synthetic": 18.624942872826036,
+                  "kl_histogram": {
+                    "bins": 20,
+                    "epsilon": 1e-08,
+                    "common_min": 5.109000000000002,
+                    "common_max": 1547.6215802275537
+                  },
+                  "wasserstein_distance_physical_domain": 661.743020503457,
+                  "real_q1": 1223.65625,
+                  "real_q3": 1366.47325,
+                  "real_iqr": 142.817,
+                  "outlier_lower_bound": 1009.43075,
+                  "outlier_upper_bound": 1580.69875,
+                  "synthetic_outlier_ratio": 0.7692307692307693,
+                  "real_min": 5.109000000000002,
+                  "real_max": 1411.797,
+                  "synthetic_min": 16.71098417264223,
+                  "synthetic_max": 1547.6215802275537,
+                  "real_nan_inf_count": 0,
+                  "synthetic_nan_inf_count": 0,
+                  "real_variance": 68554.02995555621,
+                  "synthetic_variance": 214303.8687493982,
+                  "synthetic_to_real_variance_ratio": 3.1260579266942012
+                }
+              },
+              "synthetic_variance_by_feature": {
+                "HF1": 10471.552755393324,
+                "HF2": 138141.49615468032,
+                "HF3": 214303.8687493982
+              },
+              "synthetic_min_by_feature": {
+                "HF1": 3177.0347824715673,
+                "HF2": 8078.2999482643,
+                "HF3": 16.71098417264223
+              },
+              "synthetic_max_by_feature": {
+                "HF1": 3610.3857237020734,
+                "HF2": 9586.621911875964,
+                "HF3": 1547.6215802275537
+              },
+              "synthetic_nan_inf_count": 0,
+              "zero_variance_feature_count": 0
+            }
+          },
+          "pooled": {
+            "rows_real": 26,
+            "rows_synthetic": 130,
+            "feature_metrics": {
+              "HF1": {
+                "mean_real": 2938.070423076923,
+                "mean_synthetic": 3371.6494219656047,
+                "std_real": 478.3241614188157,
+                "std_synthetic": 122.34843764008932,
+                "mean_percentage_difference": 14.757270468507421,
+                "std_percentage_difference": 74.42143895111285,
+                "kl_divergence_real_to_synthetic": 10.864722960807264,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 621.219,
+                  "common_max": 3617.1739852079454
+                },
+                "wasserstein_distance_physical_domain": 433.5789988886824,
+                "real_q1": 2916.3635,
+                "real_q3": 3130.0625,
+                "real_iqr": 213.69900000000007,
+                "outlier_lower_bound": 2595.8149999999996,
+                "outlier_upper_bound": 3450.611,
+                "synthetic_outlier_ratio": 0.24615384615384617,
+                "real_min": 621.219,
+                "real_max": 3180.188,
+                "synthetic_min": 3167.609785851896,
+                "synthetic_max": 3617.1739852079454,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 228794.00339701326,
+                "synthetic_variance": 14969.140192970825,
+                "synthetic_to_real_variance_ratio": 0.06542627853316471
+              },
+              "HF2": {
+                "mean_real": 7039.032000000002,
+                "mean_synthetic": 8984.215362741787,
+                "std_real": 367.23771726017185,
+                "std_synthetic": 420.1435787019493,
+                "mean_percentage_difference": 27.634245202206554,
+                "std_percentage_difference": 14.406434566822005,
+                "kl_divergence_real_to_synthetic": 21.52675562722799,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 5845.843999999999,
+                  "common_max": 9718.820035139024
+                },
+                "wasserstein_distance_physical_domain": 1945.183362741787,
+                "real_q1": 6832.813250000009,
+                "real_q3": 7350.183750000011,
+                "real_iqr": 517.3705000000018,
+                "outlier_lower_bound": 6056.757500000007,
+                "outlier_upper_bound": 8126.239500000014,
+                "synthetic_outlier_ratio": 0.9846153846153847,
+                "real_min": 5845.843999999999,
+                "real_max": 7799.094000000001,
+                "synthetic_min": 8054.839233063637,
+                "synthetic_max": 9718.820035139024,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 134863.5409784619,
+                "synthetic_variance": 176520.62672448106,
+                "synthetic_to_real_variance_ratio": 1.3088832270292525
+              },
+              "HF3": {
+                "mean_real": 1241.9345384615388,
+                "mean_synthetic": 580.9463003724472,
+                "std_real": 261.8282451447059,
+                "std_synthetic": 522.0360103417883,
+                "mean_percentage_difference": 53.22247007542753,
+                "std_percentage_difference": 99.38109047527402,
+                "kl_divergence_real_to_synthetic": 2.439281686928812,
+                "kl_histogram": {
+                  "bins": 20,
+                  "epsilon": 1e-08,
+                  "common_min": 0.35469990366697307,
+                  "common_max": 1584.3964861534832
+                },
+                "wasserstein_distance_physical_domain": 689.635476225479,
+                "real_q1": 1223.65625,
+                "real_q3": 1366.47325,
+                "real_iqr": 142.817,
+                "outlier_lower_bound": 1009.43075,
+                "outlier_upper_bound": 1580.69875,
+                "synthetic_outlier_ratio": 0.7615384615384615,
+                "real_min": 5.109000000000002,
+                "real_max": 1411.797,
+                "synthetic_min": 0.35469990366697307,
+                "synthetic_max": 1584.3964861534832,
+                "real_nan_inf_count": 0,
+                "synthetic_nan_inf_count": 0,
+                "real_variance": 68554.02995555621,
+                "synthetic_variance": 272521.5960935716,
+                "synthetic_to_real_variance_ratio": 3.975281923910939
+              }
+            },
+            "synthetic_variance_by_feature": {
+              "HF1": 14969.140192970825,
+              "HF2": 176520.62672448106,
+              "HF3": 272521.5960935716
+            },
+            "synthetic_min_by_feature": {
+              "HF1": 3167.609785851896,
+              "HF2": 8054.839233063637,
+              "HF3": 0.35469990366697307
+            },
+            "synthetic_max_by_feature": {
+              "HF1": 3617.1739852079454,
+              "HF2": 9718.820035139024,
+              "HF3": 1584.3964861534832
+            },
+            "synthetic_nan_inf_count": 0,
+            "zero_variance_feature_count": 0
+          }
+        }
+      },
+      "condition_bin_source_vs_generated": {
+        "bin_1": {
+          "interval": "[0.0,0.2)",
+          "source": {
+            "count": 68,
+            "mean": {
+              "HF1": 3095.889514705882,
+              "HF2": 6359.046382352941,
+              "HF3": 1385.9097205882354
+            },
+            "std": {
+              "HF1": 704.9127523688031,
+              "HF2": 1178.2031005712374,
+              "HF3": 352.7413698820011
+            }
+          },
+          "synthetic": {
+            "count": 130,
+            "mean": {
+              "HF1": 3371.6494219656047,
+              "HF2": 8984.215362741787,
+              "HF3": 580.9463003724472
+            },
+            "std": {
+              "HF1": 122.34843764008932,
+              "HF2": 420.1435787019493,
+              "HF3": 522.0360103417883
+            }
+          }
+        },
+        "bin_2": {
+          "interval": "[0.2,0.4)",
+          "source": {
+            "count": 66,
+            "mean": {
+              "HF1": 2789.353681818182,
+              "HF2": 7182.972257575759,
+              "HF3": 1141.0667424242422
+            },
+            "std": {
+              "HF1": 230.59032098068317,
+              "HF2": 661.9066574586635,
+              "HF3": 226.2790706826626
+            }
+          },
+          "synthetic": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          }
+        },
+        "bin_3": {
+          "interval": "[0.4,0.6)",
+          "source": {
+            "count": 68,
+            "mean": {
+              "HF1": 2145.2700000000004,
+              "HF2": 8107.167073529412,
+              "HF3": 686.931294117647
+            },
+            "std": {
+              "HF1": 311.09842201932133,
+              "HF2": 711.4001442869617,
+              "HF3": 272.0540189215812
+            }
+          },
+          "synthetic": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          }
+        },
+        "bin_4": {
+          "interval": "[0.6,0.8)",
+          "source": {
+            "count": 66,
+            "mean": {
+              "HF1": 1709.8125909090907,
+              "HF2": 8564.37271212121,
+              "HF3": 432.78703030303035
+            },
+            "std": {
+              "HF1": 253.40221533860856,
+              "HF2": 602.7162459985369,
+              "HF3": 195.93440247741313
+            }
+          },
+          "synthetic": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          }
+        },
+        "bin_5": {
+          "interval": "[0.8,1.0]",
+          "source": {
+            "count": 68,
+            "mean": {
+              "HF1": 1400.9186323529411,
+              "HF2": 8865.524588235292,
+              "HF3": 282.6475882352941
+            },
+            "std": {
+              "HF1": 261.50599485592187,
+              "HF2": 494.8703183277125,
+              "HF3": 147.66305069972006
+            }
+          },
+          "synthetic": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          }
+        }
+      }
+    }
+  },
+  "gen_source_alignment_status": "POOR__DESCRIPTIVE_MULTI_METRIC_MISMATCH_OBSERVED",
+  "source_target_domain_shift_status": "PRESENT__DESCRIPTIVE_SOURCE_TARGET_DIFFERENCES_OBSERVED",
+  "generated_vs_source_clearly_better_than_generated_vs_target_all_metrics": false,
+  "conditionwise_alignment_status": "LIMITED__SYNTHETIC_TARGET_SUPPORT_ONLY_IN_FIRST_20_PERCENT_BIN",
+  "automatic_parameter_change_performed": false,
+  "next_action": "RETURN_RESULTS_FOR_HUMAN_REVIEW"
+}

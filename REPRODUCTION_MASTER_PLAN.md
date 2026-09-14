@@ -1547,3 +1547,16 @@ UNRESOLVED_EXECUTION_PARAMETERS=NONE__FOR_DECLARED_TIER2_STANDARD_CORE_PATH
 PHASE9A_RETRY_AUTHORIZED=True
 
 The earlier Phase 9A block is retained as history. PLAN-CHANGE-0014 corrects its inappropriate causal-STL requirement; it does not establish paper-exact STL, branch variants, or fusion semantics.
+
+# Phase 9A retry preflight — label-interface blocker (2026-09-14)
+
+PHASE9A_STATUS=BLOCKED_BEFORE_REAL_NUMERICAL_DATA_ACCESS
+UNRESOLVED_EXECUTION_PARAMETER=NASA_CHARGE_HF_TO_DISCHARGE_CAPACITY_TARGET_ALIGNMENT
+REAL_DATA_USED=False
+TRAIN_DATA_USED=False
+VALIDATION_DATA_USED=False
+TEST_LOADED=False
+TEST_VALUE_ACCESS_COUNT=0
+PHASE9A_PIPELINE_GATE=BLOCKED
+
+PLAN-CHANGE-0014's fixed offline-STL and branch configurations remain valid. The retry did not create an unapproved NASA charge-HF-to-capacity pairing rule, reduce the four-battery E1 target roster, or read any numeric TRAIN/VALIDATION/TEST values.

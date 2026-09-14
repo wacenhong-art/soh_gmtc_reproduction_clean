@@ -36,3 +36,7 @@ No split materialization, HF/capacity read, scaler fit, STL decomposition, windo
 NEXT_ACTION=HUMAN_OR_ADVISOR_AUTHORIZATION_FOR_CAUSAL_STL_TARGET_POLICY_AND_COMPLETE_BRANCH_EXECUTION_CONFIG
 
 This is a protocol gate, not a scientific failure and not evidence about model performance.
+
+## Retry preflight — 2026-09-14
+
+PLAN-CHANGE-0014 resolved the offline-STL and branch-config blockers. Before any numeric data access, the retry found a distinct label-interface blocker: NASA HF source records are charge operations, while their Phase 1 raw-capacity field is `None`. No authorized pairing from charge HF identity to an observed discharge capacity label exists. The retry is therefore blocked before accessing TRAIN/VALIDATION values; see `PHASE9A_RETRY_PREFLIGHT_BLOCKER_REPORT.md`.

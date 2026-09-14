@@ -24,12 +24,16 @@ from torch import nn
 from audit_nasa_discharge_centered_pairing import BATTERIES, RAW, audit
 from itransformer_structural import ITransformerStructuralConfig, ParameterizedITransformerStructural
 from stl_decomposition import STLDecomposer
+from tier2_hf_extraction import HFExtractionError, extract_nasa_hf
+from tier2_phase9a_access import PostSplitPairAccessor, TestLockViolation
+from tier2_phase9a_config import FROZEN_TIER2_PHASE9A_CONFIG
 from tier2_scalar_component_readout import (
     LinearScalarComponentReadout,
     ScalarComponentReadoutConfig,
     strict_scalar_mse,
 )
 from timesnet_structural import ParameterizedStandardTimesNet, TimesNetStructuralConfig
+from tier2_soh_bridge import NASA_RATED_CAPACITY_AH, SOH_FORMULA, capacity_to_soh
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -37,8 +41,8 @@ OUTPUT = ROOT / "PHASE9A_DRY_RUN_METRICS.json"
 TARGET_BATTERIES = ("B0007", "B0018")  # Phase 1 E1 target SOH-estimation roles.
 EXPECTED_PAIR_COUNTS = {"B0005": 168, "B0006": 168, "B0007": 168, "B0018": 132}
 EXPECTED_SPLITS = {"B0005": (117, 34, 17), "B0006": (117, 34, 17), "B0007": (117, 34, 17), "B0018": (92, 26, 14)}
-SEQ_LEN, PRED_LEN, PERIOD, EPOCHS, SEED, BATCH_SIZE, LR = 10, 1, 7, 3, 42, 32, 0.001
-TEST_NUMERICAL_VALUE_ACCESS_COUNT = 0
+SEQ_LEN, PRED_LEN, PERIOD = 10, 1, 7
+RUN_CONFIG = FROZEN_TIER2_PHASE9A_CONFIG
 
 
 class ProtocolViolation(RuntimeError):
@@ -57,10 +61,11 @@ class Split:
 
 
 def set_seed() -> None:
-    random.seed(SEED)
-    np.random.seed(SEED)
-    torch.manual_seed(SEED)
-    torch.use_deterministic_algorithms(True, warn_only=True)
+    RUN_CONFIG.validate()
+    random.seed(RUN_CONFIG.seed)
+    np.random.seed(RUN_CONFIG.seed)
+    torch.manual_seed(RUN_CONFIG.seed)
+    torch.use_deterministic_algorithms(True)
     torch.set_num_threads(1)
 
 
@@ -71,6 +76,7 @@ def split_for(n: int) -> Split:
 
 
 def _cycles(battery: str) -> list[Any]:
+    """Authorize only raw MAT parsing; post-split field access is guarded separately."""
     path = next(RAW.rglob(f"{battery}.mat"), None)
     if path is None:
         raise ProtocolViolation(f"official raw file missing for {battery}")
@@ -86,31 +92,13 @@ def _finite_vector(value: Any, *, name: str) -> np.ndarray:
     return values
 
 
-def extract_existing_hf(charge: Any) -> np.ndarray:
-    """Reuse the existing Phase 1 definitions; no new feature formula is introduced."""
-    data = charge.data
-    voltage = _finite_vector(getattr(data, "Voltage_charge"), name="Voltage_charge")
-    current = _finite_vector(getattr(data, "Current_charge"), name="Current_charge")
-    time = _finite_vector(getattr(data, "Time"), name="Time")
-    if not (voltage.size == current.size == time.size):
-        raise ProtocolViolation("charge voltage/current/time lengths differ")
-    upper = np.flatnonzero(voltage >= 4.2)
-    lower = np.flatnonzero(voltage >= 3.8)
-    upper_4 = np.flatnonzero(voltage >= 4.0)
-    if not (upper.size and lower.size and upper_4.size):
-        raise ProtocolViolation("existing HF voltage thresholds are unavailable")
-    i_42 = int(upper[0])
-    tail = np.flatnonzero((current[i_42:] >= 0.0) & (current[i_42:] <= 0.02))
-    if tail.size == 0:
-        raise ProtocolViolation("existing HF current threshold is unavailable")
-    i_cut = i_42 + int(tail[0])
-    features = np.asarray(
-        [time[i_42] - time[0], time[i_cut] - time[i_42], time[int(upper_4[0])] - time[int(lower[0])]],
-        dtype=np.float64,
-    )
-    if not np.isfinite(features).all() or (features < 0.0).any():
-        raise ProtocolViolation("existing HF extraction yielded invalid values")
-    return features
+def extract_frozen_hf(charge: Any) -> tuple[np.ndarray, str]:
+    """Use the authorized Eq.(1)–Eq.(3) NASA endpoint map."""
+    try:
+        result = extract_nasa_hf(charge)
+    except HFExtractionError as error:
+        raise ProtocolViolation(str(error)) from error
+    return np.asarray((result.hf1_seconds, result.hf2_seconds, result.hf3_seconds), dtype=np.float64), result.t_imin_provenance
 
 
 def extract_capacity(discharge: Any) -> float:
@@ -137,21 +125,26 @@ def validate_pairing_and_splits() -> tuple[dict[str, dict[str, Any]], dict[str, 
 
 def numeric_pairs_for_train_and_val(battery: str, pairs: list[dict[str, Any]], split: Split) -> tuple[np.ndarray, np.ndarray, np.ndarray, dict[str, int]]:
     """Extract only TRAIN/VAL pair numeric fields; TEST indices are rejected before access."""
-    cycles = _cycles(battery)
+    accessor = PostSplitPairAccessor(_cycles(battery), split.train_end, split.val_end)
     hf, capacity, pair_indices = [], [], []
+    t_imin_fallback_count = 0
     for pair_index, pair in enumerate(pairs):
         if pair_index >= split.val_end:
             continue  # TEST membership is never dereferenced numerically.
         charge_index = int(pair["charge_record_index"])
-        discharge_index = int(pair["discharge_record_index"])
         try:
-            hf.append(extract_existing_hf(cycles[charge_index]))
+            charge, discharge = accessor.records_for_pair(pair_index, pair)
+            feature_vector, endpoint_provenance = extract_frozen_hf(charge)
+            hf.append(feature_vector)
         except ProtocolViolation as error:
             partition = "TRAIN" if pair_index < split.train_end else "VALIDATION"
             raise ProtocolViolation(
                 f"{battery} {partition} pair_index={pair_index} charge_record_index={charge_index}: {error}"
             ) from error
-        capacity.append(extract_capacity(cycles[discharge_index]))
+        except TestLockViolation as error:
+            raise ProtocolViolation(f"{battery} attempted TEST numerical access") from error
+        t_imin_fallback_count += int(endpoint_provenance == "HUMAN_AUTHORIZED_FINAL_VALID_CHARGE_TIMESTAMP_FALLBACK")
+        capacity.append(extract_capacity(discharge))
         pair_indices.append(pair_index)
     expected = split.val_end
     if len(hf) != expected or pair_indices != list(range(expected)):
@@ -160,6 +153,9 @@ def numeric_pairs_for_train_and_val(battery: str, pairs: list[dict[str, Any]], s
         "train_hf_pair_count": split.train_end,
         "val_hf_pair_count": split.val_end - split.train_end,
         "hf_extraction_failure_count": 0,
+        "t_imin_final_timestamp_fallback_count": t_imin_fallback_count,
+        "raw_mat_full_parse_allowed": True,
+        "post_split_test_numerical_materialization_count": accessor.post_split_test_numerical_materialization_count,
     }
 
 
@@ -236,16 +232,16 @@ def fingerprint(model: nn.Module) -> str:
 def train_branch(kind: str, train_x: np.ndarray, train_y: np.ndarray, val_x: np.ndarray) -> tuple[nn.Module, list[float], dict[str, Any]]:
     model = Branch(kind)
     initial = fingerprint(model)
-    optimizer = torch.optim.Adam(model.parameters(), lr=LR)
+    optimizer = torch.optim.Adam(model.parameters(), lr=RUN_CONFIG.learning_rate)
     x = torch.from_numpy(train_x)
     y = torch.from_numpy(train_y)
     losses: list[float] = []
     core_grad = readout_grad = False
     model.train()
-    for _ in range(EPOCHS):
+    for _ in range(RUN_CONFIG.dry_run_epochs):
         total, count = 0.0, 0
-        for start in range(0, x.shape[0], BATCH_SIZE):
-            end = min(start + BATCH_SIZE, x.shape[0])
+        for start in range(0, x.shape[0], RUN_CONFIG.batch_size):
+            end = min(start + RUN_CONFIG.batch_size, x.shape[0])
             optimizer.zero_grad(set_to_none=True)
             prediction = model(x[start:end], partition="TRAIN")
             loss = strict_scalar_mse(prediction, y[start:end])
@@ -315,8 +311,13 @@ def one_run(audits: dict[str, dict[str, Any]], splits: dict[str, Split]) -> dict
             "train_loss_traces": loss_traces,
             "fusion": {"mode": "ADVISOR_AUTHORIZED_COMPONENT_SUM", "output_shape": list(fused.shape), "status": "PASS"},
             "prediction_domain": "CAPACITY",
-            "capacity_to_soh_bridge_status": "FROZEN_DENOMINATOR_AVAILABLE__NOT_EXECUTED__CAPACITY_PRIMARY",
+            "capacity_to_soh_bridge_status": "PA001_ACTIVE__HUMAN_AUTHORIZED_FALLBACK",
+            "soh_formula": SOH_FORMULA,
+            "soh_denominator_ah": NASA_RATED_CAPACITY_AH,
             "validation_metrics_capacity": metrics(fused.reshape(-1), val_y.reshape(-1)),
+            "validation_metrics_soh": metrics(
+                capacity_to_soh(fused.reshape(-1)), capacity_to_soh(val_y.reshape(-1))
+            ),
         }
     return results
 
@@ -334,8 +335,8 @@ def main() -> None:
         raise ProtocolViolation("fixed-seed deterministic rerun mismatch")
     output = {
         "phase": "PHASE9A_REAL_TRAIN_VAL_DRY_RUN_AFTER_ALL_INTERFACE_FREEZES",
-        "protocol": {"pairing_mode": "DISCHARGE_CENTERED_NEAREST_PRECEDING_UNCONSUMED_CHARGE", "split": "CHRONOLOGICAL_70_20_10", "seq_len": SEQ_LEN, "pred_len": PRED_LEN, "stl_period": PERIOD, "stl_mode": "OFFLINE_TRAIN_ONLY", "normalization": "MINMAX_0_1__TRAIN_ONLY", "loss": "MSE", "fusion": "TREND_PLUS_SEASONAL_PLUS_RESIDUAL", "epochs": EPOCHS, "seed": SEED, "batch_size": BATCH_SIZE, "learning_rate": LR},
-        "test_lock": {"test_loaded": False, "test_numerical_value_access_count": TEST_NUMERICAL_VALUE_ACCESS_COUNT, "test_transform_applied": False, "test_predictions_saved": False},
+        "protocol": {"pairing_mode": "DISCHARGE_CENTERED_NEAREST_PRECEDING_UNCONSUMED_CHARGE", "split": "CHRONOLOGICAL_70_20_10", "seq_len": SEQ_LEN, "pred_len": PRED_LEN, "stl_period": PERIOD, "stl_mode": "OFFLINE_TRAIN_ONLY", "normalization": "MINMAX_0_1__TRAIN_ONLY", "loss": "MSE", "fusion": "TREND_PLUS_SEASONAL_PLUS_RESIDUAL", "epochs": RUN_CONFIG.dry_run_epochs, "seed": RUN_CONFIG.seed, "batch_size": RUN_CONFIG.batch_size, "learning_rate": RUN_CONFIG.learning_rate, "optimizer": RUN_CONFIG.optimizer, "device": RUN_CONFIG.device, "train_batch_shuffle": RUN_CONFIG.train_batch_shuffle, "validation_batch_shuffle": RUN_CONFIG.validation_batch_shuffle, "drop_last": RUN_CONFIG.drop_last},
+        "test_lock": {"raw_mat_full_parse_allowed": True, "test_loaded": False, "test_numerical_value_access_count": 0, "test_transform_applied": False, "test_predictions_saved": False},
         "pairing_metadata": {battery: {key: value for key, value in audits[battery].items() if key != "pair_identities"} for battery in BATTERIES},
         "target_execution_roster": list(TARGET_BATTERIES),
         "results_by_battery": first,

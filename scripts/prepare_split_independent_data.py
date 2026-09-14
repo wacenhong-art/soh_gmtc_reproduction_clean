@@ -22,6 +22,8 @@ from xml.etree import ElementTree as ET
 
 from scipy.io import loadmat
 
+from tier2_hf_extraction import HFExtractionError, extract_nasa_hf_from_arrays
+
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "raw_data"
@@ -77,6 +79,31 @@ def hf_status(times, voltage, current, cutoff):
     return {"status": state, "HF1": hf1, "HF2": hf2, "HF3": hf3}
 
 
+def nasa_hf_status(cycle):
+    """PLAN-CHANGE-0017_REVISED NASA-only endpoint map with explicit fallback provenance."""
+    try:
+        feature = extract_nasa_hf_from_arrays(
+            getattr(cycle.data, "Time", []),
+            getattr(cycle.data, "Voltage_measured", []),
+            getattr(cycle.data, "Current_charge", []),
+        )
+    except HFExtractionError as error:
+        return {
+            "status": f"FAILED_{str(error).upper().replace(' ', '_')}",
+            "HF1": None,
+            "HF2": None,
+            "HF3": None,
+            "t_imin_provenance": "NOT_AVAILABLE",
+        }
+    return {
+        "status": "SUCCESS",
+        "HF1": feature.hf1_seconds,
+        "HF2": feature.hf2_seconds,
+        "HF3": feature.hf3_seconds,
+        "t_imin_provenance": feature.t_imin_provenance,
+    }
+
+
 def matlab_timestamp(value) -> str | None:
     values = [int(round(float(x))) for x in value[:6]]
     try:
@@ -99,17 +126,15 @@ def nasa_inventory(battery: str) -> tuple[dict, list[dict]]:
         if timestamp:
             timestamps.append(timestamp)
         fields = set(cycle.data._fieldnames)
-        voltage = getattr(cycle.data, "Voltage_charge", getattr(cycle.data, "Voltage_measured", []))
-        current = getattr(cycle.data, "Current_charge", getattr(cycle.data, "Current_measured", []))
-        times = getattr(cycle.data, "Time", [])
         if operation == "charge":
-            features = hf_status(times, voltage, current, 0.02)
+            features = nasa_hf_status(cycle)
             canonical.append({
                 "dataset": "NASA", "battery_id": battery, "cycle_index": type_counts[operation],
                 "chronological_order": ordinal, "operation_record_id": f"{battery}:operation:{ordinal}",
                 "raw_source_file": str(file_path.relative_to(ROOT)), "timestamp": timestamp,
                 "raw_capacity_ah": None, "feature_status": features["status"],
                 "HF1_seconds": features["HF1"], "HF2_seconds": features["HF2"], "HF3_seconds": features["HF3"],
+                "t_imin_provenance": features["t_imin_provenance"],
                 "split_assignment": None,
             })
         records.append((operation, ordinal))

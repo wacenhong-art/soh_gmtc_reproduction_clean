@@ -1,6 +1,6 @@
 # Unified Pre-Numerical Fix Package
 
-`STATUS=PROPOSAL_ONLY__NOT_APPLIED`  
+`STATUS=APPLIED_BY_PLAN-CHANGE-0017_REVISED__HUMAN_AUTHORIZED`
 `RECOMMENDED_CHANGE_ID=PLAN-CHANGE-0017_REVISED__UNIFIED_PRE_NUMERICAL_CLOSURE`  
 `RESULT_BLIND=True`  
 `PERFORMANCE_BLIND=True`  
@@ -43,5 +43,11 @@
 - no model training, validation tuning, SCF-GAN, or TEST metric is used to
   select any rule.
 
-No proposal in this package is active. Applying it requires a single explicit
-Human-authorized Plan Change after review.
+The proposal was applied only after the explicit Human authorization recorded
+in `MASTER_PLAN_CHANGE_REQUEST_PLAN-CHANGE-0017-REVISED.md`. The applied
+revision resolves its prior underspecification through exact frozen rules:
+terminal `Voltage_measured`; raw-sign `Current_charge<=0.02 A` strictly after
+`t_Vmax`, otherwise final valid timestamp; raw full MAT parse but sealed
+post-split TEST numerical access; active PA001 NASA 2.0-Ah bridge; and the
+versioned CPU Adam run configuration. It remains a Tier 2 fallback, never a
+paper-exact implementation claim.

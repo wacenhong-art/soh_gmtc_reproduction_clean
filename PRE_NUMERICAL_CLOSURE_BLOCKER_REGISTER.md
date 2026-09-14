@@ -23,3 +23,16 @@ excluded from this critical register.
 - Historical PLAN-CHANGE-0001/0002/0003 records are absent from this worktree;
   the current Plan Change series begins at 0004. This is provenance debt, not a
   runtime Phase 9A blocker.
+
+## Resolution update — PLAN-CHANGE-0017_REVISED
+
+| ID | Resolution status | Frozen result-blind execution rule |
+|---|---|---|
+| PNC-001 | `RESOLVED_FOR_TIER2__PAPER_EXACT_REMAINS_UNRESOLVED` | raw-sign `Current_charge<=0.02 A` strictly after `t_Vmax`, otherwise final valid charge timestamp with recorded fallback provenance |
+| PNC-002 | `RESOLVED_FOR_TIER2__PAPER_EXACT_REMAINS_UNRESOLVED` | `Voltage_measured`, first sampled value at/above 3.8/4.0/4.2 V |
+| PNC-003 | `RESOLVED_FOR_TIER2_BY_HUMAN_AUTHORIZED_BOUNDARY` | raw MAT full parse allowed; after split TEST record dereference is mechanically rejected |
+| PNC-004 | `RESOLVED_FOR_TIER2_BY_PA001` | `SOH=Capacity_Ah/2.0` for NASA, labelled Human fallback |
+| PNC-005 | `RESOLVED_FOR_TIER2` | CPU Adam, seed 42, 3 epochs, lr 0.001, batch 32, no shuffle/drop-last/early stopping/checkpoint |
+
+`PHASE9A_CRITICAL_BLOCKERS_TOTAL=0`
+`TIER3_PAPER_EXACT_ONLY_BLOCKERS_RETAINED=True`

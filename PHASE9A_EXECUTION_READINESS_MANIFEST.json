@@ -1,0 +1,44 @@
+{
+  "plan_change": "PLAN-CHANGE-0017_REVISED",
+  "status": "PASS__AUTHORIZED_NOT_EXECUTED",
+  "tier": "TIER2_FALLBACK_NUMERICAL_REPRODUCTION",
+  "hf_endpoint_protocol": "TIER2_NASA_HF_ENDPOINT_PROTOCOL_V1",
+  "test_boundary": {
+    "raw_mat_full_parse_allowed": true,
+    "post_split_test_numerical_field_access_allowed": false,
+    "test_lock_gate": "PASS"
+  },
+  "soh_bridge": {
+    "formula": "SOH=CAPACITY_AH/2.0",
+    "nasa_denominator_ah": 2.0,
+    "provenance": "PA001__HUMAN_AUTHORIZED_FALLBACK"
+  },
+  "run_config": {
+    "seed": 42,
+    "dry_run_epochs": 3,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "optimizer": "ADAM",
+    "device": "CPU",
+    "train_shuffle": false,
+    "validation_shuffle": false,
+    "drop_last": false
+  },
+  "unresolved_phase9a_critical_counts": {
+    "feature_semantics": 0,
+    "data_alignment": 0,
+    "execution_parameters": 0,
+    "model_io_contracts": 0,
+    "scale_contracts": 0,
+    "training_contracts": 0,
+    "total": 0
+  },
+  "authorization": {
+    "phase9a_retry_authorized": true,
+    "phase9a_started": false,
+    "validation_data_used": false,
+    "test_loaded": false,
+    "model_trained": false,
+    "grid_search_run": false
+  }
+}

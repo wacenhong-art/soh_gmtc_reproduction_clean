@@ -63,3 +63,23 @@ No transpose, output-rank, or broadcast mismatch was found by static source
 inspection; all three core/readout contracts were previously structural-tested.
 The route remains blocked before model execution by the feature, test-loader,
 scale-bridge, and run-configuration rows above.
+
+## PLAN-CHANGE-0017_REVISED closure update
+
+The above pre-fix statuses are historical. For the specifically authorized
+NASA-only Tier 2 Phase 9A path, `t_Imin`, canonical voltage field, TEST access
+boundary, PA001 SOH bridge, and run configuration are now frozen in
+`MASTER_PLAN_CHANGE_REQUEST_PLAN-CHANGE-0017-REVISED.md`. The implementation
+uses `Voltage_measured` for all voltage thresholds and raw-sign
+`Current_charge<=0.02 A` strictly after `t_Vmax`, with a labelled final-timestamp
+fallback. `TIER2_PHASE9A_RUN_CONFIG_V1.md` freezes the execution details.
+
+`UNRESOLVED_FEATURE_SEMANTICS=0`
+`UNRESOLVED_DATA_ALIGNMENT=0`
+`UNRESOLVED_EXECUTION_PARAMETERS=0`
+`UNRESOLVED_MODEL_IO_CONTRACTS=0`
+`UNRESOLVED_SCALE_CONTRACTS=0`
+`UNRESOLVED_TRAINING_CONTRACTS=0`
+`PHASE9A_CRITICAL_BLOCKERS_TOTAL=0`
+
+This update does not revise the table's Tier 3 paper-exact evidence status.

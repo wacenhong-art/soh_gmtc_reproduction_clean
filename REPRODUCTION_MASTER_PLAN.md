@@ -6,9 +6,9 @@
 
 **Current plan state:** Phase 1 protocol membership and leakage freeze is complete under a Human-authorized, result-blind Protocol B evaluation fallback. Primary-source clarification remains pending and overrides the fallback if materially different. Phase 2 structural STL is complete only on deterministic synthetic fixtures; real NASA/CALCE STL remains blocked by its missing period. Phase 3 standard iTransformer core is structurally implemented and tested on a generic synthetic interface only; real residual input, target alignment, and target-paper architecture fidelity remain blocked. Phase 4 has a synthetic-only routing scaffold. Phase 5 has a Human-authorized synthetic standard TimesNet-core side-track, but neither target-paper Trend/Seasonal variant nor real-data TimesNet fidelity is established. Phase 6 has a synthetic-only preconstructed-feature fusion structural contract; it does not define any real error, ratio, 9d, loss, or final-output semantics.
 
-`CURRENT_PLAN_VERSION=1.4.6`
+`CURRENT_PLAN_VERSION=1.4.7`
 
-`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0009`
+`LAST_PLAN_CHANGE_ID=PLAN-CHANGE-0017_REVISED`
 
 ## NON-NEGOTIABLE RULES
 
@@ -1651,3 +1651,71 @@ SYNTHETIC_TINY_READOUT_OVERFIT=PASS__PRE_REGISTERED_20_STEPS
 PHASE9A_RETRY_AUTHORIZED=True
 
 Synthetic-only verification confirms the frozen adapter’s software and gradient path, not real-data performance or paper-exact branch semantics. The next permitted activity is the separately invoked Phase 9A TRAIN+VALIDATION dry-run retry; TEST remains locked and no Phase 9A data work was performed in this Plan Change.
+
+# PLAN-CHANGE-0017_REVISED — unified pre-numerical closure (2026-09-14)
+
+`PLAN_CHANGE_STATUS=APPLIED__HUMAN_AUTHORIZED__RESULT_BLIND_UNIFIED_CLOSURE`
+`PLAN_CHANGE_0017_REVISED_SUPERSEDES_UNAPPLIED_0017_PROPOSAL=True`
+
+This is the active Tier 2 execution override for the otherwise historical plan
+state above. It retains every Tier 1/Tier 3 paper-fidelity limitation and does
+not alter core paper topology, NASA pairing, pair-first chronological 70/20/10
+split, STL period/mode, branch configuration, scalar readout, or component sum.
+
+```text
+CURRENT_REPRODUCTION_TIER=TIER2_FALLBACK_NUMERICAL_REPRODUCTION
+TIER2_FALLBACK_NUMERICAL_STATUS=AUTHORIZED_FOR_PHASE9A_RETRY__NOT_EXECUTED
+TIER3_PAPER_EXACT_NUMERICAL_STATUS=BLOCKED_BY_RETAINED_PRIMARY_SOURCE_ISSUES
+
+HF1=t_Vmax-t_0
+HF2=t_Imin-t_Vmax
+HF3=t_4p0-t_3p8
+PAPER_HF1_HF2_NAMING_FORMULA_CONTRADICTION=True
+PAPER_EQUATIONS_TAKE_PRECEDENCE_FOR_TIER2_IMPLEMENTATION=True
+NASA_CANONICAL_VOLTAGE_FIELD=Voltage_measured
+T_IMIN_FIELD=Current_charge
+T_IMIN_SIGN_CONVENTION=RAW_CHARGER_CURRENT_SIGN__NO_ABS_OR_SIGN_INVERSION
+T_IMIN_THRESHOLD_A=0.02
+T_IMIN_ENDPOINT_RULE=FIRST_RAW_CURRENT_CHARGE_LEQ_0P02_STRICTLY_AFTER_T_VMAX__ELSE_FINAL_VALID_TIMESTAMP
+
+RAW_MAT_FULL_PARSE_ALLOWED=True
+POST_SPLIT_TEST_NUMERICAL_FIELD_ACCESS_ALLOWED=False
+TEST_LOCK_GATE=PASS
+TIER2_SOH_BRIDGE=PA001_ACTIVE__SOH_EQUALS_CAPACITY_AH_DIVIDED_BY_2.0
+SEED=42
+DRY_RUN_EPOCHS=3
+LEARNING_RATE=0.001
+BATCH_SIZE=32
+OPTIMIZER=Adam
+DEVICE=CPU
+TRAIN_BATCH_SHUFFLE=False
+VALIDATION_BATCH_SHUFFLE=False
+DROP_LAST=False
+EARLY_STOPPING=False
+
+UNRESOLVED_FEATURE_SEMANTICS=0
+UNRESOLVED_DATA_ALIGNMENT=0
+UNRESOLVED_EXECUTION_PARAMETERS=0
+UNRESOLVED_MODEL_IO_CONTRACTS=0
+UNRESOLVED_SCALE_CONTRACTS=0
+UNRESOLVED_TRAINING_CONTRACTS=0
+PHASE9A_CRITICAL_BLOCKERS_TOTAL=0
+PRE_NUMERICAL_CLOSURE_GATE=PASS
+PHASE9A_RETRY_AUTHORIZED=True
+
+VALIDATION_DATA_USED=False
+TEST_LOADED=False
+MODEL_TRAINED=False
+GRID_SEARCH_RUN=False
+NEXT_ACTION=PHASE_9A_REAL_TRAIN_VAL_DRY_RUN__SEPARATE_USER_INVOKED_RUN_ONLY
+```
+
+The test-lock meaning is precise: Human authorization permits raw MAT parsing;
+after a metadata pair/split boundary is formed, no TEST charge/discharge record
+may be dereferenced for a numerical field or passed to feature, scaler, STL,
+DataLoader, model, prediction, or metric code. The mechanical guard and the
+coverage/result evidence are in `PRE_NUMERICAL_CLOSURE_POST_FIX_AUDIT.md`.
+
+All endpoint fallback counts are preserved. They are not data repair, model
+selection, or paper-exact facts. CALCE lifecycle/HF execution and SCF-GAN
+augmentation are expressly future, non-Phase9A blockers.

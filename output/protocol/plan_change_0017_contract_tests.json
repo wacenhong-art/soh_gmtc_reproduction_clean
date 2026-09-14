@@ -1,0 +1,62 @@
+{
+  "plan_change": "PLAN-CHANGE-0017_REVISED",
+  "raw_mat_full_parse_allowed": true,
+  "validation_data_used": false,
+  "test_loaded": false,
+  "test_numerical_materialization_count": 0,
+  "model_trained": false,
+  "grid_search_run": false,
+  "endpoint_unit_tests": {
+    "exact_voltage_endpoints": true,
+    "first_current_leq_threshold_after_vmax": true,
+    "final_timestamp_fallback_provenance": true,
+    "final_timestamp_fallback_duration": true,
+    "nonmonotonic_time_rejected": true,
+    "absent_voltage_endpoint_rejected": true
+  },
+  "test_lock_unit_test": {
+    "train_pair_access_allowed": true,
+    "test_pair_rejected_before_dereference": true,
+    "post_split_test_numerical_materialization_count": 0
+  },
+  "train_only_hf_coverage": {
+    "B0005": {
+      "train_charge_count": 117,
+      "hf1_valid_count": 117,
+      "hf2_valid_count": 117,
+      "hf3_valid_count": 117,
+      "failure_count": 0,
+      "t_imin_final_timestamp_fallback_count": 0
+    },
+    "B0006": {
+      "train_charge_count": 117,
+      "hf1_valid_count": 117,
+      "hf2_valid_count": 117,
+      "hf3_valid_count": 117,
+      "failure_count": 0,
+      "t_imin_final_timestamp_fallback_count": 90
+    },
+    "B0007": {
+      "train_charge_count": 117,
+      "hf1_valid_count": 117,
+      "hf2_valid_count": 117,
+      "hf3_valid_count": 117,
+      "failure_count": 0,
+      "t_imin_final_timestamp_fallback_count": 0
+    },
+    "B0018": {
+      "train_charge_count": 92,
+      "hf1_valid_count": 92,
+      "hf2_valid_count": 92,
+      "hf3_valid_count": 92,
+      "failure_count": 0,
+      "t_imin_final_timestamp_fallback_count": 4
+    }
+  },
+  "scale_and_soh_unit_tests": {
+    "minmax_round_trip": true,
+    "soh_formula_capacity_over_2ah": true,
+    "soh_denominator_is_2ah": true
+  },
+  "all_contract_tests_passed": true
+}

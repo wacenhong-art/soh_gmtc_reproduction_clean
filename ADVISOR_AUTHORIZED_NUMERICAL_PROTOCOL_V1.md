@@ -68,3 +68,23 @@ Each Tier 2 branch preserves its frozen multivariate core output `[B,1,3]` and a
 ## Explicit exclusions
 
 No period, width, component-weight, normalization, or architecture comparison is permitted. No paper-undefined current-target error or ratio feature is constructed. No synthetic SOH is generated. No formal training, validation experiment, test loading, or model-metric selection is authorized in this preparation step. Any change requires a new Plan Change. PLAN-CHANGE-0013 corrects PLAN-CHANGE-0012 before numerical execution.
+
+## Revision: PLAN-CHANGE-0017_REVISED unified pre-numerical closure
+
+`PLAN_CHANGE_STATUS=APPLIED__HUMAN_AUTHORIZED__RESULT_BLIND_UNIFIED_CLOSURE`
+
+The executable NASA endpoint contract is `TIER2_NASA_HF_ENDPOINT_PROTOCOL_V1.md`:
+the paper equations remain `HF1=t_Vmax-t_0`, `HF2=t_Imin-t_Vmax`, and
+`HF3=t_4p0-t_3p8`; NASA voltage endpoints use `Voltage_measured`; and
+`t_Imin` uses the first raw-sign `Current_charge<=0.02 A` sample strictly after
+`t_Vmax`, otherwise the final valid timestamp in the same charge operation
+with explicit Human-fallback provenance. This does not resolve paper-exact
+field or endpoint semantics.
+
+`RAW_MAT_FULL_PARSE_ALLOWED=True`, but post-split TEST numerical record access
+for HF, scaling, STL, DataLoader, model, prediction, or metric is prohibited.
+`TIER2_SOH_BRIDGE=PA001_ACTIVE__NASA_CAPACITY_AH_DIVIDED_BY_2.0`.
+The dry-run execution contract is `TIER2_PHASE9A_RUN_CONFIG_V1.md`: seed 42,
+CPU Adam, learning rate 0.001, batch size 32, three epochs, no shuffle, no
+drop-last, no early stopping, and no checkpoints. These are a disclosed Tier 2
+fallback and authorize a later separate Phase 9A retry only.

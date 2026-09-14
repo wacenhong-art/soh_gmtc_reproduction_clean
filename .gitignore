@@ -51,3 +51,4 @@ output/stl/_pdf_visual_audit/
 # Locally persisted real-data SCF-GAN smoke tensors/checkpoint; only the audited
 # protocol, runner, and aggregate diagnostics belong in Git.
 output/phase9c_scfgan_real_data_smoke/
+output/phase9c_scfgan_source_only_convergence/

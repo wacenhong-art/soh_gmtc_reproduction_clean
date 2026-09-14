@@ -15,3 +15,11 @@ TEST_NUMERICAL_VALUES_MATERIALIZED=False
 For every battery, the three half-open ranges are disjoint and ordered TRAIN < VALIDATION < TEST. This manifest records pairing and membership metadata only; it contains no HF, Capacity, SOH, target, prediction, or metric value.
 
 Phase 1 E1 target-execution roster remains B0007 and B0018. B0005 and B0006 were revalidated for their frozen pairing/split structure but were not selected as substitute numerical execution targets.
+
+## Executed-run confirmation — 2026-09-14
+
+The real TRAIN+VALIDATION dry-run revalidated the full four-battery pairing
+structure before numerical access and then executed only B0007 and B0018, the
+frozen E1 target roster. The actual numerical membership remained exactly the
+ranges above. TEST is represented only by its pair indices and counts; no TEST
+charge/discharge numerical field was dereferenced after the split boundary.

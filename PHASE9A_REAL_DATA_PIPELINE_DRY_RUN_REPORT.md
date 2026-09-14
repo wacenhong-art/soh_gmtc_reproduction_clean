@@ -74,3 +74,62 @@ B0018 pair 14 / raw charge record 40. See `NASA_HF2_SIGN_AND_ENDPOINT_SEMANTICS_
 The audit found an identifiable `Voltage_measured` 4.2 V CC-to-CV endpoint in
 all 443 legal TRAIN charges. It recommends a separate result-blind Plan Change
 before any HF2 implementation changes or Phase 9A retry.
+
+## Executed fixed dry-run after PLAN-CHANGE-0017_REVISED — 2026-09-14
+
+`STATUS=PASS__TRAIN_VAL_DRY_RUN_COMPLETE__NO_TEST_NUMERICAL_ACCESS`
+`CURRENT_REPRODUCTION_TIER=TIER2_FALLBACK_NUMERICAL_REPRODUCTION`
+`PLAN_READ_BEFORE_RUN=True`
+`PLAN_HEALTH_AUDIT_BEFORE_RUN=PASS__FROZEN_TIER2_PROTOCOL_CONSISTENT`
+
+This is a single fixed CPU dry-run, not a model-selection exercise or a
+paper-exact result. It used only the Phase 1 E1 NASA target roster B0007 and
+B0018. Frozen execution settings were seed 42, three epochs, Adam with learning
+rate 0.001, batch size 32, chronological no-shuffle batches, and MSE. No
+checkpoint, early stopping, parameter comparison, SCF-GAN, synthetic HF, or
+grid search was used.
+
+### Contract and access gates
+
+| Gate | Result |
+|---|---|
+| Pair-first chronological split | PASS: B0007 `117/34/17`; B0018 `92/26/14` |
+| TEST lock | PASS: loaded/access attempts/materializations/transforms/predictions = `0/0/0/0/0` |
+| HF extraction | PASS: B0007 `117+34`; B0018 `92+26`; failures `0` |
+| TRAIN-only MinMax | PASS; validation only transformed and clipped under the frozen rule |
+| TRAIN-only offline STL(7) | PASS; no VAL/TEST input; additive reconstruction within machine precision |
+| 10-to-1 alignment | PASS: historical HF windows only; TRAIN targets stay TRAIN; VAL uses past-HF rolling history only |
+| Scalar readout / loss shape | PASS: exact `[B,1,1]` prediction-to-target equality; no broadcasting |
+| Component sum | PASS: `Trend_hat + Seasonal_hat + Residual_hat` in capacity domain |
+| Finite values / gradients | PASS: zero NaN/Inf counts; all six core/readout gradient paths finite and nonzero |
+| Fixed-seed repeat | PASS: two full payloads byte-for-byte equivalent |
+
+### Per-epoch losses
+
+Validation has no component/STL labels by frozen policy. Therefore each epoch's
+validation loss is the permitted fused capacity-domain `MSE(T_hat+S_hat+R_hat,
+y_val)`, recorded only as telemetry and never used for selection.
+
+| Battery | Trend TRAIN MSE (epochs 1/2/3) | Seasonal TRAIN MSE | Residual TRAIN MSE | Fused VAL MSE (epochs 1/2/3) |
+|---|---|---|---|---|
+| B0007 | 3.7066589494 / 1.2255793737 / 0.2230717139 | 0.0236483291 / 0.0181627694 / 0.0144738411 | 0.0592044276 / 0.0070171639 / 0.0096746829 | 2.0238604546 / 0.0022066499 / 0.6186665893 |
+| B0018 | 1.7922203977 / 0.7351082465 / 0.1020117955 | 0.2216096971 / 0.0185198228 / 0.0527355705 | 0.0290509190 / 0.0208108286 / 0.0044814322 | 0.4905633330 / 0.0975133926 / 0.3927336931 |
+
+### Final validation diagnostics
+
+The primary prediction domain is capacity. The SOH values below are the
+separately authorized PA001 fallback conversion `SOH=Capacity_Ah/2.0`; neither
+domain was used for parameter selection.
+
+| Battery | Capacity MSE / RMSE / MAE / R2 | SOH MSE / RMSE / MAE / R2 |
+|---|---|---|
+| B0007 | 0.6186665893 / 0.7865536150 / 0.7862246633 / -754.0102539062 | 0.1546666476 / 0.3932768078 / 0.3931123088 / -754.0102208114 |
+| B0018 | 0.3927336931 / 0.6266846840 / 0.6256388426 / -594.9241943359 | 0.0981834268 / 0.3133423476 / 0.3128194259 / -594.9242511421 |
+
+Negative validation R2 values do not fail this Phase 9A execution gate and did
+not trigger any protocol change. `PHASE9A_PIPELINE_GATE=PASS` and
+`SCIENTIFIC_FAILURE=False` mean only that the approved pipeline executed
+leakage-safely and reproducibly; they do not claim numerical quality or
+paper-exact reproduction.
+
+`NEXT_ACTION=HUMAN_REVIEW_OF_PHASE9A_DIAGNOSTICS__NO_AUTOMATIC_PHASE9B_OR_TUNING`

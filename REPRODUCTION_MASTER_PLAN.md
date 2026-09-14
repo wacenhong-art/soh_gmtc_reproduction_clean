@@ -1719,3 +1719,46 @@ coverage/result evidence are in `PRE_NUMERICAL_CLOSURE_POST_FIX_AUDIT.md`.
 All endpoint fallback counts are preserved. They are not data repair, model
 selection, or paper-exact facts. CALCE lifecycle/HF execution and SCF-GAN
 augmentation are expressly future, non-Phase9A blockers.
+
+# Phase 9A — executed Tier 2 real TRAIN/VALIDATION dry-run (2026-09-14)
+
+This append-only execution record follows the active PLAN-CHANGE-0017_REVISED
+freeze. It changes no scientific parameter, pairing rule, feature formula,
+split, architecture, fusion rule, or result-selection policy.
+
+```text
+PHASE9A_STATUS=PASS__FIXED_TRAIN_VAL_DRY_RUN_COMPLETE
+CURRENT_REPRODUCTION_TIER=TIER2_FALLBACK_NUMERICAL_REPRODUCTION
+TARGET_EXECUTION_ROSTER=B0007__B0018__PHASE1_E1_ONLY
+REAL_NUMERICAL_DATA_USED=True__TRAIN_AND_VALIDATION_ONLY
+TEST_LOADED=False
+TEST_NUMERICAL_VALUE_ACCESS_COUNT=0
+POST_SPLIT_TEST_NUMERICAL_ACCESS_ATTEMPTS=0
+POST_SPLIT_TEST_NUMERICAL_MATERIALIZATION_COUNT=0
+TEST_LOCK_GATE=PASS
+
+PAIRING_SPLIT_GATE=PASS
+HF_FEATURE_GATE=PASS
+NORMALIZATION_GATE=PASS__TRAIN_ONLY
+STL_GATE=PASS__OFFLINE_WITHIN_TRAIN_ONLY
+ALIGNMENT_GATE=PASS__10_TO_1
+SCALAR_READOUT_GATE=PASS__EXACT_SHAPE_NO_BROADCASTING
+FUSION_GATE=PASS__T_PLUS_S_PLUS_R_CAPACITY_DOMAIN
+FINITE_GATE=PASS__NAN_INF_COUNT_ZERO
+DETERMINISM_GATE=PASS__TWO_IDENTICAL_FIXED_SEED_PAYLOADS
+PHASE9A_CRITICAL_BLOCKERS_TOTAL=0
+PHASE9A_PIPELINE_GATE=PASS
+
+VALIDATION_USED_FOR_MODEL_SELECTION=False
+GRID_SEARCH_RUN=False
+SCFGAN_TRAINED=False
+SYNTHETIC_HF_USED=False
+SCIENTIFIC_FAILURE=False
+PROTOCOL_VIOLATION=False
+NEXT_SCIENTIFIC_ACTION=HUMAN_REVIEW_OF_PHASE9A_DIAGNOSTICS__NO_AUTOMATIC_PHASE9B_OR_TUNING
+```
+
+The validation diagnostics are recorded in `PHASE9A_DRY_RUN_METRICS.json` and
+are not a claim of numerical quality or paper-exact reproduction. Negative R2
+does not change this execution-gate result and triggered no alteration to the
+result-blind Tier 2 protocol. Tier 3 paper-exact fidelity blockers remain.

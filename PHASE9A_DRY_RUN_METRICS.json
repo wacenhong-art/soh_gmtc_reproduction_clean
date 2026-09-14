@@ -1,16 +1,566 @@
 {
   "phase": "PHASE9A_REAL_TRAIN_VAL_DRY_RUN_AFTER_ALL_INTERFACE_FREEZES",
-  "status": "BLOCKED__HF2_EXTRACTION_CONTRACT_UNSATISFIED",
-  "run_completed": false,
-  "real_numerical_data_used": true,
-  "train_data_used": true,
-  "validation_data_used": false,
-  "test_loaded": false,
-  "test_numerical_value_access_count": 0,
-  "model_trained": false,
+  "protocol": {
+    "pairing_mode": "DISCHARGE_CENTERED_NEAREST_PRECEDING_UNCONSUMED_CHARGE",
+    "split": "CHRONOLOGICAL_70_20_10",
+    "seq_len": 10,
+    "pred_len": 1,
+    "stl_period": 7,
+    "stl_mode": "OFFLINE_TRAIN_ONLY",
+    "normalization": "MINMAX_0_1__TRAIN_ONLY",
+    "loss": "MSE",
+    "fusion": "TREND_PLUS_SEASONAL_PLUS_RESIDUAL",
+    "epochs": 3,
+    "seed": 42,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "optimizer": "ADAM",
+    "device": "CPU",
+    "train_batch_shuffle": false,
+    "validation_batch_shuffle": false,
+    "drop_last": false
+  },
+  "test_lock": {
+    "raw_mat_full_parse_allowed": true,
+    "test_loaded": false,
+    "test_numerical_value_access_count": 0,
+    "post_split_test_numerical_access_attempts": 0,
+    "post_split_test_numerical_materialization_count": 0,
+    "test_transform_applied": false,
+    "test_predictions_saved": false,
+    "gate": "PASS"
+  },
+  "pairing_metadata": {
+    "B0005": {
+      "battery_id": "B0005",
+      "n_charge": 170,
+      "n_discharge": 168,
+      "n_valid_pairs": 168,
+      "unpaired_charges": 2,
+      "unpaired_discharges": 0,
+      "one_to_one": true,
+      "one_to_many_collisions": 0,
+      "many_to_one_collisions": 0,
+      "ambiguous_pairs": 0,
+      "pair_temporal_order_valid": true,
+      "impedance_between_pair_count": 137,
+      "consecutive_charge_block_count": 2,
+      "consecutive_charge_dropped_count": 2
+    },
+    "B0006": {
+      "battery_id": "B0006",
+      "n_charge": 170,
+      "n_discharge": 168,
+      "n_valid_pairs": 168,
+      "unpaired_charges": 2,
+      "unpaired_discharges": 0,
+      "one_to_one": true,
+      "one_to_many_collisions": 0,
+      "many_to_one_collisions": 0,
+      "ambiguous_pairs": 0,
+      "pair_temporal_order_valid": true,
+      "impedance_between_pair_count": 137,
+      "consecutive_charge_block_count": 2,
+      "consecutive_charge_dropped_count": 2
+    },
+    "B0007": {
+      "battery_id": "B0007",
+      "n_charge": 170,
+      "n_discharge": 168,
+      "n_valid_pairs": 168,
+      "unpaired_charges": 2,
+      "unpaired_discharges": 0,
+      "one_to_one": true,
+      "one_to_many_collisions": 0,
+      "many_to_one_collisions": 0,
+      "ambiguous_pairs": 0,
+      "pair_temporal_order_valid": true,
+      "impedance_between_pair_count": 137,
+      "consecutive_charge_block_count": 2,
+      "consecutive_charge_dropped_count": 2
+    },
+    "B0018": {
+      "battery_id": "B0018",
+      "n_charge": 134,
+      "n_discharge": 132,
+      "n_valid_pairs": 132,
+      "unpaired_charges": 2,
+      "unpaired_discharges": 0,
+      "one_to_one": true,
+      "one_to_many_collisions": 0,
+      "many_to_one_collisions": 0,
+      "ambiguous_pairs": 0,
+      "pair_temporal_order_valid": true,
+      "impedance_between_pair_count": 23,
+      "consecutive_charge_block_count": 1,
+      "consecutive_charge_dropped_count": 1
+    }
+  },
+  "target_execution_roster": [
+    "B0007",
+    "B0018"
+  ],
+  "results_by_battery": {
+    "B0007": {
+      "training_unit": "PER_TARGET_BATTERY__PHASE1_E1_ROLE_MATRIX",
+      "split": {
+        "n_total": 168,
+        "n_train": 117,
+        "n_val": 34,
+        "n_test_membership_only": 17,
+        "train_range": [
+          0,
+          117
+        ],
+        "val_range": [
+          117,
+          151
+        ],
+        "test_membership_range": [
+          151,
+          168
+        ]
+      },
+      "hf_extraction": {
+        "train_hf_pair_count": 117,
+        "val_hf_pair_count": 34,
+        "hf_extraction_failure_count": 0,
+        "t_imin_final_timestamp_fallback_count": 0,
+        "raw_mat_full_parse_allowed": true,
+        "post_split_test_numerical_access_attempts": 0,
+        "post_split_test_numerical_materialization_count": 0
+      },
+      "normalization": {
+        "normalization": "MINMAX_0_1",
+        "fit_scope": "TRAIN_ONLY",
+        "clipping_policy": "CLIP_TO_0_1__RESULT_BLIND_ENGINEERING_RULE",
+        "train_min_max_by_feature": {
+          "HF1": {
+            "min": 0.0,
+            "max": 3407.047
+          },
+          "HF2": {
+            "min": 2.530999999999999,
+            "max": 7102.3589999999995
+          },
+          "HF3": {
+            "min": 0.0,
+            "max": 1564.844
+          }
+        },
+        "val_below_train_range_count": {
+          "HF1": 0,
+          "HF2": 0,
+          "HF3": 0
+        },
+        "val_above_train_range_count": {
+          "HF1": 0,
+          "HF2": 30,
+          "HF3": 0
+        }
+      },
+      "stl": {
+        "period": 7,
+        "mode": "OFFLINE_TRAIN_ONLY",
+        "temporal_leakage_audit": "PASS__OFFLINE_WITHIN_TRAIN_ONLY",
+        "length_preserved": true,
+        "no_nan_or_inf": true,
+        "max_abs_reconstruction_error": 0.0,
+        "mean_abs_reconstruction_error": 0.0
+      },
+      "samples": {
+        "train": 107,
+        "val": 34,
+        "target_alignment": "HF[t-9:t]__TO__COMPONENT_OR_CAPACITY[t+1]",
+        "val_history_policy": "PAST_HF_AVAILABLE_AT_PREDICTION_TIME"
+      },
+      "shape_contract": {
+        "hf_input_train": [
+          107,
+          10,
+          3
+        ],
+        "hf_input_validation": [
+          34,
+          10,
+          3
+        ],
+        "component_target_train": {
+          "trend": [
+            107,
+            1,
+            1
+          ],
+          "seasonal": [
+            107,
+            1,
+            1
+          ],
+          "residual": [
+            107,
+            1,
+            1
+          ]
+        },
+        "branch_scalar_output_validation": {
+          "trend": [
+            34,
+            1,
+            1
+          ],
+          "seasonal": [
+            34,
+            1,
+            1
+          ],
+          "residual": [
+            34,
+            1,
+            1
+          ]
+        },
+        "fused_capacity_output_validation": [
+          34,
+          1,
+          1
+        ],
+        "soh_output_validation": [
+          34,
+          1,
+          1
+        ],
+        "status": "PASS__EXACT_SCALAR_SHAPES_NO_BROADCASTING"
+      },
+      "branch_audit": {
+        "trend": {
+          "initialization_fingerprint": "5bbedbc5258ff6ca",
+          "core_gradient_finite_nonzero": true,
+          "readout_gradient_finite_nonzero": true,
+          "core_output_contract_shape": [
+            "B",
+            1,
+            3
+          ],
+          "scalar_output_shape": [
+            34,
+            1,
+            1
+          ]
+        },
+        "seasonal": {
+          "initialization_fingerprint": "88cf3333594e3434",
+          "core_gradient_finite_nonzero": true,
+          "readout_gradient_finite_nonzero": true,
+          "core_output_contract_shape": [
+            "B",
+            1,
+            3
+          ],
+          "scalar_output_shape": [
+            34,
+            1,
+            1
+          ]
+        },
+        "residual": {
+          "initialization_fingerprint": "607be300d96916c4",
+          "core_gradient_finite_nonzero": true,
+          "readout_gradient_finite_nonzero": true,
+          "core_output_contract_shape": [
+            "B",
+            1,
+            3
+          ],
+          "scalar_output_shape": [
+            34,
+            1,
+            1
+          ]
+        }
+      },
+      "train_loss_traces": {
+        "trend": [
+          3.7066589493617834,
+          1.2255793737473888,
+          0.2230717138709309
+        ],
+        "seasonal": [
+          0.023648329053039305,
+          0.01816276937862423,
+          0.014473841094768772
+        ],
+        "residual": [
+          0.05920442761244061,
+          0.007017163855728702,
+          0.009674682891187824
+        ]
+      },
+      "validation_fused_mse_trace": [
+        2.023860454559326,
+        0.002206649864092469,
+        0.6186665892601013
+      ],
+      "nan_inf_count": 0,
+      "fusion": {
+        "mode": "ADVISOR_AUTHORIZED_COMPONENT_SUM",
+        "output_shape": [
+          34,
+          1,
+          1
+        ],
+        "status": "PASS"
+      },
+      "prediction_domain": "CAPACITY",
+      "capacity_to_soh_bridge_status": "PA001_ACTIVE__HUMAN_AUTHORIZED_FALLBACK",
+      "soh_formula": "SOH=CAPACITY_AH/2.0",
+      "soh_denominator_ah": 2.0,
+      "validation_metrics_capacity": {
+        "mse": 0.6186665892601013,
+        "rmse": 0.786553614993982,
+        "mae": 0.7862246632575989,
+        "r2": -754.01025390625
+      },
+      "validation_metrics_soh": {
+        "mse": 0.1546666475925021,
+        "rmse": 0.39327680784976643,
+        "mae": 0.3931123088387882,
+        "r2": -754.0102208113644
+      }
+    },
+    "B0018": {
+      "training_unit": "PER_TARGET_BATTERY__PHASE1_E1_ROLE_MATRIX",
+      "split": {
+        "n_total": 132,
+        "n_train": 92,
+        "n_val": 26,
+        "n_test_membership_only": 14,
+        "train_range": [
+          0,
+          92
+        ],
+        "val_range": [
+          92,
+          118
+        ],
+        "test_membership_range": [
+          118,
+          132
+        ]
+      },
+      "hf_extraction": {
+        "train_hf_pair_count": 92,
+        "val_hf_pair_count": 26,
+        "hf_extraction_failure_count": 0,
+        "t_imin_final_timestamp_fallback_count": 8,
+        "raw_mat_full_parse_allowed": true,
+        "post_split_test_numerical_access_attempts": 0,
+        "post_split_test_numerical_materialization_count": 0
+      },
+      "normalization": {
+        "normalization": "MINMAX_0_1",
+        "fit_scope": "TRAIN_ONLY",
+        "clipping_policy": "CLIP_TO_0_1__RESULT_BLIND_ENGINEERING_RULE",
+        "train_min_max_by_feature": {
+          "HF1": {
+            "min": 6.859,
+            "max": 3180.188
+          },
+          "HF2": {
+            "min": 1429.922,
+            "max": 8945.687
+          },
+          "HF3": {
+            "min": 0.0,
+            "max": 1411.797
+          }
+        },
+        "val_below_train_range_count": {
+          "HF1": 0,
+          "HF2": 0,
+          "HF3": 0
+        },
+        "val_above_train_range_count": {
+          "HF1": 0,
+          "HF2": 1,
+          "HF3": 0
+        }
+      },
+      "stl": {
+        "period": 7,
+        "mode": "OFFLINE_TRAIN_ONLY",
+        "temporal_leakage_audit": "PASS__OFFLINE_WITHIN_TRAIN_ONLY",
+        "length_preserved": true,
+        "no_nan_or_inf": true,
+        "max_abs_reconstruction_error": 2.220446049250313e-16,
+        "mean_abs_reconstruction_error": 2.413528314402514e-18
+      },
+      "samples": {
+        "train": 82,
+        "val": 26,
+        "target_alignment": "HF[t-9:t]__TO__COMPONENT_OR_CAPACITY[t+1]",
+        "val_history_policy": "PAST_HF_AVAILABLE_AT_PREDICTION_TIME"
+      },
+      "shape_contract": {
+        "hf_input_train": [
+          82,
+          10,
+          3
+        ],
+        "hf_input_validation": [
+          26,
+          10,
+          3
+        ],
+        "component_target_train": {
+          "trend": [
+            82,
+            1,
+            1
+          ],
+          "seasonal": [
+            82,
+            1,
+            1
+          ],
+          "residual": [
+            82,
+            1,
+            1
+          ]
+        },
+        "branch_scalar_output_validation": {
+          "trend": [
+            26,
+            1,
+            1
+          ],
+          "seasonal": [
+            26,
+            1,
+            1
+          ],
+          "residual": [
+            26,
+            1,
+            1
+          ]
+        },
+        "fused_capacity_output_validation": [
+          26,
+          1,
+          1
+        ],
+        "soh_output_validation": [
+          26,
+          1,
+          1
+        ],
+        "status": "PASS__EXACT_SCALAR_SHAPES_NO_BROADCASTING"
+      },
+      "branch_audit": {
+        "trend": {
+          "initialization_fingerprint": "313dac8ca4a07fa7",
+          "core_gradient_finite_nonzero": true,
+          "readout_gradient_finite_nonzero": true,
+          "core_output_contract_shape": [
+            "B",
+            1,
+            3
+          ],
+          "scalar_output_shape": [
+            26,
+            1,
+            1
+          ]
+        },
+        "seasonal": {
+          "initialization_fingerprint": "8047f2cdafb46564",
+          "core_gradient_finite_nonzero": true,
+          "readout_gradient_finite_nonzero": true,
+          "core_output_contract_shape": [
+            "B",
+            1,
+            3
+          ],
+          "scalar_output_shape": [
+            26,
+            1,
+            1
+          ]
+        },
+        "residual": {
+          "initialization_fingerprint": "b39842b396484f61",
+          "core_gradient_finite_nonzero": true,
+          "readout_gradient_finite_nonzero": true,
+          "core_output_contract_shape": [
+            "B",
+            1,
+            3
+          ],
+          "scalar_output_shape": [
+            26,
+            1,
+            1
+          ]
+        }
+      },
+      "train_loss_traces": {
+        "trend": [
+          1.7922203976933548,
+          0.7351082465270671,
+          0.10201179545100142
+        ],
+        "seasonal": [
+          0.22160969710931544,
+          0.018519822848824467,
+          0.05273557045474285
+        ],
+        "residual": [
+          0.029050918954719857,
+          0.02081082856691465,
+          0.004481432226872663
+        ]
+      },
+      "validation_fused_mse_trace": [
+        0.4905633330345154,
+        0.09751339256763458,
+        0.39273369312286377
+      ],
+      "nan_inf_count": 0,
+      "fusion": {
+        "mode": "ADVISOR_AUTHORIZED_COMPONENT_SUM",
+        "output_shape": [
+          26,
+          1,
+          1
+        ],
+        "status": "PASS"
+      },
+      "prediction_domain": "CAPACITY",
+      "capacity_to_soh_bridge_status": "PA001_ACTIVE__HUMAN_AUTHORIZED_FALLBACK",
+      "soh_formula": "SOH=CAPACITY_AH/2.0",
+      "soh_denominator_ah": 2.0,
+      "validation_metrics_capacity": {
+        "mse": 0.39273369312286377,
+        "rmse": 0.6266846839702274,
+        "mae": 0.6256388425827026,
+        "r2": -594.9241943359375
+      },
+      "validation_metrics_soh": {
+        "mse": 0.09818342679460201,
+        "rmse": 0.31334234759221746,
+        "mae": 0.312819425876324,
+        "r2": -594.9242511421104
+      }
+    }
+  },
+  "determinism": {
+    "same_seed_reruns": 2,
+    "status": "PASS",
+    "comparison": "complete_result_payload_exact"
+  },
+  "validation_used_for_model_selection": false,
   "scfgan_trained": false,
   "synthetic_hf_used": false,
-  "grid_search_run": false,
-  "metrics": null,
-  "blocker": "The legacy HF2 CV-cutoff condition was unavailable for 101 legal TRAIN charges (B0006: 97; B0018: 4). A subsequent TRAIN-only audit corrected the earlier uncontextualized B0007 attribution and identified a stable terminal-voltage CC-to-CV endpoint. No numerical workaround was applied."
+  "grid_search_run": false
 }

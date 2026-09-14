@@ -155,6 +155,7 @@ def numeric_pairs_for_train_and_val(battery: str, pairs: list[dict[str, Any]], s
         "hf_extraction_failure_count": 0,
         "t_imin_final_timestamp_fallback_count": t_imin_fallback_count,
         "raw_mat_full_parse_allowed": True,
+        "post_split_test_numerical_access_attempts": accessor.test_numerical_access_attempts,
         "post_split_test_numerical_materialization_count": accessor.post_split_test_numerical_materialization_count,
     }
 
@@ -229,39 +230,105 @@ def fingerprint(model: nn.Module) -> str:
     return digest.hexdigest()[:16]
 
 
-def train_branch(kind: str, train_x: np.ndarray, train_y: np.ndarray, val_x: np.ndarray) -> tuple[nn.Module, list[float], dict[str, Any]]:
-    model = Branch(kind)
-    initial = fingerprint(model)
-    optimizer = torch.optim.Adam(model.parameters(), lr=RUN_CONFIG.learning_rate)
-    x = torch.from_numpy(train_x)
-    y = torch.from_numpy(train_y)
-    losses: list[float] = []
-    core_grad = readout_grad = False
-    model.train()
-    for _ in range(RUN_CONFIG.dry_run_epochs):
-        total, count = 0.0, 0
-        for start in range(0, x.shape[0], RUN_CONFIG.batch_size):
-            end = min(start + RUN_CONFIG.batch_size, x.shape[0])
-            optimizer.zero_grad(set_to_none=True)
-            prediction = model(x[start:end], partition="TRAIN")
-            loss = strict_scalar_mse(prediction, y[start:end])
-            if not torch.isfinite(loss):
-                raise ProtocolViolation(f"{kind} training loss is non-finite")
-            loss.backward()
-            core_grad = core_grad or any(p.grad is not None and torch.isfinite(p.grad).all() and p.grad.abs().sum() > 0 for p in model.core.parameters())
-            readout_grad = readout_grad or any(p.grad is not None and torch.isfinite(p.grad).all() and p.grad.abs().sum() > 0 for p in model.readout.parameters())
-            optimizer.step()
-            total += float(loss.detach()) * (end - start)
-            count += end - start
-        losses.append(total / count)
-    if not (core_grad and readout_grad):
-        raise ProtocolViolation(f"{kind} core/readout gradient path is inactive")
-    model.eval()
+def fused_validation_prediction(
+    branches: dict[str, nn.Module], val_x: torch.Tensor, val_y: torch.Tensor
+) -> tuple[np.ndarray, dict[str, list[int]], float]:
+    """Log final-domain validation MSE per epoch without constructing VAL STL labels."""
+    for branch in branches.values():
+        branch.eval()
     with torch.no_grad():
-        val_prediction = model(torch.from_numpy(val_x), partition="VALIDATION")
-    if not torch.isfinite(val_prediction).all() or tuple(val_prediction.shape) != (val_x.shape[0], 1, 1):
-        raise ProtocolViolation(f"{kind} validation prediction contract failed")
-    return model, losses, {"initialization_fingerprint": initial, "core_gradient_finite_nonzero": core_grad, "readout_gradient_finite_nonzero": readout_grad}
+        parts = {kind: branch(val_x, partition="VALIDATION") for kind, branch in branches.items()}
+        if any(not torch.isfinite(part).all() or tuple(part.shape) != tuple(val_y.shape) for part in parts.values()):
+            raise ProtocolViolation("branch validation scalar-output contract failed")
+        fused = parts["trend"] + parts["seasonal"] + parts["residual"]
+        fused_loss = strict_scalar_mse(fused, val_y)
+    if not torch.isfinite(fused).all() or not torch.isfinite(fused_loss):
+        raise ProtocolViolation("fused validation output or loss is non-finite")
+    return (
+        fused.detach().cpu().numpy(),
+        {kind: list(part.shape) for kind, part in parts.items()},
+        float(fused_loss.detach()),
+    )
+
+
+def train_branches(
+    train_x: np.ndarray, targets: dict[str, np.ndarray], val_x: np.ndarray, val_y: np.ndarray
+) -> tuple[dict[str, nn.Module], dict[str, list[float]], dict[str, dict[str, Any]], list[float], np.ndarray, dict[str, list[int]]]:
+    """Run the fixed three-epoch schedule and record only final-domain VAL loss.
+
+    Validation intentionally has no latent component targets.  The logged
+    per-epoch validation loss is therefore MSE of the frozen `T+S+R` capacity
+    prediction against the permitted observed validation capacity target.
+    It is telemetry only and is never used for selection or early stopping.
+    """
+    kinds = ("trend", "seasonal", "residual")
+    branches = {kind: Branch(kind) for kind in kinds}
+    optimizers = {
+        kind: torch.optim.Adam(branch.parameters(), lr=RUN_CONFIG.learning_rate)
+        for kind, branch in branches.items()
+    }
+    initial = {kind: fingerprint(branch) for kind, branch in branches.items()}
+    x = torch.from_numpy(train_x)
+    y = {kind: torch.from_numpy(targets[kind]) for kind in kinds}
+    val_x_tensor, val_y_tensor = torch.from_numpy(val_x), torch.from_numpy(val_y)
+    loss_traces = {kind: [] for kind in kinds}
+    core_grad = {kind: False for kind in kinds}
+    readout_grad = {kind: False for kind in kinds}
+    fused_val_loss_trace: list[float] = []
+    final_fused: np.ndarray | None = None
+    final_shapes: dict[str, list[int]] = {}
+
+    for _ in range(RUN_CONFIG.dry_run_epochs):
+        for kind in kinds:
+            branch = branches[kind]
+            branch.train()
+            total, count = 0.0, 0
+            for start in range(0, x.shape[0], RUN_CONFIG.batch_size):
+                end = min(start + RUN_CONFIG.batch_size, x.shape[0])
+                optimizers[kind].zero_grad(set_to_none=True)
+                prediction = branch(x[start:end], partition="TRAIN")
+                loss = strict_scalar_mse(prediction, y[kind][start:end])
+                if not torch.isfinite(loss):
+                    raise ProtocolViolation(f"{kind} training loss is non-finite")
+                loss.backward()
+                core_grad[kind] = core_grad[kind] or any(
+                    parameter.grad is not None
+                    and torch.isfinite(parameter.grad).all()
+                    and parameter.grad.abs().sum() > 0
+                    for parameter in branch.core.parameters()
+                )
+                readout_grad[kind] = readout_grad[kind] or any(
+                    parameter.grad is not None
+                    and torch.isfinite(parameter.grad).all()
+                    and parameter.grad.abs().sum() > 0
+                    for parameter in branch.readout.parameters()
+                )
+                optimizers[kind].step()
+                total += float(loss.detach()) * (end - start)
+                count += end - start
+            loss_traces[kind].append(total / count)
+        final_fused, final_shapes, fused_val_loss = fused_validation_prediction(branches, val_x_tensor, val_y_tensor)
+        fused_val_loss_trace.append(fused_val_loss)
+
+    if final_fused is None:
+        raise ProtocolViolation("fixed dry-run produced no validation prediction")
+    branch_audit = {
+        kind: {
+            "initialization_fingerprint": initial[kind],
+            "core_gradient_finite_nonzero": core_grad[kind],
+            "readout_gradient_finite_nonzero": readout_grad[kind],
+            "core_output_contract_shape": ["B", 1, 3],
+            "scalar_output_shape": final_shapes[kind],
+        }
+        for kind in kinds
+    }
+    if any(not values["core_gradient_finite_nonzero"] or not values["readout_gradient_finite_nonzero"] for values in branch_audit.values()):
+        raise ProtocolViolation("a branch core/readout gradient path is inactive")
+    return branches, loss_traces, branch_audit, fused_val_loss_trace, final_fused, final_shapes
+
+
+def nonfinite_count(*values: np.ndarray) -> int:
+    return int(sum((~np.isfinite(value)).sum() for value in values))
 
 
 def metrics(prediction: np.ndarray, target: np.ndarray) -> dict[str, float]:
@@ -289,15 +356,9 @@ def one_run(audits: dict[str, dict[str, Any]], splits: dict[str, Split]) -> dict
         components = {"trend": stl["trend"], "seasonal": stl["seasonal"], "residual": stl["residual"]}
         train_x, targets = build_train_samples(train_hf, components)
         val_x, val_y = build_val_samples(train_hf, val_hf, val_capacity)
-        branches, loss_traces, branch_audit, val_parts = {}, {}, {}, []
-        for kind in ("trend", "seasonal", "residual"):
-            branch, losses, audit_info = train_branch(kind, train_x, targets[kind], val_x)
-            branches[kind] = branch
-            loss_traces[kind] = losses
-            branch_audit[kind] = audit_info
-            with torch.no_grad():
-                val_parts.append(branch(torch.from_numpy(val_x), partition="VALIDATION").numpy())
-        fused = val_parts[0] + val_parts[1] + val_parts[2]
+        _, loss_traces, branch_audit, fused_val_loss_trace, fused, scalar_output_shapes = train_branches(
+            train_x, targets, val_x, val_y
+        )
         if tuple(fused.shape) != tuple(val_y.shape) or not np.isfinite(fused).all():
             raise ProtocolViolation(f"component-sum fusion contract failed for {battery}")
         results[battery] = {
@@ -307,8 +368,21 @@ def one_run(audits: dict[str, dict[str, Any]], splits: dict[str, Split]) -> dict
             "normalization": scaler,
             "stl": {"period": PERIOD, "mode": "OFFLINE_TRAIN_ONLY", "temporal_leakage_audit": "PASS__OFFLINE_WITHIN_TRAIN_ONLY", **stl_audit},
             "samples": {"train": int(train_x.shape[0]), "val": int(val_x.shape[0]), "target_alignment": "HF[t-9:t]__TO__COMPONENT_OR_CAPACITY[t+1]", "val_history_policy": "PAST_HF_AVAILABLE_AT_PREDICTION_TIME"},
+            "shape_contract": {
+                "hf_input_train": list(train_x.shape),
+                "hf_input_validation": list(val_x.shape),
+                "component_target_train": {kind: list(target.shape) for kind, target in targets.items()},
+                "branch_scalar_output_validation": scalar_output_shapes,
+                "fused_capacity_output_validation": list(fused.shape),
+                "soh_output_validation": list(capacity_to_soh(fused).shape),
+                "status": "PASS__EXACT_SCALAR_SHAPES_NO_BROADCASTING",
+            },
             "branch_audit": branch_audit,
             "train_loss_traces": loss_traces,
+            "validation_fused_mse_trace": fused_val_loss_trace,
+            "nan_inf_count": nonfinite_count(
+                features, capacities, train_hf, val_hf, train_x, val_x, val_y, fused, *targets.values()
+            ),
             "fusion": {"mode": "ADVISOR_AUTHORIZED_COMPONENT_SUM", "output_shape": list(fused.shape), "status": "PASS"},
             "prediction_domain": "CAPACITY",
             "capacity_to_soh_bridge_status": "PA001_ACTIVE__HUMAN_AUTHORIZED_FALLBACK",
@@ -336,7 +410,20 @@ def main() -> None:
     output = {
         "phase": "PHASE9A_REAL_TRAIN_VAL_DRY_RUN_AFTER_ALL_INTERFACE_FREEZES",
         "protocol": {"pairing_mode": "DISCHARGE_CENTERED_NEAREST_PRECEDING_UNCONSUMED_CHARGE", "split": "CHRONOLOGICAL_70_20_10", "seq_len": SEQ_LEN, "pred_len": PRED_LEN, "stl_period": PERIOD, "stl_mode": "OFFLINE_TRAIN_ONLY", "normalization": "MINMAX_0_1__TRAIN_ONLY", "loss": "MSE", "fusion": "TREND_PLUS_SEASONAL_PLUS_RESIDUAL", "epochs": RUN_CONFIG.dry_run_epochs, "seed": RUN_CONFIG.seed, "batch_size": RUN_CONFIG.batch_size, "learning_rate": RUN_CONFIG.learning_rate, "optimizer": RUN_CONFIG.optimizer, "device": RUN_CONFIG.device, "train_batch_shuffle": RUN_CONFIG.train_batch_shuffle, "validation_batch_shuffle": RUN_CONFIG.validation_batch_shuffle, "drop_last": RUN_CONFIG.drop_last},
-        "test_lock": {"raw_mat_full_parse_allowed": True, "test_loaded": False, "test_numerical_value_access_count": 0, "test_transform_applied": False, "test_predictions_saved": False},
+        "test_lock": {
+            "raw_mat_full_parse_allowed": True,
+            "test_loaded": False,
+            "test_numerical_value_access_count": 0,
+            "post_split_test_numerical_access_attempts": sum(
+                result["hf_extraction"]["post_split_test_numerical_access_attempts"] for result in first.values()
+            ),
+            "post_split_test_numerical_materialization_count": sum(
+                result["hf_extraction"]["post_split_test_numerical_materialization_count"] for result in first.values()
+            ),
+            "test_transform_applied": False,
+            "test_predictions_saved": False,
+            "gate": "PASS",
+        },
         "pairing_metadata": {battery: {key: value for key, value in audits[battery].items() if key != "pair_identities"} for battery in BATTERIES},
         "target_execution_roster": list(TARGET_BATTERIES),
         "results_by_battery": first,

@@ -1599,3 +1599,22 @@ EXPECTED_UNPAIRED_CHARGES=B0005:2__B0006:2__B0007:2__B0018:2
 PHASE9A_RETRY_AUTHORIZED=True
 
 PLAN-CHANGE-0015 is a Human-authorized, web/literature-supported, result-blind Tier 2 engineering fallback. NASA official documentation establishes the charge/discharge/impedance schema and Capacity field location; MathWorks and published preprocessing precedent support removal of incomplete/repeated cycles; local structural evidence establishes deterministic Candidate E counts. None of these sources establish the target Energy paper's exact code-level pairing implementation. Before any numeric Phase 9A access, the raw structural count contract must revalidate or execution fails closed. This Plan Change does not itself start Phase 9A or unlock TEST values.
+
+# Phase 9A retry after pairing freeze — preflight blocker (2026-09-14)
+
+PAIRING_CONTRACT_STATUS=PASS__RAW_METADATA_REVALIDATED
+VALID_PAIR_COUNTS=B0005:168__B0006:168__B0007:168__B0018:132
+UNRESOLVED_EXECUTION_PARAMETER=TIER2_SCALAR_COMPONENT_READOUT_CONTRACT
+TIMESNET_TIER2_OUTPUT_SHAPE=BATCH__PRED_LEN__N_VARS__2__1__3
+ITRANSFORMER_TIER2_OUTPUT_SHAPE=BATCH__PRED_LEN__N_VARS__2__1__3
+REQUIRED_COMPONENT_TARGET_SHAPE=BATCH__PRED_LEN__1
+REAL_DATA_USED=False
+TRAIN_DATA_USED=False
+VALIDATION_DATA_USED=False
+TEST_LOADED=False
+TEST_NUMERICAL_VALUE_ACCESS_COUNT=0
+MODEL_TRAINED=False
+PHASE9A_PIPELINE_GATE=BLOCKED__SCALAR_COMPONENT_READOUT_CONTRACT_UNFROZEN
+PLAN_CHANGE_REQUIRED=True
+
+PLAN-CHANGE-0015 resolved NASA charge-HF-to-discharge-capacity pairing but does not define the branch output head required to map a 3-variable HF-window model output to one scalar STL component. Selecting an output coordinate, reducing outputs, or inserting a trainable readout would be a new material Tier 2 choice. No numeric data, training, or model metric was accessed while this blocker was identified. The next action is Human authorization of a scalar-component readout contract; Phase 9A remains blocked.

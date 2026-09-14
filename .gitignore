@@ -47,3 +47,7 @@ output/protocol/phase1_membership_manifest.csv
 
 # Read-only PDF renderings used for visual source audit; formal evidence is versioned in Markdown.
 output/stl/_pdf_visual_audit/
+
+# Locally persisted real-data SCF-GAN smoke tensors/checkpoint; only the audited
+# protocol, runner, and aggregate diagnostics belong in Git.
+output/phase9c_scfgan_real_data_smoke/

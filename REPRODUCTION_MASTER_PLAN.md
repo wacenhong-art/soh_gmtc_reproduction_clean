@@ -1799,3 +1799,40 @@ NEXT_SCIENTIFIC_ACTION=RETURN_RESULTS_FOR_HUMAN_REVIEW
 Both batteries reached the specified patience threshold; neither exhausted the
 150-epoch cap. The metrics are a result-blind diagnostic, not an automatic
 quality gate or an authorization to tune, access TEST, or enter Phase 9B.
+
+# PLAN-CHANGE-0018 — Tier 2 SCF-GAN real-data smoke execution
+
+**Status:** `APPLIED__HUMAN_AUTHORIZED__RESULT_BLIND_FALLBACK`
+**Scope:** source-only Phase 9C SCF-GAN smoke execution. This section is
+append-only and does not alter the Phase 9A/9B frozen protocols.
+
+```text
+PAPER_GENERATOR_ACTIVATION_CONTRADICTION=True
+PAPER_GENERATOR_SN_SCOPE_CONTRADICTION=True
+PAPER_DISCRIMINATOR_DEPTH_CONTRADICTION=True
+PAPER_SCFGAN_CONDITION_CONTRADICTION=True
+PAPER_EXACT_SCFGAN_EXECUTION_STATUS=UNRESOLVED
+TIER2_SCFGAN_CONFIG_STATUS=HUMAN_AUTHORIZED_RESULT_BLIND_FALLBACK
+
+SCFGAN_NOISE_DIM=16
+SCFGAN_CONDITION_DIM=1
+SCFGAN_CONDITION=PER_BATTERY_NORMALIZED_CYCLE_POSITION
+SCFGAN_GENERATOR=[64,128,64]_RELU_CONDITIONAL_BATCH_NORM_TANH_SN_FALSE
+SCFGAN_DISCRIMINATOR=[64,128,64,32]_LEAKY_RELU_0P2_SIGMOID_SN_TRUE
+SCFGAN_FEATURE_MATCH_LAYER=THIRD_DISCRIMINATOR_HIDDEN_LAYER
+SCFGAN_FEATURE_MATCH_LAMBDA=0.1
+
+SCFGAN_SOURCE_BATTERIES=B0005,B0006
+SCFGAN_TARGET_CONDITION_ONLY_BATTERIES=B0007,B0018
+SCFGAN_GAN_SCALER=SOURCE_ONLY_MINMAX_MINUS1_TO_PLUS1
+SCFGAN_GENERATED_OUTPUT=HF1_HF2_HF3_ONLY
+SCFGAN_TARGET_CAPACITY_OR_SOH_GENERATION=PROHIBITED
+SCFGAN_TEST_ACCESS=PROHIBITED
+```
+
+Tables 2/3 are the execution evidence priority for this Tier 2 fallback,
+without deleting or resolving the historical equation/prose conflicts. The
+source-only Tanh scaler is never a substitute for the Phase 9A Train-only
+`[0,1]` downstream HF scaler. Phase 9C may run twenty fixed smoke epochs only;
+it must not train downstream branches, fusion, or use output diagnostics to
+select a configuration.

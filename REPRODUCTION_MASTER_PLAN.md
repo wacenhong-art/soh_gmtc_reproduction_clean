@@ -1560,3 +1560,15 @@ TEST_VALUE_ACCESS_COUNT=0
 PHASE9A_PIPELINE_GATE=BLOCKED
 
 PLAN-CHANGE-0014's fixed offline-STL and branch configurations remain valid. The retry did not create an unapproved NASA charge-HF-to-capacity pairing rule, reduce the four-battery E1 target roster, or read any numeric TRAIN/VALIDATION/TEST values.
+
+# NASA charge/discharge label-pairing evidence audit (2026-09-14)
+
+NASA_PAIRING_AUDIT_GATE=BLOCKED__NO_STABLE_ONE_TO_ONE_MAPPING
+REAL_DATA_METADATA_USED=True
+REAL_NUMERICAL_TARGET_VALUES_USED=False
+REAL_HF_VALUES_USED=False
+TEST_NUMERICAL_VALUES_USED=False
+PROPOSED_SAMPLE_IDENTITY=CHARGE_DISCHARGE_PAIR__ENGINEERING_INFERENCE_ONLY
+PROPOSED_SPLIT_UNIT=PAIRED_SUPERVISED_CYCLE__NOT_APPLIED
+
+Raw structural evidence found that immediate adjacency is one-to-one but incomplete, while nearest-subsequent discharge is more complete but creates two many-to-one collisions per audited battery. No explicit shared session/cycle identity exists in the top-level NASA operation metadata. The Tier 2 protocol remains blocked until Human/Advisor authorization selects a pairing policy.

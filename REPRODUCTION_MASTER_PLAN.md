@@ -1618,3 +1618,36 @@ PHASE9A_PIPELINE_GATE=BLOCKED__SCALAR_COMPONENT_READOUT_CONTRACT_UNFROZEN
 PLAN_CHANGE_REQUIRED=True
 
 PLAN-CHANGE-0015 resolved NASA charge-HF-to-discharge-capacity pairing but does not define the branch output head required to map a 3-variable HF-window model output to one scalar STL component. Selecting an output coordinate, reducing outputs, or inserting a trainable readout would be a new material Tier 2 choice. No numeric data, training, or model metric was accessed while this blocker was identified. The next action is Human authorization of a scalar-component readout contract; Phase 9A remains blocked.
+
+# PLAN-CHANGE-0016 — Tier 2 scalar component readout freeze (2026-09-14)
+
+PLAN-CHANGE-0016=APPLIED__HUMAN_AUTHORIZED__WEB_SUPPORTED_RESULT_BLIND_TASK_ADAPTATION
+TIER2_SCALAR_COMPONENT_READOUT=LINEAR_3_TO_1
+CORE_OUTPUT_SHAPE=BATCH__1__3
+CORE_OUTPUT_SEMANTICS=LEARNED_INTERMEDIATE_MULTIVARIATE_OUTPUT
+READOUT_OUTPUT_SHAPE=BATCH__1__1
+READOUT_ACTIVATION=NONE
+READOUT_PARAMETER_COUNT_PER_BRANCH=4
+TOTAL_READOUT_PARAMETER_COUNT=12
+PAPER_EXACT_SCALAR_READOUT_STATUS=UNRESOLVED
+TIER2_SCALAR_READOUT_STATUS=EXECUTABLE_BY_WEB_SUPPORTED_LINEAR_TASK_ADAPTER
+
+PLAN-CHANGE-0016 freezes a task-specific, independent `Linear(3,1,bias=True)` readout after each existing unchanged Tier 2 core. It forbids channel selection, pooling, fixed weighted reduction, attention, multilayer head, activation, and performance-driven selection. It does not change paper-exact evidence, core internals, component-sum fusion, MSE, TEST lock, or any earlier protocol history. Synthetic structural verification is required before Phase 9A retry authorization.
+
+# PLAN-CHANGE-0016 scalar readout structural verification (2026-09-14)
+
+SCALAR_COMPONENT_READOUT_GATE=PASS
+TREND_SCALAR_INTERFACE=PASS
+SEASONAL_SCALAR_INTERFACE=PASS
+RESIDUAL_SCALAR_INTERFACE=PASS
+CORE_OUTPUT_SHAPE=BATCH__1__3
+SCALAR_OUTPUT_SHAPE=BATCH__1__1
+STRICT_LOSS_SHAPE_EQUALITY=PASS
+BROADCASTING_DETECTED=False
+READOUT_GRADIENTS=FINITE_NONZERO
+CORE_GRADIENTS=FINITE_NONZERO
+CORE_MODIFIED=False
+SYNTHETIC_TINY_READOUT_OVERFIT=PASS__PRE_REGISTERED_20_STEPS
+PHASE9A_RETRY_AUTHORIZED=True
+
+Synthetic-only verification confirms the frozen adapter’s software and gradient path, not real-data performance or paper-exact branch semantics. The next permitted activity is the separately invoked Phase 9A TRAIN+VALIDATION dry-run retry; TEST remains locked and no Phase 9A data work was performed in this Plan Change.

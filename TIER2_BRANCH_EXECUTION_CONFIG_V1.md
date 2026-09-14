@@ -49,3 +49,13 @@ Trend and Seasonal remain separately instantiated branches with distinct compone
 ## Execution boundary
 
 `UNRESOLVED_EXECUTION_PARAMETERS=NONE` for the declared Tier 2 standard-core fallback path. Paper-exact architecture blockers remain unresolved and are not erased. `synthetic_only_mode=False` may be used only by a future approved Tier 2 pipeline that independently rejects TEST provenance.
+
+## Revision: PLAN-CHANGE-0016 scalar component readout
+
+| Parameter | Value | Source class | Provenance | Result blind |
+|---|---:|---|---|---|
+| Tier 2 readout | `Linear(3,1,bias=True)` | A | Human-authorized web-supported task adaptation | True |
+| activation | none | A | Scalar T/S/R components may be negative | True |
+| parameters per branch | 4 | A | Three weights plus one bias | True |
+
+The three cores remain unchanged and each owns an independent scalar adapter. `CORE_OUTPUT_SEMANTICS=LEARNED_INTERMEDIATE_MULTIVARIATE_OUTPUT`; only the post-readout scalar is supervised against one component target. No reducer, MLP, attention, activation, or output-channel selection is authorized.

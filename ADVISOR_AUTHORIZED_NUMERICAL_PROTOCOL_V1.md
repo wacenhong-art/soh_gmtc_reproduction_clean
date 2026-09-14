@@ -26,6 +26,8 @@ SPLIT_BOUNDARIES=HALF_OPEN_ZERO_BASED_FLOOR_RULE
 SPLIT_UNIT=VALID_PAIRED_SUPERVISED_CYCLE__PLAN_CHANGE_0015
 NASA_PAIRING_MODE=DISCHARGE_CENTERED_NEAREST_PRECEDING_UNCONSUMED_CHARGE
 NASA_PAIRING_PROTOCOL=NASA_PAIRING_PROTOCOL_V1
+TIER2_SCALAR_COMPONENT_READOUT=LINEAR_3_TO_1__PLAN_CHANGE_0016
+READOUT_ACTIVATION=NONE
 PRIMARY_HIDDEN_WIDTH=64
 HIDDEN_WIDTH_PROVENANCE=ADVISOR_RANGE_64_128_SMALL_SAMPLE_MIN_COMPLEXITY
 FUSION_MODE=ADVISOR_AUTHORIZED_COMPONENT_SUM
@@ -58,6 +60,10 @@ TRAIN capacity only is decomposed using offline STL(period=7); bilateral context
 ## Revision: PLAN-CHANGE-0015 NASA supervised-cycle unit
 
 Before Tier 2 chronological splitting, NASA raw operation metadata is converted into `VALID_CHARGE_DISCHARGE_PAIR` identities by `NASA_PAIRING_PROTOCOL_V1.md`. Each identity binds HF1/HF2/HF3 from one charge record to Capacity from one unique later discharge record. The 70/20/10 split operates on chronological valid-pair order, never on mixed raw charge/discharge/impedance rows. This is a web/literature-supported result-blind engineering fallback, not advisor confirmation or a paper-exact pairing claim.
+
+## Revision: PLAN-CHANGE-0016 scalar component adapter
+
+Each Tier 2 branch preserves its frozen multivariate core output `[B,1,3]` and applies its own `Linear(3,1,bias=True)` adapter with no activation, yielding scalar `[B,1,1]` Trend, Seasonal, or Residual prediction. The core output is a learned intermediate multivariate representation, not three physical component predictions. The formal contract is `TIER2_SCALAR_COMPONENT_READOUT_PROTOCOL_V1.md`; this is a result-blind web-supported task adaptation, not paper-exact branch evidence.
 
 ## Explicit exclusions
 

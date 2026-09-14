@@ -61,3 +61,16 @@ The first authorized B0007 TRAIN charge record was then evaluated solely with th
 No alternative current sign convention, absolute-current threshold, interpolation, deletion, or replacement HF definition was applied. Those changes would alter the frozen HF semantics and require a separate, result-blind protocol decision. The earlier `CHARGE_CAPACITY_NONE` issue remains resolved by PLAN-CHANGE-0015 pairing; this is a new, independent HF2-executability blocker.
 
 `NEXT_ACTION=RESULT_BLIND_HF2_SIGN_AND_ENDPOINT_SEMANTICS_AUDIT_OR_EXPLICIT_HUMAN_PROTOCOL_AUTHORIZATION`
+
+## Correction after HF2 semantics audit — 2026-09-14
+
+The preceding attempt record conservatively identified B0007 as the location of
+the exception because the original fail-closed error lacked battery/pair context.
+The subsequent TRAIN-only audit corrected that attribution without changing any
+feature rule: B0007 has zero failures under the existing rule. The actual
+failures are B0006 (97 TRAIN charges) and B0018 (4 TRAIN charges); the first is
+B0018 pair 14 / raw charge record 40. See `NASA_HF2_SIGN_AND_ENDPOINT_SEMANTICS_AUDIT.md`.
+
+The audit found an identifiable `Voltage_measured` 4.2 V CC-to-CV endpoint in
+all 443 legal TRAIN charges. It recommends a separate result-blind Plan Change
+before any HF2 implementation changes or Phase 9A retry.

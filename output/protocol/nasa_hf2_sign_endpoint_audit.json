@@ -1,0 +1,408 @@
+{
+  "audit_scope": "LEGAL_PAIRED_TRAIN_CHARGE_OPERATIONS_ONLY",
+  "real_numerical_target_values_used": false,
+  "validation_data_used": false,
+  "test_loaded": false,
+  "test_numerical_value_access_count": 0,
+  "batteries": {
+    "B0005": {
+      "train_charge_count_audited": 117,
+      "current_measured_sign_counts": {
+        "POSITIVE": 116,
+        "NEGATIVE": 1,
+        "TIED_OR_ZERO": 0
+      },
+      "current_charge_sign_counts": {
+        "POSITIVE": 117,
+        "NEGATIVE": 0,
+        "TIED_OR_ZERO": 0
+      },
+      "current_charge_cc_level_1p5a_count": 116,
+      "voltage_measured_4p2_endpoint_count": 117,
+      "voltage_charge_4p2_endpoint_count": 117,
+      "current_decay_after_vmeasured_transition_count": 116,
+      "existing_hf2_failure_count": 0,
+      "hf2_failure_pair_indices": [],
+      "first_hf2_failure_summary": null,
+      "first_train_charge_summary": {
+        "n_samples": 789,
+        "time": {
+          "start": 0.0,
+          "end": 7597.875
+        },
+        "voltage_measured": {
+          "min": 3.479393559379272,
+          "max": 4.2099486995035615,
+          "median": 4.205710343408509
+        },
+        "voltage_charge": {
+          "min": 0.003,
+          "max": 4.931,
+          "median": 4.402
+        },
+        "current_measured": {
+          "min": -4.030268477538787,
+          "max": 1.5143932321982565,
+          "median": 0.38711503837758493
+        },
+        "current_charge": {
+          "min": -4.036,
+          "max": 1.5,
+          "median": 0.382
+        },
+        "current_measured_dominant_sign": "POSITIVE",
+        "current_charge_dominant_sign": "POSITIVE",
+        "voltage_measured_reaches_4p2": true,
+        "voltage_charge_reaches_4p2": true,
+        "current_charge_early_abs_median": 1.5,
+        "current_charge_early_abs_is_approximately_1p5a": true,
+        "current_decay_after_vmeasured_transition": true,
+        "existing_hf2_condition_available": true
+      }
+    },
+    "B0006": {
+      "train_charge_count_audited": 117,
+      "current_measured_sign_counts": {
+        "POSITIVE": 117,
+        "NEGATIVE": 0,
+        "TIED_OR_ZERO": 0
+      },
+      "current_charge_sign_counts": {
+        "POSITIVE": 117,
+        "NEGATIVE": 0,
+        "TIED_OR_ZERO": 0
+      },
+      "current_charge_cc_level_1p5a_count": 116,
+      "voltage_measured_4p2_endpoint_count": 117,
+      "voltage_charge_4p2_endpoint_count": 117,
+      "current_decay_after_vmeasured_transition_count": 117,
+      "existing_hf2_failure_count": 97,
+      "hf2_failure_pair_indices": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        12,
+        13,
+        18,
+        21,
+        22,
+        23,
+        24,
+        26,
+        27,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        48,
+        49,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116
+      ],
+      "first_hf2_failure_summary": {
+        "n_samples": 789,
+        "time": {
+          "start": 0.0,
+          "end": 7597.875
+        },
+        "voltage_measured": {
+          "min": 3.4691133844121107,
+          "max": 4.204084967565013,
+          "median": 4.198624932256522
+        },
+        "voltage_charge": {
+          "min": -0.007,
+          "max": 4.926,
+          "median": 4.424
+        },
+        "current_measured": {
+          "min": -4.05918455376202,
+          "max": 1.5169940262727513,
+          "median": 0.4556580066262151
+        },
+        "current_charge": {
+          "min": -4.06,
+          "max": 1.507,
+          "median": 0.453
+        },
+        "current_measured_dominant_sign": "POSITIVE",
+        "current_charge_dominant_sign": "POSITIVE",
+        "voltage_measured_reaches_4p2": true,
+        "voltage_charge_reaches_4p2": true,
+        "current_charge_early_abs_median": 1.506,
+        "current_charge_early_abs_is_approximately_1p5a": true,
+        "current_decay_after_vmeasured_transition": true,
+        "existing_hf2_condition_available": false
+      },
+      "first_train_charge_summary": {
+        "n_samples": 789,
+        "time": {
+          "start": 0.0,
+          "end": 7597.875
+        },
+        "voltage_measured": {
+          "min": 3.4691133844121107,
+          "max": 4.204084967565013,
+          "median": 4.198624932256522
+        },
+        "voltage_charge": {
+          "min": -0.007,
+          "max": 4.926,
+          "median": 4.424
+        },
+        "current_measured": {
+          "min": -4.05918455376202,
+          "max": 1.5169940262727513,
+          "median": 0.4556580066262151
+        },
+        "current_charge": {
+          "min": -4.06,
+          "max": 1.507,
+          "median": 0.453
+        },
+        "current_measured_dominant_sign": "POSITIVE",
+        "current_charge_dominant_sign": "POSITIVE",
+        "voltage_measured_reaches_4p2": true,
+        "voltage_charge_reaches_4p2": true,
+        "current_charge_early_abs_median": 1.506,
+        "current_charge_early_abs_is_approximately_1p5a": true,
+        "current_decay_after_vmeasured_transition": true,
+        "existing_hf2_condition_available": false
+      }
+    },
+    "B0007": {
+      "train_charge_count_audited": 117,
+      "current_measured_sign_counts": {
+        "POSITIVE": 117,
+        "NEGATIVE": 0,
+        "TIED_OR_ZERO": 0
+      },
+      "current_charge_sign_counts": {
+        "POSITIVE": 117,
+        "NEGATIVE": 0,
+        "TIED_OR_ZERO": 0
+      },
+      "current_charge_cc_level_1p5a_count": 116,
+      "voltage_measured_4p2_endpoint_count": 117,
+      "voltage_charge_4p2_endpoint_count": 117,
+      "current_decay_after_vmeasured_transition_count": 117,
+      "existing_hf2_failure_count": 0,
+      "hf2_failure_pair_indices": [],
+      "first_hf2_failure_summary": null,
+      "first_train_charge_summary": {
+        "n_samples": 789,
+        "time": {
+          "start": 0.0,
+          "end": 7597.875
+        },
+        "voltage_measured": {
+          "min": 3.6448995932335473,
+          "max": 4.214723891435149,
+          "median": 4.210711120755234
+        },
+        "voltage_charge": {
+          "min": 0.002,
+          "max": 4.935,
+          "median": 4.428
+        },
+        "current_measured": {
+          "min": -2.2618666203475337,
+          "max": 1.4946517877374688,
+          "median": 0.4186204056469427
+        },
+        "current_charge": {
+          "min": -2.2697,
+          "max": 1.4995,
+          "median": 0.4213
+        },
+        "current_measured_dominant_sign": "POSITIVE",
+        "current_charge_dominant_sign": "POSITIVE",
+        "voltage_measured_reaches_4p2": true,
+        "voltage_charge_reaches_4p2": true,
+        "current_charge_early_abs_median": 1.4995,
+        "current_charge_early_abs_is_approximately_1p5a": true,
+        "current_decay_after_vmeasured_transition": true,
+        "existing_hf2_condition_available": true
+      }
+    },
+    "B0018": {
+      "train_charge_count_audited": 92,
+      "current_measured_sign_counts": {
+        "POSITIVE": 92,
+        "NEGATIVE": 0,
+        "TIED_OR_ZERO": 0
+      },
+      "current_charge_sign_counts": {
+        "POSITIVE": 92,
+        "NEGATIVE": 0,
+        "TIED_OR_ZERO": 0
+      },
+      "current_charge_cc_level_1p5a_count": 90,
+      "voltage_measured_4p2_endpoint_count": 92,
+      "voltage_charge_4p2_endpoint_count": 92,
+      "current_decay_after_vmeasured_transition_count": 92,
+      "existing_hf2_failure_count": 4,
+      "hf2_failure_pair_indices": [
+        14,
+        80,
+        82,
+        90
+      ],
+      "first_hf2_failure_summary": {
+        "n_samples": 2996,
+        "time": {
+          "start": 0.0,
+          "end": 10808.672
+        },
+        "voltage_measured": {
+          "min": 3.170863201975345,
+          "max": 4.202278101475768,
+          "median": 4.196513667411697
+        },
+        "voltage_charge": {
+          "min": -0.007,
+          "max": 4.932,
+          "median": 4.338
+        },
+        "current_measured": {
+          "min": -3.6114842114091554,
+          "max": 1.5202277874505141,
+          "median": 0.2676215300125592
+        },
+        "current_charge": {
+          "min": -3.616,
+          "max": 1.507,
+          "median": 0.266
+        },
+        "current_measured_dominant_sign": "POSITIVE",
+        "current_charge_dominant_sign": "POSITIVE",
+        "voltage_measured_reaches_4p2": true,
+        "voltage_charge_reaches_4p2": true,
+        "current_charge_early_abs_median": 1.507,
+        "current_charge_early_abs_is_approximately_1p5a": true,
+        "current_decay_after_vmeasured_transition": true,
+        "existing_hf2_condition_available": false
+      },
+      "first_train_charge_summary": {
+        "n_samples": 2816,
+        "time": {
+          "start": 0.0,
+          "end": 8122.844
+        },
+        "voltage_measured": {
+          "min": 3.4476511473865226,
+          "max": 4.202872264991999,
+          "median": 4.197277342699893
+        },
+        "voltage_charge": {
+          "min": -0.007,
+          "max": 4.926,
+          "median": 4.273
+        },
+        "current_measured": {
+          "min": -4.034444944556543,
+          "max": 1.520641431268088,
+          "median": 0.1310891945366035
+        },
+        "current_charge": {
+          "min": -4.036,
+          "max": 1.507,
+          "median": 0.13
+        },
+        "current_measured_dominant_sign": "POSITIVE",
+        "current_charge_dominant_sign": "POSITIVE",
+        "voltage_measured_reaches_4p2": true,
+        "voltage_charge_reaches_4p2": true,
+        "current_charge_early_abs_median": 1.507,
+        "current_charge_early_abs_is_approximately_1p5a": true,
+        "current_decay_after_vmeasured_transition": true,
+        "existing_hf2_condition_available": true
+      }
+    }
+  },
+  "aggregate": {
+    "voltage_measured_4p2_endpoint_identifiable_all": true,
+    "voltage_charge_4p2_endpoint_identifiable_all": true,
+    "current_charge_cc_level_1p5a_consistent_all": false,
+    "current_decay_after_transition_consistent_all": false,
+    "existing_current_extractor_fails_all": false,
+    "hf2_semantics_audit_gate": "PASS__CC_DURATION_ENDPOINT_IDENTIFIED"
+  }
+}

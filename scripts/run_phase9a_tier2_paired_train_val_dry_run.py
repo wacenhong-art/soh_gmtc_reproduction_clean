@@ -144,7 +144,13 @@ def numeric_pairs_for_train_and_val(battery: str, pairs: list[dict[str, Any]], s
             continue  # TEST membership is never dereferenced numerically.
         charge_index = int(pair["charge_record_index"])
         discharge_index = int(pair["discharge_record_index"])
-        hf.append(extract_existing_hf(cycles[charge_index]))
+        try:
+            hf.append(extract_existing_hf(cycles[charge_index]))
+        except ProtocolViolation as error:
+            partition = "TRAIN" if pair_index < split.train_end else "VALIDATION"
+            raise ProtocolViolation(
+                f"{battery} {partition} pair_index={pair_index} charge_record_index={charge_index}: {error}"
+            ) from error
         capacity.append(extract_capacity(cycles[discharge_index]))
         pair_indices.append(pair_index)
     expected = split.val_end

@@ -12,5 +12,5 @@
   "synthetic_hf_used": false,
   "grid_search_run": false,
   "metrics": null,
-  "blocker": "Existing Phase 1 HF2 current condition 0 <= Current_charge <= 0.02 was unavailable in the first authorized B0007 TRAIN charge record. No numerical workaround was applied."
+  "blocker": "The legacy HF2 CV-cutoff condition was unavailable for 101 legal TRAIN charges (B0006: 97; B0018: 4). A subsequent TRAIN-only audit corrected the earlier uncontextualized B0007 attribution and identified a stable terminal-voltage CC-to-CV endpoint. No numerical workaround was applied."
 }

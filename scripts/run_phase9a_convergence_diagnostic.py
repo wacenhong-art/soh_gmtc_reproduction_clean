@@ -67,8 +67,12 @@ def fingerprint(model: torch.nn.Module) -> str:
 
 
 def train_one_battery(
-    battery: str, audits: dict[str, dict[str, Any]], splits: dict[str, Any]
-) -> dict[str, Any]:
+    battery: str,
+    audits: dict[str, dict[str, Any]],
+    splits: dict[str, Any],
+    *,
+    capture_persistence_artifacts: bool = False,
+) -> dict[str, Any] | tuple[dict[str, Any], dict[str, Any]]:
     """Train exactly one target battery and restore its minimum fused-VAL-MSE state."""
     set_seed_for_battery()
     split = splits[battery]
@@ -177,7 +181,7 @@ def train_one_battery(
     if any(not core_grad[kind] or not readout_grad[kind] for kind in KINDS):
         raise ProtocolViolation(f"{battery} has inactive core/readout gradients")
 
-    return {
+    result = {
         "training_unit": "PER_TARGET_BATTERY__PHASE1_E1_ROLE_MATRIX",
         "split": {
             "n_total": split.total,
@@ -266,10 +270,65 @@ def train_one_battery(
             np.asarray(fused_val_mse_trace),
         ),
     }
+    if not capture_persistence_artifacts:
+        return result
+
+    # This capture is deliberately post-restoration and contains only legal
+    # validation targets/predictions.  It is used by the separately authorized
+    # replay-persistence workflow; TEST records remain unreachable.
+    prediction_rows = [
+        {
+            "sample_index": int(split.train_end + local_index),
+            "target_capacity": float(target),
+            "predicted_capacity": float(prediction),
+            "error": float(prediction - target),
+        }
+        for local_index, (target, prediction) in enumerate(
+            zip(val_y.reshape(-1), restored_fused.reshape(-1), strict=True)
+        )
+    ]
+    return result, {
+        "checkpoint": {
+            "battery": battery,
+            "phase": "PHASE9A_CONVERGENCE_REPLAY_PERSISTENCE",
+            "best_epoch": best_epoch,
+            "stop_epoch": stop_epoch,
+            "best_validation_capacity_mse": best_mse,
+            "config": {
+                "seed": CONFIG.seed,
+                "max_epochs": CONFIG.max_epochs,
+                "patience": CONFIG.patience,
+                "learning_rate": CONFIG.learning_rate,
+                "batch_size": CONFIG.batch_size,
+                "optimizer": CONFIG.optimizer,
+                "device": CONFIG.device,
+            },
+            "branch_state_dicts": {
+                kind: {name: tensor.detach().cpu().clone() for name, tensor in best_state[kind].items()}
+                for kind in KINDS
+            },
+        },
+        "validation_prediction_rows": prediction_rows,
+    }
 
 
-def one_full_diagnostic(audits: dict[str, dict[str, Any]], splits: dict[str, Any]) -> dict[str, Any]:
-    return {battery: train_one_battery(battery, audits, splits) for battery in TARGET_BATTERIES}
+def one_full_diagnostic(
+    audits: dict[str, dict[str, Any]],
+    splits: dict[str, Any],
+    *,
+    capture_persistence_artifacts: bool = False,
+) -> dict[str, Any] | tuple[dict[str, Any], dict[str, dict[str, Any]]]:
+    if not capture_persistence_artifacts:
+        return {battery: train_one_battery(battery, audits, splits) for battery in TARGET_BATTERIES}
+    results: dict[str, Any] = {}
+    artifacts: dict[str, dict[str, Any]] = {}
+    for battery in TARGET_BATTERIES:
+        result, artifact = train_one_battery(
+            battery, audits, splits, capture_persistence_artifacts=True
+        )
+        results[battery] = result
+        artifacts[battery] = artifact
+    return results, artifacts
 
 
 def comparable(first: dict[str, Any], second: dict[str, Any]) -> bool:

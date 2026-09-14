@@ -1,0 +1,376 @@
+{
+  "phase": "PHASE9A_CONVERGENCE_REPLAY_VALIDATION_PREDICTIONS",
+  "scope": "VALIDATION_ONLY__NO_TEST_VALUES",
+  "columns": [
+    "sample_index",
+    "target_capacity",
+    "predicted_capacity",
+    "error"
+  ],
+  "rows_by_battery": {
+    "B0007": [
+      {
+        "sample_index": 117,
+        "target_capacity": 1.513604998588562,
+        "predicted_capacity": 1.512473464012146,
+        "error": -0.0011315345764160156
+      },
+      {
+        "sample_index": 118,
+        "target_capacity": 1.5139470100402832,
+        "predicted_capacity": 1.5096968412399292,
+        "error": -0.004250168800354004
+      },
+      {
+        "sample_index": 119,
+        "target_capacity": 1.5339598655700684,
+        "predicted_capacity": 1.5085985660552979,
+        "error": -0.025361299514770508
+      },
+      {
+        "sample_index": 120,
+        "target_capacity": 1.5391372442245483,
+        "predicted_capacity": 1.508561611175537,
+        "error": -0.03057563304901123
+      },
+      {
+        "sample_index": 121,
+        "target_capacity": 1.5236247777938843,
+        "predicted_capacity": 1.5146992206573486,
+        "error": -0.008925557136535645
+      },
+      {
+        "sample_index": 122,
+        "target_capacity": 1.5135812759399414,
+        "predicted_capacity": 1.520950198173523,
+        "error": 0.007368922233581543
+      },
+      {
+        "sample_index": 123,
+        "target_capacity": 1.5077850818634033,
+        "predicted_capacity": 1.5148329734802246,
+        "error": 0.007047891616821289
+      },
+      {
+        "sample_index": 124,
+        "target_capacity": 1.503196120262146,
+        "predicted_capacity": 1.5097495317459106,
+        "error": 0.0065534114837646484
+      },
+      {
+        "sample_index": 125,
+        "target_capacity": 1.4978220462799072,
+        "predicted_capacity": 1.503304362297058,
+        "error": 0.005482316017150879
+      },
+      {
+        "sample_index": 126,
+        "target_capacity": 1.492848515510559,
+        "predicted_capacity": 1.496876835823059,
+        "error": 0.0040283203125
+      },
+      {
+        "sample_index": 127,
+        "target_capacity": 1.4924143552780151,
+        "predicted_capacity": 1.4916585683822632,
+        "error": -0.0007557868957519531
+      },
+      {
+        "sample_index": 128,
+        "target_capacity": 1.4874827861785889,
+        "predicted_capacity": 1.4864088296890259,
+        "error": -0.0010739564895629883
+      },
+      {
+        "sample_index": 129,
+        "target_capacity": 1.4825351238250732,
+        "predicted_capacity": 1.4822100400924683,
+        "error": -0.00032508373260498047
+      },
+      {
+        "sample_index": 130,
+        "target_capacity": 1.4827874898910522,
+        "predicted_capacity": 1.4804085493087769,
+        "error": -0.0023789405822753906
+      },
+      {
+        "sample_index": 131,
+        "target_capacity": 1.47697114944458,
+        "predicted_capacity": 1.4774023294448853,
+        "error": 0.0004311800003051758
+      },
+      {
+        "sample_index": 132,
+        "target_capacity": 1.4819015264511108,
+        "predicted_capacity": 1.4730173349380493,
+        "error": -0.008884191513061523
+      },
+      {
+        "sample_index": 133,
+        "target_capacity": 1.4981366395950317,
+        "predicted_capacity": 1.46957266330719,
+        "error": -0.028563976287841797
+      },
+      {
+        "sample_index": 134,
+        "target_capacity": 1.4820774793624878,
+        "predicted_capacity": 1.4640839099884033,
+        "error": -0.017993569374084473
+      },
+      {
+        "sample_index": 135,
+        "target_capacity": 1.477115511894226,
+        "predicted_capacity": 1.4845647811889648,
+        "error": 0.0074492692947387695
+      },
+      {
+        "sample_index": 136,
+        "target_capacity": 1.4720772504806519,
+        "predicted_capacity": 1.477060079574585,
+        "error": 0.0049828290939331055
+      },
+      {
+        "sample_index": 137,
+        "target_capacity": 1.4722479581832886,
+        "predicted_capacity": 1.4726077318191528,
+        "error": 0.0003597736358642578
+      },
+      {
+        "sample_index": 138,
+        "target_capacity": 1.4670106172561646,
+        "predicted_capacity": 1.469987154006958,
+        "error": 0.002976536750793457
+      },
+      {
+        "sample_index": 139,
+        "target_capacity": 1.4617671966552734,
+        "predicted_capacity": 1.4677447080612183,
+        "error": 0.005977511405944824
+      },
+      {
+        "sample_index": 140,
+        "target_capacity": 1.456695318222046,
+        "predicted_capacity": 1.4674640893936157,
+        "error": 0.010768771171569824
+      },
+      {
+        "sample_index": 141,
+        "target_capacity": 1.45135498046875,
+        "predicted_capacity": 1.4613409042358398,
+        "error": 0.009985923767089844
+      },
+      {
+        "sample_index": 142,
+        "target_capacity": 1.4516159296035767,
+        "predicted_capacity": 1.4552078247070312,
+        "error": 0.00359189510345459
+      },
+      {
+        "sample_index": 143,
+        "target_capacity": 1.446816086769104,
+        "predicted_capacity": 1.4504313468933105,
+        "error": 0.003615260124206543
+      },
+      {
+        "sample_index": 144,
+        "target_capacity": 1.4467570781707764,
+        "predicted_capacity": 1.449548363685608,
+        "error": 0.002791285514831543
+      },
+      {
+        "sample_index": 145,
+        "target_capacity": 1.4413797855377197,
+        "predicted_capacity": 1.4449801445007324,
+        "error": 0.0036003589630126953
+      },
+      {
+        "sample_index": 146,
+        "target_capacity": 1.4362456798553467,
+        "predicted_capacity": 1.4396138191223145,
+        "error": 0.0033681392669677734
+      },
+      {
+        "sample_index": 147,
+        "target_capacity": 1.4368153810501099,
+        "predicted_capacity": 1.4351866245269775,
+        "error": -0.0016287565231323242
+      },
+      {
+        "sample_index": 148,
+        "target_capacity": 1.4362945556640625,
+        "predicted_capacity": 1.4320995807647705,
+        "error": -0.004194974899291992
+      },
+      {
+        "sample_index": 149,
+        "target_capacity": 1.4418575763702393,
+        "predicted_capacity": 1.431809425354004,
+        "error": -0.010048151016235352
+      },
+      {
+        "sample_index": 150,
+        "target_capacity": 1.467206358909607,
+        "predicted_capacity": 1.4295990467071533,
+        "error": -0.03760731220245361
+      }
+    ],
+    "B0018": [
+      {
+        "sample_index": 92,
+        "target_capacity": 1.4197026491165161,
+        "predicted_capacity": 1.4021430015563965,
+        "error": -0.01755964756011963
+      },
+      {
+        "sample_index": 93,
+        "target_capacity": 1.4155607223510742,
+        "predicted_capacity": 1.4063701629638672,
+        "error": -0.009190559387207031
+      },
+      {
+        "sample_index": 94,
+        "target_capacity": 1.4056800603866577,
+        "predicted_capacity": 1.3995527029037476,
+        "error": -0.006127357482910156
+      },
+      {
+        "sample_index": 95,
+        "target_capacity": 1.4084460735321045,
+        "predicted_capacity": 1.405988097190857,
+        "error": -0.0024579763412475586
+      },
+      {
+        "sample_index": 96,
+        "target_capacity": 1.3968547582626343,
+        "predicted_capacity": 1.3670297861099243,
+        "error": -0.02982497215270996
+      },
+      {
+        "sample_index": 97,
+        "target_capacity": 1.3935670852661133,
+        "predicted_capacity": 1.3946492671966553,
+        "error": 0.0010821819305419922
+      },
+      {
+        "sample_index": 98,
+        "target_capacity": 1.38936448097229,
+        "predicted_capacity": 1.398525595664978,
+        "error": 0.009161114692687988
+      },
+      {
+        "sample_index": 99,
+        "target_capacity": 1.3785651922225952,
+        "predicted_capacity": 1.3890035152435303,
+        "error": 0.010438323020935059
+      },
+      {
+        "sample_index": 100,
+        "target_capacity": 1.3849011659622192,
+        "predicted_capacity": 1.3910263776779175,
+        "error": 0.006125211715698242
+      },
+      {
+        "sample_index": 101,
+        "target_capacity": 1.3703252077102661,
+        "predicted_capacity": 1.3627749681472778,
+        "error": -0.007550239562988281
+      },
+      {
+        "sample_index": 102,
+        "target_capacity": 1.3733464479446411,
+        "predicted_capacity": 1.3957254886627197,
+        "error": 0.022379040718078613
+      },
+      {
+        "sample_index": 103,
+        "target_capacity": 1.3679487705230713,
+        "predicted_capacity": 1.3834033012390137,
+        "error": 0.015454530715942383
+      },
+      {
+        "sample_index": 104,
+        "target_capacity": 1.356714129447937,
+        "predicted_capacity": 1.3811451196670532,
+        "error": 0.02443099021911621
+      },
+      {
+        "sample_index": 105,
+        "target_capacity": 1.4604309797286987,
+        "predicted_capacity": 1.3855383396148682,
+        "error": -0.07489264011383057
+      },
+      {
+        "sample_index": 106,
+        "target_capacity": 1.4500999450683594,
+        "predicted_capacity": 1.325929880142212,
+        "error": -0.12417006492614746
+      },
+      {
+        "sample_index": 107,
+        "target_capacity": 1.438140630722046,
+        "predicted_capacity": 1.402393102645874,
+        "error": -0.035747528076171875
+      },
+      {
+        "sample_index": 108,
+        "target_capacity": 1.4283682107925415,
+        "predicted_capacity": 1.4257216453552246,
+        "error": -0.0026465654373168945
+      },
+      {
+        "sample_index": 109,
+        "target_capacity": 1.4147874116897583,
+        "predicted_capacity": 1.4224340915679932,
+        "error": 0.007646679878234863
+      },
+      {
+        "sample_index": 110,
+        "target_capacity": 1.4138891696929932,
+        "predicted_capacity": 1.418647050857544,
+        "error": 0.004757881164550781
+      },
+      {
+        "sample_index": 111,
+        "target_capacity": 1.3989331722259521,
+        "predicted_capacity": 1.375146508216858,
+        "error": -0.02378666400909424
+      },
+      {
+        "sample_index": 112,
+        "target_capacity": 1.3953322172164917,
+        "predicted_capacity": 1.3968266248703003,
+        "error": 0.0014944076538085938
+      },
+      {
+        "sample_index": 113,
+        "target_capacity": 1.3900461196899414,
+        "predicted_capacity": 1.3954288959503174,
+        "error": 0.0053827762603759766
+      },
+      {
+        "sample_index": 114,
+        "target_capacity": 1.3860270977020264,
+        "predicted_capacity": 1.4069043397903442,
+        "error": 0.02087724208831787
+      },
+      {
+        "sample_index": 115,
+        "target_capacity": 1.3882153034210205,
+        "predicted_capacity": 1.4017353057861328,
+        "error": 0.013520002365112305
+      },
+      {
+        "sample_index": 116,
+        "target_capacity": 1.3761826753616333,
+        "predicted_capacity": 1.3642988204956055,
+        "error": -0.011883854866027832
+      },
+      {
+        "sample_index": 117,
+        "target_capacity": 1.36471688747406,
+        "predicted_capacity": 1.3921127319335938,
+        "error": 0.02739584445953369
+      }
+    ]
+  }
+}

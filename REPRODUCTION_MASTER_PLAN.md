@@ -1762,3 +1762,40 @@ The validation diagnostics are recorded in `PHASE9A_DRY_RUN_METRICS.json` and
 are not a claim of numerical quality or paper-exact reproduction. Negative R2
 does not change this execution-gate result and triggered no alteration to the
 result-blind Tier 2 protocol. Tier 3 paper-exact fidelity blockers remain.
+
+# Phase 9A — fixed convergence diagnostic (2026-09-14)
+
+This append-only record is an explicit Human-authorized execution-control
+overlay. It leaves every Phase 9A scientific protocol field unchanged and
+preserves the three-epoch dry-run artifact as historical evidence.
+
+```text
+PHASE9A_CONVERGENCE_STATUS=EARLY_STOPPED
+MAX_EPOCHS=150
+EARLY_STOPPING=True
+PATIENCE=50
+MIN_DELTA=0.0
+EARLY_STOPPING_METRIC=FUSED_VALIDATION_CAPACITY_MSE
+BEST_CHECKPOINT=MIN_FUSED_VALIDATION_CAPACITY_MSE__IN_MEMORY_ONLY
+RESTORE_BEST_CHECKPOINT=True
+VALIDATION_USED_FOR_EARLY_STOPPING=True
+VALIDATION_USED_FOR_HYPERPARAMETER_TUNING=False
+
+B0007=BEST_EPOCH_10__STOP_EPOCH_60__BEST_VAL_CAPACITY_MSE_0.0001479668717365712
+B0018=BEST_EPOCH_14__STOP_EPOCH_64__BEST_VAL_CAPACITY_MSE_0.00105582969263196
+
+TEST_LOADED=False
+TEST_NUMERICAL_VALUE_ACCESS_COUNT=0
+TEST_LOCK_GATE=PASS
+NAN_INF_COUNT=0
+SHAPE_CONTRACT_STATUS=PASS
+SCALE_CONTRACT_STATUS=PASS__TRAIN_ONLY
+SAME_SEED_REPRODUCIBILITY=PASS
+SCFGAN_TRAINED=False
+GRID_SEARCH_RUN=False
+NEXT_SCIENTIFIC_ACTION=RETURN_RESULTS_FOR_HUMAN_REVIEW
+```
+
+Both batteries reached the specified patience threshold; neither exhausted the
+150-epoch cap. The metrics are a result-blind diagnostic, not an automatic
+quality gate or an authorization to tune, access TEST, or enter Phase 9B.

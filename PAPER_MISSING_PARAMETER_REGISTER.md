@@ -42,3 +42,7 @@ These fields, together with the retained branch target alignment, STL-period, fu
 `PLAN_CHANGE_ID=PLAN-CHANGE-0010`
 
 The Human-authorized HF-input/component-target fallback operationalizes only the previously missing cross-phase bridge. It does not fill the GAN condition encoding, GAN fields/dimensions, GAN architecture, STL period, branch target alignment, or fusion semantics rows above. All remain non-paper-exact and subject to author override.
+
+## PLAN-CHANGE-0014 Tier 2 execution note
+
+The advisor-authorized Tier 2 fallback freezes a train-only offline STL policy and the standard-core branch execution values in `TIER2_BRANCH_EXECUTION_CONFIG_V1.md`. This is an execution fallback, not a resolution of the paper's missing parameters. Paper-exact rows remain missing or ambiguous.

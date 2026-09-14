@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "synthetic_only": true,
+  "timesnet_constructor": true,
+  "itransformer_constructor": true,
+  "ten_to_one_shape": true,
+  "forward_finite": true,
+  "backward_finite": true,
+  "loss_finite": true,
+  "component_sum": true,
+  "d_model_divisible_by_heads": true,
+  "train_only_offline_stl": true,
+  "val_stl_required": false,
+  "test_lock": true
+}

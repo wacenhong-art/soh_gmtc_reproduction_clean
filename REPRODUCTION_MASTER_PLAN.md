@@ -1532,3 +1532,18 @@ TEST_VALUE_ACCESS_COUNT=0
 PHASE9A_PIPELINE_GATE=BLOCKED
 
 No real values were accessed. The blocker is an execution-contract gap: the existing STL contract permits offline intra-partition future context, while Phase 9A requires no-future target construction; branch architecture parameters needed to move synthetic-only structural modules into a Tier 2 real-data path also remain unfrozen.
+# Phase 9A retry authorization — PLAN-CHANGE-0014 (2026-09-13)
+
+PLAN-CHANGE-0014=APPLIED__HUMAN_AUTHORIZED__RESULT_BLIND_EXECUTION_PROTOCOL_COMPLETION
+STL_MODE=OFFLINE_TRAIN_ONLY
+STL_FIT_SCOPE=TRAIN_ONLY
+TRAIN_STL_CAN_USE_INTRA_TRAIN_OFFLINE_CONTEXT=True
+VAL_USED_IN_TRAIN_STL=False
+TEST_USED_IN_TRAIN_STL=False
+VAL_STL_REQUIRED=False
+STL_TEMPORAL_LEAKAGE_POLICY_STATUS=PASS__OFFLINE_WITHIN_TRAIN_ONLY__NO_CROSS_SPLIT_CONTEXT
+TIER2_BRANCH_EXECUTION_CONFIG=TIER2_BRANCH_EXECUTION_CONFIG_V1
+UNRESOLVED_EXECUTION_PARAMETERS=NONE__FOR_DECLARED_TIER2_STANDARD_CORE_PATH
+PHASE9A_RETRY_AUTHORIZED=True
+
+The earlier Phase 9A block is retained as history. PLAN-CHANGE-0014 corrects its inappropriate causal-STL requirement; it does not establish paper-exact STL, branch variants, or fusion semantics.

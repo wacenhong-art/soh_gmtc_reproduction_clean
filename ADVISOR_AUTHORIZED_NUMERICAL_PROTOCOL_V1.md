@@ -31,6 +31,13 @@ LOSS=MSE
 SCFGAN_OUTPUTS=HF1_HF2_HF3_ONLY
 SYNTHETIC_SOH_GENERATION=False
 NO_9_FEATURE_ERROR_RATIO_BUILDER=True
+STL_FIT_SCOPE=TRAIN_ONLY
+TRAIN_STL_CAN_USE_INTRA_TRAIN_OFFLINE_CONTEXT=True
+VAL_USED_IN_TRAIN_STL=False
+TEST_USED_IN_TRAIN_STL=False
+CROSS_SPLIT_CONTEXT=False
+VAL_COMPONENT_TARGETS_REQUIRED=False
+VAL_STL_REQUIRED=False
 ```
 
 ## Dataflow contract
@@ -42,6 +49,8 @@ NO_9_FEATURE_ERROR_RATIO_BUILDER=True
 HF normalization is fitted independently per feature on TRAIN only. Validation and future test, when separately authorized, use only those TRAIN-fitted min/max values. Values outside the fitted range are clipped to [0,1]; this is an explicit result-blind engineering rule, not paper evidence.
 
 STL components remain in the capacity-domain target scale unless a later approved scale bridge says otherwise. Accordingly `TIER2_FINAL_OUTPUT_DOMAIN=CAPACITY_COMPONENT_DOMAIN` and no unapproved capacity-to-SOH conversion is applied. `PAPER_EXACT_FUSION_STATUS=UNRESOLVED`.
+
+TRAIN capacity only is decomposed using offline STL(period=7); bilateral context within TRAIN is allowed. No validation or test capacity enters the TRAIN STL fit. Validation requires no STL/component labels: its reconstructed component sum is compared only to the observed final next-step target. The complete Tier 2 branch configuration is frozen in `TIER2_BRANCH_EXECUTION_CONFIG_V1.md`.
 
 ## Explicit exclusions
 

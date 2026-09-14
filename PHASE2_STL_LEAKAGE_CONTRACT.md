@@ -85,3 +85,12 @@ The parameterized module accepts exactly one caller-declared partition and rejec
 `VALIDATION_VALUES_USED=False`
 
 `TEST_VALUES_USED=False`
+
+## PLAN-CHANGE-0014 Tier 2 execution policy
+
+For the advisor-authorized Tier 2 path only, `STL_FIT_SCOPE=TRAIN_ONLY` and `STL_PERIOD=7`. Offline two-sided context within the TRAIN partition is allowed; it is disclosed as non-causal target engineering rather than paper-exact proof. Validation and TEST may not enter TRAIN STL. Validation component labels/STL are not required; validation evaluates the reconstructed component sum against the observed final next-step target.
+
+`TRAIN_STL_CAN_USE_INTRA_TRAIN_OFFLINE_CONTEXT=True`
+`VAL_USED_IN_TRAIN_STL=False`
+`TEST_USED_IN_TRAIN_STL=False`
+`CROSS_SPLIT_CONTEXT=False`

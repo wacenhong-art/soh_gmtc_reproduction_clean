@@ -1,0 +1,16 @@
+{
+  "phase": "PHASE9A_REAL_TRAIN_VAL_DRY_RUN_AFTER_ALL_INTERFACE_FREEZES",
+  "status": "BLOCKED__HF2_EXTRACTION_CONTRACT_UNSATISFIED",
+  "run_completed": false,
+  "real_numerical_data_used": true,
+  "train_data_used": true,
+  "validation_data_used": false,
+  "test_loaded": false,
+  "test_numerical_value_access_count": 0,
+  "model_trained": false,
+  "scfgan_trained": false,
+  "synthetic_hf_used": false,
+  "grid_search_run": false,
+  "metrics": null,
+  "blocker": "Existing Phase 1 HF2 current condition 0 <= Current_charge <= 0.02 was unavailable in the first authorized B0007 TRAIN charge record. No numerical workaround was applied."
+}

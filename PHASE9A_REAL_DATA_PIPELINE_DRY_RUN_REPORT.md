@@ -40,3 +40,24 @@ This is a protocol gate, not a scientific failure and not evidence about model p
 ## Retry preflight — 2026-09-14
 
 PLAN-CHANGE-0014 resolved the offline-STL and branch-config blockers. Before any numeric data access, the retry found a distinct label-interface blocker: NASA HF source records are charge operations, while their Phase 1 raw-capacity field is `None`. No authorized pairing from charge HF identity to an observed discharge capacity label exists. The retry is therefore blocked before accessing TRAIN/VALIDATION values; see `PHASE9A_RETRY_PREFLIGHT_BLOCKER_REPORT.md`.
+
+## Real TRAIN/VAL dry-run attempt after all interface freezes — 2026-09-14
+
+`STATUS=BLOCKED__HF2_EXTRACTION_CONTRACT_UNSATISFIED`<br>
+`REAL_NUMERICAL_DATA_USED=True__TRAIN_ONLY_FIELD_LEVEL_ACCESS`<br>
+`TRAIN_DATA_USED=True`<br>
+`VALIDATION_DATA_USED=False__NOT_REACHED`<br>
+`TEST_LOADED=False`<br>
+`TEST_NUMERICAL_VALUE_ACCESS_COUNT=0`<br>
+`MODEL_TRAINED=False`<br>
+`GRID_SEARCH_RUN=False`<br>
+`SCFGAN_TRAINED=False`<br>
+`SYNTHETIC_HF_USED=False`
+
+The frozen discharge-centered pairing and chronological split were reconstructed from metadata for all four NASA batteries before any numerical feature field was accessed: B0005/B0006/B0007 each yielded 168 valid pairs and the 117/34/17 split; B0018 yielded 132 valid pairs and the 92/26/14 split. This satisfied the pairing/split gate.
+
+The first authorized B0007 TRAIN charge record was then evaluated solely with the existing Phase 1 HF definition. Its HF2 rule requires the first post-4.2 V sample with `0 <= Current_charge <= 0.02`. No such sample was present. The runner stopped before accessing that pair's discharge Capacity, before accessing any validation numerical field, and before any scaler, STL, window, model, loss, metric, or checkpoint action.
+
+No alternative current sign convention, absolute-current threshold, interpolation, deletion, or replacement HF definition was applied. Those changes would alter the frozen HF semantics and require a separate, result-blind protocol decision. The earlier `CHARGE_CAPACITY_NONE` issue remains resolved by PLAN-CHANGE-0015 pairing; this is a new, independent HF2-executability blocker.
+
+`NEXT_ACTION=RESULT_BLIND_HF2_SIGN_AND_ENDPOINT_SEMANTICS_AUDIT_OR_EXPLICIT_HUMAN_PROTOCOL_AUTHORIZATION`

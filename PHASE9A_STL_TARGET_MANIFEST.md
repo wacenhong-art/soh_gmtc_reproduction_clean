@@ -1,10 +1,10 @@
 # Phase 9A STL Target Manifest — Executed Dry-Run
 
-`STL_PERIOD=7`  
-`STL_MODE=OFFLINE_TRAIN_ONLY`  
-`VAL_USED_IN_TRAIN_STL=False`  
-`TEST_USED_IN_TRAIN_STL=False`  
-`VAL_STL_REQUIRED=False`  
+`STL_PERIOD=7`
+`STL_MODE=OFFLINE_TRAIN_ONLY`
+`VAL_USED_IN_TRAIN_STL=False`
+`TEST_USED_IN_TRAIN_STL=False`
+`VAL_STL_REQUIRED=False`
 `COMPONENT_TARGET_DOMAIN=ORIGINAL_CAPACITY_DOMAIN`
 
 For each target battery, only its paired TRAIN discharge-capacity sequence was

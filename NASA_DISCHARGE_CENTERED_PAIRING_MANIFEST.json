@@ -1,0 +1,4534 @@
+{
+  "audit_type": "STRUCTURAL_METADATA_ONLY",
+  "candidate": "E_DISCHARGE_CENTERED_NEAREST_PRECEDING_UNCONSUMED_CHARGE",
+  "real_data_metadata_used": true,
+  "real_numerical_target_values_used": false,
+  "real_hf_values_used": false,
+  "test_numerical_values_used": false,
+  "batteries": [
+    {
+      "battery_id": "B0005",
+      "n_charge": 170,
+      "n_discharge": 168,
+      "n_valid_pairs": 168,
+      "unpaired_charges": 2,
+      "unpaired_discharges": 0,
+      "one_to_one": true,
+      "one_to_many_collisions": 0,
+      "many_to_one_collisions": 0,
+      "ambiguous_pairs": 0,
+      "pair_temporal_order_valid": true,
+      "impedance_between_pair_count": 137,
+      "consecutive_charge_block_count": 2,
+      "consecutive_charge_dropped_count": 2,
+      "pair_identities": [
+        {
+          "charge_record_index": 0,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 1,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 2,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 3,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 4,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 5,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 6,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 7,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 8,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 9,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 10,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 11,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 12,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 13,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 14,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 15,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 16,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 17,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 18,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 19,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 20,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 21,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 23,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 24,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 25,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 26,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 27,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 28,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 29,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 30,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 31,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 32,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 33,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 34,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 35,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 36,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 37,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 38,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 39,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 41,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 43,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 45,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 47,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 49,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 51,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 53,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 55,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 57,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 59,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 61,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 63,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 65,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 67,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 69,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 71,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 73,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 75,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 77,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 79,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 81,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 84,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 85,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 87,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 89,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 91,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 93,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 95,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 97,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 99,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 101,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 103,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 105,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 107,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 109,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 111,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 113,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 115,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 117,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 119,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 121,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 123,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 125,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 127,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 129,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 131,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 133,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 134,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 135,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 137,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 139,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 141,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 143,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 145,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 147,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 148,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 149,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 151,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 153,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 155,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 157,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 159,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 161,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 163,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 165,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 167,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 169,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 171,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 173,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 175,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 177,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 179,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 181,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 183,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 185,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 187,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 189,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 191,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 193,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 195,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 197,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 199,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 201,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 203,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 205,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 207,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 209,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 211,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 213,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 214,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 215,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 217,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 219,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 221,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 223,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 225,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 227,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 229,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 231,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 233,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 235,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 237,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 239,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 241,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 243,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 245,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 247,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 249,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 251,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 253,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 255,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 257,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 259,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 261,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 263,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 264,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 265,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 267,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 269,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 271,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 273,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 275,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 277,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 279,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 281,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 283,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 285,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 287,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 289,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 291,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 293,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 295,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 297,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 299,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 301,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 303,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 305,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 307,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 309,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 83,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 312,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 314,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 315,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 317,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 319,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 321,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 323,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 325,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 327,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 329,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 331,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 333,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 335,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 337,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 339,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 341,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 343,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 345,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 347,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 349,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 351,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 353,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 355,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 357,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 359,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 361,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 363,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 365,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 366,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 368,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 370,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 372,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 374,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 376,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 378,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 380,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 382,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 384,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 386,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 388,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 390,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 392,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 394,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 396,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 398,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 400,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 402,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 404,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 406,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 408,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 410,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 412,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 414,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 416,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 418,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 420,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 422,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 424,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 426,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 428,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 430,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 431,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 432,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 434,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 436,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 438,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 440,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 442,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 444,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 446,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 448,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 450,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 452,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 454,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 456,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 458,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 460,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 462,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 464,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 466,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 468,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 470,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 472,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 474,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 476,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 478,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 480,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 481,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 482,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 483,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 484,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 486,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 488,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 490,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 492,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 494,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 496,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 498,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 500,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 502,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 504,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 506,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 508,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 510,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 512,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 514,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 516,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 518,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 520,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 522,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 524,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 526,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 528,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 530,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 532,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 534,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 536,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 538,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 540,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 542,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 544,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 546,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 547,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 549,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 551,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 553,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 555,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 557,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 559,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 561,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 563,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 565,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 567,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 569,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 571,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 573,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 575,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 577,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 579,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 581,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 583,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 585,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 587,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 589,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 591,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 593,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 595,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 597,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 599,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 601,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 603,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 605,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 607,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 609,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 611,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 612,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 613,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        }
+      ]
+    },
+    {
+      "battery_id": "B0006",
+      "n_charge": 170,
+      "n_discharge": 168,
+      "n_valid_pairs": 168,
+      "unpaired_charges": 2,
+      "unpaired_discharges": 0,
+      "one_to_one": true,
+      "one_to_many_collisions": 0,
+      "many_to_one_collisions": 0,
+      "ambiguous_pairs": 0,
+      "pair_temporal_order_valid": true,
+      "impedance_between_pair_count": 137,
+      "consecutive_charge_block_count": 2,
+      "consecutive_charge_dropped_count": 2,
+      "pair_identities": [
+        {
+          "charge_record_index": 0,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 1,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 2,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 3,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 4,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 5,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 6,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 7,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 8,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 9,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 10,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 11,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 12,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 13,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 14,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 15,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 16,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 17,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 18,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 19,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 20,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 21,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 23,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 24,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 25,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 26,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 27,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 28,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 29,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 30,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 31,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 32,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 33,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 34,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 35,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 36,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 37,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 38,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 39,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 41,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 43,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 45,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 47,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 49,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 51,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 53,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 55,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 57,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 59,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 61,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 63,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 65,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 67,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 69,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 71,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 73,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 75,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 77,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 79,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 81,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 84,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 85,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 87,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 89,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 91,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 93,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 95,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 97,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 99,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 101,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 103,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 105,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 107,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 109,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 111,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 113,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 115,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 117,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 119,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 121,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 123,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 125,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 127,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 129,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 131,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 133,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 134,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 135,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 137,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 139,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 141,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 143,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 145,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 147,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 148,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 149,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 151,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 153,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 155,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 157,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 159,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 161,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 163,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 165,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 167,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 169,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 171,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 173,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 175,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 177,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 179,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 181,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 183,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 185,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 187,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 189,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 191,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 193,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 195,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 197,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 199,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 201,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 203,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 205,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 207,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 209,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 211,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 213,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 214,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 215,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 217,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 219,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 221,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 223,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 225,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 227,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 229,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 231,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 233,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 235,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 237,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 239,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 241,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 243,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 245,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 247,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 249,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 251,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 253,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 255,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 257,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 259,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 261,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 263,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 264,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 265,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 267,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 269,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 271,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 273,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 275,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 277,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 279,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 281,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 283,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 285,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 287,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 289,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 291,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 293,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 295,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 297,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 299,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 301,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 303,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 305,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 307,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 309,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 83,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 312,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 314,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 315,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 317,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 319,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 321,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 323,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 325,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 327,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 329,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 331,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 333,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 335,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 337,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 339,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 341,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 343,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 345,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 347,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 349,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 351,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 353,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 355,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 357,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 359,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 361,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 363,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 365,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 366,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 368,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 370,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 372,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 374,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 376,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 378,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 380,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 382,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 384,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 386,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 388,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 390,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 392,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 394,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 396,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 398,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 400,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 402,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 404,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 406,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 408,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 410,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 412,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 414,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 416,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 418,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 420,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 422,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 424,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 426,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 428,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 430,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 431,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 432,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 434,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 436,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 438,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 440,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 442,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 444,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 446,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 448,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 450,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 452,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 454,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 456,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 458,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 460,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 462,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 464,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 466,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 468,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 470,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 472,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 474,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 476,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 478,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 480,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 481,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 482,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 483,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 484,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 486,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 488,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 490,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 492,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 494,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 496,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 498,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 500,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 502,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 504,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 506,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 508,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 510,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 512,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 514,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 516,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 518,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 520,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 522,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 524,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 526,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 528,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 530,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 532,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 534,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 536,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 538,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 540,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 542,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 544,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 546,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 547,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 549,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 551,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 553,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 555,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 557,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 559,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 561,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 563,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 565,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 567,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 569,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 571,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 573,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 575,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 577,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 579,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 581,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 583,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 585,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 587,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 589,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 591,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 593,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 595,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 597,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 599,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 601,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 603,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 605,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 607,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 609,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 611,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 612,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 613,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        }
+      ]
+    },
+    {
+      "battery_id": "B0007",
+      "n_charge": 170,
+      "n_discharge": 168,
+      "n_valid_pairs": 168,
+      "unpaired_charges": 2,
+      "unpaired_discharges": 0,
+      "one_to_one": true,
+      "one_to_many_collisions": 0,
+      "many_to_one_collisions": 0,
+      "ambiguous_pairs": 0,
+      "pair_temporal_order_valid": true,
+      "impedance_between_pair_count": 137,
+      "consecutive_charge_block_count": 2,
+      "consecutive_charge_dropped_count": 2,
+      "pair_identities": [
+        {
+          "charge_record_index": 0,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 1,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 2,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 3,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 4,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 5,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 6,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 7,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 8,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 9,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 10,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 11,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 12,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 13,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 14,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 15,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 16,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 17,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 18,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 19,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 20,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 21,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 23,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 24,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 25,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 26,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 27,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 28,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 29,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 30,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 31,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 32,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 33,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 34,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 35,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 36,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 37,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 38,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 39,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 41,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 43,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 45,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 47,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 49,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 51,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 53,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 55,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 57,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 59,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 61,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 63,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 65,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 67,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 69,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 71,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 73,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 75,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 77,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 79,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 81,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 84,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 85,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 87,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 89,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 91,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 93,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 95,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 97,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 99,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 101,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 103,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 105,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 107,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 109,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 111,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 113,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 115,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 117,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 119,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 121,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 123,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 125,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 127,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 129,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 131,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 133,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 134,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 135,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 137,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 139,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 141,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 143,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 145,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 147,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 148,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 149,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 151,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 153,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 155,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 157,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 159,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 161,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 163,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 165,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 167,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 169,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 171,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 173,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 175,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 177,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 179,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 181,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 183,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 185,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 187,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 189,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 191,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 193,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 195,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 197,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 199,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 201,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 203,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 205,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 207,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 209,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 211,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 213,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 214,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 215,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 217,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 219,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 221,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 223,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 225,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 227,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 229,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 231,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 233,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 235,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 237,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 239,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 241,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 243,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 245,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 247,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 249,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 251,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 253,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 255,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 257,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 259,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 261,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 263,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 264,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 265,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 267,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 269,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 271,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 273,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 275,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 277,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 279,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 281,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 283,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 285,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 287,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 289,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 291,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 293,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 295,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 297,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 299,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 301,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 303,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 305,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 307,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 309,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 83,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 312,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 314,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 315,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 317,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 319,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 321,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 323,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 325,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 327,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 329,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 331,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 333,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 335,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 337,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 339,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 341,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 343,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 345,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 347,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 349,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 351,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 353,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 355,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 357,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 359,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 361,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 363,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 365,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 366,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 368,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 370,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 372,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 374,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 376,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 378,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 380,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 382,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 384,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 386,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 388,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 390,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 392,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 394,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 396,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 398,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 400,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 402,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 404,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 406,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 408,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 410,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 412,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 414,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 416,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 418,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 420,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 422,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 424,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 426,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 428,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 430,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 431,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 432,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 434,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 436,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 438,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 440,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 442,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 444,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 446,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 448,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 450,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 452,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 454,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 456,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 458,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 460,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 462,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 464,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 466,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 468,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 470,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 472,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 474,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 476,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 478,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 480,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 481,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 482,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 483,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 484,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 486,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 488,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 490,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 492,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 494,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 496,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 498,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 500,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 502,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 504,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 506,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 508,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 510,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 512,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 514,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 516,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 518,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 520,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 522,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 524,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 526,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 528,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 530,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 532,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 534,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 536,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 538,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 540,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 542,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 544,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 546,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 547,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 549,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 551,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 553,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 555,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 557,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 559,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 561,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 563,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 565,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 567,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 569,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 571,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 573,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 575,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 577,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 579,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 581,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 583,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 585,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 587,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 589,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 591,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 593,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 595,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 597,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 599,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 601,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 603,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 605,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 607,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 609,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 611,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 612,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 613,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        }
+      ]
+    },
+    {
+      "battery_id": "B0018",
+      "n_charge": 134,
+      "n_discharge": 132,
+      "n_valid_pairs": 132,
+      "unpaired_charges": 2,
+      "unpaired_discharges": 0,
+      "one_to_one": true,
+      "one_to_many_collisions": 0,
+      "many_to_one_collisions": 0,
+      "ambiguous_pairs": 0,
+      "pair_temporal_order_valid": true,
+      "impedance_between_pair_count": 23,
+      "consecutive_charge_block_count": 1,
+      "consecutive_charge_dropped_count": 1,
+      "pair_identities": [
+        {
+          "charge_record_index": 0,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 2,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 4,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 6,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 8,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 10,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 12,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 14,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 16,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 17,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 18,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 19,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 20,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 21,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 22,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 23,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 24,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 26,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 28,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 29,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 30,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 31,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 32,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 33,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 34,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 35,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 36,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 38,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 40,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 41,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 42,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 43,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 44,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 45,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 46,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 47,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 48,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 50,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 52,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 53,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 54,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 55,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 56,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 57,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 58,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 59,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 60,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 62,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 64,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 65,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 66,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 67,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 68,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 69,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 70,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 71,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 72,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 74,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 76,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 77,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 78,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 79,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 80,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 81,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 82,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 83,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 84,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 86,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 88,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 89,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 90,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 91,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 92,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 93,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 94,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 95,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 96,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 98,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 100,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 101,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 102,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 103,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 104,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 105,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 106,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 107,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 108,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 110,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 112,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 113,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 115,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 116,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 117,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 118,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 119,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 120,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 121,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 122,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 123,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 124,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 126,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 127,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 128,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 129,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 130,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 131,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 132,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 133,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 134,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 135,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 139,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 140,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 141,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 142,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 143,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 144,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 145,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 146,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 147,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 149,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 151,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 152,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 153,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 154,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 155,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 156,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 157,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 158,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 159,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 161,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 163,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 164,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 165,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 166,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 167,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 168,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 169,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 170,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 171,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 173,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 175,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 176,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 177,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 178,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 179,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 180,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 181,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 182,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 183,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 184,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 186,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 187,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 188,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 189,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 190,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 191,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 192,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 193,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 194,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 196,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 198,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 199,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 200,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 201,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 202,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 203,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 204,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 205,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 206,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 208,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 210,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 211,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 212,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 213,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 214,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 215,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 216,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 217,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 218,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 219,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 221,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 222,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 223,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 224,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 225,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 226,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 227,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 228,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 229,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 231,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 233,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 234,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 235,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 236,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 237,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 238,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 239,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 240,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 241,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 243,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 245,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 246,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 247,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 248,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 249,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 250,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 251,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 252,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 253,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 255,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 257,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 258,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 259,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 260,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 261,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 262,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 263,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 264,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 265,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 266,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 268,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 269,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 270,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 271,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 272,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 273,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 274,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 275,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 276,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 278,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 280,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 281,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 282,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 283,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 284,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 285,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 286,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 287,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 288,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 290,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 292,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 293,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 294,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 295,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 296,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 297,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 298,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 299,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 300,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 301,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 303,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 304,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 305,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 306,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 307,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 308,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 309,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 310,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 311,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 313,
+          "discharge_operation_type": "discharge",
+          "impedance_between": true
+        },
+        {
+          "charge_record_index": 315,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 316,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        },
+        {
+          "charge_record_index": 317,
+          "charge_operation_type": "charge",
+          "discharge_record_index": 318,
+          "discharge_operation_type": "discharge",
+          "impedance_between": false
+        }
+      ]
+    }
+  ]
+}

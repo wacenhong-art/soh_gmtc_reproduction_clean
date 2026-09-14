@@ -1572,3 +1572,13 @@ PROPOSED_SAMPLE_IDENTITY=CHARGE_DISCHARGE_PAIR__ENGINEERING_INFERENCE_ONLY
 PROPOSED_SPLIT_UNIT=PAIRED_SUPERVISED_CYCLE__NOT_APPLIED
 
 Raw structural evidence found that immediate adjacency is one-to-one but incomplete, while nearest-subsequent discharge is more complete but creates two many-to-one collisions per audited battery. No explicit shared session/cycle identity exists in the top-level NASA operation metadata. The Tier 2 protocol remains blocked until Human/Advisor authorization selects a pairing policy.
+
+# NASA discharge-centered pairing audit — Candidate E (2026-09-14)
+
+CANDIDATE_E_GATE=PASS__DETERMINISTIC_ONE_TO_ONE_STRUCTURAL_MAPPING
+PAIRING_EVIDENCE_STRENGTH=STRONG_ENGINEERING_STRUCTURAL
+PROPOSED_SAMPLE_IDENTITY=DISCHARGE_CENTERED_CHARGE_DISCHARGE_PAIR__NOT_APPLIED
+PROPOSED_SPLIT_UNIT=VALID_PAIRED_SUPERVISED_CYCLES__NOT_APPLIED
+PLAN_CHANGE_REQUIRED=True
+
+Candidate E maps each discharge with a Capacity field to the nearest preceding unconsumed charge. It is deterministic, order-only, temporally valid, one-to-one, and structurally consistent across B0005, B0006, B0007, and B0018. It remains a proposal pending advisor confirmation and PLAN-CHANGE-0015; no numeric pipeline work is authorized by this audit.

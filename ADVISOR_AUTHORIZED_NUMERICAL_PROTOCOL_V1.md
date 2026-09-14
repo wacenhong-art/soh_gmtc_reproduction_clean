@@ -23,6 +23,9 @@ TRAIN_FRACTION=0.70
 VALIDATION_FRACTION=0.20
 TEST_FRACTION=0.10
 SPLIT_BOUNDARIES=HALF_OPEN_ZERO_BASED_FLOOR_RULE
+SPLIT_UNIT=VALID_PAIRED_SUPERVISED_CYCLE__PLAN_CHANGE_0015
+NASA_PAIRING_MODE=DISCHARGE_CENTERED_NEAREST_PRECEDING_UNCONSUMED_CHARGE
+NASA_PAIRING_PROTOCOL=NASA_PAIRING_PROTOCOL_V1
 PRIMARY_HIDDEN_WIDTH=64
 HIDDEN_WIDTH_PROVENANCE=ADVISOR_RANGE_64_128_SMALL_SAMPLE_MIN_COMPLEXITY
 FUSION_MODE=ADVISOR_AUTHORIZED_COMPONENT_SUM
@@ -51,6 +54,10 @@ HF normalization is fitted independently per feature on TRAIN only. Validation a
 STL components remain in the capacity-domain target scale unless a later approved scale bridge says otherwise. Accordingly `TIER2_FINAL_OUTPUT_DOMAIN=CAPACITY_COMPONENT_DOMAIN` and no unapproved capacity-to-SOH conversion is applied. `PAPER_EXACT_FUSION_STATUS=UNRESOLVED`.
 
 TRAIN capacity only is decomposed using offline STL(period=7); bilateral context within TRAIN is allowed. No validation or test capacity enters the TRAIN STL fit. Validation requires no STL/component labels: its reconstructed component sum is compared only to the observed final next-step target. The complete Tier 2 branch configuration is frozen in `TIER2_BRANCH_EXECUTION_CONFIG_V1.md`.
+
+## Revision: PLAN-CHANGE-0015 NASA supervised-cycle unit
+
+Before Tier 2 chronological splitting, NASA raw operation metadata is converted into `VALID_CHARGE_DISCHARGE_PAIR` identities by `NASA_PAIRING_PROTOCOL_V1.md`. Each identity binds HF1/HF2/HF3 from one charge record to Capacity from one unique later discharge record. The 70/20/10 split operates on chronological valid-pair order, never on mixed raw charge/discharge/impedance rows. This is a web/literature-supported result-blind engineering fallback, not advisor confirmation or a paper-exact pairing claim.
 
 ## Explicit exclusions
 

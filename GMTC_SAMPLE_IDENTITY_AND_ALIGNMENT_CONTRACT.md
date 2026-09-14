@@ -79,3 +79,12 @@ No row-order pairing, full-lifecycle inference, validation/test label use, or sy
 `FEATURE_DIM_NOT_3_IN_CURRENT_REAL_FALLBACK=REJECT`
 
 The Phase 8 validator is metadata-only. It never pads, truncates, reorders, normalizes, or numerically pairs a payload to make it pass.
+
+## Revision: PLAN-CHANGE-0015 Tier 2 NASA sample identity
+
+`NASA_SUPERVISED_SAMPLE_IDENTITY=VALID_CHARGE_DISCHARGE_PAIR`
+
+`PAIRING_MODE=DISCHARGE_CENTERED_NEAREST_PRECEDING_UNCONSUMED_CHARGE`
+`SPLIT_UNIT=VALID_PAIRED_SUPERVISED_CYCLE`
+
+For Tier 2 NASA execution only, a sample stores `battery_id`, chronological `pair_index`, `charge_record_index`, and `discharge_record_index`. Its HF source is the charge operation and its observed capacity target is the paired discharge operation. The pairing occurs before partitioning; therefore a raw operation row cannot cross a split boundary to become an independently split sample. Each charge and discharge may occur in at most one valid pair. This engineering fallback is governed by `NASA_PAIRING_PROTOCOL_V1.md`, preserves TEST lock, and does not resolve paper-exact pairing semantics.

@@ -1582,3 +1582,20 @@ PROPOSED_SPLIT_UNIT=VALID_PAIRED_SUPERVISED_CYCLES__NOT_APPLIED
 PLAN_CHANGE_REQUIRED=True
 
 Candidate E maps each discharge with a Capacity field to the nearest preceding unconsumed charge. It is deterministic, order-only, temporally valid, one-to-one, and structurally consistent across B0005, B0006, B0007, and B0018. It remains a proposal pending advisor confirmation and PLAN-CHANGE-0015; no numeric pipeline work is authorized by this audit.
+
+# PLAN-CHANGE-0015 — Tier 2 NASA pairing policy freeze (2026-09-14)
+
+PLAN-CHANGE-0015=APPLIED__HUMAN_AUTHORIZED__WEB_LITERATURE_SUPPORTED_RESULT_BLIND_ENGINEERING_FALLBACK
+PAIRING_MODE=DISCHARGE_CENTERED_NEAREST_PRECEDING_UNCONSUMED_CHARGE
+NASA_SUPERVISED_SAMPLE_IDENTITY=VALID_CHARGE_DISCHARGE_PAIR
+SPLIT_UNIT=VALID_PAIRED_SUPERVISED_CYCLE
+ONE_CHARGE_MAX_ONE_DISCHARGE=True
+ONE_DISCHARGE_MAX_ONE_CHARGE=True
+PAIRING_PROVENANCE=NASA_OFFICIAL_FORMAT__MATHWORKS_NASA_WORKFLOW__PUBLISHED_PREPROCESSING_PRECEDENT__RAW_SEQUENCE_STRUCTURAL_EVIDENCE
+PAIRING_EVIDENCE_STRENGTH=STRONG_FOR_TIER2_ENGINEERING_REPRODUCTION
+PAPER_EXACT_PAIRING_STATUS=UNRESOLVED
+EXPECTED_VALID_PAIRS=B0005:168__B0006:168__B0007:168__B0018:132
+EXPECTED_UNPAIRED_CHARGES=B0005:2__B0006:2__B0007:2__B0018:2
+PHASE9A_RETRY_AUTHORIZED=True
+
+PLAN-CHANGE-0015 is a Human-authorized, web/literature-supported, result-blind Tier 2 engineering fallback. NASA official documentation establishes the charge/discharge/impedance schema and Capacity field location; MathWorks and published preprocessing precedent support removal of incomplete/repeated cycles; local structural evidence establishes deterministic Candidate E counts. None of these sources establish the target Energy paper's exact code-level pairing implementation. Before any numeric Phase 9A access, the raw structural count contract must revalidate or execution fails closed. This Plan Change does not itself start Phase 9A or unlock TEST values.

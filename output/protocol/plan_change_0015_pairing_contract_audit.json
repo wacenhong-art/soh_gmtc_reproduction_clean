@@ -1,0 +1,72 @@
+{
+  "audit_scope": "METADATA_AND_SYNTHETIC_CONTRACT_ONLY",
+  "real_hf_values_used": false,
+  "real_numerical_target_values_used": false,
+  "test_values_loaded": false,
+  "pairing_mode": "DISCHARGE_CENTERED_NEAREST_PRECEDING_UNCONSUMED_CHARGE",
+  "batteries": {
+    "B0005": {
+      "valid_pairs": 168,
+      "unpaired_charges": 2,
+      "charge_reuse": false,
+      "discharge_reuse": false,
+      "temporal_order_valid": true,
+      "impedance_between_pair_count": 137,
+      "synthetic_pair_split": {
+        "train_count": 117,
+        "validation_count": 34,
+        "test_membership_count": 17,
+        "disjoint": true,
+        "chronological": true
+      }
+    },
+    "B0006": {
+      "valid_pairs": 168,
+      "unpaired_charges": 2,
+      "charge_reuse": false,
+      "discharge_reuse": false,
+      "temporal_order_valid": true,
+      "impedance_between_pair_count": 137,
+      "synthetic_pair_split": {
+        "train_count": 117,
+        "validation_count": 34,
+        "test_membership_count": 17,
+        "disjoint": true,
+        "chronological": true
+      }
+    },
+    "B0007": {
+      "valid_pairs": 168,
+      "unpaired_charges": 2,
+      "charge_reuse": false,
+      "discharge_reuse": false,
+      "temporal_order_valid": true,
+      "impedance_between_pair_count": 137,
+      "synthetic_pair_split": {
+        "train_count": 117,
+        "validation_count": 34,
+        "test_membership_count": 17,
+        "disjoint": true,
+        "chronological": true
+      }
+    },
+    "B0018": {
+      "valid_pairs": 132,
+      "unpaired_charges": 2,
+      "charge_reuse": false,
+      "discharge_reuse": false,
+      "temporal_order_valid": true,
+      "impedance_between_pair_count": 23,
+      "synthetic_pair_split": {
+        "train_count": 92,
+        "validation_count": 26,
+        "test_membership_count": 14,
+        "disjoint": true,
+        "chronological": true
+      }
+    }
+  },
+  "one_to_one_contract_status": "PASS",
+  "split_unit_contract": "PASS__VALID_PAIRED_SUPERVISED_CYCLE",
+  "test_lock_contract": "PASS__NO_TEST_VALUES_MATERIALIZED"
+}

@@ -1836,3 +1836,18 @@ source-only Tanh scaler is never a substitute for the Phase 9A Train-only
 `[0,1]` downstream HF scaler. Phase 9C may run twenty fixed smoke epochs only;
 it must not train downstream branches, fusion, or use output diagnostics to
 select a configuration.
+
+# PLAN-CHANGE-0019 — Figure 3 paper-closest SCF-GAN reconstruction
+
+This append-only Tier 2 path preserves PLAN-CHANGE-0018 and its artifacts.
+It freezes `CYCLE_PLUS_BATTERY_TYPE` with a two-dimensional condition,
+Figure-3 widths `18→256→512→256→4` / `6→256→512→256→1`, and four-variable
+`HF1/HF2/HF3/SOH` output only for the separate Figure-3 reconstruction.
+`PAPER_EXACT_STATUS=UNRESOLVED_INTERNAL_CONTRADICTION` remains in force.
+The voltage-range direct implementation remains blocked because the frozen
+HF1/HF2 definitions cannot be computed from a `[3.8,4.0]`-only window.
+PLAN-CHANGE-0019 alone authorizes a fresh, source-only Figure-3 Stage A
+20-epoch smoke gate followed by its separately frozen Stage B 300-epoch
+source-only convergence diagnostic with fixed twenty-epoch snapshots. This
+does not relax the earlier PLAN-CHANGE-0018 twenty-epoch smoke limit, nor does
+it authorize target-informed selection, downstream training, or TEST access.

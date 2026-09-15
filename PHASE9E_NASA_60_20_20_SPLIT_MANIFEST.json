@@ -1,0 +1,48 @@
+{
+  "phase": "PHASE9E_NASA_60_20_20_PRETEST",
+  "split_ratio_paper_aligned": true,
+  "integer_boundary_rule": "FLOOR_HALF_OPEN",
+  "integer_boundary_rule_source": "TIER2_IMPLEMENTATION_CONVENTION",
+  "paper_explicit_integer_rounding": "NOT_SPECIFIED",
+  "test_membership_only": true,
+  "by_battery": {
+    "B0007": {
+      "n_total": 168,
+      "n_train": 100,
+      "n_val": 34,
+      "n_test_membership_only": 34,
+      "train_range": [
+        0,
+        100
+      ],
+      "val_range": [
+        100,
+        134
+      ],
+      "test_membership_range": [
+        134,
+        168
+      ],
+      "integer_boundary_rule": "FLOOR_HALF_OPEN"
+    },
+    "B0018": {
+      "n_total": 132,
+      "n_train": 79,
+      "n_val": 26,
+      "n_test_membership_only": 27,
+      "train_range": [
+        0,
+        79
+      ],
+      "val_range": [
+        79,
+        105
+      ],
+      "test_membership_range": [
+        105,
+        132
+      ],
+      "integer_boundary_rule": "FLOOR_HALF_OPEN"
+    }
+  }
+}

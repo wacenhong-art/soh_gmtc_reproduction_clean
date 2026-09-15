@@ -1,0 +1,40 @@
+{
+  "gate": "PASS",
+  "selected_source_epoch": 200,
+  "source_only_training_and_checkpoint_selection": true,
+  "scfgan_retrained": false,
+  "synthetic_regenerated": false,
+  "no_old_downstream_scaler_dependency": true,
+  "target_generation_conditions": {
+    "B0007": {
+      "target_valid_pair_count_metadata_only": 168,
+      "first_20_percent_condition_count": 33,
+      "target_hf_or_soh_materialized_for_generation": false,
+      "set_count": 5,
+      "shape_per_set": [
+        33,
+        4
+      ]
+    },
+    "B0018": {
+      "target_valid_pair_count_metadata_only": 132,
+      "first_20_percent_condition_count": 26,
+      "target_hf_or_soh_materialized_for_generation": false,
+      "set_count": 5,
+      "shape_per_set": [
+        26,
+        4
+      ]
+    }
+  },
+  "historical_post_generation_target_quality_sections_used_for_execution": false,
+  "phase": "PHASE9E_NASA_60_20_20_PRETEST",
+  "old_split_artifact_reused": false,
+  "new_real_train_scaler_fit_scope": "PHASE9E_60_PERCENT_REAL_TRAIN_ONLY",
+  "synthetic_hf_transform": "NEW_PHASE9E_REAL_TRAIN_SCALER_ONLY__UNCLIPPED",
+  "synthetic_trajectory_policy": "FIVE_INDEPENDENT_TRAJECTORIES__NO_CROSS_BOUNDARY_WINDOW",
+  "checkpoint_paths": {
+    "B0007": "output\\phase9e_nasa_60_20_20_pretest\\B0007_PHASE9E_BEST_BRANCH_AND_FUSION_CHECKPOINT.pt",
+    "B0018": "output\\phase9e_nasa_60_20_20_pretest\\B0018_PHASE9E_BEST_BRANCH_AND_FUSION_CHECKPOINT.pt"
+  }
+}

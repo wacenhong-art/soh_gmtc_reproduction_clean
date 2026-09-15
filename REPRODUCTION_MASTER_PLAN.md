@@ -1851,3 +1851,34 @@ PLAN-CHANGE-0019 alone authorizes a fresh, source-only Figure-3 Stage A
 source-only convergence diagnostic with fixed twenty-epoch snapshots. This
 does not relax the earlier PLAN-CHANGE-0018 twenty-epoch smoke limit, nor does
 it authorize target-informed selection, downstream training, or TEST access.
+
+# Phase 9E — NASA paper-aligned 60/20/20 pretest retrain
+
+This is an append-only Phase9E execution scope. It preserves every prior
+70/20/10 development artifact and never retroactively recasts those results as
+60/20/20 results. It authorizes a paper-closest Tier 2 numerical pretest only;
+it does not claim the unresolved full paper protocol is exact.
+
+```text
+SPLIT_RATIO_PAPER_ALIGNED=True
+INTEGER_BOUNDARY_RULE=FLOOR_HALF_OPEN
+INTEGER_BOUNDARY_RULE_SOURCE=TIER2_IMPLEMENTATION_CONVENTION
+PAPER_EXPLICIT_INTEGER_ROUNDING=NOT_SPECIFIED
+PAPER_ALIGNED_SPLIT=True
+PAPER_EXACT_FULL_PROTOCOL=False
+REPRODUCTION_TIER=TIER2_PAPER_CLOSEST_NUMERICAL
+
+DEVELOPMENT_70_20_10_CLOSED=True
+ARCHITECTURE_FROZEN=True
+HYPERPARAMETER_TUNING_ALLOWED=False
+TEST_LOADED=False
+TEST_ACCESS_COUNT=0
+```
+
+The Phase9E runner must pair first, then apply chronological, zero-based,
+half-open boundaries `[0,floor(0.60*N))`, `[floor(0.60*N),floor(0.80*N))`,
+and `[floor(0.80*N),N)`. It must reconstruct all split-dependent artifacts
+from the new real TRAIN partition and cannot reuse an old splitter, scaler,
+STL array, window, checkpoint, or validation prediction. Any provenance,
+leakage, split, shape, or finite-value gate failure stops execution with
+`RESEARCH_DIRECTION_REJECTED`.

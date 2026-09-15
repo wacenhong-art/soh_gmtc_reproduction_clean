@@ -28,7 +28,15 @@ class STLPartitionProvenanceError(ValueError):
     """Raised when a caller declares combined, locked, or unknown partitions."""
 
 
-ALLOWED_PARTITIONS = {"TRAIN", "VALIDATION", "SYNTHETIC_UNIT_TEST"}
+ALLOWED_PARTITIONS = {
+    "TRAIN",
+    "VALIDATION",
+    "SYNTHETIC_UNIT_TEST",
+    # Explicitly isolated synthetic trajectories authorized for Phase 9D
+    # augmentation smoke work.  This is not a real-data partition and may
+    # never be concatenated with TRAIN, VALIDATION, or TEST trajectories.
+    "TIER2_SYNTHETIC_TRAJECTORY",
+}
 FORBIDDEN_PARTITION_IDS = {
     "TEST",
     "FULL_LIFECYCLE",
@@ -105,7 +113,7 @@ def _validate_partition(partition_id: str) -> str:
         )
     if normalized not in ALLOWED_PARTITIONS:
         raise STLPartitionProvenanceError(
-            "partition_id must be TRAIN, VALIDATION, or SYNTHETIC_UNIT_TEST"
+            "partition_id must be TRAIN, VALIDATION, SYNTHETIC_UNIT_TEST, or TIER2_SYNTHETIC_TRAJECTORY"
         )
     return normalized
 

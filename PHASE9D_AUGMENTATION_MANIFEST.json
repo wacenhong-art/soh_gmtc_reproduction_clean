@@ -1,0 +1,251 @@
+{
+  "phase": "PHASE9D_AUGMENTED_FULL_GMTC_INTEGRATION_SMOKE",
+  "scope": "AUGMENTED_TRAIN_ONLY__REAL_VALIDATION_ONLY__TEST_SEALED",
+  "pc0019_selected_source_epoch": 200,
+  "by_battery": {
+    "B0007": {
+      "synthetic_trajectory_manifest": {
+        "trajectory_count": 5,
+        "sets": [
+          {
+            "set": 1,
+            "path": "output\\phase9c_figure3_reconstruction\\B0007_figure3_synthetic_set_01.npy",
+            "shape": [
+              33,
+              4
+            ],
+            "trajectory_id": "B0007_PC0019_SET_01",
+            "soh_stats": {
+              "min": 0.8770243844484631,
+              "max": 0.964213395536321,
+              "mean": 0.9230279932296717,
+              "std": 0.020147505222674483
+            },
+            "capacity_ah_stats": {
+              "min": 1.7540487688969262,
+              "max": 1.928426791072642,
+              "mean": 1.8460559864593433,
+              "std": 0.040295010445348965
+            }
+          },
+          {
+            "set": 2,
+            "path": "output\\phase9c_figure3_reconstruction\\B0007_figure3_synthetic_set_02.npy",
+            "shape": [
+              33,
+              4
+            ],
+            "trajectory_id": "B0007_PC0019_SET_02",
+            "soh_stats": {
+              "min": 0.8838473618095377,
+              "max": 0.9614404313165746,
+              "mean": 0.9222727960403834,
+              "std": 0.019780242793542086
+            },
+            "capacity_ah_stats": {
+              "min": 1.7676947236190754,
+              "max": 1.9228808626331493,
+              "mean": 1.8445455920807667,
+              "std": 0.03956048558708417
+            }
+          },
+          {
+            "set": 3,
+            "path": "output\\phase9c_figure3_reconstruction\\B0007_figure3_synthetic_set_03.npy",
+            "shape": [
+              33,
+              4
+            ],
+            "trajectory_id": "B0007_PC0019_SET_03",
+            "soh_stats": {
+              "min": 0.8738111260217376,
+              "max": 0.9619481377336498,
+              "mean": 0.9214867479609965,
+              "std": 0.01971317596114256
+            },
+            "capacity_ah_stats": {
+              "min": 1.7476222520434752,
+              "max": 1.9238962754672997,
+              "mean": 1.842973495921993,
+              "std": 0.03942635192228512
+            }
+          },
+          {
+            "set": 4,
+            "path": "output\\phase9c_figure3_reconstruction\\B0007_figure3_synthetic_set_04.npy",
+            "shape": [
+              33,
+              4
+            ],
+            "trajectory_id": "B0007_PC0019_SET_04",
+            "soh_stats": {
+              "min": 0.8622231221069867,
+              "max": 0.9566947798622539,
+              "mean": 0.9192078079746552,
+              "std": 0.019929365128191424
+            },
+            "capacity_ah_stats": {
+              "min": 1.7244462442139734,
+              "max": 1.9133895597245079,
+              "mean": 1.8384156159493104,
+              "std": 0.03985873025638285
+            }
+          },
+          {
+            "set": 5,
+            "path": "output\\phase9c_figure3_reconstruction\\B0007_figure3_synthetic_set_05.npy",
+            "shape": [
+              33,
+              4
+            ],
+            "trajectory_id": "B0007_PC0019_SET_05",
+            "soh_stats": {
+              "min": 0.8845176548654412,
+              "max": 0.9686627853019218,
+              "mean": 0.9278759121704123,
+              "std": 0.019996845632798643
+            },
+            "capacity_ah_stats": {
+              "min": 1.7690353097308824,
+              "max": 1.9373255706038437,
+              "mean": 1.8557518243408246,
+              "std": 0.039993691265597285
+            }
+          }
+        ]
+      },
+      "real_train_window_count": 107,
+      "synthetic_window_counts": [
+        23,
+        23,
+        23,
+        23,
+        23
+      ],
+      "no_cross_trajectory_windows": true,
+      "synthetic_capacity_ah_from_soh_times_2": true
+    },
+    "B0018": {
+      "synthetic_trajectory_manifest": {
+        "trajectory_count": 5,
+        "sets": [
+          {
+            "set": 1,
+            "path": "output\\phase9c_figure3_reconstruction\\B0018_figure3_synthetic_set_01.npy",
+            "shape": [
+              26,
+              4
+            ],
+            "trajectory_id": "B0018_PC0019_SET_01",
+            "soh_stats": {
+              "min": 0.8797964751467809,
+              "max": 0.9580202862357151,
+              "mean": 0.9242739986966574,
+              "std": 0.022349679708976847
+            },
+            "capacity_ah_stats": {
+              "min": 1.7595929502935619,
+              "max": 1.9160405724714302,
+              "mean": 1.8485479973933148,
+              "std": 0.044699359417953693
+            }
+          },
+          {
+            "set": 2,
+            "path": "output\\phase9c_figure3_reconstruction\\B0018_figure3_synthetic_set_02.npy",
+            "shape": [
+              26,
+              4
+            ],
+            "trajectory_id": "B0018_PC0019_SET_02",
+            "soh_stats": {
+              "min": 0.8747687879241484,
+              "max": 0.9666545792411394,
+              "mean": 0.9221336701200205,
+              "std": 0.021255706711343542
+            },
+            "capacity_ah_stats": {
+              "min": 1.7495375758482967,
+              "max": 1.9333091584822788,
+              "mean": 1.844267340240041,
+              "std": 0.042511413422687085
+            }
+          },
+          {
+            "set": 3,
+            "path": "output\\phase9c_figure3_reconstruction\\B0018_figure3_synthetic_set_03.npy",
+            "shape": [
+              26,
+              4
+            ],
+            "trajectory_id": "B0018_PC0019_SET_03",
+            "soh_stats": {
+              "min": 0.8809040280720695,
+              "max": 0.9724911998492665,
+              "mean": 0.9227923449367499,
+              "std": 0.021097162335434887
+            },
+            "capacity_ah_stats": {
+              "min": 1.761808056144139,
+              "max": 1.944982399698533,
+              "mean": 1.8455846898734998,
+              "std": 0.042194324670869775
+            }
+          },
+          {
+            "set": 4,
+            "path": "output\\phase9c_figure3_reconstruction\\B0018_figure3_synthetic_set_04.npy",
+            "shape": [
+              26,
+              4
+            ],
+            "trajectory_id": "B0018_PC0019_SET_04",
+            "soh_stats": {
+              "min": 0.8773868958413179,
+              "max": 0.9687905296010617,
+              "mean": 0.922600882579443,
+              "std": 0.023327424035667458
+            },
+            "capacity_ah_stats": {
+              "min": 1.7547737916826358,
+              "max": 1.9375810592021234,
+              "mean": 1.845201765158886,
+              "std": 0.046654848071334916
+            }
+          },
+          {
+            "set": 5,
+            "path": "output\\phase9c_figure3_reconstruction\\B0018_figure3_synthetic_set_05.npy",
+            "shape": [
+              26,
+              4
+            ],
+            "trajectory_id": "B0018_PC0019_SET_05",
+            "soh_stats": {
+              "min": 0.8786621517452304,
+              "max": 0.9671778776873231,
+              "mean": 0.9167415936102876,
+              "std": 0.020371656032923086
+            },
+            "capacity_ah_stats": {
+              "min": 1.7573243034904609,
+              "max": 1.9343557553746462,
+              "mean": 1.8334831872205752,
+              "std": 0.04074331206584617
+            }
+          }
+        ]
+      },
+      "real_train_window_count": 82,
+      "synthetic_window_counts": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "no_cross_trajectory_windows": true,
+      "synthetic_capacity_ah_from_soh_times_2": true
+    }
+  }
+}

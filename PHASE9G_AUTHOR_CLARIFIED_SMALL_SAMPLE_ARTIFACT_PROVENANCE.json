@@ -1,0 +1,77 @@
+{
+  "gate": "PASS",
+  "checkpoint_epoch": 200,
+  "source_only": true,
+  "target_blind_checkpoint_selection": true,
+  "voltage_window_encoding": "UNRESOLVED",
+  "trajectories": {
+    "B0007": {
+      "rows": 33,
+      "sets": 5,
+      "shape": [
+        33,
+        4
+      ],
+      "target_blind_generation": true
+    },
+    "B0018": {
+      "rows": 26,
+      "sets": 5,
+      "shape": [
+        26,
+        4
+      ],
+      "target_blind_generation": true
+    }
+  },
+  "phase": "PHASE9G_AUTHOR_CLARIFIED_SMALL_SAMPLE_PRETEST",
+  "runtime_provenance": {
+    "python_executable": "C:\\Users\\ROG\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "torch_version": "2.10.0+cpu",
+    "numpy_version": "2.4.2",
+    "pandas_version": "3.0.1",
+    "scipy_version": "1.17.1",
+    "sklearn_version": "1.8.0",
+    "statsmodels_version": "0.14.6"
+  },
+  "old_phase9e_train_artifact_reused": false,
+  "scaler_fit_scope": "FIRST_20_PERCENT_REAL_TARGET_TRAIN_ONLY",
+  "synthetic_transform": "NEW_FIRST20_REAL_TRAIN_SCALER_ONLY__UNCLIPPED",
+  "synthetic_trajectory_policy": "FIVE_INDEPENDENT_TRAJECTORIES__NO_CROSS_BOUNDARY_WINDOW",
+  "checkpoint_paths": {
+    "B0007": "output\\phase9g_author_clarified_small_sample_pretest\\B0007_PHASE9G_PROVISIONAL_BRANCH_AND_FUSION_CHECKPOINT.pt",
+    "B0018": "output\\phase9g_author_clarified_small_sample_pretest\\B0018_PHASE9G_PROVISIONAL_BRANCH_AND_FUSION_CHECKPOINT.pt"
+  },
+  "scfgan_status": "PROVISIONAL_TIER2_FALLBACK",
+  "paper_exact_scfgan": false,
+  "existing_completed_run_audit": {
+    "phase9g_full_run_rerun": false,
+    "existing_completed_run_accepted_for_audit": true,
+    "previous_execution_channel_status": "FAILED_TO_OBSERVE_COMPLETION",
+    "actual_phase9g_scientific_run_status": "COMPLETED_SUCCESSFULLY",
+    "previous_run_os_crash_evidence": "NONE",
+    "phase9g_observability_fix_applied_after_completed_run": true,
+    "precheck_only_afterward": "PASS",
+    "checkpoint_phase_label_mapping": {
+      "metrics_phase": "PHASE9G_AUTHOR_CLARIFIED_SMALL_SAMPLE_PRETEST",
+      "checkpoint_phase": "PHASE9G_AUTHOR_CLARIFIED_SMALL_SAMPLE",
+      "relation": "INTENTIONAL_ARTIFACT_LABEL_SHORT_FORM__NO_NUMERICAL_RESULT_DIFFERENCE"
+    },
+    "checkpoints": {
+      "B0007": {
+        "sha256": "01876f25b51d0713e5e3f79a1cae9706e557856629b106a355ed50b5a3ba9b3d",
+        "battery_matches": true,
+        "state_dicts": "trend,seasonal,residual,intelligent_fusion",
+        "best_epochs_from_linked_metrics": "trend=13,seasonal=35,residual=16,fusion=133"
+      },
+      "B0018": {
+        "sha256": "3cf7bb6b2f3029ed381c18755c0743b9143aac4c7b8545750dc812366377f9d1",
+        "battery_matches": true,
+        "state_dicts": "trend,seasonal,residual,intelligent_fusion",
+        "best_epochs_from_linked_metrics": "trend=21,seasonal=1,residual=89,fusion=150"
+      }
+    },
+    "checkpoint_provenance_gate": "PASS__SCHEMA_BATTERY_PATH_AND_METRIC_LINKAGE"
+  }
+}

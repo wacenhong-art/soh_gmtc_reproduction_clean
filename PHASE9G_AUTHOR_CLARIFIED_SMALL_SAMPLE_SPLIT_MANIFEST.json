@@ -1,0 +1,58 @@
+{
+  "phase": "PHASE9G_AUTHOR_CLARIFIED_SMALL_SAMPLE_PRETEST",
+  "integer_boundary_rule": "FLOOR_HALF_OPEN",
+  "paper_explicit_integer_rounding": "NOT_SPECIFIED",
+  "test_membership_only": true,
+  "by_battery": {
+    "B0007": {
+      "n_total": 168,
+      "real_train_range": [
+        0,
+        33
+      ],
+      "unused_real_range": [
+        33,
+        100
+      ],
+      "val_range": [
+        100,
+        134
+      ],
+      "test_membership_range": [
+        134,
+        168
+      ],
+      "counts": {
+        "real_train": 33,
+        "unused_real": 67,
+        "val": 34,
+        "test_membership_only": 34
+      }
+    },
+    "B0018": {
+      "n_total": 132,
+      "real_train_range": [
+        0,
+        26
+      ],
+      "unused_real_range": [
+        26,
+        79
+      ],
+      "val_range": [
+        79,
+        105
+      ],
+      "test_membership_range": [
+        105,
+        132
+      ],
+      "counts": {
+        "real_train": 26,
+        "unused_real": 53,
+        "val": 26,
+        "test_membership_only": 27
+      }
+    }
+  }
+}

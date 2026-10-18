@@ -1,0 +1,86 @@
+# Phase9G Author-Clarified Small-Sample NASA Pretest
+
+Author-clarified Tier-2 TRAIN+VAL protocol. PC0019 augmentation is provisional because voltage-window condition encoding remains unresolved.
+
+## B0007
+
+REAL/UNUSED/VAL/TEST=33/67/34/34; REAL/SYNTHETIC/AUGMENTED windows=23/115/138.
+
+| Branch | Best epoch | Stop epoch | Best VAL component MSE |
+| --- | ---: | ---: | ---: |
+| Trend | 13 | 63 | 0.00004322038512327708 |
+| Seasonal | 35 | 85 | 0.00006548507371917367 |
+| Residual | 16 | 66 | 0.000016818568838061765 |
+
+| Method | RMSE Ah | MAE Ah | R2 | SOH RMSE % | SOH MAE % |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| simple_sum | 0.0109344416 | 0.00846000295 | 0.84281373 | 0.54672206 | 0.423000139 |
+| intelligent_fusion | 0.0268322443 | 0.0221379958 | 0.0534676909 | 1.3416122 | 1.1068998 |
+| persistence | 0.00749272519 | 0.00587225472 | 0.926192403 | 0.374636259 | 0.293612736 |
+
+FUSION_BEST_EPOCH=133; FUSION_STOP_EPOCH=150; WEIGHT_SUM_MAX_ERROR=1.19e-07.
+
+Fusion mean/std weights: Trend 0.00671831984 / 0.00413439795; Seasonal 0.860105038 / 0.236223102; Residual 0.133176655 / 0.233453229.
+
+## B0018
+
+REAL/UNUSED/VAL/TEST=26/53/26/27; REAL/SYNTHETIC/AUGMENTED windows=16/80/96.
+
+| Branch | Best epoch | Stop epoch | Best VAL component MSE |
+| --- | ---: | ---: | ---: |
+| Trend | 21 | 71 | 0.0011622735764831305 |
+| Seasonal | 1 | 51 | 0.0011825661640614271 |
+| Residual | 89 | 139 | 0.000037930098187644035 |
+
+| Method | RMSE Ah | MAE Ah | R2 | SOH RMSE % | SOH MAE % |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| simple_sum | 0.0422155751 | 0.0383770689 | -0.89693296 | 2.11077889 | 1.91885348 |
+| intelligent_fusion | 0.237507792 | 0.235272408 | -59.042984 | 11.8753895 | 11.7636204 |
+| persistence | 0.0155280787 | 0.0116736761 | 0.743349569 | 0.776403934 | 0.583683804 |
+
+FUSION_BEST_EPOCH=150; FUSION_STOP_EPOCH=150; WEIGHT_SUM_MAX_ERROR=5.96e-08.
+
+Fusion mean/std weights: Trend 0.000534772524 / 0.00168578362; Seasonal 0.261135697 / 0.430716664; Residual 0.73832953 / 0.431531131.
+
+## Protocol status
+
+Phase9D and Phase9E results are `NON_COMPARABLE_PROTOCOL_HISTORY`; no cross-protocol difference is interpreted as model improvement.
+
+```text
+TEST_LOADED=False
+TEST_ACCESS_COUNT=0
+TEST_NUMERICAL_DEREFERENCE_COUNT=0
+SCFGAN_RETRAINED=False
+SYNTHETIC_REGENERATED=False
+FINAL_CHECKPOINTS_FROZEN=False
+PROVISIONAL_CHECKPOINTS_FROZEN=True
+NASA_FINAL_TEST_UNLOCK_ALLOWED=False
+AUTHOR_PROTOCOL_GATE=PASS
+```
+
+## Existing-run audit and runtime provenance
+
+```text
+PHASE9G_FULL_RUN_RERUN=False
+PHASE9G_EXISTING_COMPLETED_RUN_ACCEPTED_FOR_AUDIT=True
+PREVIOUS_EXECUTION_CHANNEL_STATUS=FAILED_TO_OBSERVE_COMPLETION
+ACTUAL_PHASE9G_SCIENTIFIC_RUN_STATUS=COMPLETED_SUCCESSFULLY
+PREVIOUS_RUN_OS_CRASH_EVIDENCE=NONE
+PHASE9G_OBSERVABILITY_FIX_APPLIED_AFTER_COMPLETED_RUN=True
+PRECHECK_ONLY_AFTERWARD=PASS
+PHASE9G_CHECKPOINT_PROVENANCE_GATE=PASS__SCHEMA_BATTERY_PATH_AND_METRIC_LINKAGE
+
+PYTHON_EXECUTABLE=C:\Users\ROG\AppData\Local\Programs\Python\Python311\python.exe
+PYTHON_VERSION=3.11.9
+TORCH_VERSION=2.10.0+cpu
+NUMPY_VERSION=2.4.2
+PANDAS_VERSION=3.0.1
+SCIPY_VERSION=1.17.1
+SKLEARN_VERSION=1.8.0
+STATSMODELS_VERSION=0.14.6
+```
+
+The checkpoint payload labels use the intentional short form
+`PHASE9G_AUTHOR_CLARIFIED_SMALL_SAMPLE`; the linked metrics use
+`PHASE9G_AUTHOR_CLARIFIED_SMALL_SAMPLE_PRETEST`. This naming distinction does
+not alter checkpoint tensors, selected states, or reported numerical results.

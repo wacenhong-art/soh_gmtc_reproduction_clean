@@ -1882,3 +1882,39 @@ from the new real TRAIN partition and cannot reuse an old splitter, scaler,
 STL array, window, checkpoint, or validation prediction. Any provenance,
 leakage, split, shape, or finite-value gate failure stops execution with
 `RESEARCH_DIRECTION_REJECTED`.
+
+# PLAN-CHANGE-0020 — Author-clarified small-sample protocol
+
+This append-only author clarification supersedes Phase9E only for the final
+small-sample NASA target TRAIN+VAL path. It does not overwrite or delete
+Phase9E, Phase9D, or their artifacts.
+
+```text
+PLAN_CHANGE_0020_APPLIED=True
+AUTHOR_CLARIFIED_PROTOCOL=True
+PHASE9E_STATUS=SUPERSEDED_FOR_FINAL_PROTOCOL_BY_AUTHOR_CLARIFICATION
+PHASE9F_STATUS=ABORTED_BEFORE_TEST_UNLOCK
+TEST_CONTAMINATION=False
+CURRENT_REPRODUCTION_TIER=TIER2_AUTHOR_CLARIFIED_PROTOCOL_WITH_PROVISIONAL_SCFGAN_FALLBACK
+
+NASA_SOH=CAPACITY_AH_DIVIDED_BY_2.0
+B0007_REAL_TRAIN=[0,33)__UNUSED_REAL=[33,100)__VAL=[100,134)__TEST=[134,168)
+B0018_REAL_TRAIN=[0,26)__UNUSED_REAL=[26,79)__VAL=[79,105)__TEST=[105,132)
+INTEGER_BOUNDARY_RULE=FLOOR_HALF_OPEN
+PAPER_EXPLICIT_INTEGER_ROUNDING=NOT_SPECIFIED
+
+UNUSED_20_60_USED_FOR_TRAINING=False
+UNUSED_20_60_ALLOWED_AS_PAST_INFERENCE_CONTEXT=True
+TEST_LOADED=False
+TEST_ACCESS_COUNT=0
+FINAL_CHECKPOINTS_FROZEN=False
+PROVISIONAL_CHECKPOINTS_FROZEN=True
+NASA_FINAL_TEST_UNLOCK_ALLOWED=False
+```
+
+The existing PC0019 source-only, target-blind, five-trajectory synthetic
+artifacts remain provisional because the author-confirmed charging-voltage-window
+condition encoding is unresolved. Phase9G may reuse those persisted artifacts
+only after provenance preflight; it may not retrain SCF-GAN, regenerate
+synthetic data, open TEST, alter architecture/hyperparameters, or use poor
+validation results to change the protocol.
